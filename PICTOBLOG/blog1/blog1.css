@@ -1,0 +1,368 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.blog1_card {
+    position: relative;
+    background-color: #DFC68D;
+    width: 80%;
+    align-self: center;
+    padding: 20px;
+   
+    height: 60%;
+    
+    border: 10px solid #263448;
+
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+}
+
+.blog-title {
+    font-family: "Raleway";
+    font-weight: bolder;
+    padding-top: 7px;
+    font-size: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.blog-author span{
+    color: #000000;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #263448;
+    
+}
+
+.blog-image {
+    width: 70%;
+    height: 50vh    ;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+
+}
+
+.design1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.blog1 {
+    padding: 10px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.sidesection {
+    width: 20vw;
+    height: 50vw;
+}
+
+.blog-author{
+    font-family: "Poppins", sans-serif;
+    color: rgb(68, 68, 159);
+    padding-left: 30px;
+    padding-top: 30px;
+    font-size: 20px;
+    
+}
+
+.design2 {
+    margin-left: -43px;
+}
+
+.blog-content {
+    padding-top: 0px    ;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 25px;
+    padding-top: 0px;
+    text-align: left;
+    height:40%;
+    padding: 30px;
+    color: #000000;
+
+}
+
+.design3 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.blog-image :nth-child(2){
+    
+    font-family: "Poppins",  sans-serif;
+    padding-right: px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+}
+.design4{
+    align-self: center;
+    padding:10px;
+    padding-left: 20px;
+}
+.moreblogs{
+    font-family:"Raleway" ;
+    font-weight:bolder;
+    padding-top: 15px;
+    font-size: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10px;
+
+}
+
+
+.middle_section1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-content b{
+ font-size: xx-large;
+}
+.blog-content blockquote{
+ font-weight: 600;
+}
+
+.back{
+    font-family: "Poppins",  sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 15px;
+    position: absolute;
+    height: 40px;
+    width: 100px;
+   margin: 10px;
+    border-radius: 20px;
+    border: solid #263448;
+    background-color: rgba(60, 73, 91, 1);
+    color: white ;
+}
+
+.back a{
+    color: #ccc;
+}
+.back1 a{
+    color: #ccc;
+}
+
+.back img{
+    
+    height: 35px;
+    width: 35px;
+    filter: invert();
+}
+
+.back:hover{
+    scale: 1.1;
+    background-color: rgb(42, 51, 64) ;
+    transition: 300ms;
+    cursor: pointer;
+}
+.back1{
+    font-family: "Poppins",  sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 15px;
+    position: absolute;
+    height: 40px;
+    width: 100px;
+   margin: 10px;
+    border-radius: 20px;
+    border: solid #263448;
+    background-color: rgba(60, 73, 91, 1);
+    color: white ;
+}
+
+.back1 img{
+    
+    height: 35px;
+    width: 35px;
+    filter: invert();
+}
+
+.back1:hover{
+    scale: 1.1;
+    background-color: rgb(42, 51, 64) ;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.down{
+    
+    bottom: 10px;
+    
+}
+
+.btnback{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media (max-width: 904px) {
+   .blog-image{
+    width: 82%;
+    height: auto;
+   }
+}
+
+
+
+
+@media (max-width: 836px) {
+    .back{
+        top: 0;
+        left: 0;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        font-size: 15px;
+        position: absolute;
+        height: 20px;
+        width: 100px;
+        margin: 7px;
+        border-radius: 20px;
+        border: solid #263448;
+        background-color: rgba(60, 73, 91, 1);
+        color: white;
+    }
+}
+
+
+@media (max-width: 804px) {
+    .blog-title {
+        font-family: "Raleway";
+        font-weight: bolder;
+        padding-top: 21px;
+        font-size: 39px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+} 
+}
+
+
+@media (max-width: 596px){
+    .blog-image img {
+        width: 96%;
+        height: 100%;
+        border: 5px solid #263448;
+}
+}
+@media (max-width: 448px){
+    .blog-content{
+        padding: 0;
+        font-size: 15px;
+    }
+    .blog-author {
+        font-family: "Poppins", sans-serif;
+        color: blue;
+        padding-left: 2px;
+        padding-top: 14px;
+        font-size: 20px;
+    }
+
+    .design1 img{
+        width: 119%;
+    }
+    .blog-image {
+        width: 100%;
+        height: auto;
+    }
+    .design3 img{
+        width: 110%;
+    }
+}
+
+@media (max-width: 439px){
+    .blog-author{
+        font-size: 19px;
+    }
+    .down {
+        bottom: -3px;
+    }
+    
+    .back1 {
+        font-size: 13px;
+        height: 27px;
+        width: 100px;
+    }
+    .blog1_card{
+        width: 96%;
+    }
+    .blog-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 415px){
+    .blog-title{
+        font-size: 30px;
+    }
+    .blog-author{
+        
+        padding-bottom: 10px;
+    }
+    .blog1_card{
+        width: 96%;
+    }
+    .blog-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .back img{
+    
+        height: 30px;
+        width: 30px;
+        filter: invert();
+    }
+    .back{
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 280px){
+    .blog-title{
+        font-size: 25px;
+    }
+
+    .blog-author{
+        font-size: 15px;
+        padding-bottom: 10px;
+    }
+}
