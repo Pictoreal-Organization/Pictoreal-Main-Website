@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -8,13 +7,10 @@
     position: relative;
     background-color: #DFC68D;
     width: 80%;
+    max-width: 1200px;
     align-self: center;
     padding: 20px;
-   
-    height: 60%;
-    
     border: 10px solid #263448;
-
 }
 
 blockquote {
@@ -33,24 +29,20 @@ blockquote {
     justify-content: center;
 }
 
-.blog-author span{
+.blog-author span {
     color: #000000;
 }
 
 .blog-image img {
     width: 100%;
-    height: 100%;
     border: 5px solid #263448;
-    
 }
 
 .blog-image {
     width: 70%;
-    height: 50vh    ;
     display: flex;
     gap: 30px;
     flex-direction: row;
-
 }
 
 .design1 {
@@ -66,21 +58,17 @@ blockquote {
     flex-direction: column;
 }
 
-
-
-
 .sidesection {
     width: 20vw;
     height: 50vw;
 }
 
-.blog-author{
+.blog-author {
     font-family: "Poppins", sans-serif;
     color: rgb(68, 68, 159);
     padding-left: 30px;
     padding-top: 30px;
     font-size: 20px;
-    
 }
 
 .design2 {
@@ -88,15 +76,15 @@ blockquote {
 }
 
 .blog-content {
-    padding-top: 0px    ;
+    padding-top: 0px;
     font-size: 17px;
     font-family: "Poppins", sans-serif;
     text-align: center;
-    padding: 25px;
     padding-top: 0px;
-    text-align: left;
-    height:40%;
-    padding: 30px;
+    text-align: justify;
+    height: 40%;
+    padding-block: 30px;
+    padding-inline: 10px;
     color: #000000;
 
 }
@@ -107,48 +95,50 @@ blockquote {
     justify-content: center;
 }
 
-.blog-image :nth-child(2){
-    
-    font-family: "Poppins",  sans-serif;
+.blog-image :nth-child(2) {
+
+    font-family: "Poppins", sans-serif;
     padding-right: px;
     font-size: 18px;
     font-weight: 500;
     text-align: justify;
 }
-.design4{
+
+.design4 {
     align-self: center;
-    padding:10px;
+    padding: 10px;
     padding-left: 20px;
 }
-.moreblogs{
-    font-family:"Raleway" ;
-    font-weight:bolder;
+
+.moreblogs {
+    font-family: "Raleway";
+    font-weight: bolder;
     padding-top: 15px;
     font-size: 30px;
     display: flex;
     align-content: center;
     justify-content: center;
     padding-left: 10px;
-
 }
 
 
-.middle_section1{
+.middle_section1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.blog-content b{
- font-size: xx-large;
-}
-.blog-content blockquote{
- font-weight: 600;
+.blog-content b {
+    font-size: xx-large;
 }
 
-.back{
-    font-family: "Poppins",  sans-serif;
+.blog-content blockquote {
+    font-weight: 600;
+}
+
+.back {
+    font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -157,35 +147,36 @@ blockquote {
     position: absolute;
     height: 40px;
     width: 100px;
-   margin: 10px;
+    margin: 10px;
     border-radius: 20px;
     border: solid #263448;
     background-color: rgba(60, 73, 91, 1);
-    color: white ;
+    color: white;
 }
 
-.back a{
-    color: #ccc;
-}
-.back1 a{
+.back a {
     color: #ccc;
 }
 
-.back img{
-    
+.back1 a {
+    color: #ccc;
+}
+
+.back img {
     height: 35px;
     width: 35px;
     filter: invert();
 }
 
-.back:hover{
+.back:hover {
     scale: 1.1;
-    background-color: rgb(42, 51, 64) ;
+    background-color: rgb(42, 51, 64);
     transition: 300ms;
     cursor: pointer;
 }
-.back1{
-    font-family: "Poppins",  sans-serif;
+
+.back1 {
+    font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -194,34 +185,31 @@ blockquote {
     position: absolute;
     height: 40px;
     width: 100px;
-   margin: 10px;
+    margin: 10px;
     border-radius: 20px;
     border: solid #263448;
     background-color: rgba(60, 73, 91, 1);
-    color: white ;
+    color: white;
 }
 
-.back1 img{
-    
+.back1 img {
     height: 35px;
     width: 35px;
     filter: invert();
 }
 
-.back1:hover{
+.back1:hover {
     scale: 1.1;
-    background-color: rgb(42, 51, 64) ;
+    background-color: rgb(42, 51, 64);
     transition: 300ms;
     cursor: pointer;
 }
 
-.down{
-    
+.down {
     bottom: 10px;
-    
 }
 
-.btnback{
+.btnback {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,17 +217,13 @@ blockquote {
 }
 
 @media (max-width: 904px) {
-   .blog-image{
-    width: 82%;
-    height: auto;
-   }
+    .blog-image {
+        width: 82%;
+    }
 }
 
-
-
-
 @media (max-width: 836px) {
-    .back{
+    .back {
         top: 0;
         left: 0;
         font-family: "Poppins", sans-serif;
@@ -269,22 +253,27 @@ blockquote {
         display: flex;
         align-content: center;
         justify-content: center;
-} 
+    }
+
+    .blog1_card {
+        width: 90%;
+    }
 }
 
 
-@media (max-width: 596px){
+@media (max-width: 596px) {
     .blog-image img {
         width: 96%;
-        height: 100%;
         border: 5px solid #263448;
+    }
 }
-}
-@media (max-width: 448px){
-    .blog-content{
+
+@media (max-width: 448px) {
+    .blog-content {
         padding: 0;
         font-size: 15px;
     }
+
     .blog-author {
         font-family: "Poppins", sans-serif;
         color: blue;
@@ -293,34 +282,38 @@ blockquote {
         font-size: 20px;
     }
 
-    .design1 img{
+    .design1 img {
         width: 119%;
     }
+
     .blog-image {
         width: 100%;
-        height: auto;
     }
-    .design3 img{
+
+    .design3 img {
         width: 110%;
     }
 }
 
-@media (max-width: 439px){
-    .blog-author{
+@media (max-width: 439px) {
+    .blog-author {
         font-size: 19px;
     }
+
     .down {
         bottom: -3px;
     }
-    
+
     .back1 {
         font-size: 13px;
         height: 27px;
         width: 100px;
     }
-    .blog1_card{
-        width: 96%;
+
+    .blog1_card {
+        width: 100%;
     }
+
     .blog-image {
         display: flex;
         align-items: center;
@@ -328,40 +321,43 @@ blockquote {
     }
 }
 
-@media (max-width: 415px){
-    .blog-title{
+@media (max-width: 415px) {
+    .blog-title {
         font-size: 30px;
     }
-    .blog-author{
-        
+
+    .blog-author {
         padding-bottom: 10px;
     }
-    .blog1_card{
-        width: 96%;
+
+    .blog1_card {
+        width: 100%;
     }
+
     .blog-image {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .back img{
-    
+
+    .back img {
         height: 30px;
         width: 30px;
         filter: invert();
     }
-    .back{
+
+    .back {
         padding: 10px;
     }
 }
 
 
-@media (max-width: 280px){
-    .blog-title{
+@media (max-width: 280px) {
+    .blog-title {
         font-size: 25px;
     }
 
-    .blog-author{
+    .blog-author {
         font-size: 15px;
         padding-bottom: 10px;
     }
