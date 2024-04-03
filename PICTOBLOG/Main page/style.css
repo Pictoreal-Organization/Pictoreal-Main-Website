@@ -10,7 +10,7 @@
 .blog-heading img {
     width: 600px;
     position: absolute;
-    top: 45px;
+    top: 55px;
     align-self: center;
 }
 
@@ -150,11 +150,13 @@ main h2 {
 
 @media (max-width: 800px) {
     .blog-heading img {
-        width: 400px;
+        width: 350px;
         top: 60px;
     }
 
     .blog_card_container {
         grid-template-columns: 1fr;
     }
+
+
 }
