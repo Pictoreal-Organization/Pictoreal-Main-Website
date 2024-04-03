@@ -222,9 +222,8 @@ blockquote {
         gap: 5px;
         font-size: 15px;
         position: absolute;
-        height: 20px;
         width: 100px;
-        margin: 7px;
+        margin: 10px;
         border-radius: 20px;
         border: 2px solid black;
         background-color: rgba(60, 73, 91, 1);
@@ -237,7 +236,7 @@ blockquote {
     .blog-title {
         font-family: "Raleway";
         font-weight: bolder;
-        padding-top: 21px;
+        padding-top: 30px;
         font-size: 39px;
         display: flex;
         align-content: center;
@@ -282,16 +281,6 @@ blockquote {
     .design3 img {
         width: 110%;
     }
-}
-
-@media (max-width: 439px) {
-    .blog-author {
-        font-size: 19px;
-    }
-
-    .down {
-        bottom: -3px;
-    }
 
     .back1 {
         font-size: 13px;
@@ -303,6 +292,20 @@ blockquote {
         font-size: 13px;
         height: 27px;
         width: 80px;
+    }
+
+    .down {
+        bottom: -3px;
+    }
+}
+
+@media (max-width: 439px) {
+    .blog-title{
+        padding-top: 21px;
+    }
+
+    .blog-author {
+        font-size: 19px;
     }
 
     .blog1_card {
