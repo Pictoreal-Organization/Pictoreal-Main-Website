@@ -15,8 +15,8 @@
 
 blockquote {
     font-style: italic;
-    border-left: 4px solid #ccc;
     padding-left: 10px;
+    font-size: 17px;
 }
 
 .blog-title {
@@ -42,7 +42,7 @@ blockquote {
     width: 70%;
     display: flex;
     gap: 30px;
-    flex-direction: row;
+    flex-direction: row;    
 }
 
 .design1 {
@@ -205,8 +205,20 @@ blockquote {
     padding: 10px;
 }
 
+.blog-content-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-content-image img{
+    width: 70%;
+    border: 5px solid #263448;
+}
+
 @media (max-width: 904px) {
-    .blog-image {
+    .blog-image .blog-content-image img{
         width: 82%;
     }
 }
@@ -250,7 +262,7 @@ blockquote {
 
 
 @media (max-width: 596px) {
-    .blog-image img {
+    .blog-image img .blog-content-image img {
         width: 96%;
         border: 5px solid #263448;
     }
@@ -274,7 +286,11 @@ blockquote {
         width: 119%;
     }
 
-    .blog-image {
+    .blog-image  {
+        width: 100%;
+    }
+
+    .blog-content-image img{
         width: 100%;
     }
 
@@ -353,4 +369,12 @@ blockquote {
         font-size: 15px;
         padding-bottom: 10px;
     }
+}
+
+i {
+    -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
+    -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
+    -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
+    -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
+    transform: scale(1) rotate(0deg) translate(0px, 0px) skew(30deg, 0deg);
 }
