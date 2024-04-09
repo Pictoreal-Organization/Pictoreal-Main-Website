@@ -19,14 +19,14 @@ main h2 {
     font-size: 50px;
     text-align: center;
     font-weight: 700;
-    padding: 10px 10px 10px 10px;
+    /* padding: 10px 10px 10px 10px; */
     margin-bottom: 25px;
     font-family: "Raleway", sans-serif;
 }
 
 .blog-container {
     display: grid;
-    justify-items: center;
+    justify-content: center;
     margin-top: 24px;
 }
 
@@ -36,6 +36,7 @@ main h2 {
     align-items: center;
     margin-top: 15px;
     max-width: 2500px;
+    justify-content: center;
 }
 
 .blog-authors span {
@@ -65,7 +66,7 @@ main h2 {
 .blog-image img {
     position: relative;
     top: 12px;
-    width: 280px;
+    width: 200px;
 }
 
 .blog_card_content {
@@ -159,4 +160,24 @@ main h2 {
     }
 
 
+}
+
+@media (max-width: 380px){
+    .blog_card{
+        scale: 0.8;
+    }
+
+    .blog-heading img{
+        scale: 0.8;
+    }
+
+    body{
+        position: relative;
+    }
+
+    .blog-container{
+        margin-top: 0px;
+        position: relative;
+        top: -25px;
+    }
 }
