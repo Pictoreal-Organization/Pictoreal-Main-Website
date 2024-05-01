@@ -35,8 +35,7 @@ h6 {
 
 .heads {
 
-  color: #4a5562;
-  color: #263448;
+  color: rgba(83, 23, 51, 1);
   font-size: 40px;
   text-align: center;
   font-weight: 700;
@@ -56,7 +55,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -2250,7 +2249,7 @@ section {
 }
 
 .card {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(58, 6, 34, 1), rgba(58, 6, 34, 1));
 }
 
 /* .card:nth-child(2) {
@@ -2332,7 +2331,7 @@ section {
 }
 
 .card .card__overlay {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(83, 32, 23, 1),rgba(83, 32, 23, 1));
 }
 
 /* .card:nth-child(2) .card__overlay {
