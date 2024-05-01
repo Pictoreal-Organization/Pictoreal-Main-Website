@@ -5,12 +5,12 @@
 
 .blog1_card {
     position: relative;
-    background-color: #DFC68D;
+    background-color: #D2B49A;
     width: 80%;
     max-width: 1200px;
     align-self: center;
     padding: 20px;
-    border: 10px solid #263448;
+    border: 10px solid #3A0622;
 }
 
 blockquote {
@@ -27,6 +27,7 @@ blockquote {
     display: flex;
     align-content: center;
     justify-content: center;
+    color: #561A34;
 }
 
 .blog-author span {
@@ -35,7 +36,7 @@ blockquote {
 
 .blog-image img {
     width: 100%;
-    border: 5px solid #263448;
+    border: 5px solid #3A0622;
 }
 
 .blog-image {
@@ -150,13 +151,13 @@ blockquote {
     margin: 10px;
     border-radius: 20px;
     border: 2px solid black;
-    background-color: #3C495B;
+    background-color: #6f2143;
     color: white;
     box-shadow: 5px 5px 9.1px rgba(0, 0, 0, 0.250)
 }
 
 .back:hover{
-    background-color: #232b35;
+    background-color: #561A34;
     scale: 1.1;
     transition: 400ms;
 }
@@ -182,14 +183,14 @@ blockquote {
     margin: 10px;
     border-radius: 20px;
     border: 2px solid black;
-    background-color: rgba(60, 73, 91, 1);
+    background-color: #6f2143;
     color: white;
 }
 
 
 .back1:hover {
     scale: 1.1;
-    background-color: rgb(42, 51, 64);
+    background-color: #561A34;
     transition: 300ms;
     cursor: pointer;
 }
@@ -214,7 +215,7 @@ blockquote {
 
 .blog-content-image img{
     width: 70%;
-    border: 5px solid #263448;
+    border: 5px solid #561A34;
 }
 
 @media (max-width: 904px) {
@@ -238,7 +239,7 @@ blockquote {
         margin: 10px;
         border-radius: 20px;
         border: 2px solid black;
-        background-color: rgba(60, 73, 91, 1);
+        background-color: #6f2143;
         color: white;
     }
 }
@@ -264,7 +265,7 @@ blockquote {
 @media (max-width: 596px) {
     .blog-image img .blog-content-image img {
         width: 96%;
-        border: 5px solid #263448;
+        border: 5px solid #3A0622;
     }
 }
 
