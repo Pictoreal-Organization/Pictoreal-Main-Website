@@ -15,7 +15,7 @@
 }
 
 main h2 {
-    color: #263448;
+    color: #49112E;
     font-size: 50px;
     text-align: center;
     font-weight: 700;
@@ -49,9 +49,9 @@ main h2 {
     width: 350px;
     height: 480px;
     position: relative;
-    background-color: #DFC68D;
+    background-color: #D2B49A;
     padding: 15px;
-    border: solid 10px #263448;
+    border: solid 10px #3A0622;
     margin: 10px;
     box-shadow: 10px 10px 9.1px rgba(0, 0, 0, 0.250)
 }
@@ -114,7 +114,7 @@ main h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3C495B;
+    background-color: #6f2143;
     border-radius: 10.4px;
     width: 100px;
     height: 30px;
@@ -127,7 +127,7 @@ main h2 {
 }
 
 .blog-button button:hover {
-    background-color: #232b35;
+    background-color: #561A34;
     scale: 1.1;
     transition: 400ms;
 }
