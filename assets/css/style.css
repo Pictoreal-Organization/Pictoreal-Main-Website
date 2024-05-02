@@ -2177,7 +2177,7 @@ section {
 
 .btn_hero,
 .btn_hero:focus {
-  background: #263448;
+  background: #561A34;
   border: none;
   padding: 8px 25px;
   border-radius: 4px;
@@ -2189,7 +2189,12 @@ section {
 .btn_hero:hover,
 .btn_hero:focus:hover {
   color: #fff;
-  background: #263448;
+  background: #3E0927;
+}
+
+.mt-5:hover{
+  scale: 1.1;
+  transition: 300ms;
 }
 
 /* Event Cards  */
