@@ -69,8 +69,10 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #263448;
+  background: rgb(127, 16, 73);
   color: #fff;
+  scale: 1.1;
+  transform: 0.2s;
 }
 
 .back-to-top.active {
@@ -174,7 +176,7 @@ h6 {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #263448;
+  background: rgba(83, 32, 23, 1);
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -185,7 +187,9 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
+  scale: 1.1;
+  transition: 0.3s;
 }
 
 .navbar .dropdown ul {
@@ -1363,7 +1367,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
   float: left;
   width: 44px;
   height: 44px;
@@ -1380,14 +1384,14 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
 }
 
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #8795a4;
+  color: rgb(147, 84, 116);
 }
 
 .contact .info .email,
@@ -1398,7 +1402,7 @@ section {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #556270;
+  background: rgba(73, 17, 46, 1);
   color: #fff;
 }
 
@@ -1463,7 +1467,7 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #263448;
+  border-color: rgba(58, 6, 34, 1);
 }
 
 .contact .php-email-form input {
@@ -1475,7 +1479,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #263448;
+  background: rgba(83, 32, 23, 1);
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -2020,7 +2024,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   /* background: #4a5562; */
-  background: rgba(38, 52, 72, 0.90);
+  background: rgb(98, 9, 29);
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -2028,7 +2032,7 @@ section {
 
 #footer .footer-top {
   /* background: #515d6a; */
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   padding: 60px 0 30px 0;
 }
 
@@ -2159,7 +2163,7 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: white;
 }
 
 #footer .credits a {
@@ -2371,11 +2375,14 @@ section {
   background-color: #caa656;
   border-color: #caa656;
   color: white;
+  box-shadow: inset;
 }
 
 .event-btn:hover {
   color: white;
   background: rgba(202, 166, 86, 0.9);
+  scale: 1.1;
+  transition: 0.2s;
 }
 
 .event-border {

@@ -2231,8 +2231,18 @@ section {
 }
 
 .card {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1), rgba(73, 17, 46, 1));
 }
+
+
+/* added hover effect on  */
+
+.card:hover{  
+  scale: 1.01;
+  transition: 1s;
+}
+
+
 
 /* .card:nth-child(2) {
     background-image: linear-gradient(45deg, #cf0, #09afff);
@@ -2344,7 +2354,7 @@ section {
 }
 
 .team-heading{
-  color: #263448;
+  color: rgba(58, 6, 34, 1);
 }
 
 .page-heading{
