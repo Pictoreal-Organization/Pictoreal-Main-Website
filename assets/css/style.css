@@ -155,7 +155,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #000;
+  color: #3A0622;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -171,7 +171,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar .getstarted,
@@ -225,7 +225,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #263448;
+  color: #561A34;
 }
 
 .navbar .dropdown:hover>ul {
@@ -261,7 +261,7 @@ h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #556270;
+  color: #3A0622;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -318,13 +318,13 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #556270;
+  color: #3A0622;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar-mobile .getstarted,
