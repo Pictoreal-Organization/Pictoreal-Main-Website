@@ -2196,10 +2196,10 @@ section {
   background: #3E0927;
 }
 
-.mt-5:hover{
+/* .mt-5:hover{
   scale: 1.1;
   transition: 300ms;
-}
+} */
 
 /* Event Cards  */
 .cards_container {

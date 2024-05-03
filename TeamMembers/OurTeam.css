@@ -173,7 +173,7 @@ h6 {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #263448;
+  background: rgba(83, 32, 23, 1);
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -184,7 +184,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
 }
 
 .navbar .dropdown ul {
@@ -1349,7 +1349,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
   float: left;
   width: 44px;
   height: 44px;
@@ -1366,7 +1366,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
 }
 
 .contact .info p {
@@ -2005,14 +2005,14 @@ section {
   # Footer
   --------------------------------------------------------------*/
 #footer {
-  background: rgba(38, 52, 72, 0.90);
+  background: rgb(98, 9, 29);
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   padding: 60px 0 30px 0;
 }
 
