@@ -39,6 +39,8 @@
 
 <body>
 
+  <div id="preloader"></div>
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -50,7 +52,7 @@
           <li><a href="index.html" >Home</a></li>
           <li><a href="./index.html#events">Events</a></li>
           <li><a href="./index.html#portfolio">Gallery</a></li>
-          <li><a href="../Pictoreal-Main-Website/PICTOBLOG/Main page/index.html"  class="active">Blogs</a></li>
+          <li><a href="./PICTOBLOG/Main page/index.html" >Blogs</a></li>
           <li><a href="./TeamMembers/OurTeam.html">Our Team</a></li>
           <li class="dropdown"><a href="./magazines/index.html"><span>Magazines</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -203,6 +205,13 @@
       </div>
     </footer><!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script> // for loader
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+        loader.style.display = "none"
+    })
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

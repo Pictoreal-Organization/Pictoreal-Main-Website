@@ -49,6 +49,9 @@
   </head>
 
   <body>
+
+    <div id="preloader"></div>
+
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center">
         <a href="#" class="logo"
@@ -117,6 +120,13 @@
         </div>
       </div>
     </main>
+
+    <script> // for loader
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function(){
+          loader.style.display = "none"
+      })
+    </script>
 
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
