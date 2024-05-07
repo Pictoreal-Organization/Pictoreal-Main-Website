@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-image: url(../img/27884380_stain_halftone_background\ 1.svg);
 }
 
 a {
@@ -176,7 +177,7 @@ h6 {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: rgba(83, 32, 23, 1);
+  background: #6f2143;
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -2331,7 +2332,7 @@ section {
   height: 100%;
   box-shadow: none;
   border-radius: 0;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .card__overlay:hover::before,
@@ -2340,7 +2341,7 @@ section {
 }
 
 .card .card__overlay {
-  background-image: linear-gradient(45deg, rgba(83, 32, 23, 1),rgba(83, 32, 23, 1));
+  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1),rgba(73, 17, 46, 1));
 }
 
 /* .card:nth-child(2) .card__overlay {
@@ -2372,15 +2373,15 @@ section {
 }
 
 .event-btn {
-  background-color: #caa656;
-  border-color: #caa656;
-  color: white;
+  background-color: #d0b311;
+  border-color: #d0b311;
+  color: black;
   box-shadow: inset;
 }
 
 .event-btn:hover {
-  color: white;
-  background: rgba(202, 166, 86, 0.9);
+  color: black;
+  background: #a38d11;
   scale: 1.1;
   transition: 0.2s;
 }
