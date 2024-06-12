@@ -2359,6 +2359,7 @@ section {
   box-sizing: border-box;
   pointer-events: none;
   transition: 0s;
+  overflow-y: auto;
 }
 
 .card__overlay:hover~.card__content {
