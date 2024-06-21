@@ -1362,6 +1362,8 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
+  border-radius: 10px;
+  padding: 25px;
   width: 100%;
   background: #fff;
 }
@@ -1408,6 +1410,8 @@ section {
 }
 
 .contact .php-email-form {
+  border-radius: 10px;
+  padding: 25px;
   width: 100%;
   background: #fff;
 }
@@ -2466,3 +2470,5 @@ section {
   position: fixed;
   z-index: 100;
 }
+
+
