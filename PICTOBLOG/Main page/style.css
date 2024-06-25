@@ -32,7 +32,7 @@ main h2 {
 
 .blog_card_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr /*1fr 1fr*/;
     align-items: center;
     margin-top: 15px;
     max-width: 2500px;
@@ -138,7 +138,7 @@ main h2 {
 
 @media (max-width: 2000px) {
     .blog_card_container {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr /*1fr*/;
     }
 }
 
@@ -165,6 +165,7 @@ main h2 {
 @media (max-width: 380px){
     .blog_card{
         scale: 0.8;
+        margin: 8px;
     }
 
     .blog-heading img{
