@@ -42,11 +42,11 @@
 </head>
 
 <body>
-
+  <div id="preloader"></div>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-      <a href="../index.html" class="logo"><img src="../assets/img/themelogo.png" alt="" class="img-fluid"></a>
+      <a href="../index.html" class="logo"><img src="../assets/img/navrasLogo.png" alt="" class="img-fluid"></a>
       <h1 class="logo me-auto"></h1>
 
 
@@ -240,20 +240,20 @@
           </div>
 
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="../assets/img/events/Amche_Bappa/IMG-20230922-WA0004~2 - BHAN AR.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <!-- <h4>Session</h4> -->
-                <!-- <p>Blood Donation</p> -->
+                <h4>Session</h4>
+                <p>Blood Donation</p>
                 <div class="portfolio-links">
                   <a href="../assets/img/events/Amche_Bappa/IMG-20230922-WA0004~2 - BHAN AR.jpg" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="BE_Photoshoot"><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           
         </div>
@@ -329,7 +329,13 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-
+  
+      <script> // for loader
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = "none"
+        })
+    </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
