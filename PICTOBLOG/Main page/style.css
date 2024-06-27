@@ -28,6 +28,7 @@ main h2 {
     display: grid;
     justify-content: center;
     margin-top: 24px;
+    overflow: hidden;
 }
 
 .blog_card_container {

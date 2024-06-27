@@ -1,6 +1,5 @@
 .flex .blog-content-image img{
     width: 350px;
-    margin: 10px;
 }
 
 .blog-content-image img{
@@ -9,6 +8,7 @@
 
 .flex{
     display: flex;
+    gap: 20px;
 }
 
 .flex blog-content-image img{
