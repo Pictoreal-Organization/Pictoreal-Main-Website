@@ -62,3 +62,14 @@
     vertical-align: middle;
 }
 
+.magazine-title {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: left;
+    color: #D2B49A;
+  }
+  
+  .btn_hero {
+    margin-top: 20px;
+  }
+  
