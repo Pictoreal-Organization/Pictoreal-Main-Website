@@ -160,6 +160,9 @@ main h2 {
         grid-template-columns: 1fr;
     }
 
+   #preloader{
+        background-size: 60%;
+   }
 
 }
 
@@ -182,6 +185,9 @@ main h2 {
         position: relative;
         top: -25px;
     }
+    #preloader{
+        background-size: 60%;
+   }
 }
 
 #preloader{
@@ -191,4 +197,5 @@ main h2 {
     width: 100%;
     position: fixed;
     z-index: 100;
+    top: 0;
   }

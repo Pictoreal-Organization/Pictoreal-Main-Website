@@ -2357,7 +2357,7 @@ section {
 }
 
 .card .card__overlay {
-  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1),rgba(73, 17, 46, 1));
+  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1), rgba(73, 17, 46, 1));
 }
 
 /* .card:nth-child(2) .card__overlay {
@@ -2474,13 +2474,15 @@ section {
   }
 }
 
-#preloader{
+#preloader {
   background: #3A0622 url(../img/Load.gif) no-repeat center center;
   background-size: 20%;
   height: 100vh;
   width: 100%;
   position: fixed;
   z-index: 100;
+
+  @media (max-width: 500px) {
+    background-size: 60%;
+  }
 }
-
-
