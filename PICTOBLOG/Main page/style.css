@@ -33,11 +33,15 @@ main h2 {
 
 .blog_card_container {
     display: grid;
-    grid-template-columns: 1fr 1fr /*1fr 1fr*/;
+    grid-template-columns: 1fr 1fr 1fr/* 1fr*/;
     align-items: center;
     margin-top: 15px;
     max-width: 2500px;
     justify-content: center;
+}
+
+.blog-authors{
+    text-align: center;
 }
 
 .blog-authors span {
@@ -139,7 +143,7 @@ main h2 {
 
 @media (max-width: 2000px) {
     .blog_card_container {
-        grid-template-columns: 1fr 1fr /*1fr*/;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
