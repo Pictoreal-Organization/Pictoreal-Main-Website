@@ -40,10 +40,11 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
-            <a href="../index.html" class="logo"><img src="../assets/img/themelogo.png" alt="" class="img-fluid"></a>
+            <a href="../index.html" class="logo"><img src="../assets/img/navrasLogo.png" alt="" class="img-fluid"></a>
             <h1 class="logo me-auto"><a href="../index.html"></a></h1>
 
 
@@ -57,6 +58,8 @@
                     <li class="dropdown"><a href="../magazines/index.html"><span>Magazines</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
+                            <li><a href="../magazines/vol-26.html">Volume 26</a></li>
+                            <li><a href="../magazines/vol-25.html">Volume 25</a></li>
                             <li><a href="../magazines/vol-24.html">Volume 24</a></li>
                             <li><a href="../magazines/vol-23.html">Volume 23</a></li>
                             <li><a href="../magazines/vol-22.html">Volume 22</a></li>
@@ -64,7 +67,7 @@
                         </ul>
                     </li>
                     <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../magazines/vol-25.html" class="getstarted">Volume 25</a></li>
+                    <li><a href="../magazines/vol-26.html" class="getstarted">Volume 26</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -709,6 +712,14 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    <script> // for loader
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = "none"
+        })
+    </script>
+          
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

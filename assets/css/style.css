@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-image: url(../img/27884380_stain_halftone_background\ 1.svg);
 }
 
 a {
@@ -35,8 +36,7 @@ h6 {
 
 .heads {
 
-  color: #4a5562;
-  color: #263448;
+  color: rgba(83, 23, 51, 1);
   font-size: 40px;
   text-align: center;
   font-weight: 700;
@@ -56,7 +56,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -70,8 +70,10 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #263448;
+  background: rgb(127, 16, 73);
   color: #fff;
+  scale: 1.1;
+  transform: 0.2s;
 }
 
 .back-to-top.active {
@@ -154,7 +156,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #000;
+  color: #3A0622;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -170,12 +172,12 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #263448;
+  background: #6f2143;
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -186,7 +188,9 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
+  scale: 1.1;
+  transition: 0.3s;
 }
 
 .navbar .dropdown ul {
@@ -222,7 +226,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #263448;
+  color: #561A34;
 }
 
 .navbar .dropdown:hover>ul {
@@ -258,7 +262,7 @@ h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #556270;
+  color: #3A0622;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -315,13 +319,13 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #556270;
+  color: #3A0622;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar-mobile .getstarted,
@@ -1358,13 +1362,15 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
+  border-radius: 10px;
+  padding: 25px;
   width: 100%;
   background: #fff;
 }
 
 .contact .info i {
   font-size: 20px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
   float: left;
   width: 44px;
   height: 44px;
@@ -1381,14 +1387,14 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
 }
 
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #8795a4;
+  color: rgb(147, 84, 116);
 }
 
 .contact .info .email,
@@ -1399,11 +1405,13 @@ section {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #556270;
+  background: rgba(73, 17, 46, 1);
   color: #fff;
 }
 
 .contact .php-email-form {
+  border-radius: 10px;
+  padding: 25px;
   width: 100%;
   background: #fff;
 }
@@ -1464,7 +1472,7 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #263448;
+  border-color: rgba(58, 6, 34, 1);
 }
 
 .contact .php-email-form input {
@@ -1476,7 +1484,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #263448;
+  background: rgba(83, 32, 23, 1);
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -2021,7 +2029,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   /* background: #4a5562; */
-  background: rgba(38, 52, 72, 0.90);
+  background: rgba(73, 17, 46, 1);
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -2029,7 +2037,7 @@ section {
 
 #footer .footer-top {
   /* background: #515d6a; */
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   padding: 60px 0 30px 0;
 }
 
@@ -2148,7 +2156,7 @@ section {
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #df3740;
+  background: rgba(73, 17, 46, 1);
 }
 
 #footer .copyright {
@@ -2160,7 +2168,7 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: white;
 }
 
 #footer .credits a {
@@ -2178,7 +2186,7 @@ section {
 
 .btn_hero,
 .btn_hero:focus {
-  background: #263448;
+  background: #561A34;
   border: none;
   padding: 8px 25px;
   border-radius: 4px;
@@ -2190,8 +2198,13 @@ section {
 .btn_hero:hover,
 .btn_hero:focus:hover {
   color: #fff;
-  background: #263448;
+  background: #3E0927;
 }
+
+/* .mt-5:hover{
+  scale: 1.1;
+  transition: 300ms;
+} */
 
 /* Event Cards  */
 .cards_container {
@@ -2250,8 +2263,20 @@ section {
 }
 
 .card {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(58, 6, 34, 1), rgba(58, 6, 34, 1));
 }
+
+.magazine-title {
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  color: #D2B49A;
+}
+
+.btn_hero {
+  margin-top: 20px;
+}
+
 
 /* .card:nth-child(2) {
   background-image: linear-gradient(45deg, #cf0, #09afff);
@@ -2323,7 +2348,7 @@ section {
   height: 100%;
   box-shadow: none;
   border-radius: 0;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .card__overlay:hover::before,
@@ -2332,7 +2357,7 @@ section {
 }
 
 .card .card__overlay {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1), rgba(73, 17, 46, 1));
 }
 
 /* .card:nth-child(2) .card__overlay {
@@ -2350,6 +2375,7 @@ section {
   box-sizing: border-box;
   pointer-events: none;
   transition: 0s;
+  overflow-y: auto;
 }
 
 .card__overlay:hover~.card__content {
@@ -2364,14 +2390,17 @@ section {
 }
 
 .event-btn {
-  background-color: #caa656;
-  border-color: #caa656;
-  color: white;
+  background-color: #d0b311;
+  border-color: #d0b311;
+  color: black;
+  box-shadow: inset;
 }
 
 .event-btn:hover {
-  color: white;
-  background: rgba(202, 166, 86, 0.9);
+  color: black;
+  background: #a38d11;
+  scale: 1.1;
+  transition: 0.2s;
 }
 
 .event-border {
@@ -2442,5 +2471,18 @@ section {
 
   .heading span {
     font-size: 25px;
+  }
+}
+
+#preloader {
+  background: #3A0622 url(../img/Load.gif) no-repeat center center;
+  background-size: 20%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+
+  @media (max-width: 500px) {
+    background-size: 60%;
   }
 }

@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #caa656;
+  background-image: url(../assets/img/27884380_stain_halftone_background\ 1.svg);
 }
 
 a {
@@ -55,7 +56,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #263448;
+  background: #3A0622;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -69,8 +70,10 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #263448;
+  background: #561A34;
   color: #fff;
+  scale: 1.1;
+  transition: 400ms;
 }
 
 .back-to-top.active {
@@ -152,7 +155,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #556270;
+  color: #3A0622;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -168,12 +171,12 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #263448;
+  background: #6f2143;
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -184,7 +187,8 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
+  scale: 1.05;
 }
 
 .navbar .dropdown ul {
@@ -220,7 +224,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #263448;
+  color: #561A34;
 }
 
 .navbar .dropdown:hover>ul {
@@ -256,7 +260,7 @@ h6 {
   * Mobile Navigation 
   */
 .mobile-nav-toggle {
-  color: #556270;
+  color: #3A0622;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -313,13 +317,13 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #556270;
+  color: #3A0622;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #caa656;
+  color: #D2B49A;
 }
 
 .navbar-mobile .getstarted,
@@ -1349,7 +1353,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
   float: left;
   width: 44px;
   height: 44px;
@@ -1366,7 +1370,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #556270;
+  color: rgba(73, 17, 46, 1);
 }
 
 .contact .info p {
@@ -2005,14 +2009,14 @@ section {
   # Footer
   --------------------------------------------------------------*/
 #footer {
-  background: rgba(38, 52, 72, 0.90);
+  background: rgba(73, 17, 46, 1);
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #263448;
+  background: rgba(58, 6, 34, 1);
   padding: 60px 0 30px 0;
 }
 
@@ -2231,8 +2235,18 @@ section {
 }
 
 .card {
-  background-image: linear-gradient(45deg, #263448, #263448);
+  background-image: linear-gradient(45deg, rgba(73, 17, 46, 1), rgba(73, 17, 46, 1));
 }
+
+
+/* added hover effect on  */
+
+.card:hover{  
+  scale: 1.01;
+  transition: 1s;
+}
+
+
 
 /* .card:nth-child(2) {
     background-image: linear-gradient(45deg, #cf0, #09afff);
@@ -2344,9 +2358,23 @@ section {
 }
 
 .team-heading{
-  color: #263448;
+  color: rgba(58, 6, 34, 1);
 }
 
 .page-heading{
   margin-top: 2rem;
 }
+
+#preloader{
+  background: #3A0622 url(../assets/img/Load.gif) no-repeat center center;
+  background-size: 20%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  @media (max-width: 500px) {
+    background-size: 60%;
+  }
+}
+

@@ -49,17 +49,20 @@
   </head>
 
   <body>
+
+    <div id="preloader"></div>
+
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center">
-        <a href="#" class="logo"
-          ><img src="../../assets/img/themelogo.png" alt="" class="img-fluid"
+        <a href="../../index.html" class="logo"
+          ><img src="../../assets/img/navrasLogo.png" alt="" class="img-fluid"
         /></a>
         <h1 class="logo me-auto"><a href="#"></a></h1>
         <nav id="navbar" class="navbar">
           <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../index.html/#events">Events</a></li>
-            <li><a href="#portfolio">Gallery</a></li>
+            <li><a href="../../index.html#events">Events</a></li>
+            <li><a href="../../index.html#portfolio">Gallery</a></li>
             <li><a href="../Main page/index.html" class="active">Blogs</a></li>
             <li><a href="../../TeamMembers/OurTeam.html">Our Team</a></li>
             <li class="dropdown">
@@ -67,6 +70,7 @@
                 ><span>Magazines</span> <i class="bi bi-chevron-down"></i
               ></a>
               <ul>
+                <li><a href="../../magazines/vol-26.html">Volume 26</a></li>
                 <li><a href="../../magazines/vol-25.html">Volume 25</a></li>
                 <li><a href="../../magazines/vol-24.html">Volume 24</a></li>
                 <li><a href="../../magazines/vol-23.html">Volume 23</a></li>
@@ -76,8 +80,8 @@
             </li>
             <li><a href="../../contact.html">Contact</a></li>
             <li>
-              <a href="../../magazines/vol-25.html" class="getstarted"
-                >Volume 25</a
+              <a href="../../magazines/vol-26.html" class="getstarted"
+                >Volume 26</a
               >
             </li>
           </ul>
@@ -300,6 +304,13 @@
         </div>
       </div>
     </div>
+
+  <script> // for loader
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+        loader.style.display = "none"
+    })
+  </script>
 
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>

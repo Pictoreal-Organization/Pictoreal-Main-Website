@@ -23,7 +23,7 @@
 
 .project-counter-wrp ul li:nth-child(1)
 {
-    background: #263448;
+    background:rgba(73, 17, 46, 1);
 }
 
 .project-counter-wrp ul li:nth-child(2)
@@ -33,7 +33,7 @@
 
 .project-counter-wrp ul li:nth-child(3)
 {
-    background: #263448;
+    background:rgba(73, 17, 46, 1);
 }
 
 .project-counter-wrp ul li  p.number{
@@ -62,3 +62,14 @@
     vertical-align: middle;
 }
 
+.magazine-title {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: left;
+    color: #D2B49A;
+  }
+  
+  .btn_hero {
+    margin-top: 20px;
+  }
+  

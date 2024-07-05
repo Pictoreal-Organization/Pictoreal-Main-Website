@@ -26,42 +26,53 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-      <a href="#" class="logo"><img src="../../assets/img/themelogo.png" alt="" class="img-fluid" /></a>
-      <h1 class="logo me-auto"><a href="#"></a></h1>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#portfolio">Gallery</a></li>
-          <li><a href="../Main page/index.html" class="active">Blogs</a></li>
-          <li><a href="../../TeamMembers/OurTeam.html">Our Team</a></li>
-          <li class="dropdown">
-            <a href="../../magazines/index.html"><span>Magazines</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="../../magazines/vol-25.html">Volume 25</a></li>
-              <li><a href="../../magazines/vol-24.html">Volume 24</a></li>
-              <li><a href="../../magazines/vol-23.html">Volume 23</a></li>
-              <li><a href="../../magazines/vol-22.html">Volume 22</a></li>
-              <li><a href="../../magazines/index.html">More...</a></li>
-            </ul>
-          </li>
-          <li><a href="../../contact.html">Contact</a></li>
-          <li>
-            <a href="../../magazines/vol-25.html" class="getstarted">Volume 25</a>
-          </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <div class="blog-heading">
-      <h2>BLOGS</h2>
-      <img src="../images/decor.png" alt="" />
-    </div>
+
+    
+  <body>
+    <div id="preloader"></div>
+
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center">
+        <a href="../../index.html" class="logo"
+          ><img src="../../assets/img/navrasLogo.png" alt="" class="img-fluid"
+        /></a>
+        <h1 class="logo me-auto"><a href="#"></a></h1>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#events">Events</a></li>
+            <li><a href="../../index.html#portfolio">Gallery</a></li>
+            <li><a href="../Main page/index.html" class="active">Blogs</a></li>
+            <li><a href="../../TeamMembers/OurTeam.html">Our Team</a></li>
+            <li class="dropdown">
+              <a href="../../magazines/index.html"
+                ><span>Magazines</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="../../magazines/vol-26.html">Volume 26</a></li>
+                <li><a href="../../magazines/vol-25.html">Volume 25</a></li>
+                <li><a href="../../magazines/vol-24.html">Volume 24</a></li>
+                <li><a href="../../magazines/vol-23.html">Volume 23</a></li>
+                <li><a href="../../magazines/vol-22.html">Volume 22</a></li>
+                <li><a href="../../magazines/index.html">More...</a></li>
+              </ul>
+            </li>
+            <li><a href="../../contact.html">Contact</a></li>
+            <li>
+              <a href="../../magazines/vol-26.html" class="getstarted"
+                >Volume 26</a
+              >
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="blog-heading">
+        <h2>BLOGS</h2>
+        <img src="../images/decor.png" alt="" />
+      </div>
 
     <div class="blog-container">
       <div class="blog_card_container">
@@ -111,10 +122,43 @@
             </div>
           </div>
         </div>
+        <div class="blog_card">
+          <div class="blog-image">
+            <img src="../images/blog3_poster_img.png" />
+          </div>
+          <div class="blog_card_content">
+            <h2 class="blog-title">Error 500</h2>
+            <h4 class="blog-authors">
+              Author: <span>Nehal Shivane, Sampada Tagalpallewar, Shruti Mone</span>
+            </h4>
+            <div class="blog-sample">
+              <p>
+                ‘500- That’s an error. The server encountered an error and could not complete your request’ Oh not again! Don’t we too, as humans...
+              </p>
+            </div>
+            <div class="blog-button">
+              <a href="../blogs/blog3.html">
+                <button>Read</button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     </div>
   </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script> // for loader
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function(){
+          loader.style.display = "none"
+      })
+    </script>
 
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
