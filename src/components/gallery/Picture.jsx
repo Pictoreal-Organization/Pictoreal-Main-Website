@@ -193,12 +193,12 @@ const Picture = () => {
     {
       images: [
         "/gallery/blood1.jpg",
-        "/gallery/blood2.JPG",
-        "/gallery/blood3.JPG",
-        "/gallery/blood4.JPG",
+        "/gallery/blood2.jpg",
+        "/gallery/blood3.jpg",
+        "/gallery/blood4.jpg",
         "/gallery/blood5.jpg",
         "/gallery/blood6.jpg",
-        "/gallery/blood7.JPG",
+        "/gallery/blood7.jpg",
       ],
       title: "Blood Donation Drive",
       description:
