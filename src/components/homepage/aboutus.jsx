@@ -12,7 +12,7 @@ const AboutUs = () => {
             <div className='w-full lg:w-5/12'>
                 <h2 className='text-[#531733] text-4xl text-center font-bold p-2.5 mt-0 mb-7.5'>ABOUT US</h2>
                 <div class="phnx flex justify-center mx-auto pt-14">
-                  <Image src="/homepage/volume26_logo.png" alt='volume 26 logo' width={325} height={325}
+                  <Image src="/icon.png" alt='volume 26 logo' width={325} height={325}
                   />
                 </div>
             </div>

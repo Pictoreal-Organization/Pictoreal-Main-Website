@@ -1,0 +1,36 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/homepage/AboutUs.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes AboutUs_flip__Bfbwl {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .AboutUs_flip__Bfbwl {
+    animation: AboutUs_flip__Bfbwl 1s ease-in-out;
+  }
+  
+  .AboutUs_phnx__zhmKw {
+    position: relative;
+  }
+  
+  .AboutUs_backLogo__VbQfx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.5; /* Lower opacity for back logo */
+    z-index: 0;
+  }
+  
+  .AboutUs_frontLogo__uH6WQ {
+    position: relative;
+    z-index: 1;
+  }
+  

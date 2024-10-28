@@ -752,6 +752,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-\[325px\] {
+  height: 325px;
+}
 .max-h-\[calc\(100vh-70px\)\] {
   max-height: calc(100vh - 70px);
 }
@@ -808,6 +811,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[325px\] {
+  width: 325px;
 }
 .max-w-3xl {
   max-width: 48rem;

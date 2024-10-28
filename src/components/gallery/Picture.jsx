@@ -54,77 +54,49 @@ const Carousel = ({ images, onImageClick }) => {
   const [isTwoImages, setIsTwoImages] = useState(false);
   const imageRef = useRef(null);
   const containerRef = useRef(null);
+  const timerRef = useRef(null); // Ref to store the timer
 
-  // Auto-slide every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(
-        (prevIndex) =>
-          (prevIndex + 1) % Math.ceil(images.length / (isTwoImages ? 2 : 1))
-      );
+  // Function to reset and start a new timer
+  const resetTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length, isTwoImages]);
-
-  // Function to determine if we should display two images per slide
-  const updateImageLayout = () => {
-    if (imageRef.current && containerRef.current) {
-      const width = imageRef.current.naturalWidth;
-      const height = imageRef.current.naturalHeight;
-      const containerWidth = containerRef.current.offsetWidth;
-
-      setIsTwoImages(width <= 1 && height <= 1 && containerWidth >= 1);
-    }
   };
 
-  // Update layout on image load and window resize
+  // Auto-slide with reset on component mount and updates
   useEffect(() => {
-    updateImageLayout();
+    resetTimer();
+    return () => clearInterval(timerRef.current);
+  }, [images.length]);
 
-    const resizeObserver = new ResizeObserver(() => updateImageLayout());
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
-      }
-    };
-  }, [images]);
-
-  // Move to the next or previous slide
-  const nextSlide = () =>
+  // Reset timer on manual navigation
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    resetTimer(); // Restart the timer when navigating
+  };
+  const prevSlide = () => {
     setCurrentIndex(
-      (currentIndex + 1) % Math.ceil(images.length / (isTwoImages ? 2 : 1))
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
-  const prevSlide = () =>
-    setCurrentIndex(
-      (currentIndex - 1 + Math.ceil(images.length / (isTwoImages ? 2 : 1))) %
-        Math.ceil(images.length / (isTwoImages ? 2 : 1))
-    );
+    resetTimer(); // Restart the timer when navigating
+  };
 
   return (
-    <div
-      className="relative max-w-4xl mx-auto overflow-hidden my-8"
-      ref={containerRef}
-    >
+    <div className="relative max-w-4xl mx-auto overflow-hidden my-8" ref={containerRef}>
       <div className="relative w-full h-auto flex items-center justify-center bg-white-200 rounded-lg shadow-lg">
         {/* Image Slider */}
         <div
           className="flex transition-transform duration-1000 ease-in-out"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            width: `${Math.ceil(images.length / (isTwoImages ? 2 : 1)) * 100}%`,
+            width: `${images.length * 100}%`,
           }}
         >
           {images.map((image, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 h-80 flex items-center justify-center ${
-                isTwoImages ? "w-1/2" : "w-full"
-              }`}
-              style={{ width: isTwoImages ? "50%" : "100%" }}
+              className="flex-shrink-0 h-80 flex items-center justify-center w-full"
             >
               <img
                 ref={index === 0 ? imageRef : null}
@@ -154,12 +126,15 @@ const Carousel = ({ images, onImageClick }) => {
 
       {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {Array(Math.ceil(images.length / (isTwoImages ? 2 : 1)))
+        {Array(images.length)
           .fill()
           .map((_, index) => (
             <div
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => {
+                setCurrentIndex(index);
+                resetTimer(); // Restart the timer when clicking an indicator
+              }}
               className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
                 currentIndex === index ? "bg-[#d0b311]" : "bg-[#9d2b60]"
               }`}
@@ -192,7 +167,7 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/manthan1.jpg",
+        "/gallery/manthan1.JPG",
         "/gallery/manthan2.JPG",
         "/gallery/manthan3.JPG",
         "/gallery/manthan4.JPG",
@@ -234,10 +209,10 @@ const Picture = () => {
         "/gallery/pictofest1.jpg",
         "/gallery/pictofest2.jpg",
         "/gallery/pictofest3.jpg",
-        "/gallery/pictofest4.JPG",
-        "/gallery/pictofest5.JPG",
+        "/gallery/pictofest4.jpg",
+        "/gallery/pictofest5.jpg",
         "/gallery/pictofest6.jpg",
-        "/gallery/pictofest7.JPG",
+        "/gallery/pictofest7.jpg",
       ],
       title: "PICTOFEST",
       description: `On February 23rd, PICTOREAL launched its first intercollegiate art festival, PICTOFEST. Over two days, participants engaged in events like Lost in Pieces, Trivia, Meme-making, Creative Writing, and workshops such as Play with Clay and Resin Art. "Taare Zameen Par," an open-air live painting event, received enthusiastic responses. The art exhibition PICS-O-REEL displayed 600+ entries, attracting a large audience from Pune colleges. It concluded with a closing ceremony awarding prizes for all competitions.`,
@@ -259,7 +234,7 @@ const Picture = () => {
       images: [
         "/gallery/interview1.JPG",
         "/gallery/interview2.JPG",
-        "/gallery/interview3.jpg",
+        "/gallery/interview3.JPG",
         "/gallery/interview4.JPG",
         "/gallery/interview5.JPG",
       ],
@@ -269,10 +244,10 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/career1.JPG",
+        "/gallery/career1.jpg",
         "/gallery/career2.jpg",
-        "/gallery/career3.JPG",
-        "/gallery/career4.JPG",
+        "/gallery/career3.jpg",
+        "/gallery/career4.jpg",
         "/gallery/career5.jpg",
         "/gallery/career6.jpg",
       ],
@@ -284,10 +259,10 @@ const Picture = () => {
       images: [
         "/gallery/ngo1.jpg",
         "/gallery/ngo2.jpg",
-        "/gallery/ngo3.JPG",
+        "/gallery/ngo3.jpg",
         "/gallery/ngo4.jpg",
-        "/gallery/ngo5.JPG",
-        "/gallery/ngo6.JPG",
+        "/gallery/ngo5.jpg",
+        "/gallery/ngo6.jpg",
       ],
       title: "NGO Visit",
       description:
@@ -313,9 +288,9 @@ const Picture = () => {
       images: [
         "/gallery/pictosocial1.jpg",
         "/gallery/pictosocial2.jpg",
-        "/gallery/pictosocial3.JPG",
+        "/gallery/pictosocial3.jpg",
         "/gallery/pictosocial4.jpg",
-        "/gallery/pictosocial5.JPG",
+        "/gallery/pictosocial5.jpg",
         "/gallery/pictosocial6.jpg",
       ],
       title: "Pictosocial Visit",
