@@ -1,4 +1,4 @@
-Thanks for downloading this template!
+Thanks for downloading this template.
 
 Template Name: Sailor
 Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
