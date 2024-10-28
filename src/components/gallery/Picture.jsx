@@ -1,0 +1,404 @@
+"use client"; // Ensure this directive is at the top of client components
+
+import React, { useState, useEffect, useRef } from "react";
+
+// Expanded Image View Component
+const ExpandedImage = ({ image, onClose }) => (
+  <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+    <img
+      src={image}
+      alt="Expanded"
+      className="max-w-full max-h-full border-[#d0b311] border-2 object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
+    />
+    <button
+      onClick={onClose}
+      className="absolute top-4 right-4 text-white bg-red-600 p-3 rounded-full hover:bg-red-700 transition-colors duration-300"
+    >
+      &#10005;
+    </button>
+  </div>
+);
+
+// Modal Component (Grid View)
+const Modal = ({ isOpen, onClose, images, onImageClick }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+      <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-800 z-50 bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
+        >
+          &#10005;
+        </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Image ${index}`}
+              className="w-full h-64 object-cover border-[#d0b311] border-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              onClick={() => onImageClick(image)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Carousel Component
+const Carousel = ({ images, onImageClick }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTwoImages, setIsTwoImages] = useState(false);
+  const imageRef = useRef(null);
+  const containerRef = useRef(null);
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex + 1) % Math.ceil(images.length / (isTwoImages ? 2 : 1))
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length, isTwoImages]);
+
+  // Function to determine if we should display two images per slide
+  const updateImageLayout = () => {
+    if (imageRef.current && containerRef.current) {
+      const width = imageRef.current.naturalWidth;
+      const height = imageRef.current.naturalHeight;
+      const containerWidth = containerRef.current.offsetWidth;
+
+      setIsTwoImages(width <= 1 && height <= 1 && containerWidth >= 1);
+    }
+  };
+
+  // Update layout on image load and window resize
+  useEffect(() => {
+    updateImageLayout();
+
+    const resizeObserver = new ResizeObserver(() => updateImageLayout());
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+    };
+  }, [images]);
+
+  // Move to the next or previous slide
+  const nextSlide = () =>
+    setCurrentIndex(
+      (currentIndex + 1) % Math.ceil(images.length / (isTwoImages ? 2 : 1))
+    );
+  const prevSlide = () =>
+    setCurrentIndex(
+      (currentIndex - 1 + Math.ceil(images.length / (isTwoImages ? 2 : 1))) %
+        Math.ceil(images.length / (isTwoImages ? 2 : 1))
+    );
+
+  return (
+    <div
+      className="relative max-w-4xl mx-auto overflow-hidden my-8"
+      ref={containerRef}
+    >
+      <div className="relative w-full h-auto flex items-center justify-center bg-white-200 rounded-lg shadow-lg">
+        {/* Image Slider */}
+        <div
+          className="flex transition-transform duration-1000 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${Math.ceil(images.length / (isTwoImages ? 2 : 1)) * 100}%`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`flex-shrink-0 h-80 flex items-center justify-center ${
+                isTwoImages ? "w-1/2" : "w-full"
+              }`}
+              style={{ width: isTwoImages ? "50%" : "100%" }}
+            >
+              <img
+                ref={index === 0 ? imageRef : null}
+                src={image}
+                alt={`Slide ${index}`}
+                className="max-h-full object-contain border-2 border-[#d0b311] cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+                onClick={() => onImageClick(images)}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+        >
+          &#10094;
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      {/* Indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {Array(Math.ceil(images.length / (isTwoImages ? 2 : 1)))
+          .fill()
+          .map((_, index) => (
+            <div
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                currentIndex === index ? "bg-[#d0b311]" : "bg-[#9d2b60]"
+              }`}
+            />
+          ))}
+      </div>
+    </div>
+  );
+};
+
+// Main Picture Component
+const Picture = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [carouselImages, setCarouselImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Sample image sets for each carousel
+  const imageSets = [
+    {
+      images: [
+        "/gallery/mre1.JPG",
+        "/gallery/mre2.JPG",
+        "/gallery/mre3.JPG",
+        "/gallery/mre4.JPG",
+        "/gallery/mre5.JPG",
+      ],
+      title: "Magazine Release Event",
+      description:
+        "The Magazine Release Event, the flagship event of Pictoreal, showcased a unique and captivating theme this year, Navras, symbolizing a magazine brimming with emotions. A classical dance performance depicting the nine rasas enhanced the event’s charm. The magazine was unveiled by dignitaries alongside student members of Pictoreal.The essence of Navras was truly felt as team members shared their experiences of magazine creation. Nostalgia peaked when the journey was relived through a heartfelt behind-the-scenes video. The magazine’s success was evident in the emotional involvement of all attendees, marking the fulfillment of a year-long dream.",
+    },
+    {
+      images: [
+        "/gallery/manthan1.jpg",
+        "/gallery/manthan2.JPG",
+        "/gallery/manthan3.JPG",
+        "/gallery/manthan4.JPG",
+        "/gallery/manthan5.JPG",
+      ],
+      title: "Manthan",
+      description:
+        'The MANTHAN public speaking competition on September 14, 2023, allowed students to showcase their oratory skills on "Is brain drain a threat to innovation and development in home countries?". Through extempore storytelling and debate rounds, participants gained public speaking experience. First-year student Siddhant Vishnu won, receiving an Amazon gift card. MANTHAN helped students enhance communication skills while addressing a key socio-economic issue.',
+    },
+    {
+      images: [
+        "/gallery/parichay1.JPG",
+        "/gallery/parichay2.JPG",
+        "/gallery/parichay4.JPG",
+        "/gallery/parichay3.JPG",
+        "/gallery/parichay5.JPG",
+        "/gallery/parichay6.JPG",
+      ],
+      title: "Parichay",
+      description:
+        "On October 16, 2023, Parichay introduced PICT's club Pictoreal to over 160 First Year students. Team heads introduced their teams, conducted activities and played games describing every team and its role in the harmonic operation of the club. The PictoSocial team performed a humorous skit on the ‘Blood Donation Drive.’ The event concluded with an open mic, showcasing talents in music and dance.",
+    },
+    {
+      images: [
+        "/gallery/blood1.jpg",
+        "/gallery/blood2.JPG",
+        "/gallery/blood3.JPG",
+        "/gallery/blood4.JPG",
+        "/gallery/blood5.jpg",
+        "/gallery/blood6.jpg",
+        "/gallery/blood7.JPG",
+      ],
+      title: "Blood Donation Drive",
+      description:
+        "On January 31st, 2024, Pictoreal and NSS hosted a successful Blood Donation Drive with Janakalyan Blood Bank. Dr. Kulkarni inaugurated the event, emphasizing community involvement and the importance of blood donation. A campus street play raised awareness, resulting in over 231 donors. With support from 50+ volunteers, the event ran smoothly. The closing ceremony celebrated the event’s success and the impact of community collaboration.",
+    },
+    {
+      images: [
+        "/gallery/pictofest1.jpg",
+        "/gallery/pictofest2.jpg",
+        "/gallery/pictofest3.jpg",
+        "/gallery/pictofest4.JPG",
+        "/gallery/pictofest5.JPG",
+        "/gallery/pictofest6.jpg",
+        "/gallery/pictofest7.JPG",
+      ],
+      title: "PICTOFEST",
+      description: `On February 23rd, PICTOREAL launched its first intercollegiate art festival, PICTOFEST. Over two days, participants engaged in events like Lost in Pieces, Trivia, Meme-making, Creative Writing, and workshops such as Play with Clay and Resin Art. "Taare Zameen Par," an open-air live painting event, received enthusiastic responses. The art exhibition PICS-O-REEL displayed 600+ entries, attracting a large audience from Pune colleges. It concluded with a closing ceremony awarding prizes for all competitions.`,
+    },
+    {
+      images: [
+        "/gallery/be1.JPG",
+        "/gallery/be2.JPG",
+        "/gallery/be3.JPG",
+        "/gallery/be4.JPG",
+        "/gallery/be5.JPG",
+        "/gallery/be6.JPG",
+      ],
+      title: "BE Photoshoot",
+      description:
+        "The BE photoshoot by Pictoreal on April 13, 2024, captured final moments for the BEs with class photos and staff portraits. Held in front of the A1 Building and Lawn, the event included interactive activities, fostering bonding among students. It concluded with a ramp walk where BEs flaunted their sarees and suits, adding style and flair.",
+    },
+    {
+      images: [
+        "/gallery/interview1.JPG",
+        "/gallery/interview2.JPG",
+        "/gallery/interview3.jpg",
+        "/gallery/interview4.JPG",
+        "/gallery/interview5.JPG",
+      ],
+      title: "Interviews",
+      description:
+        "This year at Pictoreal, we interviewed remarkable individuals: tech enthusiast Pratik Ratadiya, Sujata Mastani visionary Sachin Kondhalkar, wildlife conservation hero Kulbhushan Singh Suryawanshi, and Guinness World Record cyclist Preeti Maske. Each conversation offered invaluable insights, enriching our journey and providing lessons from diverse fields, including technology, culinary arts, conservation, and extreme sports.",
+    },
+    {
+      images: [
+        "/gallery/career1.JPG",
+        "/gallery/career2.jpg",
+        "/gallery/career3.JPG",
+        "/gallery/career4.JPG",
+        "/gallery/career5.jpg",
+        "/gallery/career6.jpg",
+      ],
+      title: "Career Guidance",
+      description:
+        "On March 15, 2024, a career guidance session was conducted at Pune Municipality's Madhyamik Vidyalaya, Katraj. It aimed to enlighten 8th and 9th grade students about career pathways after completing the 10th grade. The session encouraged students to explore their dreams and various career options, providing guidance on steps to achieve their goals. An interactive activity prompted students to write down their aspirations, fostering engagement and reflection.",
+    },
+    {
+      images: [
+        "/gallery/ngo1.jpg",
+        "/gallery/ngo2.jpg",
+        "/gallery/ngo3.JPG",
+        "/gallery/ngo4.jpg",
+        "/gallery/ngo5.JPG",
+        "/gallery/ngo6.JPG",
+      ],
+      title: "NGO Visit",
+      description:
+        "The visit to Akshar Paaul NGO on January 14, 2024, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami. On the occasion of Republic Day, inspiring stories of freedom fighters were shared, along with engaging general knowledge questions. But it was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
+    },
+    {
+      images: [
+        "/gallery/d1.jpg",
+        "/gallery/d2.jpg",
+        "/gallery/d3.jpg",
+        "/gallery/d4.jpg",
+        "/gallery/d5.jpg",
+        "/gallery/d6.jpg",
+        "/gallery/d7.jpg",
+        "/gallery/d8.jpg",
+        "/gallery/d9.jpg",
+      ],
+      title: "Blood Donation Drive",
+      description:
+        "Pictoreal organized its annual Donation Drive for Vol '24, reflecting its commitment to serving the underprivileged. The drive received generous contributions from students and staff, including monetary donations, clothes, footwear, bags, and books. A closing ceremony was held to distribute the donations among three beneficiary NGOs, amplifying the impact of Pictoreal's generosity.",
+    },
+    {
+      images: [
+        "/gallery/pictosocial1.jpg",
+        "/gallery/pictosocial2.jpg",
+        "/gallery/pictosocial3.JPG",
+        "/gallery/pictosocial4.jpg",
+        "/gallery/pictosocial5.JPG",
+        "/gallery/pictosocial6.jpg",
+      ],
+      title: "Pictosocial Visit",
+      description:
+        "The visit to Janseva Orphanage on November 5, 2023, saw the enthusiastic participation of 40 dedicated volunteers. Our goal was not just to bring smiles to the children's faces, but also to ignite their creativity, promote teamwork, and instill an appreciation for cultural traditions. Through engaging activities like diya painting, killa making, and lantern crafting, we created a memorable experience for both volunteers and children alike, fostering a sense of joy and community spirit.",
+    },
+    {
+      images: [
+        "/gallery/cleanliness1.jpg",
+        "/gallery/cleanliness2.jpg",
+        "/gallery/cleanliness3.jpg",
+        "/gallery/cleanliness4.jpg",
+      ],
+      title: "Cleanliness Drive",
+      description:
+        "On April 20th, a cleanliness drive was conducted at ARAI Hills, Pune. The primary objective was restoring the pristine beauty and well-being of the local ecosystem. Three groups of volunteers equipped with garbage bags and hand gloves for safety, commenced the activity at 9:00 AM. After two hours of rigourous scouting, volunteers managed to collected 12+ bags worth of environmentally hazardous waste. Drive halted at 11:00 AM due to intense heat. All waste was then disposed of at the PMC garbage disposal area on the hill.",
+    },
+    {
+      images: [
+        "/gallery/bappa1.jpg",
+        "/gallery/bappa2.jpg",
+        "/gallery/bappa3.jpg",
+        "/gallery/bappa4.jpg",
+      ],
+      title: "Amche Bappa",
+      description:
+        "Amche Bappa commenced on September 19th, 2023, spanned for 10 days featuring contests where participants displayed creativity and devotion to Ganpati Bappa. They uploaded photos of home decorations and showcased mandal art, enriching community festivities. Reels and videos added dynamic storytelling to express devotion. Overall, Amche Bappa celebrated Ganesh Chaturthi with enthusiasm, creativity, and community spirit.",
+    },
+  ];
+
+  const handleImageClick = (images) => {
+    setCarouselImages(images);
+    setModalOpen(true);
+  };
+
+  const handleGridImageClick = (image) => {
+    setSelectedImage(image); // Set the selected image for the expanded view
+  };
+
+  return (
+    <div className="space-y-8 p-4 mb-10">
+      <h2 className="text-5xl text-[#531733] font-bold text-center mb-10">
+            GALLERY
+          </h2>
+      {imageSets.map((set, i) => (
+        <div
+          key={i}
+          className="max-w-4xl mx-auto ring-2 ring-[#531733] bg-[#FFFFFF] p-6 rounded-lg"
+        >
+          {/* Heading */}
+          
+          <h2 className="text-3xl text-[#531733] font-bold text-center mb-4">
+            {set.title}
+          </h2>
+          
+          {/* Carousel */}
+          <Carousel images={set.images} onImageClick={handleImageClick} />
+
+          {/* Description */}
+          <div className="flex justify-center">
+  <p className="text-justify text-gray-700 mb-4 max-w-3xl">
+    {set.description}
+  </p>
+</div>
+
+        </div>
+      ))}
+
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        images={carouselImages}
+        onImageClick={handleGridImageClick}
+      />
+
+      {selectedImage && (
+        <ExpandedImage
+          image={selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
+    </div>
+);
+};
+
+export default Picture;
