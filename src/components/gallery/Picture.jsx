@@ -280,7 +280,7 @@ const Picture = () => {
         "/gallery/d8.jpg",
         "/gallery/d9.jpg",
       ],
-      title: "Blood Donation Drive",
+      title: "Donation Drive",
       description:
         "Pictoreal organized its annual Donation Drive for Vol '24, reflecting its commitment to serving the underprivileged. The drive received generous contributions from students and staff, including monetary donations, clothes, footwear, bags, and books. A closing ceremony was held to distribute the donations among three beneficiary NGOs, amplifying the impact of Pictoreal's generosity.",
     },
