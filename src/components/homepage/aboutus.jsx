@@ -18,10 +18,10 @@ const AboutUs = () => {
             </div>
             {/* div for content */}
             <div className='w-full lg:w-7/12 text-justify'>
-                <p className='mb-4 mt-4 font-sans text-[#444444]'>
+                <p className='mb-4 mt-4 font-sans font-semibold text-[#141414]'>
                 A magazine is an experiment and it represents a new focus, a new ratio between commerce and intellect.
                 </p>
-                <p className='mb-4 font-sans text-[#444444]'>
+                <p className='mb-4 font-sans font-semibold text-[#141414]'>
                 Pictoreal is one of the distinguished non-technical clubs at PICT. At Pictoreal, our mission is to create and publish the annual magazine of PICT with unique themes that showcase the talents of PICT. Pictoreal organizes several enthusiastic events throughout the year to boost creative minds. The club always promotes one's skills in literature, design, and photography. We support individuals to build practical skills like event management, public speaking, teamwork, and much more. To enhance one's productive skills, we host multiple events like Pics-o-Reel, an annual art and photography exhibition-cum-competition where students can showcase their art pieces. This year, we introduced a new event, Pictofest, which included Pics-o-Reel and various other workshops such as mastering Blender, pottery, and competitions for creative writing and meme making. To promote public speaking skills, we organize Manthan, featuring mini-events such as extempore, debates, group discussions, etc. Pictosocial, a subgroup of Pictoreal believes the culture in
               PICT to lose ourselves in the service of others until we discover our own lives and our happiness. To
               promote the same, we organize events like Tree plantation drives, blood donation and Monetary donation
@@ -29,10 +29,10 @@ const AboutUs = () => {
               organize Career counselling sessions. Here at Pictoreal, we try to step forward, reach out and help the
               students in PICT unleash their creative side.
                 </p>
-                <p className='mb-4'>
+                <p className='mb-4 text-[#141414] font-semibold'>
                 Our members in Pictoreal always live by one motto-
                 </p>
-                <p className='font-bold italic'>
+                <p className='font-bold italic text-[#141414]'>
                 &lsquo;May Thoughts, Colours, and Words prevail!&rsquo;
                 </p>
             </div>

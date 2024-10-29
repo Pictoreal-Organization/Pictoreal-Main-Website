@@ -28,7 +28,7 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
       <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-800 z-50 bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
+          className="absolute top-4 right-4 text-[#141414] z-50 bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
         >
           &#10005;
         </button>
@@ -110,18 +110,22 @@ const Carousel = ({ images, onImageClick }) => {
         </div>
 
         {/* Navigation Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
-        >
-          &#10095;
-        </button>
+        {/* Navigation Buttons */}
+<div className="none">
+  <button
+    onClick={prevSlide}
+    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+  >
+    &#10094;
+  </button>
+  <button
+    onClick={nextSlide}
+    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+  >
+    &#10095;
+  </button>
+</div>
+
       </div>
 
       {/* Indicators */}
@@ -351,7 +355,7 @@ const Picture = () => {
 
           {/* Description */}
           <div className="flex justify-center">
-  <p className="text-justify text-gray-700 mb-4 max-w-3xl">
+  <p className="text-justify text-[#141414] mb-4 max-w-3xl">
     {set.description}
   </p>
 </div>

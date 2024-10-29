@@ -9,28 +9,34 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const navbarRef = useRef(null); // Create a ref for the navbar
+  const navbarRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   const handleClickOutside = (event) => {
-    // Check if the click was outside the navbar
-    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+    if (
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target) &&
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target)
+    ) {
       setOpen(false);
       setDropdownOpen(false);
     }
   };
 
   useEffect(() => {
-    // Add event listener for clicks
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Clean up the event listener on component unmount
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  // Function to handle link click
   const handleLinkClick = () => {
-    setOpen(false); // Close the navbar when a link is clicked
+    setOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -51,10 +57,10 @@ const Navbar = () => {
             onClick={() => setOpen(!open)}
           />
           <nav
-            ref={navbarRef} // Attach the ref to the nav element
+            ref={navbarRef}
             className={`${
               open ? "block" : "hidden"
-            } lg:flex lg:items-center lg:w-auto w-full transition-all duration-300 ease-in-out`} // Added transition classes
+            } lg:flex lg:items-center lg:w-auto w-full transition-all duration-300 ease-in-out`}
           >
             <ul className="text-base text-[#3A0622] lg:flex lg:justify-between">
               <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
@@ -74,26 +80,32 @@ const Navbar = () => {
               </li>
               <li
                 className="relative lg:px-5 py-2 hover:text-[#D2B49A] font-semibold"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
+                onMouseEnter={() => window.innerWidth >= 1024 && setDropdownOpen(true)}
+                onMouseLeave={() => window.innerWidth >= 1024 && setDropdownOpen(false)}
               >
-                <span className="flex items-center cursor-pointer">
-                  <Link href="" onClick={handleLinkClick}>Magazines</Link>
-                  <span className="ml-1 ">
+                <span
+                  className="flex items-center cursor-pointer"
+                  onClick={() => window.innerWidth < 1024 && toggleDropdown()} // Toggle on click for mobile
+                >
+                  Magazines
+                  <span className="ml-1">
                     <IoMdArrowDropdown />
                   </span>
                 </span>
 
                 {dropdownOpen && (
-                  <ul className="absolute left-0 mt-2 w-48 text-[#3A0622] ring-1 ring-[#3A0622] bg-white rounded-lg shadow-lg z-10  transition-transform duration-300 ease-in-out">
+                  <ul
+                    ref={dropdownRef}
+                    className="absolute left-0 mt-2 w-48 text-[#3A0622] ring-1 ring-[#3A0622] bg-white rounded-lg shadow-lg z-10 transition-transform duration-300 ease-in-out"
+                  >
                     <li className="py-2 px-4 text-[#3A0622]">
-                      <Link href="https://online.fliphtml5.com/ukioy/fyba/">Volume 26</Link>
+                      <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
                     </li>
                     <li className="py-2 px-4 text-[#3A0622]">
-                      <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9">Volume 25</Link>
+                      <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 25</Link>
                     </li>
                     <li className="py-2 px-4 text-[#3A0622]">
-                      <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP">Volume 24</Link>
+                      <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 24</Link>
                     </li>
                     <li className="py-2 px-4 text-[#3A0622]">
                       <Link href="/magazines" onClick={handleLinkClick}>More...</Link>
