@@ -197,12 +197,12 @@ const Picture = () => {
     {
       images: [
         "/gallery/blood1.jpg",
-        "/gallery/blood2.JPG",
-        "/gallery/blood3.JPG",
-        "/gallery/blood4.JPG",
+        "/gallery/blood2.jpg",
+        "/gallery/blood3.jpg",
+        "/gallery/blood4.jpg",
         "/gallery/blood5.jpg",
         "/gallery/blood6.jpg",
-        "/gallery/blood7.JPG",
+        "/gallery/blood7.jpg",
       ],
       title: "Blood Donation Drive",
       description:
@@ -284,7 +284,7 @@ const Picture = () => {
         "/gallery/d8.jpg",
         "/gallery/d9.jpg",
       ],
-      title: "Blood Donation Drive",
+      title: "Donation Drive",
       description:
         "Pictoreal organized its annual Donation Drive for Vol '24, reflecting its commitment to serving the underprivileged. The drive received generous contributions from students and staff, including monetary donations, clothes, footwear, bags, and books. A closing ceremony was held to distribute the donations among three beneficiary NGOs, amplifying the impact of Pictoreal's generosity.",
     },
