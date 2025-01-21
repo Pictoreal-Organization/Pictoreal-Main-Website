@@ -11,20 +11,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/ourteam/page": [
+    "/blogs/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/ourteam/page.js"
+      "static/chunks/app/blogs/page.js"
     ],
-    "/magazines/page": [
+    "/blogs/blog4/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/magazines/page.js"
+      "static/chunks/app/blogs/blog4/page.js"
     ],
-    "/gallery/page": [
+    "/blogs/blog3/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/gallery/page.js"
+      "static/chunks/app/blogs/blog3/page.js"
+    ],
+    "/blogs/blog1/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blogs/blog1/page.js"
     ]
   }
 }

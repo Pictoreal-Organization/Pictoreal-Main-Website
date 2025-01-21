@@ -29,6 +29,12 @@ const Blogs = () => {
       authors: "Nehal Shivane, Sampada Tagalpallewar, Shruti Mone",
       imgSrc: "/blog/blog3-poster-img.png",
     },
+    {
+      id: "blog4",
+      title: "अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया ।",
+      authors: "Ayan Pathan",
+      imgSrc: "/blog/blog3-poster-img.png",
+    },
   ];
 
   return (
@@ -45,7 +51,7 @@ const Blogs = () => {
       </div>
 
       <div className="flex justify-center mt-10 sm:mt-20 overflow-hidden mb-10 px-5 lg:px-10 lg:mb-32">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-xl">
           {blogPosts.map((post) => (
             <div
               key={post.id}
