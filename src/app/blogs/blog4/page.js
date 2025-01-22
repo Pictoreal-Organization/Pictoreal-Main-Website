@@ -210,7 +210,7 @@ export default function BlogDakhni() {
               </p>
               {/* </div> */}
 
-              <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#3A0622] md:w-5/12">
+              <div className="flex justify-center items-center my-4 border-[5px] border-[#3A0622] w-full">
                   <Image
                     src="/blog/dakhni-content-3.png"
                     alt="Historical Dakhni"
