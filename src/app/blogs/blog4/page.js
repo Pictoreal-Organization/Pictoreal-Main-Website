@@ -80,17 +80,6 @@ export default function BlogDakhni() {
               </p>
               <br />
 
-              <div className="flex justify-center my-4 md:mx-16">
-                <Image
-                  src="/blog/dakhni-content-2.png"
-                  className="border-[5px] border-[#3A0622]"
-                  alt="Dakhni Words"
-                  width={600}
-                  height={400}
-                />
-              </div>
-              <br />
-
               <p>
                 लतीफ़ा कुछ ऐसा है कि एक उर्दू के टीचर जो यूपी से थे, एक दफ़ा
                 हैदराबाद आए । उन्हें चारमीनार जाना था और उन्हें रास्ता नहीं पता
@@ -138,6 +127,17 @@ export default function BlogDakhni() {
                 <br />
               </p>
 
+              <div className="flex justify-center my-4 md:mx-16">
+                <Image
+                  src="/blog/dakhni-content-2.png"
+                  className="border-[5px] border-[#3A0622]"
+                  alt="Dakhni Words"
+                  width={600}
+                  height={400}
+                />
+              </div>
+              <br />
+
               <p>
                 एक सवाल जो लाज़मी बनता है कि अगर यह भाषा इतनी मशहूर है तो{" "}
                 <strong className="text-lg">
@@ -165,16 +165,6 @@ export default function BlogDakhni() {
                   दक्कन का गवर्नर बना दिया । मुगल साम्राज्य के अंदर उर्दू ही
                   अधिकारिक भाषा जैसे हुआ करती थी, जो कि दक्कन पर लागू कर दी गई ।
                 </p>
-
-                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#3A0622] md:w-5/12">
-                  <Image
-                    src="/blog/dakhni-content-3.png"
-                    alt="Historical Dakhni"
-                    width={300}
-                    height={400}
-                    className="w-full h-auto"
-                  />
-                </div>
               </div>
 
               <p>
@@ -219,6 +209,17 @@ export default function BlogDakhni() {
                 समझाता हूँ ।
               </p>
               {/* </div> */}
+
+              <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#3A0622] md:w-5/12">
+                  <Image
+                    src="/blog/dakhni-content-3.png"
+                    alt="Historical Dakhni"
+                    width={300}
+                    height={400}
+                    className="w-full h-auto"
+                  />
+                </div>
+  
               <br></br>
               <p>
                 <strong className="text-lg">दक्खनी और मराठी</strong> का रिश्ता
