@@ -145,8 +145,8 @@ export default function BlogDakhni() {
                 </strong>
               </p>
 
-              <div className="flex flex-col md:flex-row items-center">
-                <p className="text-justify md:w-7/12">
+             
+                <p className="text-lg">
                   सच कहूँ तो यह भाषा कभी{" "}
                   <strong className="text-lg">लिखी जाती थी !</strong> बहमनी
                   साम्राज्य के दौर में लगभग{" "}
@@ -165,7 +165,6 @@ export default function BlogDakhni() {
                   दक्कन का गवर्नर बना दिया । मुगल साम्राज्य के अंदर उर्दू ही
                   अधिकारिक भाषा जैसे हुआ करती थी, जो कि दक्कन पर लागू कर दी गई ।
                 </p>
-              </div>
 
               <p>
                 तो, कुछ ऐसे{" "}
