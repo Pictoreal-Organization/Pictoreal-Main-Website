@@ -33,7 +33,7 @@ const Blogs = () => {
       id: "blog4",
       title: "अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया ।",
       authors: "Ayan Pathan",
-      imgSrc: "/blog/blog3-poster-img.png",
+      imgSrc: "/blog/blog-dakhni-poster.png",
     },
   ];
 
