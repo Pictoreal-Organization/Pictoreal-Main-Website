@@ -12,11 +12,10 @@ export default function AdminPanel() {
   const [pendingDonors, setPendingDonors] = useState([]);
   const [newDonor, setNewDonor] = useState({
     name: "",
-    regNo: "",
-    mobile: "",
+    reg_number: "",
+    mobile_number: "",
     category: "Faculty",
     bloodGroup: "O+",
-    date: new Date().toISOString(),
     approved: false
   });
   const [search, setSearch] = useState("");
@@ -64,7 +63,9 @@ export default function AdminPanel() {
     fetchDonors();
   }, []);
 
-  const handleChange = (e) => setNewDonor({ ...newDonor, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setNewDonor((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -72,12 +73,10 @@ export default function AdminPanel() {
 
     try {
       setLoading(true);
-      // Add current date and set approved to false
-      const donorData = {
-        ...newDonor,
-      };
 
-      // Send directly to backend
+      const donorData = { ...newDonor };
+      console.log("Sending Data:", JSON.stringify(donorData));
+
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -86,14 +85,14 @@ export default function AdminPanel() {
 
       if (!res.ok) throw new Error("Failed to add donor");
 
-      const savedDonor = await res.json();
-      setPendingDonors(prev => [...prev, savedDonor]);
+      // After successful submission, fetch the updated donor list
+      await fetchDonors();
 
       // Reset form
       setNewDonor({
         name: "",
-        regNo: "",
-        mobile: "",
+        reg_number: "",
+        mobile_number: "",
         category: "Faculty",
         bloodGroup: "O+",
       });
@@ -101,6 +100,7 @@ export default function AdminPanel() {
       toast.success("Donor added successfully! Awaiting approval.");
       setPage("list");
       setActiveTab("pending");
+
     } catch (error) {
       console.error("Error saving donor:", error);
       toast.error("Error adding donor");
@@ -109,42 +109,43 @@ export default function AdminPanel() {
     }
   }, [newDonor]);
 
+
   const handleApprove = async (id) => {
     try {
-        setLoading(true);
+      setLoading(true);
 
-        // Find the donor using the _id and extract the reg_number
-        const donorToApprove = pendingDonors.find(d => d._id === id);
-        if (!donorToApprove) throw new Error("Donor not found");
+      // Find the donor using the _id and extract the reg_number
+      const donorToApprove = pendingDonors.find(d => d._id === id);
+      if (!donorToApprove) throw new Error("Donor not found");
 
-        const donorRegnoArray = [donorToApprove.reg_number]; // ✅ Send reg_number
+      const donorRegnoArray = [donorToApprove.reg_number]; // ✅ Send reg_number
 
-        console.log("Sending Data:", JSON.stringify({ donorRegno: donorRegnoArray }));
+      console.log("Sending Data:", JSON.stringify({ donorRegno: donorRegnoArray }));
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin`, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ donorRegno: donorRegnoArray }), // ✅ Correct key
-        });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ donorRegno: donorRegnoArray }), // ✅ Correct key
+      });
 
-        if (!res.ok) {
-            const errorData = await res.json();
-            throw new Error(errorData.error || "Failed to approve donor");
-        }
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to approve donor");
+      }
 
-        fetchDonors();
-        toast.success("Donor approved successfully!");
+      fetchDonors();
+      toast.success("Donor approved successfully!");
     } catch (error) {
-        console.error("Error approving donor:", error);
-        toast.error(error.message);
+      console.error("Error approving donor:", error);
+      toast.error(error.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
 
 
-  
-  
+
+
 
   // const handleDelete = async (id, isPending = false) => {
   //   try {
@@ -175,9 +176,13 @@ export default function AdminPanel() {
 
   // Filter donors based on search and active tab
   const getFilteredDonors = () => {
+    console.log("Donors List:", donors);
+    console.log("Pending Donors List:", pendingDonors);
+
     const list = activeTab === "pending" ? pendingDonors : donors;
+
     return list.filter(d =>
-      d.name.toLowerCase().includes(search.toLowerCase())
+      d?.name?.toLowerCase().includes(search.toLowerCase()) // Ensuring `d` is valid
     );
   };
 
@@ -214,8 +219,8 @@ export default function AdminPanel() {
               <input
                 id="regNo"
                 type="text"
-                name="regNo"
-                value={newDonor.regNo}
+                name="reg_number"
+                value={newDonor.reg_number}
                 onChange={handleChange}
                 placeholder="Enter registration number"
                 className="w-full p-3 border rounded-lg"
@@ -227,8 +232,8 @@ export default function AdminPanel() {
               <input
                 id="mobile"
                 type="text"
-                name="mobile"
-                value={newDonor.mobile}
+                name="mobile_number"
+                value={newDonor.mobile_number}
                 onChange={handleChange}
                 placeholder="Enter mobile number"
                 className="w-full p-3 border rounded-lg"
