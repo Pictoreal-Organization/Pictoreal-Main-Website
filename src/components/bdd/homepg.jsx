@@ -19,7 +19,8 @@ export default function BloodDonorDashboard() {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch("https://cd9392g9-5000.inc1.devtunnels.ms/api/donate");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate`);
+
       
       if (!res.ok) throw new Error("Failed to fetch");
       

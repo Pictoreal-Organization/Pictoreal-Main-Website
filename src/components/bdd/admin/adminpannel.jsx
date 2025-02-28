@@ -30,12 +30,12 @@ export default function AdminPanel() {
       setLoading(true);
       
       // Fetch pending donors
-      const adminRes = await fetch("https://cd9392g9-5000.inc1.devtunnels.ms/api/donate/admin");
+      const adminRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin`);
       if (!adminRes.ok) throw new Error("Failed to fetch pending donors");
       const adminData = await adminRes.json();
 
       // Fetch approved donors
-      const donateRes = await fetch("https://cd9392g9-5000.inc1.devtunnels.ms/api/donate");
+      const donateRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate`);
       if (!donateRes.ok) throw new Error("Failed to fetch approved donors");
       const donateData = await donateRes.json();
 
@@ -73,7 +73,7 @@ export default function AdminPanel() {
       };
       
       // Send directly to backend
-      const res = await fetch("https://cd9392g9-5000.inc1.devtunnels.ms/api/donate/admin", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(donorData),
@@ -114,7 +114,7 @@ export default function AdminPanel() {
       if (!donorToApprove) throw new Error("Donor not found");
       
       // Update donor's approved status
-      const res = await fetch(`https://cd9392g9-5000.inc1.devtunnels.ms/api/donate/admin/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...donorToApprove, approved: true }),
@@ -139,7 +139,7 @@ export default function AdminPanel() {
       setLoading(true);
       
       // Delete from backend
-      const res = await fetch(`https://cd9392g9-5000.inc1.devtunnels.ms/api/donate/admin/${id}`, { 
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin/${id}`, { 
         method: "DELETE" 
       });
       
