@@ -5,7 +5,7 @@ import Footer from "./homepage/footer";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
-  const hideLayout = pathname.startsWith("/bdd/admin") || pathname === "/bdd" || pathname.startsWith("/bdd/login")  ;
+  const hideLayout = pathname.startsWith("/bdd/admin") || pathname === "/bdd" || pathname.startsWith("/bdd/login") || pathname.startsWith("/bdd/certificate") ;
 
   return (
     <div>

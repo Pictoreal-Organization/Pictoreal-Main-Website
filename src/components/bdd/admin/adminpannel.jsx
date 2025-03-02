@@ -343,13 +343,13 @@ export default function AdminPanel() {
                               <Check size={18} />
                             </button>
                           )}
-                          <button
+                          {/*<button
                             onClick={() => handleDelete(donor._id, activeTab === 'pending')}
                             className="bg-red-600 text-white p-1 rounded hover:bg-red-700"
                             title="Delete"
                           >
                             <Trash2 size={18} />
-                          </button>
+                          </button>*/}
                         </td>
                       </tr>
                     ))}

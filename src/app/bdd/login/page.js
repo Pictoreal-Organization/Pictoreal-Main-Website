@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -8,12 +8,19 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    // If user is already authenticated, redirect to admin panel
+    if (localStorage.getItem("isAuthenticated") === "true") {
+      router.push("/bdd/admin");
+    }
+  }, [router]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (username === "admin" && password === "password123") {
       localStorage.setItem("isAuthenticated", "true");
-      router.push("/bdd/admin"); 
+      router.push("/bdd/admin"); // Redirect to admin panel
     } else {
       setError("Invalid credentials. Please try again.");
     }
@@ -23,14 +30,10 @@ export default function LoginPage() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="p-6 bg-white rounded shadow-md w-80">
         <h1 className="text-xl font-bold mb-4 text-center">Login</h1>
-        {error && (
-          <p className="text-red-500 text-sm mb-2 text-center">{error}</p>
-        )}
+        {error && <p className="text-red-500 text-sm mb-2 text-center">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="username" className="block mb-1">
-              Username
-            </label>
+            <label htmlFor="username" className="block mb-1">Username</label>
             <input
               id="username"
               type="text"
@@ -42,9 +45,7 @@ export default function LoginPage() {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block mb-1">
-              Password
-            </label>
+            <label htmlFor="password" className="block mb-1">Password</label>
             <input
               id="password"
               type="password"

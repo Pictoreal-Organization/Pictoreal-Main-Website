@@ -88,23 +88,39 @@ export default function BloodDonorDashboard() {
     return colors[group] || 'bg-gray-600 text-white';
   };
 
+  // Function to format relative time (x minutes ago)
+  const formatRelativeTime = (dateString) => {
+    if (!dateString) return "N/A";
+    
+    const donationDate = new Date(dateString);
+    const now = new Date();
+    
+    // Calculate time difference in milliseconds
+    const timeDiff = now - donationDate;
+    
+    // Convert to minutes
+    const minutesAgo = Math.floor(timeDiff / 60000);
+    
+    if (minutesAgo < 1) return "Just now";
+    if (minutesAgo === 1) return "1 minute ago";
+    if (minutesAgo < 60) return `${minutesAgo} minutes ago`;
+    
+    // Convert to hours if more than 60 minutes
+    const hoursAgo = Math.floor(minutesAgo / 60);
+    if (hoursAgo === 1) return "1 hour ago";
+    if (hoursAgo < 24) return `${hoursAgo} hours ago`;
+    
+    // Convert to days if more than 24 hours
+    const daysAgo = Math.floor(hoursAgo / 24);
+    if (daysAgo === 1) return "1 day ago";
+    return `${daysAgo} days ago`;
+  };
+
   // Ensure all blood groups are displayed even if they have 0 donors
   const bloodGroupsDisplay = {
     'A+': 0, 'A-': 0, 'B+': 0, 'B-': 0, 
     'AB+': 0, 'AB-': 0, 'O+': 0, 'O-': 0,
     ...stats.bloodGroups
-  };
-
-  // Format date for better readability
-  const formatDate = (dateString) => {
-    const options = { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit' 
-    };
-    return new Date(dateString).toLocaleString(undefined, options);
   };
 
   return (
@@ -202,7 +218,7 @@ export default function BloodDonorDashboard() {
                       {latestDonor.bloodGroup}
                     </span>
                     <span className="text-gray-500 ml-2 text-lg">
-                      {formatDate(latestDonor.date)}
+                      {formatRelativeTime(latestDonor.date)}
                     </span>
                   </div>
                 </div>
@@ -256,7 +272,7 @@ export default function BloodDonorDashboard() {
                     Blood Group
                   </th>
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Date
+                    Time
                   </th>
                 </tr>
               </thead>
@@ -272,7 +288,7 @@ export default function BloodDonorDashboard() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {formatDate(donor.date)}
+                      {formatRelativeTime(donor.date)}
                     </td>
                   </tr>
                 ))}
