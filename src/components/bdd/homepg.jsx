@@ -33,7 +33,7 @@ export default function BloodDonorDashboard() {
         recentDonors: data.recentDonors?.filter(donor => donor.approved === true).map(donor => ({
           name: donor.name,
           bloodGroup: donor.bloodGroup,
-          date: donor.date,
+          date: donor.createdAt || donor.date, // Use createdAt if available, fallback to date
           _id: donor._id
         })) || []
       };
@@ -114,6 +114,24 @@ export default function BloodDonorDashboard() {
     const daysAgo = Math.floor(hoursAgo / 24);
     if (daysAgo === 1) return "1 day ago";
     return `${daysAgo} days ago`;
+  };
+
+  // Format timestamp to a human-readable format
+  const formatTimestamp = (dateString) => {
+    if (!dateString) return "N/A";
+    
+    const date = new Date(dateString);
+    
+    // Format: March 2, 2025 at 08:53 AM
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }) + ' at ' + 
+    date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
   };
 
   // Ensure all blood groups are displayed even if they have 0 donors
@@ -222,6 +240,10 @@ export default function BloodDonorDashboard() {
                     </span>
                   </div>
                 </div>
+                
+                <div className="mt-4 text-gray-500 text-sm">
+                  {formatTimestamp(latestDonor.date)}
+                </div>
               </div>
             )}
           </div>
@@ -274,6 +296,9 @@ export default function BloodDonorDashboard() {
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Time
                   </th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Timestamp
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -289,6 +314,9 @@ export default function BloodDonorDashboard() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {formatRelativeTime(donor.date)}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {formatTimestamp(donor.date)}
                     </td>
                   </tr>
                 ))}
