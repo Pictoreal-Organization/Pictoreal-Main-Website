@@ -1,20 +1,20 @@
-"use client"; // Ensure this is a client component
+"use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ Correct import
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); // ✅ No more "NextRouter not mounted" error
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      const res = await fetch("https://bdd-backend.onrender.com/api/donate/login", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/login`, { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -27,7 +27,7 @@ export default function Login() {
       }
 
       localStorage.setItem("token", data.token);
-      router.push("/bdd/admin"); // ✅ Correct navigation
+      router.push("/bdd/admin");
     } catch (err) {
       setError(err.message);
     }
