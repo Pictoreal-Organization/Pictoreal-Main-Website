@@ -1,4 +1,4 @@
-import Picture from "@/components/gallery/Picture";
+import Picture from "../../components/gallery/Picture";
 
 const Gallery = () => {
     return ( 

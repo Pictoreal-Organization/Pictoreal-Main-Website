@@ -1,4 +1,4 @@
-import MagazinesPage from "@/components/magazines/MagazinesPage";
+import MagazinesPage from "../../components/magazines/MagazinesPage";
 
 const Magazines = () => {
     return ( 

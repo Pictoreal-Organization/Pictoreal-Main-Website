@@ -1,4 +1,4 @@
-import Team from "@/components/ourTeam/Team";
+import Team from "../../components/ourTeam/Team";
 
 const Ourteam = () => {
     return ( 
