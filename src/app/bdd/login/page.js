@@ -8,8 +8,10 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const ADMIN_USERNAME = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
   useEffect(() => {
-    // If user is already authenticated, redirect to admin panel
     if (localStorage.getItem("isAuthenticated") === "true") {
       router.push("/bdd/admin");
     }
@@ -18,9 +20,9 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (username === "admin" && password === "password123") {
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       localStorage.setItem("isAuthenticated", "true");
-      router.push("/bdd/admin"); // Redirect to admin panel
+      router.push("/bdd/admin");
     } else {
       setError("Invalid credentials. Please try again.");
     }
