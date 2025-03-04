@@ -90,7 +90,7 @@ export default function BloodDonorDashboard() {
 
      
 
-       <div className="relative min-h-screen bg-[url('/vector.png')] bg-cover bg-center bg-no-repeat text-gray-900">
+       <div className="relative min-h-screen bg-[url('/Vector.png')] bg-cover bg-center bg-no-repeat text-gray-900">
   {/* Centered Total Donors Section - Overlapping */}
   <div className="absolute inset-x-0 top-[50%] flex justify-center z-10">
     <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 duration-300 w-72 -mt-20">
