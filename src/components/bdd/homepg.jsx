@@ -82,29 +82,33 @@ export default function BloodDonorDashboard() {
           <div className="absolute -inset-1 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
         </div>
         <div className="relative z-10 text-center py-8">
-          <h1 className="text-4xl md:text-5xl font-bold">Blood Donation Center</h1>
-          <p className="text-xl mt-2 opacity-90">Every donation saves lives</p>
+          <h1 className="text-4xl md:text-5xl font-bold font-[Georgia]">Blood Donation Drive</h1>
+          <p className="text-xl mt-2 opacity-120">A Drop For You , A Life For Someone , Donate Blood Be a Hero </p>
         </div>
       </div>
       
+
      
 
-      {/* Centered Total Donors Section */}
-      <div className="flex justify-center">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 duration-300 w-72">
-          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 text-white text-center">
-            <h2 className="text-xl font-semibold">Total Donors</h2>
-          </div>
-          <div className="p-8 flex items-center justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full blur-md animate-pulse"></div>
-              <p className="relative text-6xl font-extrabold text-red-600">
-                {loading ? '...' : stats.totalDonors}
-              </p>
-            </div>
-          </div>
+       <div className="relative min-h-screen bg-[url('/vector.png')] bg-cover bg-center bg-no-repeat text-gray-900">
+  {/* Centered Total Donors Section - Overlapping */}
+  <div className="absolute inset-x-0 top-[50%] flex justify-center z-10">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 duration-300 w-72 -mt-20">
+      <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 text-white text-center">
+        <h2 className="text-xl font-semibold">Total Donors</h2>
+      </div>
+      <div className="p-8 flex items-center justify-center">
+        <div className="relative">
+          <div className="absolute inset-0 bg-red-100 rounded-full blur-md animate-pulse"></div>
+          <p className="relative text-6xl font-extrabold text-red-600">
+            {loading ? '...' : stats.totalDonors}
+          </p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Blood Group Statistics Section */}
       <section className="mt-8 bg-white rounded-xl shadow-lg p-6">
