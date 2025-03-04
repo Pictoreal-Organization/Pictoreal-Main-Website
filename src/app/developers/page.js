@@ -1,8 +1,8 @@
-import TeamPage from "@/components/developers/developers";
+import TeamPage from "../../components/developers/developers";
 
 const Developers = () => {
     return ( 
-       <TeamPage/>
+       <TeamPage />
      );
 }
  
