@@ -79,7 +79,7 @@ export default function BloodDonorDashboard() {
   // Blood group color mapping
   const getBloodGroupColor = (group) => {
     const colors = {
-      'A+': 'bg-red-600 text-white',
+      'A+': 'bg-red-500 text-white',
       'A-': 'bg-red-500 text-white',
       'B+': 'bg-red-500 text-white',
       'B-': 'bg-red-500 text-white',
