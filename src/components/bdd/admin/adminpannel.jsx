@@ -18,6 +18,9 @@ export default function AdminPanel() {
     bloodGroup: "O+",
     approved: false
   });
+  const [errors, setErrors] = useState({
+    mobile_number: ""
+  });
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState("register");
@@ -63,13 +66,46 @@ export default function AdminPanel() {
     fetchDonors();
   }, []);
 
+  // Validate mobile number
+  const validateMobileNumber = (value) => {
+    // Clear previous error
+    setErrors(prev => ({ ...prev, mobile_number: "" }));
+    
+    // Skip validation if field is empty (we'll check for required fields separately)
+    if (!value.trim()) return true;
+    
+    // Check for 10-digit mobile number (India standard)
+    const mobileRegex = /^[6-9]\d{9}$/;
+    
+    if (!mobileRegex.test(value)) {
+      setErrors(prev => ({ 
+        ...prev, 
+        mobile_number: "Please enter a valid 10-digit mobile number" 
+      }));
+      return false;
+    }
+    
+    return true;
+  };
+
   const handleChange = (e) => {
-    setNewDonor((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    
+    setNewDonor(prev => ({ ...prev, [name]: value }));
+    
+    // Validate mobile number as user types
+    if (name === "mobile_number") {
+      validateMobileNumber(value);
+    }
   };
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
+    
+    // Validation checks
     if (!newDonor.name.trim()) return toast.error("Name is required!");
+    if (!newDonor.mobile_number.trim()) return toast.error("Mobile number is required!");
+    if (!validateMobileNumber(newDonor.mobile_number)) return toast.error(errors.mobile_number);
 
     try {
       setLoading(true);
@@ -96,6 +132,7 @@ export default function AdminPanel() {
         category: "Faculty",
         bloodGroup: "O+",
       });
+      setErrors({ mobile_number: "" });
 
       toast.success("Donor added successfully! Awaiting approval.");
       setPage("list");
@@ -107,7 +144,7 @@ export default function AdminPanel() {
     } finally {
       setLoading(false);
     }
-  }, [newDonor]);
+  }, [newDonor, errors]);
 
 
   const handleApprove = async (id) => {
@@ -143,36 +180,40 @@ export default function AdminPanel() {
     }
   };
 
+  // New delete handler using PATCH method
+  const handleDelete = async (id) => {
+    try {
+      setLoading(true);
 
+      // Find the donor using the _id and extract the reg_number
+      const donorToDelete = pendingDonors.find(d => d._id === id);
+      if (!donorToDelete) throw new Error("Donor not found");
 
+      const donorRegnoArray = [donorToDelete.reg_number];
 
+      console.log("Deleting donor:", JSON.stringify({ donorRegno: donorRegnoArray }));
 
-  // const handleDelete = async (id, isPending = false) => {
-  //   try {
-  //     setLoading(true);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/delete`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ donorRegno: donorRegnoArray }),
+      });
 
-  //     // Delete from backend
-  //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate/admin/${id}`, { 
-  //       method: "DELETE" 
-  //     });
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to delete donor");
+      }
 
-  //     if (!res.ok) throw new Error("Failed to delete donor");
-
-  //     // Update local state
-  //     if (isPending) {
-  //       setPendingDonors(prev => prev.filter(d => d._id !== id));
-  //     } else {
-  //       setDonors(prev => prev.filter(d => d._id !== id));
-  //     }
-
-  //     toast.success("Donor removed successfully");
-  //   } catch (error) {
-  //     console.error("Error deleting donor:", error);
-  //     toast.error("Error deleting donor");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+      // Update local state
+      setPendingDonors(prev => prev.filter(d => d._id !== id));
+      toast.success("Donor deleted successfully");
+    } catch (error) {
+      console.error("Error deleting donor:", error);
+      toast.error(error.message || "Error deleting donor");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Filter donors based on search and active tab
   const getFilteredDonors = () => {
@@ -184,6 +225,31 @@ export default function AdminPanel() {
     return list.filter(d =>
       d?.name?.toLowerCase().includes(search.toLowerCase()) // Ensuring `d` is valid
     );
+  };
+
+  // Improved date formatter that handles various date formats and prevents "Invalid Date"
+  const formatDate = (dateValue) => {
+    if (!dateValue) return "N/A";
+    
+    try {
+      // Try to parse the date - handles ISO strings, timestamps, etc.
+      const date = new Date(dateValue);
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        return "N/A";
+      }
+      
+      // Format the date: March 17, 2025
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (err) {
+      console.error("Date parsing error:", err);
+      return "N/A";
+    }
   };
 
   const filteredDonors = getFilteredDonors();
@@ -211,6 +277,7 @@ export default function AdminPanel() {
                 onChange={handleChange}
                 placeholder="Enter donor's full name"
                 className="w-full p-3 border rounded-lg"
+                required
               />
             </div>
 
@@ -235,9 +302,14 @@ export default function AdminPanel() {
                 name="mobile_number"
                 value={newDonor.mobile_number}
                 onChange={handleChange}
-                placeholder="Enter mobile number"
-                className="w-full p-3 border rounded-lg"
+                placeholder="Enter 10-digit mobile number"
+                className={`w-full p-3 border rounded-lg ${errors.mobile_number ? 'border-red-500' : ''}`}
+                required
               />
+              {errors.mobile_number && (
+                <p className="text-red-500 text-sm mt-1">{errors.mobile_number}</p>
+              )}
+              <p className="text-xs text-gray-500 mt-1">Format: 10 digits starting with 6-9</p>
             </div>
 
             <div>
@@ -266,7 +338,11 @@ export default function AdminPanel() {
               </select>
             </div>
 
-            <button type="submit" className="w-full flex items-center justify-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700">
+            <button 
+              type="submit" 
+              className="w-full flex items-center justify-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 disabled:bg-red-300 disabled:cursor-not-allowed"
+              disabled={!!errors.mobile_number}
+            >
               <PlusCircle className="mr-2" /> Add Donor
             </button>
           </form>
@@ -332,24 +408,26 @@ export default function AdminPanel() {
                         <td className="p-3 border">{donor.mobile_number}</td>
                         <td className="p-3 border">{donor.bloodGroup}</td>
                         <td className="p-3 border">{donor.category}</td>
-                        <td className="p-3 border">{new Date(donor.date).toLocaleDateString()}</td>
+                        <td className="p-3 border">{formatDate(donor.date || donor.createdAt)}</td>
                         <td className="p-3 border flex space-x-2">
                           {activeTab === 'pending' && (
-                            <button
-                              onClick={() => handleApprove(donor._id)}
-                              className="bg-green-600 text-white p-1 rounded hover:bg-green-700"
-                              title="Approve"
-                            >
-                              <Check size={18} />
-                            </button>
+                            <>
+                              <button
+                                onClick={() => handleApprove(donor._id)}
+                                className="border-2 border-green-600 text-green-600 p-1 rounded hover:bg-green-600 hover:text-white transition-colors duration-200"
+                                title="Approve"
+                              >
+                                <Check size={18} />
+                              </button>
+                              <button
+                                onClick={() => handleDelete(donor._id)}
+                                className="bg-red-600 text-white p-1 rounded hover:bg-red-700"
+                                title="Delete"
+                              >
+                                <Trash2 size={18} />
+                              </button>
+                            </>
                           )}
-                          {/*<button
-                            onClick={() => handleDelete(donor._id, activeTab === 'pending')}
-                            className="bg-red-600 text-white p-1 rounded hover:bg-red-700"
-                            title="Delete"
-                          >
-                            <Trash2 size={18} />
-                          </button>*/}
                         </td>
                       </tr>
                     ))}
