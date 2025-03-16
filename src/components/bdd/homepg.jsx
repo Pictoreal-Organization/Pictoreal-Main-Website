@@ -156,8 +156,15 @@ export default function BloodDonorDashboard() {
           <h1 className="text-4xl md:text-5xl font-bold font-[Georgia]">Blood Donation Drive</h1>
           <p className="text-xl mt-2 opacity-120">A Drop For You , A Life For Someone , Donate Blood Be a Hero </p>
         </div>
-        <img src = "/Pictoreal.jpg" alt = "Pictoreal logo" className = "absolute  left-10 w-24 h-24 rounded-full shadow-lg "/>
-        <img src = "/NSS.jpg" alt = "NSS logo" className = "absolute  right-10 w-24 h-24 rounded-full shadow-lg "/>
+        <style jsx>{`
+  @media (max-width: 840px) {
+    .hide-on-840 {
+      display: none;
+    }
+  }
+`}</style>
+        <img src = "/Pictoreal.jpg" alt = "Pictoreal logo" className = "absolute  left-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840"/>
+        <img src = "/NSS.jpg" alt = "NSS logo" className = "absolute  right-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840 "/>
             </div>
       </div>
      
