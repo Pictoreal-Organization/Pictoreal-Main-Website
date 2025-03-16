@@ -1,17 +1,16 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
-
+import BloodDonationToast from "./toast"; 
 
 export default function BloodDonorDashboard() {
-  
   const [stats, setStats] = useState({
     totalDonors: 0,
     bloodGroups: {},
     recentDonors: [],
-    
   });
 
   const [latestDonor, setLatestDonor] = useState(null);
+  const [showToast, setShowToast] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [transitionState, setTransitionState] = useState("idle");
@@ -23,7 +22,6 @@ export default function BloodDonorDashboard() {
       setLoading(true);
       setError(null);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/donate`);
-
       
       if (!res.ok) throw new Error("Failed to fetch");
       
@@ -52,11 +50,13 @@ export default function BloodDonorDashboard() {
           setTimeout(() => {
             setLatestDonor(processedData.recentDonors[0]);
             setTransitionState("entering");
+            setShowToast(true); // Show toast notification for new donor
             setTimeout(() => setTransitionState("idle"), 1000);
           }, 700);
         } else {
           setLatestDonor(processedData.recentDonors[0]);
           setTransitionState("entering");
+          setShowToast(true); // Show toast notification for new donor
           setTimeout(() => setTransitionState("idle"), 1000);
         }
       }
@@ -75,6 +75,11 @@ export default function BloodDonorDashboard() {
     const interval = setInterval(fetchStats, refreshInterval);
     return () => clearInterval(interval);
   }, [fetchStats, refreshInterval]);
+
+  // Handle toast close
+  const handleToastClose = () => {
+    setShowToast(false);
+  };
 
   // Blood group color mapping
   const getBloodGroupColor = (group) => {
@@ -146,48 +151,53 @@ export default function BloodDonorDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 text-gray-900 p-1">
+      {/* Toast Notification - Now at top right */}
+      {showToast && latestDonor && (
+        <BloodDonationToast donor={latestDonor} onClose={handleToastClose} autoCloseTime={7000} />
+      )}
+      
       {/* Header section */}
       <div className="relative overflow-hidden bg-red-600 text-white rounded-xl shadow-xl mb-6 p-1">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -inset-1 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
         </div>
-        <div className = "flex items-center justify-center ">
-        <div className="relative z-10 text-center py-8">
-          <h1 className="text-4xl md:text-5xl font-bold font-[Georgia]">Blood Donation Drive</h1>
-          <p className="text-xl mt-2 opacity-120">A Drop For You , A Life For Someone , Donate Blood Be a Hero </p>
+        <div className="flex items-center justify-center">
+          <div className="relative z-10 text-center py-8">
+            <h1 className="text-4xl md:text-5xl font-bold font-[Georgia]">Blood Donation Drive</h1>
+            <p className="text-xl mt-2 opacity-120">A Drop For You, A Life For Someone, Donate Blood Be a Hero</p>
+          </div>
+          <style jsx>{`
+            @media (max-width: 840px) {
+              .hide-on-840 {
+                display: none;
+              }
+            }
+          `}</style>
+          <img src="/Pictoreal.jpg" alt="Pictoreal logo" className="absolute left-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840"/>
+          <img src="/NSS.jpg" alt="NSS logo" className="absolute right-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840"/>
         </div>
-        <style jsx>{`
-  @media (max-width: 840px) {
-    .hide-on-840 {
-      display: none;
-    }
-  }
-`}</style>
-        <img src = "/Pictoreal.jpg" alt = "Pictoreal logo" className = "absolute  left-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840"/>
-        <img src = "/NSS.jpg" alt = "NSS logo" className = "absolute  right-10 w-24 h-24 rounded-full shadow-lg hidden md:block hide-on-840 "/>
-            </div>
       </div>
-     
 
       {/* Centered Total Donors Section */}
       <div className="relative min-h-screen bg-[url('/Vector.png')] bg-cover bg-center bg-no-repeat text-gray-900">
-  {/* Centered Total Donors Section - Overlapping */}
-  <div className="absolute inset-x-0 top-[35%] flex justify-center z-10">
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 duration-300 w-72 -mt-20">
-      <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 text-white text-center">
-        <h2 className="text-xl font-semibold">Total Donors</h2>
-      </div>
-      <div className="p-8 flex items-center justify-center">
-        <div className="relative">
-          <div className="absolute inset-0 bg-red-100 rounded-full blur-md"></div>
-          <p className="relative text-6xl font-extrabold text-red-600">
-            {loading ? '' : stats.totalDonors}
-          </p>
+        {/* Centered Total Donors Section - Overlapping */}
+        <div className="absolute inset-x-0 top-[35%] flex justify-center z-10">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 duration-300 w-72 -mt-20">
+            <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 text-white text-center">
+              <h2 className="text-xl font-semibold">Total Donors</h2>
+            </div>
+            <div className="p-8 flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-red-100 rounded-full blur-md"></div>
+                <p className="relative text-6xl font-extrabold text-red-600">
+                  {loading ? '' : stats.totalDonors}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      
       {/* Blood Group Statistics Section */}
       <section className="mt-8 bg-white rounded-xl shadow-lg p-6">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
@@ -204,6 +214,7 @@ export default function BloodDonorDashboard() {
           ))}
         </div>
       </section>
+      
       <section className="mt-8 bg-white rounded-xl shadow-lg p-6">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
           Recent Donors
