@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --firefly: #0A192E;
+  --submarine: #B4BBC3;
+  --lynch: #76879E;
+  --bali-hai: #7B94AB;
+}
+
+@layer utilities {
+  /* Firefly (Dark Navy) */
+  .text-firefly {
+    color: var(--firefly);
+  }
+  .bg-firefly {
+    background-color: var(--firefly);
+  }
+
+  /* Submarine (Light Gray-Blue) */
+  .text-submarine {
+    color: var(--submarine);
+  }
+  .bg-submarine {
+    background-color: var(--submarine);
+  }
+
+  /* Lynch (Slate Blue) */
+  .text-lynch {
+    color: var(--lynch);
+  }
+  .bg-lynch {
+    background-color: var(--lynch);
+  }
+
+  /* Bali Hai (Steel Blue) */
+  .text-bali {
+    color: var(--bali-hai);
+  }
+  .bg-bali {
+    background-color: var(--bali-hai);
+  }
+}
