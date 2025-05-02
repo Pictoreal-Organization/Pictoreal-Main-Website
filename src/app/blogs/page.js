@@ -40,7 +40,7 @@ const Blogs = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full relative mt-5 text-center">
-        <div className="text-4xl md:text-5xl font-bold text-[#49112E] mb-20">
+        <div className="text-4xl md:text-5xl font-bold text-bali mb-20">
           BLOGS
         </div>
         <img
@@ -55,7 +55,7 @@ const Blogs = () => {
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-[#D2B49A] p-4 border-4 border-[#3A0622] shadow-lg rounded-lg flex flex-col justify-between"
+              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-firefly p-4 border-4 border-lynch shadow-lg rounded-lg flex flex-col justify-between"
             >
               <div className="flex justify-center w-full h-[160px] lg:h-[180px]">
                 <img
@@ -65,17 +65,16 @@ const Blogs = () => {
                 />
               </div>
               <div className="flex flex-col items-center mt-2">
-                <h2 className="text-lg lg:text-xl font-bold text-center">
+                <h2 className="text-lg lg:text-xl font-bold text-submarine text-center">
                   {post.title}
                 </h2>
-                <h4 className="text-sm lg:text-base font-semibold text-center">
+                <h4 className="text-sm lg:text-base font-semibold text-lynch text-center">
                   Author: <span>{post.authors}</span>
                 </h4>
               </div>
-              {/* Button positioned at the bottom */}
               <div className="flex justify-center mt-4">
                 <Link href={`/blogs/${post.id}`}>
-                  <button className="bg-[#6f2143] hover:bg-[#561A34] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-black shadow-md">
+                  <button className="bg-lynch hover:bg-[#394553] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-black shadow-md">
                     Read
                   </button>
                 </Link>
