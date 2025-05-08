@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --firefly: #0A192E;
+  --firefly: #0A192E; /*Used for bg of buttons and headings*/
   --submarine: #b4bbc4;
-  --lynch: #76879E;
+  --lynch: #76879E; /*Used for bg of text*/
   --bali-hai: #7B94AB;
+  --twilight: #112B45;/*Used for alternative for dark blue*/
+  --mist: #EAF4FB; /*Used for alternative for text*/
 }
 
 @layer utilities {
@@ -41,4 +43,22 @@
   .bg-bali {
     background-color: var(--bali-hai);
   }
+  .text-twilight {
+    color: var(--twilight);
+  }
+  .bg-twilight {
+    background-color: var(--twilight);
+  }
+  .text-mist {
+    color: var(--mist);
+  }
+  .bg-mist {
+    background-color: var(--mist);
+  }
+  .bg-mist-texture {
+    background-color: var(--mist);
+    background-image: url('http://www.transparenttextures.com/patterns/debut-light.png');
+  }
+  
 }
+

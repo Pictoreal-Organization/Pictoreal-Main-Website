@@ -5,7 +5,7 @@ const Contact = () => {
     <>
     <div className="py-16">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-center text-4xl font-bold mb-10 text-[#532c2b]">Contact Us</h2>
+        <h2 className="text-center text-4xl font-bold mb-10 text-mist">Contact Us</h2>
         <div className="grid md:grid-cols-12 gap-10 p-5">
 
           {/* Contact Information */}
@@ -20,7 +20,7 @@ const Contact = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-6 h-6 text-[#532c2b]"
+                  className="w-6 h-6 text-mist"
                 >
                   <path
                     strokeLinecap="round"
@@ -30,8 +30,8 @@ const Contact = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#532c2b]">Location:</h3>
-                <p className="text-[#6c4041]">
+                <h3 className="text-lg font-semibold text-mist">Location:</h3>
+                <p className="text-mist">
                   Pune Institute Of Computer Technology,
                   <br />
                   Survey No. 27, Near Trimurti Chowk, Dhankwadi
@@ -50,7 +50,7 @@ const Contact = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-6 h-6 text-[#532c2b]"
+                  className="w-6 h-6 text-mist"
                 >
                   <path
                     strokeLinecap="round"
@@ -60,8 +60,8 @@ const Contact = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#532c2b]">Email:</h3>
-                <p className="text-[#6c4041]">pictoreal@pict.edu</p>
+                <h3 className="text-lg font-semibold text-mist">Email:</h3>
+                <p className="text-mist">pictoreal@pict.edu</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-6 h-6 text-[#532c2b]"
+                  className="w-6 h-6 text-mist"
                 >
                   <path
                     strokeLinecap="round"
@@ -84,8 +84,8 @@ const Contact = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#532c2b]">Call:</h3>
-                <p className="text-[#6c4041]">+91 20 24371101</p>
+                <h3 className="text-lg font-semibold text-mist">Call:</h3>
+                <p className="text-mist">+91 20 24371101</p>
               </div>
             </div>
           </div>

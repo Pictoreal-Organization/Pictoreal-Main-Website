@@ -45,9 +45,9 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen bg-image mb-10">
+    <div className="min-h-screen bg-mist-texture mb-10">
       <section id="events" className="w-full">
-        <h2 className="text-[40px] font-[700] text-center mb-[30px] p-[10px] text-[#531733] font-family-['Raleway', sans-serif]">
+        <h2 className="text-[40px] font-[700] text-center mb-[30px] p-[10px] text-firefly font-family-['Raleway', sans-serif]">
           OUR EVENTS
         </h2>
         <div className="container w-10/12 px-3 mx-auto">
@@ -84,8 +84,8 @@ const FlipCard = ({ event, onEventClick }) => {
       onClick={onEventClick} // Trigger event navigation on click
     >
       <div className="absolute inset-0 flex h-full">
-        <div className="w-1/2 bg-[#4E1F39] p-6 flex items-center justify-center relative"></div>
-        <div className="w-1/2 bg-[#3A0622] p-6 flex flex-col items-center justify-center relative"></div>
+        <div className="w-1/2 bg-firefly p-6 flex items-center justify-center relative"></div>
+        <div className="w-1/2 bg-twilight p-6 flex flex-col items-center justify-center relative"></div>
         <div
           className={`absolute flex items-center justify-center h-full w-full ${
             flipped ? "backside" : "frontside"
@@ -112,7 +112,7 @@ const FlipCard = ({ event, onEventClick }) => {
                   height={100}
                   className="rounded-sm filter invert mb-[12px] sm:w-24 sm:h-24"
                 />
-                <h3 className="text-xl sm:text-3xl tracking-widest font-bold text-white text-center font-family-['Raleway', sans-serif] mb-[2px]">
+                <h3 className="text-xl sm:text-3xl tracking-widest font-bold text-mist text-center font-family-['Raleway', sans-serif] mb-[2px]">
                   {event.title.toUpperCase()}
                 </h3>
                 <a

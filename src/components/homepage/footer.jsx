@@ -5,7 +5,9 @@ import { AiFillHeart } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-[#3e0d23] text-white pt-10">
+<div class="bg-mist-texture">
+    <footer id="footer" className="bg-firefly text-lynch pt-10">
+      
       <div className="footer-top">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
@@ -118,7 +120,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="text-center mt-10 bg-[#561a34] p-2">
+      <div className="text-center mt-10 bg-twilight p-2">
       Made with <AiFillHeart className="inline text-red-500" /> by{' '}
       <a href="/developers" className="hover:text-[#caa656]">
         Pictoreal Tech Team
@@ -126,6 +128,7 @@ const Footer = () => {
     </div>
       <BackToTopButton/>
     </footer>
+    </div>
   );
 };
 

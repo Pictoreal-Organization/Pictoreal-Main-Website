@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 // Expanded Image View Component
 const ExpandedImage = ({ image, onClose }) => (
-  <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+  <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
     <img
       src={image}
       alt="Expanded"
@@ -24,7 +24,7 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+    <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
       <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
         <button
           onClick={onClose}
@@ -114,13 +114,13 @@ const Carousel = ({ images, onImageClick }) => {
 <div className="none">
   <button
     onClick={prevSlide}
-    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
   >
     &#10094;
   </button>
   <button
     onClick={nextSlide}
-    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
   >
     &#10095;
   </button>
@@ -335,18 +335,19 @@ const Picture = () => {
   };
 
   return (
+    <div class="bg-mist-texture">
     <div className="space-y-8 p-4 mb-10">
-      <h2 className="text-5xl text-[#531733] font-bold text-center mb-10">
+      <h2 className="text-5xl text-firefly font-bold text-center mb-10">
             GALLERY
           </h2>
       {imageSets.map((set, i) => (
         <div
           key={i}
-          className="max-w-4xl mx-auto ring-2 ring-[#531733] bg-[#FFFFFF] p-6 rounded-lg"
+          className="max-w-4xl mx-auto ring-2 ring-firefly bg-[#FFFFFF] p-6 rounded-lg"
         >
           {/* Heading */}
           
-          <h2 className="text-3xl text-[#531733] font-bold text-center mb-4">
+          <h2 className="text-3xl text-firefly font-bold text-center mb-4">
             {set.title}
           </h2>
           
@@ -376,6 +377,7 @@ const Picture = () => {
           onClose={() => setSelectedImage(null)}
         />
       )}
+    </div>
     </div>
 );
 };
