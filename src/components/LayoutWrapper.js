@@ -14,7 +14,7 @@ export default function LayoutWrapper({ children }) {
       
       {/* Main content container */}
       <main className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 flex-grow">{children}</div>
+        <div className="col-span-12 flex-grow bg-mist-texture">{children}</div>
       </main>
       
       {/* Conditionally render Footer */}

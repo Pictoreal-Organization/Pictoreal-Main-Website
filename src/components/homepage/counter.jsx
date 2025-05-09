@@ -51,7 +51,7 @@ export default function Counter() {
 
   const counterItems = [
     { target: 35, label: "Years since inception", color: "bg-firefly" },
-    { target: 10, label: "Events every year", color: "bg-[#C8A455]" },
+    { target: 10, label: "Events every year", color: "bg-[#76879E]" },
     { target: 120, label: "Members", color: "bg-firefly" },
   ];
 
@@ -59,7 +59,7 @@ export default function Counter() {
     <section
       id="section_counter"
       ref={sectionCounterRef}
-      className="w-full py-16"
+      className="w-full py-16 bg-mist-texture"
     >
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-firefly text-4xl md:text-4xl text-center font-bold mb-16">

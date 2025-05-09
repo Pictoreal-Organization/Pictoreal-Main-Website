@@ -64,23 +64,23 @@ const Navbar = () => {
             } lg:flex lg:items-center lg:w-auto w-full transition-all duration-300 ease-in-out`}
           >
             <ul className="text-base text-firefly lg:flex lg:justify-between">
-              <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/" onClick={handleLinkClick}>Home</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/#events" onClick={handleLinkClick}>Events</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/gallery" onClick={handleLinkClick}>Gallery</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/blogs" onClick={handleLinkClick}>Blogs</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#D2B49A] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/ourteam" onClick={handleLinkClick}>Our Team</Link>
               </li>
               <li
-                className="relative lg:px-5 py-2 hover:text-[#D2B49A] font-semibold"
+                className="relative lg:px-5 py-2 hover:text-[#7679E] font-semibold"
                 onMouseEnter={() => window.innerWidth >= 1024 && setDropdownOpen(true)}
                 onMouseLeave={() => window.innerWidth >= 1024 && setDropdownOpen(false)}
               >
@@ -114,7 +114,7 @@ const Navbar = () => {
                   </ul>
                 )}
               </li>
-              <li className="py-2 px-4 lg:px-6 lg:mx-4 lg:py-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#D2B49A]">
+              <li className="py-2 px-4 lg:px-6 lg:mx-4 lg:py-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#76879E]">
                 <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
               </li>
             </ul>

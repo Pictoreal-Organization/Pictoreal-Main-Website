@@ -28,7 +28,7 @@ export default function MagazineCard({ magazine }) {
           target="_blank"  // Open link in a new tab
           rel="noopener noreferrer"  // Security measure for external links
         >
-          <button className="bg-[#8C3B62] hover:bg-[#692648] text-white font-bold py-2 px-4 rounded mt-4">
+          <button className="bg-[#0A192E] hover:bg-[#76879E] text-white font-bold py-2 px-4 rounded mt-4">
             Read More
           </button>
         </a>
