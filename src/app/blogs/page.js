@@ -40,7 +40,7 @@ const Blogs = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full relative mt-5 text-center">
-        <div className="text-4xl md:text-5xl font-bold text-bali mb-20">
+        <div className="text-4xl md:text-5xl font-bold text-firefly mb-20">
           BLOGS
         </div>
         <img
