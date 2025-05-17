@@ -140,7 +140,7 @@ const Carousel = ({ images, onImageClick }) => {
                 resetTimer(); // Restart the timer when clicking an indicator
               }}
               className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                currentIndex === index ? "bg-[#d0b311]" : "bg-[#9d2b60]"
+                currentIndex === index ? "bg-[#d0b311]" : "bg-firefly"
               }`}
             />
           ))}
@@ -183,12 +183,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/parichay1.JPG",
-        "/gallery/parichay2.JPG",
-        "/gallery/parichay4.JPG",
-        "/gallery/parichay3.JPG",
-        "/gallery/parichay5.JPG",
-        "/gallery/parichay6.JPG",
+        "/gallery/Parichay_1.jpg",
+        "/gallery/Parichay_2.JPG",
+        "/gallery/Parichay_3.jpg",
+        "/gallery/Parichay_4.jpg",
+        "/gallery/Parichay_5.JPG",
+        "/gallery/Parichay_6.jpg",
       ],
       title: "Parichay",
       description:
