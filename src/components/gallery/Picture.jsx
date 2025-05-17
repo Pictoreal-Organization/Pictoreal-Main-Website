@@ -171,11 +171,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/manthan1.JPG",
-        "/gallery/manthan2.JPG",
-        "/gallery/manthan3.JPG",
-        "/gallery/manthan4.JPG",
-        "/gallery/manthan5.JPG",
+        "/gallery/Manthan_1.JPG",
+        "/gallery/Manthan_2.JPG",
+        "/gallery/Manthan_3.JPG",
+        "/gallery/Manthan_4.JPG",
+        "/gallery/Manthan_5.JPG",
+        "/gallery/Manthan_6.JPG",
       ],
       title: "Manthan",
       description:
@@ -312,10 +313,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/cleanliness1.jpg",
-        "/gallery/cleanliness2.jpg",
-        "/gallery/cleanliness3.jpg",
-        "/gallery/cleanliness4.jpg",
+        "/gallery/Clean_1.jpg",
+        "/gallery/Clean_2.jpg",
+        "/gallery/Clean_3.jpg",
+        "/gallery/Clean_4.jpg",
+        "/gallery/Clean_5.jpg", 
+
       ],
       title: "Cleanliness Drive",
       description:
