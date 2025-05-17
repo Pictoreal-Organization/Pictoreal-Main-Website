@@ -257,12 +257,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/career1.jpg",
-        "/gallery/career2.jpg",
-        "/gallery/career3.jpg",
-        "/gallery/career4.jpg",
-        "/gallery/career5.jpg",
-        "/gallery/career6.jpg",
+        "/gallery/Career_1.JPG",
+        "/gallery/Career_2.JPG",
+        "/gallery/Career_3.JPG",
+        "/gallery/Career_4.JPG",
+        "/gallery/Career_5.JPG",
+        "/gallery/Career_6.jpg",
+        "/gallery/Career_7.jpg",
       ],
       title: "Career Guidance",
       description:
@@ -270,14 +271,15 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/ngo1.jpg",
-        "/gallery/ngo2.jpg",
-        "/gallery/ngo3.jpg",
-        "/gallery/ngo4.jpg",
-        "/gallery/ngo5.jpg",
-        "/gallery/ngo6.jpg",
+        "/gallery/OLD_1.jpg",
+        "/gallery/OLD_2.jpg",
+        "/gallery/OLD_3.jpg",
+        "/gallery/OLD_4.jpg",
+        "/gallery/OLD_5.jpg",
+        "/gallery/OLD_6.jpg",
+        "/gallery/OLD_7.jpg",
       ],
-      title: "NGO Visit",
+      title: "Old Age Home Visit",
       description:
         "The visit to Akshar Paaul NGO on January 14, 2024, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami. On the occasion of Republic Day, inspiring stories of freedom fighters were shared, along with engaging general knowledge questions. But it was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
     },
@@ -299,12 +301,10 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/pictosocial1.jpg",
-        "/gallery/pictosocial2.jpg",
-        "/gallery/pictosocial3.jpg",
-        "/gallery/pictosocial4.jpg",
-        "/gallery/pictosocial5.jpg",
-        "/gallery/pictosocial6.jpg",
+        "/gallery/Visit_1.jpg",
+        "/gallery/Visit_2.jpg",
+        "/gallery/Visit_3.jpg",
+        "/gallery/Visit_4.jpg",
       ],
       title: "Pictosocial Visit",
       description:
