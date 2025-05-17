@@ -196,13 +196,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/blood1.jpg",
-        "/gallery/blood2.jpg",
-        "/gallery/blood3.jpg",
-        "/gallery/blood4.jpg",
-        "/gallery/blood5.jpg",
-        "/gallery/blood6.jpg",
-        "/gallery/blood7.jpg",
+        "/gallery/BDD_1.jpg",
+        "/gallery/BDD_2.jpg",
+        "/gallery/BDD_3.jpg",
+        "/gallery/BDD_4.jpg",
+        "/gallery/BDD_5.jpg",
+        "/gallery/BDD_6.jpg",
+        "/gallery/BDD_7.jpg",
       ],
       title: "Blood Donation Drive",
       description:
