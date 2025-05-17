@@ -11,7 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/icon?<generated>" type="image/<generated>" sizes="<generated>" />
+        {/* <link rel="icon" href="/icon?<generated>" type="image/<generated>" sizes="<generated>" /> */}
+        <link rel="apple-touch-icon" href="/icon?<generated>" type="image/<generated>" sizes="<generated>" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Head>
@@ -21,3 +22,6 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
+

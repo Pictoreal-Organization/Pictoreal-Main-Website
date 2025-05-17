@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Hero from "./hero";
 
 const HomePage = () => {
+ 
   return (
     <>
       <main>
