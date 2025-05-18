@@ -5,7 +5,7 @@ import Image from "next/image";
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    '/homepage/slide_img_1.jpg',
+    '/homepage/Pictofam.JPG',
     '/homepage/slide_img_2.jpg',
     '/homepage/slide_img_3.jpg'
   ];
