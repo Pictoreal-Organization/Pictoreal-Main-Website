@@ -77,6 +77,9 @@ const Navbar = () => {
                 <Link href="/blogs" onClick={handleLinkClick}>Blogs</Link>
               </li>
               <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+                <Link href="/audio" onClick={handleLinkClick}>Articles</Link>
+              </li>
+              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
                 <Link href="/ourteam" onClick={handleLinkClick}>Our Team</Link>
               </li>
               <li
