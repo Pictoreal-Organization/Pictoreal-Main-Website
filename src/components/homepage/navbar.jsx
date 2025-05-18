@@ -103,13 +103,13 @@ const Navbar = () => {
                     className="absolute left-0 mt-2 w-48 text-firefly ring-1 ring-[#3A0622] bg-white rounded-lg shadow-lg z-10 transition-transform duration-300 ease-in-out"
                   >
                     <li className="py-2 px-4 text-firefly">
-                      <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
+                      <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
                     </li>
                     <li className="py-2 px-4 text-firefly">
-                      <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 25</Link>
+                      <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 26</Link>
                     </li>
                     <li className="py-2 px-4 text-firefly">
-                      <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 24</Link>
+                      <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 25</Link>
                     </li>
                     <li className="py-2 px-4 text-firefly">
                       <Link href="/magazines" onClick={handleLinkClick}>More...</Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 )}
               </li>
               <li className="py-2 px-4 lg:px-6 lg:mx-4 lg:py-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#76879E]">
-                <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
+                <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
               </li>
             </ul>
           </nav>

@@ -16,7 +16,7 @@ const Team = () => {
     <div className="container mx-auto my-5 w-full md:w-3/4">
       <Title 
         text="TEAM PHOTO" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
       />
     
       <div className="flex flex-wrap justify-around gap-3">
@@ -30,12 +30,12 @@ const Team = () => {
 
       <Title 
         text="MEET OUR TEAM" 
-        style={{ color: '#CAA656' }} 
+        style={{ color: "var( --lynch)" }} 
       />
 
       <Title 
         text="Magazine Coordinators" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
       />
       {/* Magazine Coordinators */}
       <div className='grid grid-cols-1 justify-items-center'>
@@ -59,7 +59,7 @@ const Team = () => {
         {/* Magazine Secretaries */}
         <Title 
         text="Magazine Secretaries" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Chaitrali Ginimav", "Vineet Kothari"]}
@@ -71,7 +71,7 @@ const Team = () => {
         {/* Joint Secretaries */}
         <Title 
         text="Joint Secretaries" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Gayatri Sawant", "Manthan Adhav"]}
@@ -83,7 +83,7 @@ const Team = () => {
         {/* External Affairs Officers */}
         <Title 
         text="External Affairs Officers" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Advait Naik", "Anshika Singh"]}
@@ -95,7 +95,7 @@ const Team = () => {
         {/* PictoSocial Secretary */}
         <Title 
         text="PictoSocial Secretary" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Aarya Ghate"]}
@@ -107,7 +107,7 @@ const Team = () => {
         {/* Treasurer */}
         <Title 
         text="Treasurer" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Kashish Hase"]}
@@ -119,7 +119,7 @@ const Team = () => {
         {/* Chief Designer */}
         <Title 
         text="Chief Designer" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Atharva Pardeshi"]}
@@ -131,7 +131,7 @@ const Team = () => {
         {/* Design Heads */}
         <Title 
         text="Design Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Prem Rahinj", "Amulya Agrawal", "Kshitij Dhake"]}
@@ -143,7 +143,7 @@ const Team = () => {
         {/* Editing Heads */}
         <Title 
         text="Editing Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Revati Ranade", "Soham Phatak", "Shruti Mone"]}
@@ -155,7 +155,7 @@ const Team = () => {
         {/* Picto-Social Heads */}
         <Title 
         text="Picto-Social Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Sanika Deshpande", "Aditya Choudhary", "Tanvi Somani"]}
@@ -167,7 +167,7 @@ const Team = () => {
         {/* Event Managers */}
         <Title 
         text="Event Managers" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Kartik Tichkule", "Aarya Badhe", "Hariom Gilda"]}
@@ -179,7 +179,7 @@ const Team = () => {
         {/* Public Relations Officers */}
         <Title 
         text="Public Relations Officers" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Unnati Rathi", "Shrihari Kulkarni", "Mahi Shah"]}
@@ -191,7 +191,7 @@ const Team = () => {
         {/* Social Media Heads */}
         <Title 
         text="Social Media Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Anvitha Mayya", "Atharva Dhake", "Sampada Tagalpallewar"]}
@@ -203,7 +203,7 @@ const Team = () => {
         {/* Tech Heads */}
         <Title 
         text="Tech Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Ria Narode", "Gaurav Waghmare", "Mansi Apet"]}
@@ -215,7 +215,7 @@ const Team = () => {
         {/* Marketing Heads */}
         <Title 
         text="Marketing Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Samyak Bora", "Ajinkya Bobade"]}
@@ -227,7 +227,7 @@ const Team = () => {
         {/* Video Editing Heads */}
         <Title 
         text="Video Editing Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Gaurav Waghmare", "Shrihari Kulkarni"]}
@@ -239,7 +239,7 @@ const Team = () => {
         {/* Photography Heads */}
         <Title 
         text="Photography Heads" 
-        style={{ color: '#3A0622' }} 
+        style={{color: "var(--firefly)" }} 
         />
         <TeamMember
           names={["Dev Dandekar", "Yash Apotikar"]}

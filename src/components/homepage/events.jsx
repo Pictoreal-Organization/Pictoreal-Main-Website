@@ -214,6 +214,8 @@ const FlipCard = ({ event, onEventClick }) => {
         position: "relative",
       }}
       onClick={onEventClick}
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
     >
       <div className="absolute inset-0 flex h-full">
         <div className="w-1/2 bg-firefly p-6 flex items-center justify-center relative"></div>
@@ -230,7 +232,6 @@ const FlipCard = ({ event, onEventClick }) => {
                   href={`/gallery?eventId=${event.id}`}
                   className="bg-[#b4bbc3] hover:bg-[#76879E] text-black opacity-80 text-sm font-normal py-[2px] px-[4px] 
                   rounded-sm transition duration-300 ease-in-out hover:scale-110 cursor-pointer sm:py-[4px] sm:px-[8px] mt-2"
-
                 >
                   View Photos
                 </a>
@@ -253,7 +254,6 @@ const FlipCard = ({ event, onEventClick }) => {
                   href={`/gallery?eventId=${event.id}`}
                   className="bg-[#b4bbc3] hover:bg-[#76879E] text-black opacity-80 text-sm font-normal py-[2px] px-[4px] 
                   rounded-sm transition duration-300 ease-in-out hover:scale-110 cursor-pointer sm:py-[4px] sm:px-[8px] mt-2"
-
                 >
                   View Photos
                 </a>

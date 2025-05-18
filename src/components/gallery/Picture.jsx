@@ -140,7 +140,7 @@ const Carousel = ({ images, onImageClick }) => {
                 resetTimer(); // Restart the timer when clicking an indicator
               }}
               className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                currentIndex === index ? "bg-[#d0b311]" : "bg-[#9d2b60]"
+                currentIndex === index ? "bg-[#d0b311]" : "bg-firefly"
               }`}
             />
           ))}
@@ -171,11 +171,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/manthan1.JPG",
-        "/gallery/manthan2.JPG",
-        "/gallery/manthan3.JPG",
-        "/gallery/manthan4.JPG",
-        "/gallery/manthan5.JPG",
+        "/gallery/Manthan_1.JPG",
+        "/gallery/Manthan_2.JPG",
+        "/gallery/Manthan_3.JPG",
+        "/gallery/Manthan_4.JPG",
+        "/gallery/Manthan_5.JPG",
+        "/gallery/Manthan_6.JPG",
       ],
       title: "Manthan",
       description:
@@ -183,12 +184,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/parichay1.JPG",
-        "/gallery/parichay2.JPG",
-        "/gallery/parichay4.JPG",
-        "/gallery/parichay3.JPG",
-        "/gallery/parichay5.JPG",
-        "/gallery/parichay6.JPG",
+        "/gallery/Parichay_1.jpg",
+        "/gallery/Parichay_2.JPG",
+        "/gallery/Parichay_3.jpg",
+        "/gallery/Parichay_4.jpg",
+        "/gallery/Parichay_5.JPG",
+        "/gallery/Parichay_6.jpg",
       ],
       title: "Parichay",
       description:
@@ -196,13 +197,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/blood1.jpg",
-        "/gallery/blood2.jpg",
-        "/gallery/blood3.jpg",
-        "/gallery/blood4.jpg",
-        "/gallery/blood5.jpg",
-        "/gallery/blood6.jpg",
-        "/gallery/blood7.jpg",
+        "/gallery/BDD_1.jpg",
+        "/gallery/BDD_2.jpg",
+        "/gallery/BDD_3.jpg",
+        "/gallery/BDD_4.jpg",
+        "/gallery/BDD_5.jpg",
+        "/gallery/BDD_6.jpg",
+        "/gallery/BDD_7.jpg",
       ],
       title: "Blood Donation Drive",
       description:
@@ -210,25 +211,34 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/pictofest1.jpg",
-        "/gallery/pictofest2.jpg",
-        "/gallery/pictofest3.jpg",
-        "/gallery/pictofest4.jpg",
-        "/gallery/pictofest5.jpg",
-        "/gallery/pictofest6.jpg",
-        "/gallery/pictofest7.jpg",
+        "/gallery/Pictofest_1.jpg",
+        "/gallery/Pictofest_2.jpg",
+        "/gallery/pictofest_3.jpg",
+        "/gallery/Pictofest_4.JPG",
+        "/gallery/Pictofest_5.jpg",
+        "/gallery/Pictofest_6.jpg",
+        "/gallery/Pictofest_7.jpg",
+        "/gallery/Pictofest_8.jpg",
+        "/gallery/Pictofest_9.JPG",
+        "/gallery/Pictofest_10.JPG",
+        "/gallery/Pictofest_11.JPG",
+        "/gallery/Pictofest_12.JPG",
+        "/gallery/Pictofest_13.JPG",
       ],
       title: "PICTOFEST",
       description: `On February 23rd, PICTOREAL launched its first intercollegiate art festival, PICTOFEST. Over two days, participants engaged in events like Lost in Pieces, Trivia, Meme-making, Creative Writing, and workshops such as Play with Clay and Resin Art. "Taare Zameen Par," an open-air live painting event, received enthusiastic responses. The art exhibition PICS-O-REEL displayed 600+ entries, attracting a large audience from Pune colleges. It concluded with a closing ceremony awarding prizes for all competitions.`,
     },
     {
       images: [
-        "/gallery/be1.JPG",
-        "/gallery/be2.JPG",
-        "/gallery/be3.JPG",
-        "/gallery/be4.JPG",
-        "/gallery/be5.JPG",
-        "/gallery/be6.JPG",
+        "/gallery/BE_1.JPG",
+        "/gallery/BE_2.JPG",
+        "/gallery/BE_3.JPG",
+        "/gallery/BE_4.JPG",
+        "/gallery/BE_5.JPG",
+        "/gallery/BE_6.JPG",
+        "/gallery/BE_7.JPG",
+        "/gallery/BE_8.JPG",
+        "/gallery/BE_9.JPG",
       ],
       title: "BE Photoshoot",
       description:
@@ -248,12 +258,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/career1.jpg",
-        "/gallery/career2.jpg",
-        "/gallery/career3.jpg",
-        "/gallery/career4.jpg",
-        "/gallery/career5.jpg",
-        "/gallery/career6.jpg",
+        "/gallery/Career_1.JPG",
+        "/gallery/Career_2.JPG",
+        "/gallery/Career_3.JPG",
+        "/gallery/Career_4.JPG",
+        "/gallery/Career_5.JPG",
+        "/gallery/Career_6.jpg",
+        "/gallery/Career_7.jpg",
       ],
       title: "Career Guidance",
       description:
@@ -261,14 +272,15 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/ngo1.jpg",
-        "/gallery/ngo2.jpg",
-        "/gallery/ngo3.jpg",
-        "/gallery/ngo4.jpg",
-        "/gallery/ngo5.jpg",
-        "/gallery/ngo6.jpg",
+        "/gallery/OLD_1.jpg",
+        "/gallery/OLD_2.jpg",
+        "/gallery/OLD_3.jpg",
+        "/gallery/OLD_4.jpg",
+        "/gallery/OLD_5.jpg",
+        "/gallery/OLD_6.jpg",
+        "/gallery/OLD_7.jpg",
       ],
-      title: "NGO Visit",
+      title: "Old Age Home Visit",
       description:
         "The visit to Akshar Paaul NGO on January 14, 2024, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami. On the occasion of Republic Day, inspiring stories of freedom fighters were shared, along with engaging general knowledge questions. But it was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
     },
@@ -290,12 +302,10 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/pictosocial1.jpg",
-        "/gallery/pictosocial2.jpg",
-        "/gallery/pictosocial3.jpg",
-        "/gallery/pictosocial4.jpg",
-        "/gallery/pictosocial5.jpg",
-        "/gallery/pictosocial6.jpg",
+        "/gallery/Visit_1.jpg",
+        "/gallery/Visit_2.jpg",
+        "/gallery/Visit_3.jpg",
+        "/gallery/Visit_4.jpg",
       ],
       title: "Pictosocial Visit",
       description:
@@ -303,10 +313,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/cleanliness1.jpg",
-        "/gallery/cleanliness2.jpg",
-        "/gallery/cleanliness3.jpg",
-        "/gallery/cleanliness4.jpg",
+        "/gallery/Clean_1.jpg",
+        "/gallery/Clean_2.jpg",
+        "/gallery/Clean_3.jpg",
+        "/gallery/Clean_4.jpg",
+        "/gallery/Clean_5.jpg", 
+
       ],
       title: "Cleanliness Drive",
       description:
