@@ -128,7 +128,7 @@ function Audio() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-1">
         {filteredTracks.map((track, index) => {
           const isFullscreen = fullscreenIndex === index;
 
@@ -136,9 +136,9 @@ function Audio() {
             <div
               key={index}
               id={`card-${index}`}
-              className={`relative bg-white shadow-md rounded-lg p-4 flex items-center transition-all duration-300 ${isFullscreen
+              className={`relative bg-white hover:bg-mist shadow-md rounded-lg px-4 flex items-center transition-all duration-300 ${isFullscreen
                 ? 'flex-col fixed inset-0 bg-black z-50 justify-center items-center'
-                : 'flex-row gap-4'
+                : 'flex-row gap-x-4'
                 }`}
             >
               {isFullscreen && (
@@ -153,17 +153,17 @@ function Audio() {
               <img
                 src={`http://localhost:5000/images/${track.image}`}
                 alt={track.title}
-                className={`object-cover rounded mb-4 ${isFullscreen ? 'lg:max-w-md max-w-lg w-full' : 'w-16'}`}
+                className={`object-cover rounded my-2 ${isFullscreen ? 'lg:max-w-md max-w-lg w-full' : 'w-8'}`}
               />
 
-              <div className='flex flex-col items-center w-full'>
+              <div className='flex flex-row items-center w-full'>
                 <h2
-                  className={`font-semibold text-gray-800 text-center ${isFullscreen ? 'text-2xl mb-4' : 'text-xl mb-2'}`}
+                  className={`font-semibold w-full text-gray-800 text-center ${isFullscreen ? 'text-2xl mb-4' : 'text-xl mb-2'}`}
                 >
                   {track.title}
                 </h2>
 
-                <div className={`w-full ${isFullscreen ? 'fixed bottom-0 left-0 right-0 p-4 shadow-inner z-50' : ''}`}>
+                <div className={`w-2/3 ${isFullscreen ? 'fixed bottom-0 left-0 right-0 p-4 shadow-inner z-50' : ''}`}>
                   <div className={isFullscreen ? 'max-w-2xl mx-auto' : 'w-full'}>
                     <audio
                       ref={(el) => (audioRefs.current[index] = el)}
