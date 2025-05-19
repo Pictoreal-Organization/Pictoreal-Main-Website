@@ -71,7 +71,7 @@ export default function blog5() {
                 time, maybe more than a year. It struck me that I had been so occupied
                 with my academic schedule that I had forgotten about my hobbies.
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8">
+              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Embracing the New Me, Nurturing the Old Self :</strong>
               </h2>
               <p className="mb-5">
@@ -108,7 +108,7 @@ export default function blog5() {
                 started to be happier, had a fresh start every day, and became more
                 productive.</strong>
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8">
+              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Evolving Through Exploration :</strong>
               </h2>
               <p className="mb-5">
