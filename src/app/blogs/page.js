@@ -35,6 +35,12 @@ const Blogs = () => {
       authors: "Ayan Pathan",
       imgSrc: "/blog/blog-dakhni-poster.png",
     },
+    {
+      id: "blog5",
+      title: "Dreams and deadline",
+      authors: "Harshit Vora, Omkar desai",
+      imgSrc: "/blog/blog5-poster-img.png",
+    },
   ];
 
   return (
