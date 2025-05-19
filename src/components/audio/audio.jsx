@@ -111,7 +111,7 @@ function Audio() {
   const availableVolumes = [...new Set(tracks.map(t => t.volume))].sort((a, b) => b - a);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-mist-texture p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">🎵 Audio Gallery</h1>
 
       {/* Volume filter buttons */}

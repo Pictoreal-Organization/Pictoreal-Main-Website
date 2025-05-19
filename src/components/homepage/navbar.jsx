@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <>
     
-      <header className="border-b border-[#d2b49a]-300 py-2 bg-mist sticky top-0 z-50">
+      <header className="border-b border-[#d2b49a]-300 py-2 bg-white sticky top-0 z-50">
         <div className="flex justify-between items-center xl:max-w-7xl xl:mx-auto max-w-full px-[8%] flex-wrap">
           <Link href="/">
             <Image
@@ -64,26 +64,26 @@ const Navbar = () => {
             } lg:flex lg:items-center lg:w-auto w-full transition-all duration-300 ease-in-out`}
           >
             <ul className="text-base text-firefly lg:flex lg:justify-between">
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/" onClick={handleLinkClick}>Home</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/#events" onClick={handleLinkClick}>Events</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/gallery" onClick={handleLinkClick}>Gallery</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/blogs" onClick={handleLinkClick}>Blogs</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/audio" onClick={handleLinkClick}>Articles</Link>
               </li>
-              <li className="lg:px-5 py-2 hover:text-[#7679E] font-semibold">
+              <li className="lg:px-5 py-2 hover:text-[#76879E] font-semibold">
                 <Link href="/ourteam" onClick={handleLinkClick}>Our Team</Link>
               </li>
               <li
-                className="relative lg:px-5 py-2 hover:text-[#7679E] font-semibold"
+                className="relative lg:px-5 py-2 hover:text-[#76879E] font-semibold"
                 onMouseEnter={() => window.innerWidth >= 1024 && setDropdownOpen(true)}
                 onMouseLeave={() => window.innerWidth >= 1024 && setDropdownOpen(false)}
               >
@@ -102,16 +102,16 @@ const Navbar = () => {
                     ref={dropdownRef}
                     className="absolute left-0 mt-2 w-48 text-firefly ring-1 ring-[#3A0622] bg-white rounded-lg shadow-lg z-10 transition-transform duration-300 ease-in-out"
                   >
-                    <li className="py-2 px-4 text-firefly">
+                    <li className="py-2 px-4 hover:text-[#76879E] text-firefly">
                       <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
                     </li>
-                    <li className="py-2 px-4 text-firefly">
+                    <li className="py-2 px-4 hover:text-[#76879E] text-firefly">
                       <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 26</Link>
                     </li>
-                    <li className="py-2 px-4 text-firefly">
+                    <li className="py-2 px-4 hover:text-[#76879E] text-firefly">
                       <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 25</Link>
                     </li>
-                    <li className="py-2 px-4 text-firefly">
+                    <li className="py-2 px-4 hover:text-[#76879E] text-firefly">
                       <Link href="/magazines" onClick={handleLinkClick}>More...</Link>
                     </li>
                   </ul>
