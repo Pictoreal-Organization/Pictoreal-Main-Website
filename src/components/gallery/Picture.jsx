@@ -1,6 +1,7 @@
 "use client"; // Ensure this directive is at the top of client components
 
 import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation"; 
 
 // Expanded Image View Component
 const ExpandedImage = ({ image, onClose }) => (
@@ -154,6 +155,19 @@ const Picture = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [carouselImages, setCarouselImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const searchParams = useSearchParams();
+  const eventId = searchParams.get("eventId");
+
+  useEffect(() => {
+  if (eventId) {
+    const element = document.getElementById(eventId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}, [eventId]);
+
 
   // Sample image sets for each carousel
   const imageSets = [
@@ -355,6 +369,7 @@ const Picture = () => {
       {imageSets.map((set, i) => (
         <div
           key={i}
+          id={set.title.toLowerCase().replace(/\s+/g, "-")}
           className="max-w-4xl mx-auto ring-2 ring-firefly bg-[#FFFFFF] p-6 rounded-lg"
         >
           {/* Heading */}
