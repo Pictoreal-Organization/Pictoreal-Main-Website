@@ -4,7 +4,7 @@ export default function Blog2() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-firefly lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-lynch mx-auto">
+        <div className="relative bg-submarine lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-firefly mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
@@ -12,7 +12,7 @@ export default function Blog2() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-medium pt-10 text-[50px] text-bali text-left mt-5 md:mt-0">
+          <div className="font-raleway font-medium pt-10 text-[50px] text-firefly text-left mt-5 md:mt-0">
   Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and Universal Forces
 </div>
 
@@ -28,13 +28,13 @@ export default function Blog2() {
                 className="w-full border-5 border-[#3A0622]"
               />
             </div>
-            <div className="font-poppins text-[20px] text-lynch pt-8">
-              <span className="text-submarine text-center justify-center">Author: </span>
+            <div className="font-poppins text-[20px] text-firefly pt-8">
+              <span className="text-firefly text-center justify-center">Author: </span>
               Shrihari Kulkarni
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-bali p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
               <p className="mb-4">
                 Once upon a time, in a universe far, far smaller than we can
@@ -235,7 +235,7 @@ export default function Blog2() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

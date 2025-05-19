@@ -4,7 +4,7 @@ export default function Blog3() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-firefly w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-lynch mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-firefly mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
@@ -12,7 +12,7 @@ export default function Blog3() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-medium pt-10 text-5xl text-bali text-center">
+          <div className="font-raleway font-medium pt-10 text-5xl text-firefly text-center">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex items-center justify-center">
@@ -28,16 +28,16 @@ export default function Blog3() {
               />
             </div>
 
-            <div className="font-poppins text-[20px] text-bali pl-8 pt-8">
-              <span className="text-bali">Author: </span>Nehal Shivane, Sampada
+            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8">
+              <span className="text-firefly">Author: </span>Nehal Shivane, Sampada
               Tagalpallewar, Shruti Mone
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-bali p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="p-2 lg:p-5">
               <p>
-                ‘500- That's an error. The server encountered an error and could
+                '500- That's an error. The server encountered an error and could
                 not complete your request' Oh not again! Don't we too, as
                 humans, encounter such unexpected conditions that prevent us
                 from fulfilling our desires? Indeed, we are referring to the
@@ -258,7 +258,7 @@ export default function Blog3() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

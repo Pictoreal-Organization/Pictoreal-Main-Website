@@ -37,7 +37,7 @@ const Blogs = () => {
     },
     {
       id: "blog5",
-      title: "Dreams and deadline",
+      title: "Dreams and Deadline",
       authors: "Harshit Vora, Omkar desai",
       imgSrc: "/blog/blog5-poster-img.png",
     },
@@ -61,7 +61,7 @@ const Blogs = () => {
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-firefly p-4 border-4 border-lynch shadow-lg rounded-lg flex flex-col justify-between"
+              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-submarine p-4 border-4 border-lynch shadow-lg rounded-lg flex flex-col justify-between"
             >
               <div className="flex justify-center w-full h-[160px] lg:h-[180px]">
                 <img
@@ -71,16 +71,16 @@ const Blogs = () => {
                 />
               </div>
               <div className="flex flex-col items-center mt-2">
-                <h2 className="text-lg lg:text-xl font-bold text-submarine text-center">
+                <h2 className="text-lg lg:text-xl font-bold text-firefly text-center">
                   {post.title}
                 </h2>
-                <h4 className="text-sm lg:text-base font-semibold text-lynch text-center">
+                <h4 className="text-sm lg:text-base font-semibold text-firefly text-center">
                   Author: <span>{post.authors}</span>
                 </h4>
               </div>
               <div className="flex justify-center mt-4">
                 <Link href={`/blogs/${post.id}`}>
-                  <button className="bg-lynch hover:bg-[#394553] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-black shadow-md">
+                  <button className="bg-firefly hover:bg-[#394553] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-black shadow-md">
                     Read
                   </button>
                 </Link>

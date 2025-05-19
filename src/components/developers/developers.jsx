@@ -91,6 +91,14 @@ const TeamPage = () => {
       github: "https://github.com/ayan0211",
       linkedin: "https://www.linkedin.com/in/ayan-pathan-67705a285/",
     },
+    {
+      id: 13,
+      name: "Rohit Jadhav",
+      image: "/developers/Rohit_Jadhav.jpg",
+      github: "https://github.com/rohit510511",
+      linkedin: "https://www.linkedin.com/in/rohit-jadhav-696955306/",
+    },
+    
   ];
 
   const handleProfileClick = (url, memberId) => {

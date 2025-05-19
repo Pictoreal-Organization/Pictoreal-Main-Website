@@ -4,8 +4,8 @@ export default function Blog1() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-firefly w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-lynch mx-auto">
-          <div className="font-raleway font-medium pt-2 text-5xl text-bali text-center mt-14 mb-5">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-firefly mx-auto">
+          <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Uncanny Valley
           </div>
           <div className="flex items-center justify-center">
@@ -21,15 +21,15 @@ export default function Blog1() {
               <img
                 src="/blog/blog1-poster-img.jpg"
                 alt="Blog Poster"
-                className="w-auto md:w-2/3 h-auto border-[5px] border-lynch"
+                className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-poppins text-[20px] text-lynch pl-8 pt-8 text-center">
-              <span className="text-bali">Author: </span>Prem Rahinj, Spondon Nath
+            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8 text-center">
+              <span className="text-firefly">Author: </span>Prem Rahinj, Spondon Nath
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-bali p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
               <p>
                 When we picture an ideal being, what do we think of? One can say
@@ -46,16 +46,16 @@ export default function Blog1() {
                 <i>Sofia, a Human-Like social robot</i> that could interact with
                 people in real-time using AI and Computer vision. On airing, the
                 interview went popular amongst viewers due to a small segment
-                where the ‘robot’ played and won a game of Rock-Paper-Scissors
+                where the 'robot' played and won a game of Rock-Paper-Scissors
                 with the host. It was sensational to see an inanimate object
                 interact, understand, play, and beat a human at its own game.
                 But what sent chills down my spine was when she casually said –{" "}
                 <i>
-                  “I won, this is a good beginning of my plan to dominate the
-                  human race.”
+                  "I won, this is a good beginning of my plan to dominate the
+                  human race."
                 </i>
               </p>
-              <div className="blog-content-image border-[5px] border-lynch md:w-5/10 md:mx-40">
+              <div className="blog-content-image border-[5px] border-firefly md:w-5/10 md:mx-40">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-image-1.png"
@@ -74,7 +74,7 @@ export default function Blog1() {
                 imperfections, evoking a strong sense of discomfort, eeriness,
                 or unease in human observers.
               </p>
-              <div className="blog-content-image border-[5px] border-lynch md:w-5/10 md:mx-80">
+              <div className="blog-content-image border-[5px] border-firefly md:w-5/10 md:mx-80">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-2.webp"
@@ -91,7 +91,7 @@ export default function Blog1() {
                 <i>"WHAT IFs"</i> get. But how does AI manage to blur the lines
                 so seamlessly?
               </p>
-              <div className="blog-content-image border-[5px] border-lynch w-auto md:w-7/10 md:mx-52">
+              <div className="blog-content-image border-[5px] border-firefly w-auto md:w-7/10 md:mx-52">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-3.png"
@@ -144,7 +144,7 @@ export default function Blog1() {
                 independently generate art for yourselves with AI. This is the
                 uncanny valley.
               </p>
-              <div className="blog-content-image border-[5px] border-lynch w-auto md:w-8/10 md:mx-72">
+              <div className="blog-content-image border-[5px] border-firefly w-auto md:w-8/10 md:mx-72">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-4.jpg"
@@ -173,7 +173,7 @@ export default function Blog1() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>
