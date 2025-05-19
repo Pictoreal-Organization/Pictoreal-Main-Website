@@ -30,7 +30,7 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       className={`fixed right-4 bottom-4 z-50 bg-firefly rounded transition-all duration-400 
       ${isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'} 
-      hover:bg-[#7f1049] scale-100 hover:scale-110 cursor-pointer w-10 h-10 flex items-center justify-center`}
+      hover:bg-twilight scale-100 hover:scale-110 cursor-pointer w-10 h-10 flex items-center justify-center`}
       style={{ transition: 'opacity 0.4s' }}
     >
       {/* <i className="bi bi-arrow-up-short text-white text-2xl"></i> */}
