@@ -154,7 +154,7 @@ const Events = () => {
       id: "career-guidance",
     },
     { title: "MANTHAN", image: "/events/e2.png", id: "manthan" },
-    { title: "PICTOFEST", image: "/events/e3.png", id: "pictfest" },
+    { title: "PICTOFEST", image: "/events/e3.png", id: "pictofest" },
     { title: "Blood Donation", image: "/events/e4.png", id: "blood-donation" },
     { title: "BE Photoshoot", image: "/events/e6.png", id: "be-photoshoot" },
     { title: "Parichay", image: "/events/e10.png", id: "parichay" },
