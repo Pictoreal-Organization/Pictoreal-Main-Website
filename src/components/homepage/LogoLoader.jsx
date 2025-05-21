@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LogoLoader = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen bg-mist-texture">
       <div className="relative">
         <Image
           src="/V27_FINAL_LOGO.png"
