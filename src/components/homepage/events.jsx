@@ -165,7 +165,7 @@ const Events = () => {
     },
     { title: "Interviews", image: "/events/e9.png", id: "interviews" },
     { title: "amche bappa", image: "/events/e11.png", id: "amche-bappa" },
-    { title: "NGO visit", image: "/events/e15.png", id: "ngo-visit" },
+    { title: "NGO visit", image: "/events/e15.png", id: "pictosocial-visit"},
     {
       title: "Cleanliness drive",
       image: "/events/e13.png",
