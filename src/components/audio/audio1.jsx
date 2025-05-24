@@ -128,19 +128,19 @@ function Audio() {
       <div className="flex justify-center mb-6 flex-wrap gap-2">
         <button
           onClick={() => handleLanguageRedirect('english')}
-          className="px-4 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded bg-white text-gray-800 border hover:bg-firefly hover:text-mist"
         >
           English
         </button>
         <button
           onClick={() => handleLanguageRedirect('hindi')}
-          className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded bg-white text-gray-800 border hover:bg-firefly hover:text-mist"
         >
           Hindi
         </button>
         <button
           onClick={() => handleLanguageRedirect('marathi')}
-          className="px-4 py-2 rounded bg-green-500 hover:bg-green-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded bg-white text-gray-800 border hover:bg-firefly hover:text-mist"
         >
           Marathi
         </button>
