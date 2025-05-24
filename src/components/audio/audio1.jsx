@@ -108,24 +108,42 @@ function Audio() {
     }
   };
 
+  const handleLanguageRedirect = (language) => {
+    const languageUrls = {
+      english: 'http://localhost:3000/audio/V27/eng',
+      hindi: 'http://localhost:3000/audio/V27/hin',
+      marathi: 'http://localhost:3000/audio/V27/mar'
+    };
+    
+    window.location.href = languageUrls[language];
+  };
+
   const availableVolumes = [...new Set(tracks.map(t => t.volume))].sort((a, b) => b - a);
 
   return (
     <div className="min-h-screen bg-mist-texture p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">🎵 Audio Gallery</h1>
 
-      {/* Volume filter buttons */}
+      {/* Language navigation buttons */}
       <div className="flex justify-center mb-6 flex-wrap gap-2">
-        {availableVolumes.map((vol) => (
-          <button
-            key={vol}
-            onClick={() => setVolumeFilter(vol)}
-            className={`px-4 py-2 rounded ${vol === volumeFilter ? 'bg-firefly text-mist' : 'bg-white text-gray-800 border'
-              }`}
-          >
-            Volume {vol}
-          </button>
-        ))}
+        <button
+          onClick={() => handleLanguageRedirect('english')}
+          className="px-4 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-200"
+        >
+          English
+        </button>
+        <button
+          onClick={() => handleLanguageRedirect('hindi')}
+          className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-200"
+        >
+          Hindi
+        </button>
+        <button
+          onClick={() => handleLanguageRedirect('marathi')}
+          className="px-4 py-2 rounded bg-green-500 hover:bg-green-600 text-white transition-colors duration-200"
+        >
+          Marathi
+        </button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-1">
