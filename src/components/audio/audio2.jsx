@@ -110,9 +110,9 @@ function Audio() {
 
   const handleLanguageRedirect = (language) => {
     const languageUrls = {
-      english: 'https://www.pictoreal.in/audio/V27/eng',
-      hindi: 'https://www.pictoreal.in/audio/V27/hin',
-      marathi: 'https://www.pictoreal.in/audio/V27/mar'
+      english: '/audio/V27/eng',
+      hindi: '/audio/V27/hin',
+      marathi: '/audio/V27/mar'
     };
     
     window.location.href = languageUrls[language];
