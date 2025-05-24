@@ -10,7 +10,7 @@ function Audio() {
   const fullscreenCardRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/tracks')
+    fetch('http://localhost:5000/tracks/27/mar')
       .then((res) => res.json())
       .then((data) => {
         setTracks(data);
