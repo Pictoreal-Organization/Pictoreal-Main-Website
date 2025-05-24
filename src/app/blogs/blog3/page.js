@@ -4,7 +4,7 @@ export default function Blog3() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-firefly mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
@@ -24,7 +24,7 @@ export default function Blog3() {
               <img
                 src="/blog/blog3-poster-img.png"
                 alt="Blog Poster"
-                className="w-full md:w-1/2 border-[5px] border-[#3A0622]"
+                className="w-full md:w-1/2 border-[5px] border-[#1a365d]"
               />
             </div>
 
@@ -66,7 +66,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-1.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 1"
                   width={600}
                   height={400}
@@ -139,7 +139,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-2.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 2"
                   width={600}
                   height={400}
@@ -190,7 +190,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-3.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 3"
                   width={600}
                   height={400}
@@ -235,7 +235,7 @@ export default function Blog3() {
                   existence as the most erroneous being on this planet!
                 </p>
 
-                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#3A0622] md:w-5/12">
+                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#1a365d] md:w-5/12">
                   <Image
                     src="/blog/blog3-content-4.jpg"
                     alt="Blog Image 4"
@@ -258,7 +258,7 @@ export default function Blog3() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

@@ -5,7 +5,7 @@ export default function BlogDakhni() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-firefly mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-raleway px-2 font-bold pt-10 text-2xl md:text-5xl text-firefly text-center">
             अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया
           </div>
@@ -18,7 +18,7 @@ export default function BlogDakhni() {
               <img
                 src="/blog/blog-dakhni-poster.png"
                 alt="Blog Poster"
-                className="w-full md:w-1/2 border-[5px] border-firefly"
+                className="w-full md:w-1/2 border-[5px] border-[#1a365d]"
               />
             </div>
 
@@ -272,7 +272,7 @@ export default function BlogDakhni() {
                 <img src="/blog/3.svg" alt="Content Image" className="w-7/10" />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

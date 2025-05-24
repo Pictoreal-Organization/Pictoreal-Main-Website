@@ -4,7 +4,7 @@ export default function Blog1() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-firefly mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Uncanny Valley
           </div>
@@ -55,7 +55,7 @@ export default function Blog1() {
                   human race."
                 </i>
               </p>
-              <div className="blog-content-image border-[5px] border-firefly md:w-5/10 md:mx-40">
+              <div className="blog-content-image border-[5px] border-[#1a365d] md:w-5/10 md:mx-40">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-image-1.png"
@@ -74,7 +74,7 @@ export default function Blog1() {
                 imperfections, evoking a strong sense of discomfort, eeriness,
                 or unease in human observers.
               </p>
-              <div className="blog-content-image border-[5px] border-firefly md:w-5/10 md:mx-80">
+              <div className="blog-content-image border-[5px] border-[#1a365d] md:w-5/10 md:mx-80">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-2.webp"
@@ -91,7 +91,7 @@ export default function Blog1() {
                 <i>"WHAT IFs"</i> get. But how does AI manage to blur the lines
                 so seamlessly?
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-auto md:w-7/10 md:mx-52">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-auto md:w-7/10 md:mx-52">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-3.png"
@@ -144,7 +144,7 @@ export default function Blog1() {
                 independently generate art for yourselves with AI. This is the
                 uncanny valley.
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-auto md:w-8/10 md:mx-72">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-auto md:w-8/10 md:mx-72">
                 <img
                   className="w-auto h-auto max-w-full"
                   src="../blog/blog1-content-img-4.jpg"
@@ -173,7 +173,7 @@ export default function Blog1() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

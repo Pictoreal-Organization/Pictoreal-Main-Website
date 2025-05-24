@@ -17,11 +17,11 @@ const BlogPage = () => {
 
   return (
     <div className="flex flex-col p-10">
-      <div className="relative bg-submarine w-4/5 max-w-[1200px] p-5 border-[10px] border-firefly mx-auto">
+      <div className="relative bg-submarine w-4/5 max-w-[1200px] p-5 border-[10px] border-[#1a365d] mx-auto">
         
         <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
           <Link href="/blogs">
-            <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
+            <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
               Back
             </div>
           </Link>
@@ -42,7 +42,7 @@ const BlogPage = () => {
               alt="Blog Poster"
               width={800}
               height={500}
-              className="w-full border-5 border-firefly"
+              className="w-full border-5 border-[#1a365d]"
             />
           </div>
           <div className="font-poppins text-[20px] text-firefly pl-8 pt-8">
@@ -67,7 +67,7 @@ const BlogPage = () => {
               alt="Content Image"
               width={600}
               height={400}
-              className="w-7/10 border-5 border-firefly"
+              className="w-7/10 border-5 border-[#1a365d]"
             />
           </div>
 
