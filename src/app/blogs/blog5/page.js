@@ -4,7 +4,7 @@ export default function blog5() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-firefly mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Dreams and Deadlines
           </div>
@@ -21,7 +21,7 @@ export default function blog5() {
               <img
                 src="/blog/blog5-poster-img.png"
                 alt="Blog Poster"
-                className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
+                className="w-auto md:w-2/3 h-auto border-[5px] border-[#1a365d]"
               />
             </div>
             <div className="font-poppins text-[20px] text-firefly pl-8 pt-8 text-center">
@@ -54,7 +54,7 @@ export default function blog5() {
               <p className="mb-5">
                 Here's how it all unfolded:
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/2 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/2 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-1.png"
@@ -87,7 +87,7 @@ export default function blog5() {
                 rendition of a popular song every alternate Saturday, while learning
                 from each other (guess what, we still have a jam once in a while).
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/3 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/3 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-2.png"
@@ -151,7 +151,7 @@ export default function blog5() {
                 <strong> They weren't doing it all at once, they were doing small things
                 consistently.</strong>
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/2 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/2 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-3.png"
@@ -173,7 +173,7 @@ export default function blog5() {
                 and promised to return to them when things eased up. It wasn't about
                 perfection, it was about <strong>showing up when I could.</strong>
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/3 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/3 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-4.png"
@@ -198,7 +198,7 @@ export default function blog5() {
                 about enjoying the process. I had built a system that worked for me---a
                 mix of dedication and spontaneity that made life exciting.
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/3 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/3 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-5.png"
@@ -224,7 +224,7 @@ export default function blog5() {
                 carrying the ability to stay true to what I love. Because, in the end,
                 <strong> it's not about the time you have, but how you choose to use it.</strong>
               </p>
-              <div className="blog-content-image border-[5px] border-firefly w-full md:w-1/3 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/3 mx-auto mb-5">
                 <img
                   className="w-full h-auto"
                   src="../blog/blog5-content-6.png"
@@ -241,7 +241,7 @@ export default function blog5() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-firefly bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

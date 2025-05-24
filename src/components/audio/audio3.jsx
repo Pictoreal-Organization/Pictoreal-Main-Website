@@ -10,7 +10,7 @@ function Audio() {
   const fullscreenCardRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/tracks/27/hin')
+    fetch(`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/tracks/27/hin`)
       .then((res) => res.json())
       .then((data) => {
         setTracks(data);
@@ -110,9 +110,9 @@ function Audio() {
 
   const handleLanguageRedirect = (language) => {
     const languageUrls = {
-      english: 'http://localhost:3000/audio/V27/eng',
-      hindi: 'http://localhost:3000/audio/V27/hin',
-      marathi: 'http://localhost:3000/audio/V27/mar'
+      english: '/audio/V27/eng',
+      hindi: '/audio/V27/hin',
+      marathi: '/audio/V27/mar'
     };
     
     window.location.href = languageUrls[language];
@@ -128,19 +128,19 @@ function Audio() {
       <div className="flex justify-center mb-6 flex-wrap gap-2">
         <button
           onClick={() => handleLanguageRedirect('english')}
-          className="px-4 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded bg-white text-gray-800 border hover:bg-firefly hover:text-mist transition-colors duration-200"
         >
           English
         </button>
         <button
           onClick={() => handleLanguageRedirect('hindi')}
-          className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded border bg-firefly text-mist"
         >
           Hindi
         </button>
         <button
           onClick={() => handleLanguageRedirect('marathi')}
-          className="px-4 py-2 rounded bg-green-500 hover:bg-green-600 text-white transition-colors duration-200"
+          className="px-4 py-2 rounded bg-white text-gray-800 border hover:bg-firefly hover:text-mist transition-colors duration-200"
         >
           Marathi
         </button>
@@ -169,7 +169,7 @@ function Audio() {
               )}
 
               <img
-                src={`http://localhost:5000/images/${track.image}`}
+                src={`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/images/${track.image}`}
                 alt={track.title}
                 className={`object-cover rounded my-2 ${isFullscreen ? 'lg:max-w-md max-w-lg w-full' : 'w-8'}`}
               />
@@ -181,7 +181,7 @@ function Audio() {
                   {track.title}
                 </h2>
 
-                <div className={`w-2/3 ${isFullscreen ? 'fixed bottom-0 left-0 right-0 p-4 shadow-inner z-50' : ''}`}>
+                <div className={` ${isFullscreen ? 'fixed bottom-0 left-0 right-0 p-4 shadow-inner z-50 w-full' : 'w-2/3'}`}>
                   <div className={isFullscreen ? 'max-w-2xl mx-auto' : 'w-full'}>
                     <audio
                       ref={(el) => (audioRefs.current[index] = el)}
@@ -192,7 +192,7 @@ function Audio() {
                       key={`audio-${index}`}
                     >
                       <source
-                        src={`http://localhost:5000/audio/27/hin/${track.file}`}
+                        src={`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/audio/27/hin/${track.file}`}
                         type="audio/mpeg"
                       />
                       Your browser does not support the audio element.
