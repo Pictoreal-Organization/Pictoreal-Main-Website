@@ -10,7 +10,7 @@ function Audio() {
   const fullscreenCardRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/tracks/27/hin')
+    fetch(`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/tracks/27/hin`)
       .then((res) => res.json())
       .then((data) => {
         setTracks(data);
@@ -110,9 +110,9 @@ function Audio() {
 
   const handleLanguageRedirect = (language) => {
     const languageUrls = {
-      english: 'http://localhost:3000/audio/V27/eng',
-      hindi: 'http://localhost:3000/audio/V27/hin',
-      marathi: 'http://localhost:3000/audio/V27/mar'
+      english: 'https://www.pictoreal.in/audio/V27/eng',
+      hindi: 'https://www.pictoreal.in/audio/V27/hin',
+      marathi: 'https://www.pictoreal.in/audio/V27/mar'
     };
     
     window.location.href = languageUrls[language];
@@ -169,7 +169,7 @@ function Audio() {
               )}
 
               <img
-                src={`http://localhost:5000/images/${track.image}`}
+                src={`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/images/${track.image}`}
                 alt={track.title}
                 className={`object-cover rounded my-2 ${isFullscreen ? 'lg:max-w-md max-w-lg w-full' : 'w-8'}`}
               />
@@ -192,7 +192,7 @@ function Audio() {
                       key={`audio-${index}`}
                     >
                       <source
-                        src={`http://localhost:5000/audio/27/hin/${track.file}`}
+                        src={`${process.env.NEXT_PUBLIC_AUDIO_API_URL}/audio/27/hin/${track.file}`}
                         type="audio/mpeg"
                       />
                       Your browser does not support the audio element.
