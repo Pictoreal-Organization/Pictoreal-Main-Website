@@ -1,34 +1,24 @@
-"use client";
 import React, { useEffect, useState, useRef } from 'react';
 
 function Audio() {
   const [tracks, setTracks] = useState([]);
   const [filteredTracks, setFilteredTracks] = useState([]);
-  const [languageFilter, setLanguageFilter] = useState('eng');
+  const [volumeFilter, setVolumeFilter] = useState(null);
   const [fullscreenIndex, setFullscreenIndex] = useState(null);
   const audioRefs = useRef([]);
   const [isPlaying, setIsPlaying] = useState({});
   const fullscreenCardRef = useRef(null);
 
   useEffect(() => {
-    if (!languageFilter) return;
-
-    // Clear audio refs and pause all audio when language changes
-    audioRefs.current.forEach((audio) => {
-      if (audio) {
-        audio.pause();
-      }
-    });
-    audioRefs.current = []; // Clear refs to force re-render
-    setIsPlaying({}); // Reset playing state
-
-    console.log("Fetching tracks for language:", languageFilter);
-    fetch(`http://localhost:5000/tracks/27/${languageFilter}`)
+    fetch('http://localhost:5000/tracks')
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched Tracks:", data);
         setTracks(data);
-        setFilteredTracks(data);
+
+        const volumes = [...new Set(data.map(t => t.volume))].sort((a, b) => b - a);
+        const latest = volumes[0];
+        setVolumeFilter(latest);
+        setFilteredTracks(data.filter(track => track.volume === latest));
       })
       .catch((err) => console.error('Error fetching tracks:', err));
 
@@ -42,10 +32,13 @@ function Audio() {
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
-  }, [languageFilter, fullscreenIndex]);
+  }, [fullscreenIndex]);
+
+  useEffect(() => {
+    setFilteredTracks(tracks.filter(track => track.volume === volumeFilter));
+  }, [volumeFilter, tracks]);
 
   const handlePlay = (index) => {
-    console.log(`Attempting to play audio at index ${index}`);
     setIsPlaying(prev => ({ ...prev, [index]: true }));
 
     audioRefs.current.forEach((audio, i) => {
@@ -54,19 +47,6 @@ function Audio() {
         setIsPlaying(prev => ({ ...prev, [i]: false }));
       }
     });
-
-    const audio = audioRefs.current[index];
-    if (audio) {
-      audio.load(); // Force reload of the audio source
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log(`Playback failed for index ${index}:`, error);
-        });
-      }
-    } else {
-      console.log(`Audio element at index ${index} is not available`);
-    }
 
     if (fullscreenIndex !== index) {
       enterFullscreen(index);
@@ -81,8 +61,8 @@ function Audio() {
     fullscreenCardRef.current = document.getElementById(`card-${index}`);
     if (fullscreenCardRef.current) {
       const request = fullscreenCardRef.current.requestFullscreen ||
-        fullscreenCardRef.current.webkitRequestFullscreen ||
-        fullscreenCardRef.current.msRequestFullscreen;
+                      fullscreenCardRef.current.webkitRequestFullscreen ||
+                      fullscreenCardRef.current.msRequestFullscreen;
 
       if (request) {
         request.call(fullscreenCardRef.current)
@@ -101,8 +81,8 @@ function Audio() {
     const currentIndex = fullscreenIndex;
 
     const exit = document.exitFullscreen ||
-      document.webkitExitFullscreen ||
-      document.msExitFullscreen;
+                 document.webkitExitFullscreen ||
+                 document.msExitFullscreen;
 
     if (exit) {
       exit.call(document).catch(err => {
@@ -128,20 +108,22 @@ function Audio() {
     }
   };
 
-  console.log("Filtered Tracks:", filteredTracks);
+  const availableVolumes = [...new Set(tracks.map(t => t.volume))].sort((a, b) => b - a);
 
   return (
     <div className="min-h-screen bg-mist-texture p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">🎵 Audio Gallery</h1>
 
+      {/* Volume filter buttons */}
       <div className="flex justify-center mb-6 flex-wrap gap-2">
-        {['eng', 'mar', 'hin'].map((lang) => (
+        {availableVolumes.map((vol) => (
           <button
-            key={lang}
-            onClick={() => setLanguageFilter(lang)}
-            className={`px-4 py-2 rounded ${lang === languageFilter ? 'bg-firefly text-mist' : 'bg-white text-gray-800 border'}`}
+            key={vol}
+            onClick={() => setVolumeFilter(vol)}
+            className={`px-4 py-2 rounded ${vol === volumeFilter ? 'bg-firefly text-mist' : 'bg-white text-gray-800 border'
+              }`}
           >
-            {lang.toUpperCase()}
+            Volume {vol}
           </button>
         ))}
       </div>
@@ -149,9 +131,6 @@ function Audio() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-1">
         {filteredTracks.map((track, index) => {
           const isFullscreen = fullscreenIndex === index;
-          // Add a query parameter to prevent caching
-          const audioSrc = `http://localhost:5000/audio/${track.volume}/${languageFilter}/${track.file}?lang=${languageFilter}`;
-          console.log(`Audio source for index ${index}:`, audioSrc);
 
           return (
             <div
@@ -187,22 +166,15 @@ function Audio() {
                 <div className={`w-2/3 ${isFullscreen ? 'fixed bottom-0 left-0 right-0 p-4 shadow-inner z-50' : ''}`}>
                   <div className={isFullscreen ? 'max-w-2xl mx-auto' : 'w-full'}>
                     <audio
-                      ref={(el) => {
-                        audioRefs.current[index] = el;
-                        console.log(`Audio ref for index ${index}:`, el);
-                        // Reload the source immediately after mounting
-                        if (el) {
-                          el.load();
-                        }
-                      }}
+                      ref={(el) => (audioRefs.current[index] = el)}
                       controls
                       className={`w-full ${isFullscreen ? '' : 'h-10'}`}
                       onPlay={() => handlePlay(index)}
                       onPause={() => handlePause(index)}
-                      key={`${languageFilter}-${index}`} // Ensure audio element re-renders on language change
+                      key={`audio-${index}`}
                     >
                       <source
-                        src={audioSrc}
+                        src={`http://localhost:5000/audio/${track.file}`}
                         type="audio/mpeg"
                       />
                       Your browser does not support the audio element.
