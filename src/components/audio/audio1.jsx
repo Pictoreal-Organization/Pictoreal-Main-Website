@@ -186,6 +186,7 @@ function Audio() {
                     <audio
                       ref={(el) => (audioRefs.current[index] = el)}
                       controls
+                      controlsList="nodownload"
                       className={`w-full ${isFullscreen ? '' : 'h-10'}`}
                       onPlay={() => handlePlay(index)}
                       onPause={() => handlePause(index)}
