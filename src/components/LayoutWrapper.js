@@ -16,7 +16,9 @@ export default function LayoutWrapper({ children }) {
     pathname.startsWith("/bdd/admin") ||
     pathname === "/bdd" ||
     pathname.startsWith("/bdd/login") ||
-    pathname.startsWith("/bdd/certificate");
+    pathname.startsWith("/bdd/certificate")||
+    pathname.startsWith("/know-your-prahar");
+    
 
   useEffect(() => {
     const handleLoad = () => {
