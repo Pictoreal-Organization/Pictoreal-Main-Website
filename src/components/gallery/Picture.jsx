@@ -103,7 +103,7 @@ const Carousel = ({ images, onImageClick }) => {
                 ref={index === 0 ? imageRef : null}
                 src={image}
                 alt={`Slide ${index}`}
-                className="max-h-full object-contain border-2 border-[#d0b311] cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+                className="max-h-full object-contain border-2 border-firefly cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
                 onClick={() => onImageClick(images)}
               />
             </div>
@@ -115,13 +115,13 @@ const Carousel = ({ images, onImageClick }) => {
 <div className="none">
   <button
     onClick={prevSlide}
-    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
   >
     &#10094;
   </button>
   <button
     onClick={nextSlide}
-    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
   >
     &#10095;
   </button>
@@ -141,7 +141,7 @@ const Carousel = ({ images, onImageClick }) => {
                 resetTimer(); // Restart the timer when clicking an indicator
               }}
               className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                currentIndex === index ? "bg-[#d0b311]" : "bg-firefly"
+                currentIndex === index ? "bg-mist" : "bg-firefly"
               }`}
             />
           ))}

@@ -90,7 +90,7 @@ const Navbar = () => {
                 className="flex items-center cursor-pointer"
                 onClick={() => window.innerWidth < 1024 && toggleDropdown()} // Toggle on click for mobile
               >
-                Magazines
+              <Link href="/magazines" onClick={handleLinkClick}>Magazines</Link>
                 <span className="ml-1">
                   <IoMdArrowDropdown />
                 </span>
