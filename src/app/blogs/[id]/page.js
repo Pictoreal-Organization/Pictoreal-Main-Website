@@ -17,17 +17,17 @@ const BlogPage = () => {
 
   return (
     <div className="flex flex-col p-10">
-      <div className="relative bg-[#D2B49A] w-4/5 max-w-[1200px] p-5 border-[10px] border-[#3A0622] mx-auto">
+      <div className="relative bg-submarine w-4/5 max-w-[1200px] p-5 border-[10px] border-[#1a365d] mx-auto">
         
         <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
           <Link href="/blogs">
-            <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
+            <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
               Back
             </div>
           </Link>
         </div>
 
-        <h1 className="font-raleway font-medium pt-10 text-5xl text-[#561A34] text-center">
+        <h1 className="font-raleway font-medium pt-10 text-5xl text-firefly text-center">
           {blogPost.title}
         </h1>
 
@@ -42,15 +42,15 @@ const BlogPage = () => {
               alt="Blog Poster"
               width={800}
               height={500}
-              className="w-full border-5 border-[#3A0622]"
+              className="w-full border-5 border-[#1a365d]"
             />
           </div>
-          <div className="font-poppins text-[20px] text-[#44449F] pl-8 pt-8">
-            <span className="text-black">Author: </span>{blogPost.authors}
+          <div className="font-poppins text-[20px] text-firefly pl-8 pt-8">
+            <span className="text-firefly">Author: </span>{blogPost.authors}
           </div>
         </div>
 
-        <div className="pt-8 text-justify font-poppins text-[17px] text-black p-8">
+        <div className="pt-8 text-justify font-poppins text-[17px] text-firefly p-8">
           {/* Content Section */}
           <article className="p-5">
             <p>{blogPost.content}</p>
@@ -67,12 +67,12 @@ const BlogPage = () => {
               alt="Content Image"
               width={600}
               height={400}
-              className="w-7/10 border-5 border-[#561A34]"
+              className="w-7/10 border-5 border-[#1a365d]"
             />
           </div>
 
           {/* Conclusion Section */}
-          <article className="p-5 mt-8 font-semibold text-lg text-[#561A34]">
+          <article className="p-5 mt-8 font-semibold text-firefly text-lg">
             <p>{blogPost.conclusion}</p>
           </article>
         </div>

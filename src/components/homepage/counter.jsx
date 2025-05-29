@@ -50,19 +50,19 @@ export default function Counter() {
   }, []);
 
   const counterItems = [
-    { target: 35, label: "Years since inception", color: "bg-[#531733]" },
-    { target: 10, label: "Events every year", color: "bg-[#C8A455]" },
-    { target: 120, label: "Members", color: "bg-[#531733]" },
+    { target: 35, label: "Years since inception", color: "bg-firefly" },
+    { target: 10, label: "Events every year", color: "bg-[#76879E]" },
+    { target: 120, label: "Members", color: "bg-firefly" },
   ];
 
   return (
     <section
       id="section_counter"
       ref={sectionCounterRef}
-      className="w-full py-16"
+      className="w-full py-16 bg-mist-texture"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-[#531733] text-4xl md:text-4xl text-center font-bold mb-16">
+        <h2 className="text-firefly text-4xl md:text-4xl text-center font-bold mb-16">
           NUMBERS THAT WE ADMIRE!
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -78,14 +78,14 @@ export default function Counter() {
               >
                 <div className="flex items-center justify-center">
                   <span 
-                    className="number text-white text-5xl md:text-6xl font-bold"
+                    className="number text-mist text-5xl md:text-6xl font-bold"
                     data-target={item.target}
                   >
                     0
                   </span>
-                  <span className="text-white text-5xl md:text-6xl font-bold ml-1">+</span>
+                  <span className="text-mist text-5xl md:text-6xl font-bold ml-1">+</span>
                 </div>
-                <p className="text-white text-xl mt-4 font-medium">
+                <p className="text-mist text-xl mt-4 font-medium">
                   {item.label}
                 </p>
               </div>

@@ -38,7 +38,7 @@ const Blogs = () => {
     {
       id: "blog5",
       title: "Dreams and Deadline",
-      authors: "Harshit Vora, Omkar Desai",
+      authors: "Harshit Vora, Omkar desai",
       imgSrc: "/blog/blog5-poster-img.png",
     },
   ];
@@ -46,7 +46,7 @@ const Blogs = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full relative mt-5 text-center">
-        <div className="text-4xl md:text-5xl font-bold text-[#49112E] mb-20">
+        <div className="text-4xl md:text-5xl font-bold text-firefly mb-20">
           BLOGS
         </div>
         <img
@@ -61,27 +61,26 @@ const Blogs = () => {
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-[#D2B49A] p-4 border-4 border-[#3A0622] shadow-lg rounded-lg flex flex-col justify-between"
+              className="w-full sm:w-[280px] lg:w-[300px] h-auto bg-submarine p-4 border-4 border-[#1a365d] shadow-lg rounded-lg flex flex-col justify-between"
             >
               <div className="flex justify-center w-full h-[160px] lg:h-[180px]">
                 <img
                   src={post.imgSrc}
                   alt={post.title}
-                  className="w-[140px] lg:w-[160px] border-2 border-black"
+                  className="w-[140px] lg:w-[160px] border-2 border-[#1a365d]"
                 />
               </div>
               <div className="flex flex-col items-center mt-2">
-                <h2 className="text-lg lg:text-xl font-bold text-center">
+                <h2 className="text-lg lg:text-xl font-bold text-firefly text-center">
                   {post.title}
                 </h2>
-                <h4 className="text-sm lg:text-base font-semibold text-center">
+                <h4 className="text-sm lg:text-base font-semibold text-firefly text-center">
                   Author: <span>{post.authors}</span>
                 </h4>
               </div>
-              {/* Button positioned at the bottom */}
               <div className="flex justify-center mt-4">
                 <Link href={`/blogs/${post.id}`}>
-                  <button className="bg-[#6f2143] hover:bg-[#561A34] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-black shadow-md">
+                  <button className="bg-firefly hover:bg-[#394553] transition-transform transform hover:scale-105 rounded-lg text-sm lg:text-lg font-medium text-white px-4 py-2 border-2 border-[#1a365d] shadow-md">
                     Read
                   </button>
                 </Link>

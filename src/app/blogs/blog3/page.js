@@ -4,7 +4,7 @@ export default function Blog3() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-[#D2B49A] w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#3A0622] mx-auto">
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
@@ -12,7 +12,7 @@ export default function Blog3() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-medium pt-10 text-5xl text-[#561A34] text-center">
+          <div className="font-raleway font-medium pt-10 text-5xl text-firefly text-center">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex items-center justify-center">
@@ -24,21 +24,21 @@ export default function Blog3() {
               <img
                 src="/blog/blog3-poster-img.png"
                 alt="Blog Poster"
-                className="w-full md:w-1/2 border-[5px] border-[#3A0622]"
+                className="w-full md:w-1/2 border-[5px] border-[#1a365d]"
               />
             </div>
 
-            <div className="font-poppins text-[20px] text-[#44449F] pl-8 pt-8">
-              <span className="text-black">Author: </span>Nehal Shivane, Sampada
+            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8">
+              <span className="text-firefly">Author: </span>Nehal Shivane, Sampada
               Tagalpallewar, Shruti Mone
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-black p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="p-2 lg:p-5">
               <p>
-                ‘500- That’s an error. The server encountered an error and could
-                not complete your request’ Oh not again! Don’t we too, as
+                '500- That's an error. The server encountered an error and could
+                not complete your request' Oh not again! Don't we too, as
                 humans, encounter such unexpected conditions that prevent us
                 from fulfilling our desires? Indeed, we are referring to the
                 mistakes, the errors that we commit knowingly or unknowingly
@@ -66,7 +66,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-1.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 1"
                   width={600}
                   height={400}
@@ -75,7 +75,7 @@ export default function Blog3() {
               <br />
 
               <p>
-                Hasn’t each one of us faced a situation where we have mistakenly
+                Hasn't each one of us faced a situation where we have mistakenly
                 used another punctuation, word, or expression instead of the
                 right one?
               </p>
@@ -104,7 +104,7 @@ export default function Blog3() {
                 a question in an exam paper, forgetting to carry your house keys
                 while leaving your house and getting locked outside, mistakenly
                 addressing an acquaintance with someone else's name, or
-                forgetting a loved one’s birthday. A more modern version of the
+                forgetting a loved one's birthday. A more modern version of the
                 Error 500 is forgetting to turn on the switch while charging the
                 phone. Recently, I found myself caught in a similar situation, I
                 forgot to charge my phone and it caused me a headache.
@@ -139,7 +139,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-2.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 2"
                   width={600}
                   height={400}
@@ -160,7 +160,7 @@ export default function Blog3() {
                 while, and started painting again, this time a new picture, with
                 a new idea, taking inspiration from the spilt water! Pouring the
                 colours on the paper, one after the other, just as the water had
-                spilt, she created a beautiful abstract! She didn’t let the
+                spilt, she created a beautiful abstract! She didn't let the
                 situation dishearten her, instead,{" "}
                 <strong className="text-lg">
                   she focused on putting things in place again.
@@ -190,7 +190,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-3.jpg"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Blog Image 3"
                   width={600}
                   height={400}
@@ -235,7 +235,7 @@ export default function Blog3() {
                   existence as the most erroneous being on this planet!
                 </p>
 
-                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#3A0622] md:w-5/12">
+                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#1a365d] md:w-5/12">
                   <Image
                     src="/blog/blog3-content-4.jpg"
                     alt="Blog Image 4"
@@ -258,7 +258,7 @@ export default function Blog3() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

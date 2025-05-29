@@ -12,7 +12,7 @@ const TeamMember = ({ names, imageSrc, altText, hoverKey }) => {
         onMouseEnter={() => setHovered(hoverKey)}
         onMouseLeave={() => setHovered(null)}
         style={{
-          border: '1px solid #3A0622',
+          border: '1px solid var(--firefly) ',
           transition: 'transform 0.5s ease',
           transform: hovered === hoverKey ? 'scale(1.01)' : 'scale(1)',
         }}
@@ -25,14 +25,14 @@ const TeamMember = ({ names, imageSrc, altText, hoverKey }) => {
           />
         </div>
         <div
-          style={{ backgroundColor: '#3A0622', padding: '16px 0' }}
+          style={{ backgroundColor: "var(--firefly)", padding: '16px 0' }}
           className="text-center rounded-b-md"
         >
           {/* Display names. If there's one name, it'll be centered, else list */}
           {names.map((name, index) => (
             <h4
               key={index}
-              className="text-[#CAA656] font-bold"
+              className="text-submarine font-bold"
               style={{ fontFamily: 'Raleway, sans-serif', fontSize: '20px' }}
             >
               {name}

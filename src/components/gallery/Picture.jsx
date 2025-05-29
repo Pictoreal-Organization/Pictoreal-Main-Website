@@ -1,10 +1,11 @@
 "use client"; // Ensure this directive is at the top of client components
 
 import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation"; 
 
 // Expanded Image View Component
 const ExpandedImage = ({ image, onClose }) => (
-  <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+  <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
     <img
       src={image}
       alt="Expanded"
@@ -24,7 +25,7 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 !m-auto bg-[#531733] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+    <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
       <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
         <button
           onClick={onClose}
@@ -102,7 +103,7 @@ const Carousel = ({ images, onImageClick }) => {
                 ref={index === 0 ? imageRef : null}
                 src={image}
                 alt={`Slide ${index}`}
-                className="max-h-full object-contain border-2 border-[#d0b311] cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+                className="max-h-full object-contain border-2 border-firefly cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
                 onClick={() => onImageClick(images)}
               />
             </div>
@@ -114,13 +115,13 @@ const Carousel = ({ images, onImageClick }) => {
 <div className="none">
   <button
     onClick={prevSlide}
-    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 left-4 md:left-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
   >
     &#10094;
   </button>
   <button
     onClick={nextSlide}
-    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-[#531733] text-[#d0b311] p-3 rounded-full hover:bg-[#9d2b60] transition-colors duration-300"
+    className="hidden md:block absolute top-1/2 right-4 md:right-40 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
   >
     &#10095;
   </button>
@@ -140,7 +141,7 @@ const Carousel = ({ images, onImageClick }) => {
                 resetTimer(); // Restart the timer when clicking an indicator
               }}
               className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                currentIndex === index ? "bg-[#d0b311]" : "bg-[#9d2b60]"
+                currentIndex === index ? "bg-mist" : "bg-firefly"
               }`}
             />
           ))}
@@ -154,6 +155,19 @@ const Picture = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [carouselImages, setCarouselImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const searchParams = useSearchParams();
+  const eventId = searchParams.get("eventId");
+
+  useEffect(() => {
+  if (eventId) {
+    const element = document.getElementById(eventId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}, [eventId]);
+
 
   // Sample image sets for each carousel
   const imageSets = [
@@ -171,11 +185,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/manthan1.JPG",
-        "/gallery/manthan2.JPG",
-        "/gallery/manthan3.JPG",
-        "/gallery/manthan4.JPG",
-        "/gallery/manthan5.JPG",
+        "/gallery/Manthan_1.JPG",
+        "/gallery/Manthan_2.JPG",
+        "/gallery/Manthan_3.JPG",
+        "/gallery/Manthan_4.JPG",
+        "/gallery/Manthan_5.JPG",
+        "/gallery/Manthan_6.JPG",
       ],
       title: "Manthan",
       description:
@@ -183,12 +198,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/parichay1.JPG",
-        "/gallery/parichay2.JPG",
-        "/gallery/parichay4.JPG",
-        "/gallery/parichay3.JPG",
-        "/gallery/parichay5.JPG",
-        "/gallery/parichay6.JPG",
+        "/gallery/Parichay_1.jpg",
+        "/gallery/Parichay_2.JPG",
+        "/gallery/Parichay_3.jpg",
+        "/gallery/Parichay_4.jpg",
+        "/gallery/Parichay_5.JPG",
+        "/gallery/Parichay_6.jpg",
       ],
       title: "Parichay",
       description:
@@ -196,13 +211,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/blood1.jpg",
-        "/gallery/blood2.jpg",
-        "/gallery/blood3.jpg",
-        "/gallery/blood4.jpg",
-        "/gallery/blood5.jpg",
-        "/gallery/blood6.jpg",
-        "/gallery/blood7.jpg",
+        "/gallery/BDD_1.jpg",
+        "/gallery/BDD_2.jpg",
+        "/gallery/BDD_3.jpg",
+        "/gallery/BDD_4.jpg",
+        "/gallery/BDD_5.jpg",
+        "/gallery/BDD_6.jpg",
+        "/gallery/BDD_7.jpg",
       ],
       title: "Blood Donation Drive",
       description:
@@ -210,25 +225,34 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/pictofest1.jpg",
-        "/gallery/pictofest2.jpg",
-        "/gallery/pictofest3.jpg",
-        "/gallery/pictofest4.jpg",
-        "/gallery/pictofest5.jpg",
-        "/gallery/pictofest6.jpg",
-        "/gallery/pictofest7.jpg",
+        "/gallery/Pictofest_1.jpg",
+        "/gallery/Pictofest_2.jpg",
+        "/gallery/pictofest_3.jpg",
+        "/gallery/Pictofest_4.JPG",
+        "/gallery/Pictofest_5.jpg",
+        "/gallery/Pictofest_6.jpg",
+        "/gallery/Pictofest_7.jpg",
+        "/gallery/Pictofest_8.jpg",
+        "/gallery/Pictofest_9.JPG",
+        "/gallery/Pictofest_10.JPG",
+        "/gallery/Pictofest_11.JPG",
+        "/gallery/Pictofest_12.JPG",
+        "/gallery/Pictofest_13.JPG",
       ],
       title: "PICTOFEST",
       description: `On February 23rd, PICTOREAL launched its first intercollegiate art festival, PICTOFEST. Over two days, participants engaged in events like Lost in Pieces, Trivia, Meme-making, Creative Writing, and workshops such as Play with Clay and Resin Art. "Taare Zameen Par," an open-air live painting event, received enthusiastic responses. The art exhibition PICS-O-REEL displayed 600+ entries, attracting a large audience from Pune colleges. It concluded with a closing ceremony awarding prizes for all competitions.`,
     },
     {
       images: [
-        "/gallery/be1.JPG",
-        "/gallery/be2.JPG",
-        "/gallery/be3.JPG",
-        "/gallery/be4.JPG",
-        "/gallery/be5.JPG",
-        "/gallery/be6.JPG",
+        "/gallery/BE_1.JPG",
+        "/gallery/BE_2.JPG",
+        "/gallery/BE_3.JPG",
+        "/gallery/BE_4.JPG",
+        "/gallery/BE_5.JPG",
+        "/gallery/BE_6.JPG",
+        "/gallery/BE_7.JPG",
+        "/gallery/BE_8.JPG",
+        "/gallery/BE_9.JPG",
       ],
       title: "BE Photoshoot",
       description:
@@ -248,12 +272,13 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/career1.jpg",
-        "/gallery/career2.jpg",
-        "/gallery/career3.jpg",
-        "/gallery/career4.jpg",
-        "/gallery/career5.jpg",
-        "/gallery/career6.jpg",
+        "/gallery/Career_1.JPG",
+        "/gallery/Career_2.JPG",
+        "/gallery/Career_3.JPG",
+        "/gallery/Career_4.JPG",
+        "/gallery/Career_5.JPG",
+        "/gallery/Career_6.jpg",
+        "/gallery/Career_7.jpg",
       ],
       title: "Career Guidance",
       description:
@@ -261,14 +286,15 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/ngo1.jpg",
-        "/gallery/ngo2.jpg",
-        "/gallery/ngo3.jpg",
-        "/gallery/ngo4.jpg",
-        "/gallery/ngo5.jpg",
-        "/gallery/ngo6.jpg",
+        "/gallery/OLD_1.jpg",
+        "/gallery/OLD_2.jpg",
+        "/gallery/OLD_3.jpg",
+        "/gallery/OLD_4.jpg",
+        "/gallery/OLD_5.jpg",
+        "/gallery/OLD_6.jpg",
+        "/gallery/OLD_7.jpg",
       ],
-      title: "NGO Visit",
+      title: "Old Age Home Visit",
       description:
         "The visit to Akshar Paaul NGO on January 14, 2024, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami. On the occasion of Republic Day, inspiring stories of freedom fighters were shared, along with engaging general knowledge questions. But it was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
     },
@@ -290,12 +316,10 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/pictosocial1.jpg",
-        "/gallery/pictosocial2.jpg",
-        "/gallery/pictosocial3.jpg",
-        "/gallery/pictosocial4.jpg",
-        "/gallery/pictosocial5.jpg",
-        "/gallery/pictosocial6.jpg",
+        "/gallery/Visit_1.jpg",
+        "/gallery/Visit_2.jpg",
+        "/gallery/Visit_3.jpg",
+        "/gallery/Visit_4.jpg",
       ],
       title: "Pictosocial Visit",
       description:
@@ -303,10 +327,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/cleanliness1.jpg",
-        "/gallery/cleanliness2.jpg",
-        "/gallery/cleanliness3.jpg",
-        "/gallery/cleanliness4.jpg",
+        "/gallery/Clean_1.jpg",
+        "/gallery/Clean_2.jpg",
+        "/gallery/Clean_3.jpg",
+        "/gallery/Clean_4.jpg",
+        "/gallery/Clean_5.jpg", 
+
       ],
       title: "Cleanliness Drive",
       description:
@@ -335,18 +361,20 @@ const Picture = () => {
   };
 
   return (
+    <div class="bg-mist-texture">
     <div className="space-y-8 p-4 mb-10">
-      <h2 className="text-5xl text-[#531733] font-bold text-center mb-10">
+      <h2 className="text-5xl text-firefly font-bold text-center mb-10">
             GALLERY
           </h2>
       {imageSets.map((set, i) => (
         <div
           key={i}
-          className="max-w-4xl mx-auto ring-2 ring-[#531733] bg-[#FFFFFF] p-6 rounded-lg"
+          id={set.title.toLowerCase().replace(/\s+/g, "-")}
+          className="max-w-4xl mx-auto ring-2 ring-firefly bg-[#FFFFFF] p-6 rounded-lg"
         >
           {/* Heading */}
           
-          <h2 className="text-3xl text-[#531733] font-bold text-center mb-4">
+          <h2 className="text-3xl text-firefly font-bold text-center mb-4">
             {set.title}
           </h2>
           
@@ -376,6 +404,7 @@ const Picture = () => {
           onClose={() => setSelectedImage(null)}
         />
       )}
+    </div>
     </div>
 );
 };

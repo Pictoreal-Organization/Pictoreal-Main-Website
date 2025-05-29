@@ -4,7 +4,7 @@ export default function Blog2() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-[#D2B49A] lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-[#3A0622] mx-auto">
+        <div className="relative bg-submarine lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-[#1a365d] mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
@@ -12,7 +12,7 @@ export default function Blog2() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-medium pt-10 text-[50px] text-[#561A34] text-left mt-5 md:mt-0">
+          <div className="font-raleway font-medium pt-10 text-[50px] text-firefly text-left mt-5 md:mt-0">
   Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and Universal Forces
 </div>
 
@@ -21,20 +21,20 @@ export default function Blog2() {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex w-7/10 gap-8 border-[5px] border-[#3A0622] mx-16">
+            <div className="flex w-7/10 gap-8 border-[5px] border-[#1a365d] mx-16">
               <img
                 src="/blog/blog2-poster-img.png"
                 alt="Blog Poster"
-                className="w-full border-5 border-[#3A0622]"
+                className="w-full border-5 border-[#1a365d]"
               />
             </div>
-            <div className="font-poppins text-[20px] text-[#44449F] pt-8">
-              <span className="text-black text-center justify-center">Author: </span>
+            <div className="font-poppins text-[20px] text-firefly pt-8">
+              <span className="text-firefly text-center justify-center">Author: </span>
               Shrihari Kulkarni
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-black p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
               <p className="mb-4">
                 Once upon a time, in a universe far, far smaller than we can
@@ -65,12 +65,12 @@ export default function Blog2() {
               <div className="md:flex justify-center mb-4">
                 <img
                   src="../blog/blog2-content-1.png"
-                  className="flex-1 border-[5px] border-[#3A0622] mb-5 md:mb-0"
+                  className="flex-1 border-[5px] border-[#1a365d] mb-5 md:mb-0"
                   alt="Image 1"
                 />
                 <img
                   src="../blog/blog2-content-2.png"
-                  className="flex-1 border-[5px] border-[#3A0622]"
+                  className="flex-1 border-[5px] border-[#1a365d]"
                   alt="Image 2"
                 />
               </div>
@@ -82,7 +82,7 @@ export default function Blog2() {
                 <div className="flex-shrink-0 mr-2 ">
                   <img
                     src="../blog/blog2-content-3.png"
-                    className="w-44 border-[5px] border-[#3A0622]"
+                    className="w-44 border-[5px] border-[#1a365d]"
                     alt="Image 3"
                   />
                 </div>
@@ -118,7 +118,7 @@ export default function Blog2() {
               <div className="flex justify-center mb-4">
                 <img
                   src="../blog/blog2-content-4.png"
-                  className="border-[5px] border-[#3A0622]"
+                  className="border-[5px] border-[#1a365d]"
                   alt="Image 4"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Blog2() {
                 <div className="">
                   <img
                     src="../blog/blog2-content-6.png"
-                    className="border-[5px] border-[#3A0622]"
+                    className="border-[5px] border-[#1a365d]"
                     alt="Image 5"
                   />
                 </div>
@@ -154,7 +154,7 @@ export default function Blog2() {
               <div className="md:flex mb-4">
                 <div className="flex-shrink-0">
                   <img src="/blog/blog2-content-5.png" 
-                        className="border-[5px] border-[#3A0622]"
+                        className="border-[5px] border-[#1a365d]"
                         alt="Image 6" />
                 </div>
                 <div className="flex-1">
@@ -195,7 +195,7 @@ export default function Blog2() {
               </p>
 
               <div className="mb-4">
-                <img src="../blog/blog2-content-7.png" className="border-[5px] border-[#3A0622]" alt="Image 7" />
+                <img src="../blog/blog2-content-7.png" className="border-[5px] border-[#1a365d]" alt="Image 7" />
               </div>
 
               <p className="mb-4">
@@ -222,7 +222,7 @@ export default function Blog2() {
                   </i>
                 </p>
                 <div className="flex-shrink-0">
-                  <img src="../blog/blog2-content-8.png" className="border-[5px] border-[#3A0622]" alt="Image 8" />
+                  <img src="../blog/blog2-content-8.png" className="border-[5px] border-[#1a365d]" alt="Image 8" />
                 </div>
               </div>
             </article>
@@ -235,7 +235,7 @@ export default function Blog2() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

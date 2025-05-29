@@ -66,7 +66,7 @@ export const magazines = [
 const MagazinesPage = () => {
   return (
     <section className="min-h-screen bg-[url('/images/27884380_stain_halftone_background.svg')] bg-center bg-[length:50%] py-12">
-      <h2 className="text-4xl font-raleway font-bold text-center mb-8 p-2 text-[#531733]">MAGAZINES</h2>
+      <h2 className="text-4xl font-raleway font-bold text-center mb-8 p-2 text-[#7679E]">MAGAZINES</h2>
 
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-0 max-w-screen-xl justify-items-center">
         {magazines.map((magazine) => (
