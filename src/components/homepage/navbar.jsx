@@ -112,7 +112,7 @@ const Navbar = () => {
                   }`}
               >
                 <li className="py-2 px-4 hover:text-[#76879E]">
-                  <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
+                  <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
                 </li>
                 <li className="py-2 px-4 hover:text-[#76879E]">
                   <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 26</Link>
