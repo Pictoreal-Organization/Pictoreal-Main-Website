@@ -128,7 +128,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <li className="py-2 px-4 lg:px-6 lg:mx-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#76879E] text-center">
-              <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
+              <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
             </li>
           </ul>
         </nav>
