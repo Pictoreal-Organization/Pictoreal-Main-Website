@@ -55,12 +55,7 @@ const AboutUs = () => {
               A magazine is an experiment and it represents a new focus, a new ratio between commerce and intellect.
             </p>
             <p className='mb-4 font-sans font-semibold text-twilight'>
-              Pictoreal is one of the distinguished non-technical clubs at PICT. At Pictoreal, our mission is to create and publish the annual magazine of PICT with unique themes that showcase the talents of PICT. Pictoreal organizes several enthusiastic events throughout the year to boost creative minds. The club always promotes one's skills in literature, design, and photography. We support individuals to build practical skills like event management, public speaking, teamwork, and much more. To enhance one's productive skills, we host multiple events like Pics-o-Reel, an annual art and photography exhibition-cum-competition where students can showcase their art pieces. This year, we introduced a new event, Pictofest, which included Pics-o-Reel and various other workshops such as mastering Blender, pottery, and competitions for creative writing and meme making. To promote public speaking skills, we organize Manthan, featuring mini-events such as extempore, debates, group discussions, etc. Pictosocial, a subgroup of Pictoreal believes the culture in
-              PICT to lose ourselves in the service of others until we discover our own lives and our happiness. To
-              promote the same, we organize events like Tree plantation drives, blood donation and Monetary donation
-              drives, and Old-age home or Orphanage visits. To guide and communicate with students in remote areas, we
-              organize Career counselling sessions. Here at Pictoreal, we try to step forward, reach out and help the
-              students in PICT unleash their creative side.
+            Pictoreal is one of the distinguished non-technical clubs at PICT. At Pictoreal, our mission is to create and publish the annual magazine of PICT with unique themes that showcase the talents of PICT. We organize enthusiastic events throughout the year to boost creative minds and promote skills in literature, design, and photography. Members build practical skills like event management, public speaking, teamwork, and more. Our flagship event, Pics-o-Reel—part of the newly introduced Pictofest—is an annual art and photography exhibition-cum-competition. Pictofest also hosts workshops on Blender, pottery, creative writing, meme making, and more. To develop public speaking, we conduct Manthan, featuring extempore, debates, and group discussions. Pictosocial, a subgroup of Pictoreal, believes in losing ourselves in service to others to find purpose and joy. We conduct tree plantation drives, blood and monetary donation campaigns, and visits to old-age homes or orphanages. We also hold career counselling sessions for students in remote areas. At Pictoreal, we strive to help every student at PICT unleash their creative side.
             </p>
             <p className='mb-4 text-twilight font-semibold'>
               Our members in Pictoreal always live by one motto-
@@ -84,6 +79,11 @@ const AboutUs = () => {
         .flip-container {
           width: 325px;
           height: 325px;
+          transition: transform 0.6s ease;
+        }
+
+        .zoom {
+          transform: scale(1.1);
         }
 
         .flip-inner {
@@ -110,8 +110,15 @@ const AboutUs = () => {
           transform: rotateY(180deg);
         }
       `}</style>
+    
     </section>
   )
 }
 
 export default AboutUs
+
+
+
+
+
+
