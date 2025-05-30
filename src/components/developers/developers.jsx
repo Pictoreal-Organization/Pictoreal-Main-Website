@@ -9,13 +9,28 @@ const TeamPage = () => {
   const teamMembers = [
     {
       id: 1,
+      name: "Abhijeet Bhosale",
+      image:"/developers/Abhijeet_Bhosale.jpg",
+      github:"https://github.com/Abhijeet212004",
+      linkedin: "https://www.linkedin.com/in/abhijeet-bhosale-5728772b5/"
+    },
+
+    {
+      id: 2,
       name: "Ayan Pathan",
       image: "/developers/Ayan_Pathan.jpg",
       github: "https://github.com/ayan0211",
       linkedin: "https://www.linkedin.com/in/ayan-pathan-67705a285/",
     },
     {
-      id: 2,
+      id: 4,
+      name: "Khanak Kumar",
+      image: "/developers/Khanak_Kumar.jpg",
+      github: "https://github.com/KhanakKumar",
+      linkedin: "https://www.linkedin.com/in/khanak-kumar-133a1226b/",
+    },
+    {
+      id: 5,
       name: "Madhura Deshmukh",
       image: "/developers/Madhura_Deshmukh.jpg",
       github: "https://github.com/madhura0805",
@@ -23,14 +38,21 @@ const TeamPage = () => {
     },
     
     {
-      id: 3,
+      id: 6,
       name: "Manas Gawali",
       image: "/developers/Manas_Gawali.jpg",
       github: "https://github.com/ManasGawali",
       linkedin: "https://www.linkedin.com/in/manas-gawali-ab000128b/",
     },
+    {
+      id: 7,
+      name: "Riddhi Lahare",
+      image: "/developers/Riddhi_Lahare.jpg",
+      github: "https://github.com/riddhilahare14",
+      linkedin: "https://www.linkedin.com/in/riddhi-lahare?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
+    },
      {
-      id: 4,
+      id: 8,
       name: "Rohit Jadhav",
       image: "/developers/Rohit_Jadhav.jpg",
       github: "https://github.com/rohit510511",
@@ -38,14 +60,21 @@ const TeamPage = () => {
     },
     
     {
-      id: 5,
+      id: 9,
       name: "Saanvi Bhavsar",
       image: "/developers/Saanvi_Bhavsar.jpg",
       github: "https://github.com/Saanvi-B-star",
       linkedin: "https://www.linkedin.com/in/saanvi-bhavsar-b2a460299/",
     },
     {
-      id: 6,
+      id: 10,
+      name: "Spondon Nath",
+      image: "/developers/Spondon_Nath.jpg",
+      github: "https://github.com/tailblazer24",
+      linkedin: "https://www.linkedin.com/in/spondon-nath-0249291a9/",
+    },
+    {
+      id: 11,
       name: "Vihan Wani",
       image: "/developers/Vihan_Wani.jpg",
       github: "https://github.com/VIHAN-07",
