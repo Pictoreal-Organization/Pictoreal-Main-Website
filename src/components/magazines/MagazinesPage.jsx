@@ -1,6 +1,12 @@
 import MagazineCard from "./MagazineCard";
 export const magazines = [
   {
+    volume : 27,
+    title : 'Prahar',
+    imgLink : '/magazines/vol_2026_27.png',
+    iFrameSrc : 'https://online.fliphtml5.com/vimxt/lkrg/'
+  },
+  {
     volume : 26,
     title : 'Navras',
     imgLink : '/magazines/vol_2025_26.jpg',

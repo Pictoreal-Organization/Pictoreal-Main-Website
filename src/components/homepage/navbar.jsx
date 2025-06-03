@@ -127,13 +127,13 @@ const Navbar = () => {
                   }`}
               >
                 <li className="py-2 px-4 hover:text-[#76879E]">
+                  <Link href="https://online.fliphtml5.com/vimxt/lkrg/" onClick={handleLinkClick}>Volume 27</Link>
+                </li>
+                <li className="py-2 px-4 hover:text-[#76879E]">
                   <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
                 </li>
                 <li className="py-2 px-4 hover:text-[#76879E]">
-                  <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 26</Link>
-                </li>
-                <li className="py-2 px-4 hover:text-[#76879E]">
-                  <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 25</Link>
+                  <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 25</Link>
                 </li>
                 <li className="py-2 px-4 hover:text-[#76879E]">
                   <Link href="/magazines" onClick={handleLinkClick}>More...</Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <li className="py-2 px-4 lg:px-6 lg:mx-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#76879E] text-center">
-              <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 27</Link>
+              <Link href="https://online.fliphtml5.com/vimxt/lkrg/" onClick={handleLinkClick}>Volume 27</Link>
             </li>
           </ul>
         </nav>
