@@ -260,11 +260,11 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/interview1.JPG",
-        "/gallery/interview2.JPG",
-        "/gallery/interview3.JPG",
-        "/gallery/interview4.JPG",
-        "/gallery/interview5.JPG",
+        "/gallery/Int1.JPG",
+        "/gallery/Int2.JPG",
+        "/gallery/Int3.jpg",
+        "/gallery/Int4.jpg",
+        "/gallery/Int5.jpg",
       ],
       title: "Interviews",
       description:
