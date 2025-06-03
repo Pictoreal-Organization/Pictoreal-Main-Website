@@ -300,19 +300,14 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/d1.jpg",
-        "/gallery/d2.jpg",
-        "/gallery/d3.jpg",
-        "/gallery/d4.jpg",
-        "/gallery/d5.jpg",
-        "/gallery/d6.jpg",
-        "/gallery/d7.jpg",
-        "/gallery/d8.jpg",
-        "/gallery/d9.jpg",
+        "/gallery/Picto_Plants1.JPG",
+        "/gallery/Picto_Plants2.JPG",
+        "/gallery/Picto_Plants3.jpg",
+        "/gallery/Picto_Plants4.JPG",
       ],
-      title: "Donation Drive",
+      title: "Picto Plants",
       description:
-        "Pictoreal organized its annual Donation Drive for Vol '24, reflecting its commitment to serving the underprivileged. The drive received generous contributions from students and staff, including monetary donations, clothes, footwear, bags, and books. A closing ceremony was held to distribute the donations among three beneficiary NGOs, amplifying the impact of Pictoreal's generosity.",
+        "Picto Plants was a sapling plantation drive organized by Pictoreal for Vol '27, reflecting the club's commitment to environmental sustainability and community service. Students and staff participated enthusiastically, planting saplings and contributing to a greener campus. The drive aimed to raise awareness about the importance of trees and environmental conservation, and concluded with a ceremony celebrating the collective effort to make a positive ecological impact.",
     },
     {
       images: [
@@ -321,7 +316,7 @@ const Picture = () => {
         "/gallery/Visit_3.jpg",
         "/gallery/Visit_4.jpg",
       ],
-      title: "Pictosocial Visit",
+      title: "Orphanage Visit",
       description:
         "The visit to Janseva Orphanage on December 22nd, 2024, saw the enthusiastic participation of 40 dedicated volunteers. Our goal was not just to bring smiles to the children's faces, but also to ignite their creativity, promote teamwork, and instill an appreciation for cultural traditions. Through engaging activities like diya painting, killa making, and lantern crafting, we created a memorable experience for both volunteers and children alike, fostering a sense of joy and community spirit.",
     },
@@ -332,7 +327,6 @@ const Picture = () => {
         "/gallery/Clean_3.jpg",
         "/gallery/Clean_4.jpg",
         "/gallery/Clean_5.jpg", 
-
       ],
       title: "Cleanliness Drive",
       description:
