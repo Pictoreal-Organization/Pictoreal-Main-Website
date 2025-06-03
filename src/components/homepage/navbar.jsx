@@ -65,10 +65,25 @@ const Navbar = () => {
         {/* Navigation */}
         <nav
           ref={navbarRef}
-          className={`${open ? "block" : "hidden"
-            } lg:flex lg:items-center lg:w-auto w-full transition-all duration-300 ease-in-out`}
+          className={`
+            ${open ? "flex" : "hidden"}
+            lg:flex lg:items-center lg:w-auto
+            w-full
+            transition-all duration-300 ease-in-out
+            flex-col
+            lg:flex-row
+            absolute
+            lg:static
+            left-0
+            top-full
+            bg-white
+            lg:bg-transparent
+            shadow-lg
+            lg:shadow-none
+            z-40
+          `}
         >
-          <ul className="text-base text-firefly lg:flex lg:items-center lg:gap-2">
+          <ul className="text-base text-firefly flex flex-col lg:flex-row lg:items-center lg:gap-2 w-full lg:w-auto">
             <li className="px-4 py-2 hover:text-[#76879E] font-semibold">
               <Link href="/" onClick={handleLinkClick}>Home</Link>
             </li>
@@ -112,13 +127,13 @@ const Navbar = () => {
                   }`}
               >
                 <li className="py-2 px-4 hover:text-[#76879E]">
+                  <Link href="https://online.fliphtml5.com/vimxt/lkrg/" onClick={handleLinkClick}>Volume 27</Link>
+                </li>
+                <li className="py-2 px-4 hover:text-[#76879E]">
                   <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
                 </li>
                 <li className="py-2 px-4 hover:text-[#76879E]">
-                  <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 26</Link>
-                </li>
-                <li className="py-2 px-4 hover:text-[#76879E]">
-                  <Link href="https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP" onClick={handleLinkClick}>Volume 25</Link>
+                  <Link href="https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9" onClick={handleLinkClick}>Volume 25</Link>
                 </li>
                 <li className="py-2 px-4 hover:text-[#76879E]">
                   <Link href="/magazines" onClick={handleLinkClick}>More...</Link>
@@ -128,7 +143,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <li className="py-2 px-4 lg:px-6 lg:mx-2 bg-firefly text-mist rounded-xl font-semibold hover:scale-110 transition-transform duration-300 ease-in-out hover:bg-[#76879E] text-center">
-              <Link href="https://online.fliphtml5.com/ukioy/fyba/" onClick={handleLinkClick}>Volume 26</Link>
+              <Link href="https://online.fliphtml5.com/vimxt/lkrg/" onClick={handleLinkClick}>Volume 27</Link>
             </li>
           </ul>
         </nav>

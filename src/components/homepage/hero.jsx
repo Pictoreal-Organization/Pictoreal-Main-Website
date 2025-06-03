@@ -6,8 +6,10 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
     '/homepage/Pictofam.JPG',
-    '/homepage/slide_img_2.jpg',
-    '/homepage/slide_img_3.jpg'
+    '/homepage/Pictofam2.jpg',
+    '/homepage/Pictofam3.jpg',
+    '/homepage/Pictofam4.jpg'
+
   ];
 
   useEffect(() => {
@@ -100,3 +102,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
