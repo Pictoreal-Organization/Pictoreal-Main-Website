@@ -97,6 +97,7 @@ const Navbar = () => {
               <Link href="/blogs" onClick={handleLinkClick}>Blogs</Link>
             </li>
             <li className="px-4 py-2 hover:text-[#76879E] font-semibold">
+            V27_Theme_Change
               <Link href="/audio/v27" onClick={handleLinkClick}>Articles</Link>
             </li>
             <li className="px-4 py-2 hover:text-[#76879E] font-semibold">
