@@ -110,9 +110,9 @@ function Audio() {
 
   const handleLanguageRedirect = (language) => {
     const languageUrls = {
-      english: '/audio/V27/eng',
-      hindi: '/audio/V27/hin',
-      marathi: '/audio/V27/mar'
+      english: '/audio/v27/eng',
+      hindi: '/audio/v27/hin',
+      marathi: '/audio/v27/mar'
     };
     
     window.location.href = languageUrls[language];
