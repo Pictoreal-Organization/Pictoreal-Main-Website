@@ -23,21 +23,21 @@ function AudioIndex() {
     {
       id: 'english',
       name: 'English',
-      flag: '🇺🇸',
+      flag: '',
       accent: 'from-firefly-400 to-submarine-300',
       glow: 'shadow-blue-500/50'
     },
     {
       id: 'hindi',
       name: 'हिंदी',
-      flag: '🇮🇳',
+      flag: '',
       accent: 'from-firefly-400 to-submarine-300',
       glow: 'shadow-blue-500/50'
     },
     {
       id: 'marathi',
       name: 'मराठी',
-      flag: '🏛️',
+      flag: '',
       accent: 'from-firefly-400 to-submarine-300',
       glow: 'shadow-blue-500/50'
     }
