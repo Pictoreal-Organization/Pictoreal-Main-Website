@@ -227,7 +227,7 @@ const Picture = () => {
       images: [
         "/gallery/Pictofest_1.jpg",
         "/gallery/Pictofest_2.jpg",
-        "/gallery/pictofest_3.jpg",
+        "/gallery/Pictofest_3.jpg",
         "/gallery/Pictofest_4.JPG",
         "/gallery/Pictofest_5.jpg",
         "/gallery/Pictofest_6.jpg",
@@ -262,7 +262,7 @@ const Picture = () => {
       images: [
         "/gallery/Int1.JPG",
         "/gallery/Int2.JPG",
-        "/gallery/Int3.jpg",
+        "/gallery/Int3.JPG",
         "/gallery/Int4.jpg",
         "/gallery/Int5.jpg",
       ],
