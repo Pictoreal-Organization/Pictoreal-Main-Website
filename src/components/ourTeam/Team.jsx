@@ -134,7 +134,7 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Prem Rahinj", "Amulya Agrawal", "Kshitij Dhake"]}
+          names={["Saanvi Bhavsar", "Anjani Gulve", "Sanvi Waghmode"]}
           imageSrc="/our_team/design-heads.JPG"
           altText="Design Heads"
           hoverKey="design_heads"
@@ -142,14 +142,14 @@ const Team = () => {
         
         {/* Editing Heads */}
         <Title 
-        text="Editing Heads" 
+        text="Editorial Heads" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Revati Ranade", "Soham Phatak", "Shruti Mone"]}
-          imageSrc="/our_team/DSC_4540.JPG"
-          altText="Editing Heads"
-          hoverKey="editing_heads"
+          names={["Spondon Nath", "Sanavi Kulkarni", "Ayan Pathan"]}
+          imageSrc="/our_team/editorial-heads.JPG"
+          altText="Editorial Heads"
+          hoverKey="editorial_heads"
         />
         
         {/* Picto-Social Heads */}
@@ -158,8 +158,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Sanika Deshpande", "Aditya Choudhary", "Tanvi Somani"]}
-          imageSrc="/our_team/DSC_4489.JPG"
+          names={["Dhanashri Mahadik", "Harshit Vora", "Sukanya Gupta"]}
+          imageSrc="/our_team/picto-social-heads.JPG"
           altText="Picto-Social Heads"
           hoverKey="picto_social_heads"
         />
@@ -170,7 +170,7 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Kartik Tichkule", "Aarya Badhe", "Hariom Gilda"]}
+          names={["Vedika Bopche", "Omkar Desai", "Jeet Amin"]}
           imageSrc="/our_team/event-managers.JPG"
           altText="Event Managers"
           hoverKey="event_managers"
@@ -182,8 +182,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Unnati Rathi", "Shrihari Kulkarni", "Mahi Shah"]}
-          imageSrc="/our_team/DSC_5995.JPG"
+          names={["Shraddha Dolas", "Trishit Guin", "Maria Shaikh"]}
+          imageSrc="/our_team/public-relations-officers.JPG"
           altText="Public Relations Officers"
           hoverKey="public_relations_officers"
         />
@@ -194,8 +194,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Anvitha Mayya", "Atharva Dhake", "Sampada Tagalpallewar"]}
-          imageSrc="/our_team/DSC_5401.JPG"
+          names={["Pushkar Mulajkar", "Aditya Tidake", "Samierra Arora"]}
+          imageSrc="/our_team/social-media-heads.JPG"
           altText="Social Media Heads"
           hoverKey="social_media_heads"
         />
@@ -206,8 +206,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Ria Narode", "Gaurav Waghmare", "Mansi Apet"]}
-          imageSrc="/our_team/DSC_5457.JPG"
+          names={["Madhura Deshmukh", "Manas Gawali", "Riddhi Lahare"]}
+          imageSrc="/our_team/tech-heads.JPG"
           altText="Tech Heads"
           hoverKey="tech_heads"
         />
@@ -218,8 +218,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Samyak Bora", "Ajinkya Bobade"]}
-          imageSrc="/our_team/DSC_4504.JPG"
+          names={["Manas Yeola", "Pratik Chavan", "Gauravi Muttha"]}
+          imageSrc="/our_team/marketing-heads.JPG"
           altText="Marketing Heads"
           hoverKey="marketing_heads"
         />
@@ -230,8 +230,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Gaurav Waghmare", "Shrihari Kulkarni"]}
-          imageSrc="/our_team/DSC_5406.JPG"
+          names={["Vihan Wani", "Pranav Wagh"]}
+          imageSrc="/our_team/video-editing-heads.JPG"
           altText="Video Editing Heads"
           hoverKey="video_editing_heads"
         />
@@ -242,8 +242,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Dev Dandekar", "Yash Apotikar"]}
-          imageSrc="/our_team/DSC_6009.JPG"
+          names={["Shantanu Sable", "Mahesh Loya"]}
+          imageSrc="/our_team/photography-heads.JPG"
           altText="Photography Heads"
           hoverKey="photography_heads"
         />
