@@ -195,7 +195,7 @@ const Team = () => {
         />
         <TeamMember
           names={["Manas Yeola", "Pratik Chavan", "Gauravi Muttha"]}
-          imageSrc="/our_team/marketing-heads.JPG"
+          imageSrc="/our_team/marketing-heads.jpg"
           altText="Marketing Heads"
           hoverKey="marketing_heads"
         />
@@ -207,14 +207,14 @@ const Team = () => {
         />
         <TeamMember
           names={["Vihan Wani", "Pranav Wagh"]}
-          imageSrc="/our_team/video-editing-heads.JPG"
+          imageSrc="/our_team/video-editing-heads.jpg"
           altText="Video Editing Heads"
           hoverKey="video_editing_heads"
         />
 
         {/* Photography Heads */}
         <Title 
-        text="Photography Headss" 
+        text="Photography Heads" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
