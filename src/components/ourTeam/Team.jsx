@@ -62,8 +62,8 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Chaitrali Ginimav", "Vineet Kothari"]}
-          imageSrc="/our_team/DSC_5911.JPG"
+          names={["Amulya Agrawal", "Prem Rahinj"]}
+          imageSrc="/our_team/magazine-secretaries.JPG"
           altText="Magazine Secretaries"
           hoverKey="magazine_secretaries"
         />
@@ -74,34 +74,22 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Gayatri Sawant", "Manthan Adhav"]}
-          imageSrc="/our_team/DSC_5939.JPG"
+          names={["Sampada Tagalpallewar", "Kshitij Dhake"]}
+          imageSrc="/our_team/joint-secretaries.JPG"
           altText="Joint Secretaries"
           hoverKey="joint_secretaries"
         />
 
         {/* External Affairs Officers */}
         <Title 
-        text="External Affairs Officers" 
+        text="General Secretaries" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Advait Naik", "Anshika Singh"]}
-          imageSrc="/our_team/DSC_5860.JPG"
-          altText="External Affairs Officers"
-          hoverKey="external_affairs_officers"
-        />
-
-        {/* PictoSocial Secretary */}
-        <Title 
-        text="PictoSocial Secretary" 
-        style={{color: "var(--firefly)" }} 
-        />
-        <TeamMember
-          names={["Aarya Ghate"]}
-          imageSrc="/our_team/picto-social-secretary.jpg"
-          altText="PictoSocial Secretary"
-          hoverKey="picto_social_secretary"
+          names={["Aarya Badhe", "Unnati Rathi"]}
+          imageSrc="/our_team/general-secretaries.JPG"
+          altText="General Secretaries"
+          hoverKey="general_secretaries"
         />
 
         {/* Treasurer */}
@@ -110,22 +98,10 @@ const Team = () => {
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
-          names={["Kashish Hase"]}
+          names={["Kartik Tichkule"]}
           imageSrc="/our_team/TR.JPG"
           altText="Treasurer"
           hoverKey="treasurer"
-        />
-        
-        {/* Chief Designer */}
-        <Title 
-        text="Chief Designer" 
-        style={{color: "var(--firefly)" }} 
-        />
-        <TeamMember
-          names={["Atharva Pardeshi"]}
-          imageSrc="/our_team/atharva-pardeshi.JPG"
-          altText="Chief Designer"
-          hoverKey="chief_designer"
         />
         
         {/* Design Heads */}
@@ -238,7 +214,7 @@ const Team = () => {
 
         {/* Photography Heads */}
         <Title 
-        text="Photography Heads" 
+        text="Production Heads" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
