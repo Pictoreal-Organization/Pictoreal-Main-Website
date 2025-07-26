@@ -39,21 +39,21 @@ const Team = () => {
       />
       {/* Magazine Coordinators */}
       <div className='grid grid-cols-1 justify-items-center'>
-        <div className='grid lg:grid-cols-2 justify-items-center gap-y-10 mg:gap-0'>
+        <div className='grid lg:grid-cols-1 justify-items-center gap-y-10 mg:gap-0'>
           <TeamMember
-            names={["Mr. Amol Chavan"]}
-            imageSrc="/our_team/amol-chavan.jpg"
+            names={["Mrs. Asmita Joshi"]}
+            imageSrc="/our_team/asmita-joshi.jpg"
             altText="Magazine Coordinators"
             hoverKey="magazine_coordinators"
             className="mb-5"
           />
-          <TeamMember
+          {/* <TeamMember
             names={["Mr. Pankaj Patil"]}
             imageSrc="/our_team/Pankaj-Patil.jpg"
             altText="Magazine Coordinators"
             hoverKey="magazine_coordinators"
             className="mt-5"
-          />
+          /> */}
         </div>
         
         {/* Magazine Secretaries */}
