@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-export default function blog5() {
+export default function Blog1() {
   return (
     <>
       <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-[#D2B49A] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#3A0622] mx-auto">
-          <div className="font-raleway font-medium pt-2 text-5xl text-[#561A34] text-center mt-14 mb-5">
-            Dreams and Deadlines
+        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
+          <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
+            Uncanny Valley
           </div>
           <div className="flex items-center justify-center">
             <img
@@ -19,229 +19,161 @@ export default function blog5() {
           <div className="flex flex-col items-center justify-center">
             <div className="flex justify-center w-auto md:w-2/3 gap-8 mx-auto md:mx-32">
               <img
-                src="/blog/blog5-poster-img.png"
+                src="/blog/blog1-poster-img.jpg"
                 alt="Blog Poster"
-                className="w-auto md:w-2/3 h-auto border-[5px] border-[#3A0622]"
+                className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-poppins text-[20px] text-[#44449F] pl-8 pt-8 text-center">
-              <span className="text-black">Author: </span>Harshit Vora, Omkar Desai
+            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8 text-center">
+              <span className="text-firefly">Author: </span>Prem Rahinj, Spondon Nath
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-black p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
-              <p className="mb-5 text-center">
-                <strong>A life of learning and leisure</strong>
+              <p>
+                When we picture an ideal being, what do we think of? One can say
+                that a perfect individual is blessed with the possessions one
+                understands to be ideal and perfect in their eyes, be it
+                academics, social interaction, cognitive ability, and whatnot.
+                To become an ideal being like this is nearly impossible for us
+                humans to achieve. But the same does not apply to the
+                enterprising advancements of technology in today's era.
               </p>
+              <br />
               <p className="mb-5">
-                Let's face it, being a student can feel like living in a whirlwind.
-                Amidst those assignments, deadlines, and exams, nurturing your passions
-                might seem daunting, if not impossible. But what if I tell you it
-                doesn't have to be this way? Balancing academics and personal interests
-                isn't about sacrificing priceless moments (though, let's be honest,
-                that's what many try- but I've never really gone down that road).
+                Six years ago, Jimmy Fallon interviewed{" "}
+                <i>Sofia, a Human-Like social robot</i> that could interact with
+                people in real-time using AI and Computer vision. On airing, the
+                interview went popular amongst viewers due to a small segment
+                where the 'robot' played and won a game of Rock-Paper-Scissors
+                with the host. It was sensational to see an inanimate object
+                interact, understand, play, and beat a human at its own game.
+                But what sent chills down my spine was when she casually said –{" "}
+                <i>
+                  "I won, this is a good beginning of my plan to dominate the
+                  human race."
+                </i>
               </p>
-              <p className="mb-5">
-                When I first stepped onto the college campus, I had a mix of excitement
-                and anxiety. I couldn't shake the question: How do I make it through 4
-                years? Spoiler alert - I graduated last year. But it wasn't without its
-                fair share of struggles, lessons, and moments of growth. Whenever I
-                found it gruelling, I sought advice from my friends and seniors. <strong>I
-                came across something that helped me in my college days and is helping
-                me even now.</strong>
-              </p>
-              <p className="mb-5">
-                Here's how it all unfolded:
-              </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/2 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] md:w-5/10 md:mx-40">
                 <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-1.png"
-                  alt="College campus life"
+                  className="w-auto h-auto max-w-full"
+                  src="../blog/blog1-content-image-1.png"
+                  alt="Sofia the robot"
                 />
               </div>
+              <br />
               <p className="mb-5">
-                After I secured admission into my dream college and started my academic
-                journey away from home, it didn't take me long to realise that something
-                was surely missing in my life. I was in a place I wanted to be, I had
-                the company of amazing people, and good food to eat, but I could still
-                sense a void. After deep thought, I realised that I hadn't spent time
-                listening to my favourite songs and hadn't played my keyboard for a long
-                time, maybe more than a year. It struck me that I had been so occupied
-                with my academic schedule that I had forgotten about my hobbies.
+                Ready to dive into the real-world{" "}
+                <b className="text-lg">Uncanny Valley?</b> It's a place where AI
+                meets humanity in ways that might make one reconsider their
+                future. In today's AI-packed world, we're not just talking about
+                it; we're living in it. The uncanny valley effect is a sensation
+                experienced by humans when AI entities closely resembling humans
+                in appearance or behavior exhibit subtle, unnatural traits or
+                imperfections, evoking a strong sense of discomfort, eeriness,
+                or unease in human observers.
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
-                <strong>Embracing the New Me, Nurturing the Old Self :</strong>
-              </h2>
-              <p className="mb-5">
-                By the time my first year began, I had already distanced myself from my
-                passion due to the two years of extreme study and hard work. My first
-                year's, or at least my first semester's goal was to fit myself into the
-                foreign environment and make it a part of my life. Get comfortable with
-                my new routine, all the new things, and the new people around. As I
-                walked into my second semester, I found people with shared interests,
-                and we all began to meet after college, discussing our favourite singers
-                and songs. <strong>I realised that just spending more time with them brought
-                me closer to my passion.</strong> We started to get together and created a
-                rendition of a popular song every alternate Saturday, while learning
-                from each other (guess what, we still have a jam once in a while).
-              </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/3 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] md:w-5/10 md:mx-80">
                 <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-2.png"
-                  alt="Music jam session"
+                  className="w-auto h-auto max-w-full"
+                  src="../blog/blog1-content-img-2.webp"
+                  alt="Uncanny Valley"
                 />
               </div>
+              <br />
               <p className="mb-5">
-                I utilised my free time watching relevant videos and ensured I didn't
-                waste my time on social media or anything which hindered my
-                productivity. To break it down simply, it was all about <strong>finding a
-                small gap and utilising it fully.</strong> Let's say you like to read or write.
-                Just make sure you read for at least ten minutes before bed, and write
-                your thoughts whenever you feel motivated. For someone who likes to
-                paint, take time on weekends for at least an hour to paint, and see how
-                refreshed you feel. In my case, I had started dedicating some time each
-                evening to playing the piano or exploring new music genres---it gave me
-                a sense of calm and creativity that I carried into the next day. <strong>I
-                started to be happier, had a fresh start every day, and became more
-                productive.</strong>
+                AI is no longer a buzzword. It's an artist that paints our
+                reality with shades of 'almost-human'. The 'why' behind its
+                development is driven by the quest for making machines act so
+                convincingly that they leave us blinking in disbelief. The more
+                one ponders about its potential implications, the scarier the{" "}
+                <i>"WHAT IFs"</i> get. But how does AI manage to blur the lines
+                so seamlessly?
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
-                <strong>Evolving Through Exploration :</strong>
-              </h2>
-              <p className="mb-5">
-                By my second year, I had started finding a rhythm between academics and
-                personal interests. Now I also had some extra time because I had
-                Saturdays off. Moreover, I had gotten the hang of doing smart study and
-                scoring good grades.
-              </p>
-              <p className="mb-5">
-                So I went on a journey of exploration, looking for something more
-                fascinating. I tried out things that I had never done before. I joined
-                the photography club, played the role of an organiser for an event, got
-                hooked on playing football, and even started experimenting with digital
-                art. I was trying to find a new place where I could fit in. But at the
-                same time, I hadn't given up on my old love for music. I decided to take
-                it a step further---learn classical music professionally. But could I
-                really pull this off? What if I get some important work and have to skip
-                my classes? Is it worth it? There were so many questions that captivated
-                my mind. So I sought guidance from my seniors who had mastered the art
-                of managing tasks. They advised me to attend music classes on weekends
-                when the college was off. By doing this, I could enhance my hobby
-                without hindering my academic commitments.
-              </p>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8">
-                <strong>Small Steps To Big Wins</strong>
-              </h2>
-              <p className="mb-5">
-                The third year brought challenges of its own---internships, projects,
-                and a heavier workload. My time was stretched thinner than ever. My
-                calendar was overflowing, and it seemed as though every minute of my day
-                was taken. There were times when I'd sit down to plan my day and realise
-                there weren't enough hours to get everything done. And, through all this
-                chaos, my hobbies began to slip through my fingers again.
-              </p>
-              <p className="mb-5">
-                There were moments of frustration---I used to see my friends and peers
-                manage everything smoothly while I found it very difficult to spend time
-                playing my keyboard, listening to my favourite playlist or even just
-                relaxing. But then I started observing them, and something clicked.
-                <strong> They weren't doing it all at once, they were doing small things
-                consistently.</strong>
-              </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/2 mx-auto mb-5">
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-auto md:w-7/10 md:mx-52">
                 <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-3.png"
-                  alt="Student planning activities"
+                  className="w-auto h-auto max-w-full"
+                  src="../blog/blog1-content-img-3.png"
+                  alt="AI blurring lines"
                 />
               </div>
-              <p className="mb-5">
-                Doodling art behind my notebook, jotting down quick thoughts in a
-                journal, or even humming along to a tune during a break became my little
-                wins.
-                <br />
-                Another lesson I learned was that <strong>consistency does not equal rigidity;
-                embrace flexibility.</strong> There were days when academics or projects took
-                up all my time, and I couldn't focus on my hobbies, but that was okay.
-                <strong> Prioritising tasks</strong> according to needs was equally important. A day
-                before an internship interview, I had to spend time revising core
-                concepts, and during college exams, all the time went into memorising
-                the theory. I stopped being hard on myself for missing out on these days
-                and promised to return to them when things eased up. It wasn't about
-                perfection, it was about <strong>showing up when I could.</strong>
+              <br />
+              <p>
+                Horizons of AI broaden with every new patch. It writes, reads,
+                speaks, and interacts with immense efficiency and unmatchable
+                accuracy. A threatening metric of its devastating efficiency is
+                the number of people laid off, which increases by the day.{" "}
+                <i>Chat-GPT</i>, one of the biggest job eaters today, is a
+                prompt-based AI tool designed to understand, respond, and engage
+                in human-like conversations on a wide range of topics. Similar
+                to <i>Chat-GPT</i> is <i>Replica</i>, another conversational
+                partner created to display companionship, self-reflection, and
+                improve conversational skills. All this is executed so well,
+                that it seemingly emits distinct human traits like empathy and
+                sorrow. By their very nature, both <i>Chat-GPT and Replica</i>,
+                are designed to help humans in everyday tasks. But there is a
+                silver line to it as often these models produce false results
+                that seem so satisfactory, that one might be left struck by awe.
+                So arises another disbelief.{" "}
+                <b className="text-lg">
+                  Should we trust AI or not? What if it knows how to lie?
+                </b>{" "}
+                When given a thought, doesn't it seem more discouraging than
+                nourishing? The uncanny of these interestingly engaging thoughts
+                could be considered wizardly delusive enough to tickle even the
+                stiffest of brains.
               </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/3 mx-auto mb-5">
+              <br />
+              <p className="mb-5">
+                Speaking of wizardry, an artist's imaginative perspective and
+                ability to colorize his imagination into physical matter is no
+                less than developing spells. Can AI do the same? Absolutely! I
+                mean just think of it. If it was not curious about art, could{" "}
+                <i>DALL-E</i> ever stay in the market? DALL-E is a plug-in that
+                combines concepts, attributes, and styles to create original,
+                realistic images and it's capable of putting even the best of
+                the artists to shame. This is where the bounds of humanity and
+                AI are clearly stated. Where it takes years of training to
+                achieve human abilities, a machine can effortlessly calculate it
+                using algorithms. The quality of art provided is unmatched for
+                the minimal costs of a few megabytes of internet access and a
+                few seconds required to type the prompt, and done, that's it,
+                premium images with flaws nearly equal to zero served. This
+                raises a question as to why approach and pay when you can
+                independently generate art for yourselves with AI. This is the
+                uncanny valley.
+              </p>
+              <div className="blog-content-image border-[5px] border-[#1a365d] w-auto md:w-8/10 md:mx-72">
                 <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-4.png"
-                  alt="Balancing activities"
+                  className="w-auto h-auto max-w-full"
+                  src="../blog/blog1-content-img-4.jpg"
+                  alt="DALL-E art"
                 />
               </div>
-              <h2 className="font-raleway font-medium text-3xl text-[#561A34] mb-3 mt-8">
-                <strong>Finding Peace Amid The Chaos:</strong>
-              </h2>
-              <p className="mb-5">
-                By the time I reached my final year, I had found a rhythm. The pressure
-                of placements, final year projects, and looming goodbyes was real, but
-                by that time, I had learned how to keep doing what I loved.
+              <br />
+              <p>
+                The Uncanny Valley conceptualizes the emptiness encountered
+                between <i>extremely precise and non-human</i>. It describes the
+                point at which a humanoid object, such as a robot or an animated
+                character, closely resembles a human but is still noticeably
+                artificial or non-human, causing a feeling of unease or
+                discomfort in observers. In this theory, people feel a sense of
+                unease, uneasiness, or discomfort when they see robots or
+                animated characters that are extremely close to being human but
+                are not entirely lifelike.
               </p>
-              <p className="mb-5">
-                One thing that helped me was to treat my hobbies like a refresh button.
-                After a long and hectic day, stepping out with a camera didn't feel like
-                a chore---it felt refreshing.
-              </p>
-              <p className="mb-5">
-                My fourth year was not about balancing academics and hobbies; it was
-                about enjoying the process. I had built a system that worked for me---a
-                mix of dedication and spontaneity that made life exciting.
-              </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/3 mx-auto mb-5">
-                <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-5.png"
-                  alt="Graduation celebration"
-                />
-              </div>
-              <p className="mb-5">
-                <strong>Looking back at these four years, I've realised life is not about
-                choosing between your responsibilities and the things you love; it is
-                about weaving them together.</strong> Whether it is a hectic first year, an
-                exploratory second year, a challenging third year, or a balanced fourth
-                year, the key is to keep moving forward.
-              </p>
-              <p className="mb-5">
-                So, my advice? Don't wait for the perfect time. Start small, be
-                flexible, and make this a part of your routine. Your interests are what
-                define you and make you unique. <strong>Your interests are what make you,
-                YOU.</strong> Nurturing them, even in little ways, makes you happier and more
-                energised, ready to take on anything that comes your way.
-              </p>
-              <p className="mb-5">
-                As I move forward from college, I'm not just carrying my degree, I'm
-                carrying the ability to stay true to what I love. Because, in the end,
-                <strong> it's not about the time you have, but how you choose to use it.</strong>
-              </p>
-              <div className="blog-content-image border-[5px] border-[#3A0622] w-full md:w-1/3 mx-auto mb-5">
-                <img
-                  className="w-full h-auto"
-                  src="../blog/blog5-content-6.png"
-                  alt="Life beyond graduation"
-                />
-              </div>
             </article>
             <div className="flex flex-col items-center w-full">
               <div className="flex justify-center w-full mb-4">
                 <img
                   src="/blog/3.svg"
                   alt="Content Image"
-                  className="w-7/10"
+                  className="w-7/10 "
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-white shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

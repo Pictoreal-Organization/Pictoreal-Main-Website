@@ -13,15 +13,15 @@ const Blogs = () => {
   const blogPosts = [
     {
       id: "blog1",
-      title: "Uncanny Valley",
-      authors: "Prem Rahinj, Spondon Nath",
-      imgSrc: "/blog/blog1-poster-img.jpg",
+      title: "Dreams and Deadline",
+      authors: "Harshit Vora, Omkar desai",
+      imgSrc: "/blog/blog5-poster-img.png",
     },
     {
       id: "blog2",
-      title: "Mysteries of Particle Physics",
-      authors: "Shrihari Kulkarni",
-      imgSrc: "/blog/blog2-poster-img.png",
+      title: "अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया ।",
+      authors: "Ayan Pathan",
+      imgSrc: "/blog/blog-dakhni-poster.png",
     },
     {
       id: "blog3",
@@ -31,16 +31,16 @@ const Blogs = () => {
     },
     {
       id: "blog4",
-      title: "अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया ।",
-      authors: "Ayan Pathan",
-      imgSrc: "/blog/blog-dakhni-poster.png",
+      title: "Mysteries of Particle Physics",
+      authors: "Shrihari Kulkarni",
+      imgSrc: "/blog/blog2-poster-img.png",
     },
     {
       id: "blog5",
-      title: "Dreams and Deadline",
-      authors: "Harshit Vora, Omkar desai",
-      imgSrc: "/blog/blog5-poster-img.png",
-    },
+      title: "Uncanny Valley",
+      authors: "Prem Rahinj, Spondon Nath",
+      imgSrc: "/blog/blog1-poster-img.jpg",
+    }
   ];
 
   return (
