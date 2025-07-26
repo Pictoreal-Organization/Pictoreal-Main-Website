@@ -34,7 +34,7 @@ const Team = () => {
       />
 
       <Title 
-        text="Magazine Coordinators" 
+        text="Magazine Coordinator" 
         style={{color: "var(--firefly)" }} 
       />
       {/* Magazine Coordinators */}
@@ -43,7 +43,7 @@ const Team = () => {
           <TeamMember
             names={["Mrs. Asmita Joshi"]}
             imageSrc="/our_team/asmita-joshi.jpg"
-            altText="Magazine Coordinators"
+            altText="Magazine Coordinator"
             hoverKey="magazine_coordinators"
             className="mb-5"
           />
