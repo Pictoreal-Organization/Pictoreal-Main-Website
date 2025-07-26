@@ -200,9 +200,9 @@ const Team = () => {
           hoverKey="marketing_heads"
         />
 
-        {/* Video Editing Heads */}
+        {/* Production Heads */}
         <Title 
-        text="Video Editing Heads" 
+        text="Production Heads" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
@@ -214,7 +214,7 @@ const Team = () => {
 
         {/* Photography Heads */}
         <Title 
-        text="Production Heads" 
+        text="Photography Headss" 
         style={{color: "var(--firefly)" }} 
         />
         <TeamMember
