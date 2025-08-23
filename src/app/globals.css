@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* globals.css */
+@import 'tailwindcss';
 
 :root {
   --firefly: #0A192E; /*Used for bg of buttons and headings*/
