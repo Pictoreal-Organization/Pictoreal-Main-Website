@@ -3,6 +3,9 @@ const AboutUs = () => {
     <div>
       <p>This is About Us Section.</p>
     </div>
+    // <div>
+
+    // </div>
   );
 };
 
