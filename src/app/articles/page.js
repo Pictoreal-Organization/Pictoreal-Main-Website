@@ -1,12 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function AudioPage() {
   // fak data
-  const languages =  ["English", "Hindi", "Marathi"];
-  const [selectedLang, setSelectedLang] = React.useState("English");
-
+  const languages =  ["eng", "hin", "mar"];
+  const [selectedLang, setSelectedLang] = useState("eng");
+  // ensure selecter article is always from filtered list
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [articles, setArticles] = useState([]);
+/*
   const articles = [
     {
       id: 1,
@@ -191,23 +194,33 @@ export default function AudioPage() {
       language: "Marathi",
     },
   ];
+*/
 
-  // filter articles by language
+
+  useEffect(() => {
+    // example: fetch volume 27 tracks for selected language
+    fetch(`http://localhost:5000/tracks/27/${selectedLang}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data);
+        if(data.length > 0) setSelectedArticle(data[0]);
+      })
+      .catch((err) => console.error("Error fetching articles:", err));
+  }, [selectedLang])
+
+  /* filter articles by language
   const filteredArticles = articles.filter(
     (article) => article.language === selectedLang
   );
-
-  // ensure selecter article is always from filtered list
-  const [selectedArticle, setSelectedArticle] = React.useState(filteredArticles[0]);
-
-  React.useEffect(() => {
+  
+  useEffect(() => {
     //reset to first article when language changes
     if(filteredArticles.length > 0){
       setSelectedArticle(filteredArticles[0]);
     } else {
       setSelectedArticle(null);
     }
-  }, [selectedLang])
+  }, [selectedLang])*/
 
   return (
     <div className="min-h-screen bg-blue-100 p-8">
@@ -226,53 +239,52 @@ export default function AudioPage() {
               : "bg-white text-gray-700 hover:bg-gray-200"              
             }`}
           >
-            {lang}
+            {lang.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6 h-full">
         {/* Left side: list of articles */}
-        <div className="col-span-1 max-h-[500px] overflow-y-auto space-y-4 pr-2">
-          {filteredArticles.length > 0 ? (
-            filteredArticles.map((article) => (
+        <div className="col-span-1 max-h-[80vh] overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+          {articles.map((article) => (
             <div
-            key={article.id}
-            onClick={() => setSelectedArticle(article)}
-            className={`flex items-center bg-white shadow-md rounded-lg p-4 cursor-pointer transition ${
-              selectedArticle.id === article.id
-              ? "ring-2 ring-blue-400"
-              : "hover:bg-gray-50"
-          }`}
-          >
+              key={article.id}
+              onClick={() => setSelectedArticle(article)}
+              className={`flex items-center bg-white shadow-md rounded-lg p-4 cursor-pointer transition ${
+                selectedArticle.id === article.id
+                ? "ring-2 ring-blue-400"
+                : "hover:bg-gray-50"
+              }`}
+            >
             <img
-              src={article.image}
+              src={`http://localhost:5000/images/${article.image}`}
               alt={article.title}
-              className="w-16 h-16 object-cover rounded-md mr-4"
+              className="w-16 h-20 object-cover rounded-md mr-4"
             />
             <p className="font-medium">{article.title}</p>
             </div>
-          ))
-        ) : (
-          <p className="text-gray-600">No articles available in this language.</p>
-        )}
+          ))}
         </div>
 
         {/* right side: selected article*/}
-        <div className="col-span-2 bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center h-[500px]">
-          {
-            selectedArticle ? (
+        <div className="col-span-2 bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center justify-between min-h-[80vh]">
+          {selectedArticle ? (
               <>
-                <img 
-                  src={selectedArticle}
-                  alt={selectedArticle.title}
-                  className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
-                />
+                <div className="h-3/4 flex justify-center items-center w-full mb-4">
+                  <img 
+                    src={`http://localhost:5000/images/${selectedArticle.image}`}
+                    alt={selectedArticle.title}
+                    className="max-w-full max-h-full object-contain rounded-md shadow-lg"
+                  />
+                </div>
                 <h2 className="text-lg font-semibold text-center mb-4">
                   {selectedArticle.title}
                 </h2>
                 <audio controls className="w-full">
-                  <source src="/audio/cricket.mp3" type="audio/mpeg" />
+                  <source 
+                  src={`http://localhost:5000/audio/27/${selectedLang}/${selectedArticle.audio}`} 
+                  type="audio/mpeg" />
                   Your browser does not support the audio element.
                 </audio>
               </>
