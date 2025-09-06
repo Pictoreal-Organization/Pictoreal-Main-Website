@@ -40,7 +40,7 @@ const AboutUs = () => {
       <div className="flex flex-col lg:flex-row items-start lg:space-x-12">
 
         {/* LEFT: Carousel Section */}
-        <div className="flex-shrink-0 mt-10 lg:w-1/2 flex justify-center relative h-96">
+        <div className="flex-shrink-0 w-682px h-411px mt-28 lg:w-1/2 flex justify-center relative h-96">
           <div className="w-full h-full relative overflow-hidden rounded-lg shadow-lg">
             {/* Carousel images */}
             {images.map((src, index) => (
@@ -99,7 +99,7 @@ const AboutUs = () => {
           <div className="flex flex-col items-center lg:items-start space-y-8 mt-20">
             {/* Logo Section */}
             <div className="flex-shrink-0 mb-4 self-center">
-              <div className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center overflow-hidden ml-10">
+              <div className="relative w-55 h-55 rounded-full flex flex-col items-center justify-center overflow-hidden ml-10">
                 <img
                   src="./V27_FINAL_LOGO.png"
                   alt="Pictoreal logo"
@@ -109,19 +109,19 @@ const AboutUs = () => {
             </div>
 
             {/* Text */}
-            <p className="text-sm text-gray-700 leading-relaxed max-w-md text-center">
+            <p className="text-sm text-gray-700 font-body leading-relaxed max-w-md text-center">
               We are Pictoreal: a community that publishes a magazine and serves our community.
               Join us to write the story and be the change on campus this year.
             </p>
 
             {/* Stats */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8 justify-center lg:justify-start w-full">
-              <div className="bg-blue-200 text-blue-800 rounded-lg px-6 py-2 text-sm font-semibold flex flex-col items-center justify-center min-w-[150px] h-16 shadow-md">
-                <span className="text-xl font-bold">35+</span>
-                <span className="text-xs">Years since inception</span>
+              <div className="flex flex-col items-center justify-center text-white text-center" style={{width: "137px",height: "76px",backgroundColor: "#407499",borderTopLeftRadius: "30px",borderTopRightRadius: "50px",borderBottomRightRadius: "20px",borderBottomLeftRadius: "0px",}}>
+                <span className="text-xl leading-none">35+</span>
+                <span className="text-xs mt-1">Years since inception</span>
               </div>
-              <div className="bg-gray-300 rounded-lg w-full sm:w-28 h-16 shadow-md"></div>
-              <div className="bg-gray-300 rounded-lg w-full sm:w-28 h-16 shadow-md"></div>
+              <div style={{width: "126px",height: "76px",backgroundColor: "#DCF1FF",opacity: 1,borderTopLeftRadius: "30px",borderTopRightRadius: "50px",borderBottomRightRadius: "20px",borderBottomLeftRadius: "10px",}}></div>
+              <div style={{width: "126px",height: "76px",backgroundColor: "#DCF1FF",opacity: 1,borderTopLeftRadius: "30px",borderTopRightRadius: "50px",borderBottomRightRadius: "20px",borderBottomLeftRadius: "10px",}}></div>
             </div>
           </div>
         </div>
