@@ -941,25 +941,22 @@ const handlePublish = useCallback(async () => {
           style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           rows={1}
         />
-
-        {/* Subtitle */}
-        {(editorState.subtitle || showSettings) && (
-          <textarea
-            ref={subtitleRef}
-            value={editorState.subtitle}
-            onChange={(e) => {
-              setEditorState(prev => ({ ...prev, subtitle: e.target.value }));
-              handleTextareaResize(e.target);
-            }}
-            placeholder="Subtitle (optional)"
-            className="w-full text-xl text-gray-600 placeholder-gray-400 border-none outline-none resize-none overflow-hidden leading-relaxed mt-4 bg-transparent"
-            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-            rows={1}
-          />
-        )}
+{/* Description */}
+         <textarea
+          ref={titleRef}
+          value={editorState.description}
+          onChange={(e) => {
+            setEditorState(prev => ({ ...prev, description: e.target.value }));
+            handleTextareaResize(e.target);
+          }}
+          placeholder="Description"
+          className="w-full m-5 text-2xl font-bold text-gray-900 placeholder-gray-400 border-none outline-none resize-none overflow-hidden leading-relaxed bg-transparent"
+          style={{ fontFamily: 'Georgia, charter, serif' }}
+          rows={1}
+        />
 
         {/* Content Editor */}
-        <div className="relative mt-12">
+        <div className="relative mt-5">
           <button
             ref={plusBtnRef}
             onClick={handlePlusClick}
