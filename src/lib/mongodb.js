@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const globalWithMongoose = global;
 
@@ -7,8 +7,9 @@ if (!cached) {
   cached = globalWithMongoose.mongoose = { conn: null, promise: null };
 }
 
-export async function connectToDatabase() {
+async function connectToDatabase() {
   if (cached.conn) {
+    console.log("Database already connected.");
     return cached.conn;
   }
 
@@ -21,11 +22,18 @@ export async function connectToDatabase() {
       .connect(uri, {
         dbName: "pictoblogs",
       })
-      .then((mongooseInstance) => mongooseInstance);
+      .then((mongooseInstance) => {
+        console.log("Database connected successfully.");
+        return mongooseInstance;
+      })
+      .catch((err) => {
+        console.error("Database connection failed:", err);
+        throw err;
+      });
   }
 
   cached.conn = await cached.promise;
   return cached.conn;
 }
 
-
+module.exports = { connectToDatabase };
