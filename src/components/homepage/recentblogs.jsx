@@ -1,9 +1,7 @@
-const Blogs = () => {
+export default function RecentBlogs() {
   return (
     <div>
-      <p>This is Blogs Section.</p>
+      {/* Replace with blog cards later */}
     </div>
   );
-};
-
-export default Blogs;
+}

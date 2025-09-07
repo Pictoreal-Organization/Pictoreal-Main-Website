@@ -1,285 +1,142 @@
 "use client";
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function AudioPage() {
-  // fak data
-  const languages =  ["English", "Hindi", "Marathi"];
-  const [selectedLang, setSelectedLang] = React.useState("English");
+  const languages = ["eng", "hin", "mar"];
+  const [selectedLang, setSelectedLang] = useState("eng");
+  const [articles, setArticles] = useState([]);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
-  const articles = [
-    {
-      id: 1,
-      title: "The Silent Crisis-CLimate Change",
-      image: "/articles/climate.jpg",
-      audioUrl: "/audio/climate.mp3",
-      language: "English",
-    },
-    {
-      id: 2,
-      title: "A True Man",
-      image: "/articles/true-man.jpg",
-      audioUrl: "/audio/true-man.mp3",
-      language: "English",
-    },
-    {
-      id: 3,
-      title: "From Broken Helmets to Billion Dollar Deals- The Untild Cricket Saga",
-      image: "/articles/cricket.jpg",
-      audioUrl: "/audio/cricket.mp3",
-      language: "English",
-    },
-    {
-      id: 4,
-      title: "Letter to Krishna",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "English",
-    },
-    {
-      id: 5,
-      title: "Textile: India's Treasured Possession",
-      image: "/articles/textiles.jpg",
-      audioUrl: "/audio/textiles.mp3",
-      language: "English",
-    },
-    {
-      id: 6,
-      title: "The Future of Passwords",
-      image: "/articles/passwords.jpg",
-      audioUrl: "/audio/passwords.mp3",
-      language: "English",
-    },
-    {
-      id: 7,
-      title: "The Science Behind Mindfullness",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "English",
-    },
-    {
-      id: 8,
-      title: "Timeless Wisdom: Decoding the Concept of Prahar",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "English",
-    },
-    {
-      id: 9,
-      title: "Trump, Tariffs and Trade War",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "English",
-    },
-    {
-      id: 10,
-      title: "What Is Even Ordinary?",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "English",
-    },
-    {
-      id: 11,
-      title: "आनंदवन",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 12,
-      title: "आप, हम और दो कप चाय",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 13,
-      title: "घड़ी से पहले की घड़ियाँ",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 14,
-      title: "डॉ. एस. जयशंकर",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 15,
-      title: "नक्षत्र - तारों से तक़दीर तक",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 16,
-      title: "मक़ामात-ए-ह़ुज़्न",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 17,
-      title: "महाकुंभ २०२५ - मेरा आत्मिक अनुभव",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 18,
-      title: "वनतारा - वन्यजीव संरक्षण की क्रांति",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Hindi",
-    },
-    {
-      id: 19,
-      title: "अभिजात मराठी",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 20,
-      title: "आजीचा हरवलेला बटवा",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 21,
-      title: "डिझाईन म्हणजे केवळ शोभा नव्हे",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 22,
-      title: "तिकीट आणि प्रवास",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 23,
-      title: "प्रहर आणि सुरांचा संगम",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 24,
-      title: "प्रहारांची नाट्यमय छटा - वेळेचे चित्रपटभाषांतर",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 25,
-      title: "शाश्वतानां श्लोकानां अद्यतनं प्रतिबिंबम्",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-    {
-      id: 26,
-      title: "स्वस्थस्य स्वास्थ्य रक्षणम्",
-      image: "/articles/krishna.jpg",
-      audioUrl: "/audio/krishna.mp3",
-      language: "Marathi",
-    },
-  ];
-
-  // filter articles by language
-  const filteredArticles = articles.filter(
-    (article) => article.language === selectedLang
-  );
-
-  // ensure selecter article is always from filtered list
-  const [selectedArticle, setSelectedArticle] = React.useState(filteredArticles[0]);
-
-  React.useEffect(() => {
-    //reset to first article when language changes
-    if(filteredArticles.length > 0){
-      setSelectedArticle(filteredArticles[0]);
-    } else {
-      setSelectedArticle(null);
-    }
-  }, [selectedLang])
+  useEffect(() => {
+    let mounted = true;
+    fetch(`http://localhost:5000/tracks/27/${selectedLang}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!mounted) return;
+        const arr = Array.isArray(data) ? data : data?.tracks ?? [];
+        setArticles(arr);
+        setSelectedArticle(arr.length > 0 ? arr[0] : null);
+      })
+      .catch((err) => {
+        console.error("Error fetching articles:", err);
+        setArticles([]);
+        setSelectedArticle(null);
+      });
+    return () => {
+      mounted = false;
+    };
+  }, [selectedLang]);
 
   return (
-    <div className="min-h-screen bg-blue-100 p-8">
-      {/*title*/}
-      <h1 className="text-3xl font-bold text-center mb-8">🎵Audio Articles</h1>
+    <div className="h-screen bg-blue-100 p-8 flex flex-col">
+      {/* Title */}
+      <h1 className="text-3xl font-bold text-center mb-4">
+        🎵 Audio Articles
+      </h1>
 
-      {/*Language buttons*/}
-      <div className="flex gap-4 mb-8">
+      {/* Language buttons */}
+      <div className="flex justify-center gap-4 mb-6">
         {languages.map((lang) => (
           <button
             key={lang}
             onClick={() => setSelectedLang(lang)}
-            className={`px-6 py-2 rounded-xl shadow-md transition ${
+            className={`px-5 py-2 rounded-xl shadow-md transition ${
               selectedLang === lang
-              ? "bg-blue-800 text-white"
-              : "bg-white text-gray-700 hover:bg-gray-200"              
+                ? "bg-blue-800 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-200"
             }`}
           >
-            {lang}
+            {lang.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Left side: list of articles */}
-        <div className="col-span-1 max-h-[500px] overflow-y-auto space-y-4 pr-2">
-          {filteredArticles.length > 0 ? (
-            filteredArticles.map((article) => (
-            <div
-            key={article.id}
-            onClick={() => setSelectedArticle(article)}
-            className={`flex items-center bg-white shadow-md rounded-lg p-4 cursor-pointer transition ${
-              selectedArticle.id === article.id
-              ? "ring-2 ring-blue-400"
-              : "hover:bg-gray-50"
-          }`}
-          >
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-16 h-16 object-cover rounded-md mr-4"
-            />
-            <p className="font-medium">{article.title}</p>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-600">No articles available in this language.</p>
-        )}
+      {/* Main layout */}
+      <div className="flex-1 flex gap-6 h-0 min-h-0">
+        {/* LEFT: Article list */}
+        <div className="w-full md:w-1/3 h-full overflow-y-auto pr-2 space-y-3 custom-scrollbar">
+          {articles.length === 0 ? (
+            <p className="text-center text-gray-600 mt-6">No articles yet.</p>
+          ) : (
+            articles.map((article, idx) => {
+              const idKey = article.id ?? article._id ?? idx;
+              const isSelected =
+                selectedArticle?.id === article.id ||
+                selectedArticle?._id === article._id;
+
+              return (
+                <div
+                  key={idKey}
+                  onClick={() => setSelectedArticle(article)}
+                  className={`flex items-center bg-white rounded-lg p-3 cursor-pointer transition 
+                    ${
+                      isSelected
+                        ? "border-2 border-blue-500 bg-blue-50 shadow-md"
+                        : "border border-gray-300 hover:border-blue-300"
+                    }`}
+                >
+                  <img
+                    src={`http://localhost:5000/images/${
+                      article.image ?? article.cover ?? ""
+                    }`}
+                    alt={article.title ?? article.name ?? "Article"}
+                    className="w-14 h-14 object-cover rounded-md mr-3 flex-shrink-0 border border-gray-300"
+                  />
+                  <div className="text-sm font-medium line-clamp-2">
+                    {article.title ?? article.name ?? "Untitled"}
+                  </div>
+                </div>
+              );
+            })
+          )}
         </div>
 
-        {/* right side: selected article*/}
-        <div className="col-span-2 bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center h-[500px]">
-          {
-            selectedArticle ? (
+        {/* RIGHT: Selected article */}
+        <div className="w-full md:w-2/3 h-full flex items-stretch">
+          <div className="bg-white shadow-xl rounded-2xl p-6 w-full flex flex-col">
+            {selectedArticle ? (
               <>
-                <img 
-                  src={selectedArticle}
-                  alt={selectedArticle.title}
-                  className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
-                />
+                {/* Image */}
+                <div className="flex justify-center items-center mb-4 flex-shrink-0">
+                  <img
+                    src={`http://localhost:5000/images/${
+                      selectedArticle.image ??
+                      selectedArticle.cover ??
+                      ""
+                    }`}
+                    alt={selectedArticle.title ?? "Selected article"}
+                    className="max-w-full max-h-[60vh] object-contain rounded-md shadow-lg"
+                  />
+                </div>
+
+                {/* Title */}
                 <h2 className="text-lg font-semibold text-center mb-4">
-                  {selectedArticle.title}
+                  {selectedArticle.title ??
+                    selectedArticle.name ??
+                    "Untitled"}
                 </h2>
-                <audio controls className="w-full">
-                  <source src="/audio/cricket.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
+
+                {/* Audio player */}
+                <div className="mt-auto">
+                  <audio
+                    controls
+                    className="w-full"
+                    src={`http://localhost:5000/audio/27/${selectedLang}/${
+                      selectedArticle.audio ??
+                      selectedArticle.audioFile ??
+                      selectedArticle.file ??
+                      ""
+                    }`}
+                  >
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
               </>
             ) : (
-              <p className="text-gray-600">Select an article to read.</p>
+              <p className="text-gray-600">Select an article to listen.</p>
             )}
           </div>
+        </div>
       </div>
     </div>
   );
