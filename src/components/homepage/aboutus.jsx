@@ -52,7 +52,7 @@ const AboutUs = () => {
   }, [currentIndex]);
 
   return (
-    <div className="w-full h-full justify-center items-center">
+    <div className="w-full h-full justify-center items-center p-0">
     <div className="bg-white shadow-lg p-5 max-w-7xl w-full h-full sm:p-12 ">
       <div className="flex flex-col lg:flex-row items-start lg:space-x-12">
 
@@ -126,7 +126,7 @@ const AboutUs = () => {
             About Us
           </h1>
 
-          <div className="flex flex-col items-center lg:items-start space-y-8 mt-12 lg:mt-20 w-full">
+          <div className="flex flex-col items-center lg:items-start space-y-8 mt-3 lg:mt-20 w-full">
             {/* Logo Section */}
             {/* Logo Section with Flip */}
             <div className="flex-shrink-0 mb-4 self-center">
