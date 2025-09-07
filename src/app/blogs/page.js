@@ -93,7 +93,7 @@ export default function BlogsPage() {
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-start gap-6 border border-deepnavy"
+            className="bg-white shadow-md rounded-4xl p-6 flex flex-col md:flex-row items-start gap-6 border border-white"
           >
             {/* Image */}
             <img
@@ -113,17 +113,17 @@ export default function BlogsPage() {
 
               {/* Tags + Button */}
               <div className="flex gap-3 mt-4">
-                <span className="px-3 py-2 bg-paleskyblue text-deepnavy rounded-full rounded-md text-sm border border-deepnavy">
+                <span className="px-6 py-2 bg-[#1b3b64]  text-white rounded-full rounded-full text-sm border ">
                   Featured
                 </span>
 
-                <span className="px-3 py-2 bg-paleskyblue text-deepnavy rounded-full rounded-full text-sm border border-deepnavy">
+                <span className="px-6 py-2 bg-[#1b3b64] text-white rounded-full rounded-full text-sm border ">
                   Student Life
                 </span>
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto px-4 py-2 bg-deepnavy text-white rounded-md hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition"
+                  className="ml-auto px-6 py-2 bg-deepnavy text-white rounded-md hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition"
                 >
                   Read More
                 </Link>
