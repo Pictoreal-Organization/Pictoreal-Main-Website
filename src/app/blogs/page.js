@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import { IoIosSearch } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function BlogsPage() {
   const blogs = [
@@ -7,7 +9,7 @@ export default function BlogsPage() {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
-      img: "/blog/blog5-poster-img.png",
+      img: "/blogs/blog5-poster-img.png",
       excerpt:
         "Balancing academics and personal interests isn’t about sacrificing moments—it’s about weaving them together. A journey through 4 years of student life...",
     },
@@ -15,7 +17,7 @@ export default function BlogsPage() {
       id: "blog2",
       title: "Mysteries of Particle Physics",
       authors: "Shrihari Kulkarni",
-      img: "/blog/blog2-poster-img.png",
+      img: "/blogs/blog2-poster-img.png",
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
     },
@@ -23,7 +25,7 @@ export default function BlogsPage() {
       id: "blog3",
       title: "Error 500 - The Flawed Beauty of Your Day",
       authors: "Nehal Shivane, Sampada Tagalpallewar, Shruti Mone",
-      img: "/blog/blog3-poster-img.png",
+      img: "/blogs/blog3-poster-img.png",
       excerpt:
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
@@ -31,7 +33,7 @@ export default function BlogsPage() {
       id: "dakhni",
       title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
       authors: "Ayan Pathan",
-      img: "/blog/blog-dakhni-poster.png",
+      img: "/blogs/blog-dakhni-poster.png",
       excerpt:
         "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
     },
@@ -51,22 +53,39 @@ export default function BlogsPage() {
 
       {/* Search + Filters */}
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-10">
-        <input
-          type="text"
-          placeholder="search stories , authors , or themes ..."
-          className="w-full md:w-1/3 px-4 py-2 border border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
-        />
-        <select className="px-4 py-2 border border-deepnavy rounded-lg text-deepnavy">
-          <option>All Genres</option>
-          <option>Fiction</option>
-          <option>Non-fiction</option>
-          <option>Poetry</option>
-        </select>
-        <select className="px-4 py-2 border border-deepnavy rounded-lg text-deepnavy">
-          <option>Latest Creation</option>
-          <option>Oldest First</option>
-          <option>Most Popular</option>
-        </select>
+
+        <div className="relative w-full md:w-1/3">
+          <input
+            type="text"
+            placeholder="Search Stories, Authors, or Themes..."
+            className="w-full px-10 py-2 border border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
+          />
+          <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
+        </div>
+
+        <div className="flex gap-4">
+          {/* Genres Dropdown */}
+          <div className="relative">
+            <select className="appearance-none px-4 py-2 border border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
+              <option>All Genres</option>
+              <option>Fiction</option>
+              <option>Non-fiction</option>
+              <option>Poetry</option>
+            </select>
+            <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+          </div>
+
+          {/* Sorting Dropdown */}
+          <div className="relative">
+            <select className="appearance-none px-4 py-2 border border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
+              <option>Latest Creation</option>
+              <option>Oldest First</option>
+              <option>Most Popular</option>
+            </select>
+            <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+          </div>
+        </div>
+
       </div>
 
       {/* Blog Cards */}
@@ -94,12 +113,14 @@ export default function BlogsPage() {
 
               {/* Tags + Button */}
               <div className="flex gap-3 mt-4">
-                <span className="px-3 py-1 bg-paleskyblue text-deepnavy rounded-md text-sm border border-deepnavy">
+                <span className="px-3 py-2 bg-paleskyblue text-deepnavy rounded-md text-sm border border-deepnavy">
                   Featured
                 </span>
-                <span className="px-3 py-1 bg-paleskyblue text-deepnavy rounded-md text-sm border border-deepnavy">
+
+                <span className="px-3 py-2 bg-paleskyblue text-deepnavy rounded-md text-sm border border-deepnavy">
                   Student Life
                 </span>
+
                 <Link
                   href={`/blogs/${blog.id}`}
                   className="px-4 py-2 bg-deepnavy text-white rounded-md hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition"
