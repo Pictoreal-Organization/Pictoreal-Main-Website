@@ -72,6 +72,7 @@ h6 { font-size: 1.25rem; }
   perspective: 1000px;
 }
 
+/* logo flip */
 .flip-inner {
   position: relative;
   width: 100%;

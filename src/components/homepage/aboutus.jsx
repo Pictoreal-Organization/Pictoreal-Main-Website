@@ -52,7 +52,7 @@ const AboutUs = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-white shadow-lg p-12 max-w-7xl w-full">
+    <div className="bg-white shadow-lg p-12 max-w-7xl w-full h-full">
       <div className="flex flex-col lg:flex-row items-start lg:space-x-12">
 
         {/* LEFT: Carousel Section (HIDE on mobile) */}
@@ -179,9 +179,9 @@ const AboutUs = () => {
             </p>
 
             {/* Stats (side by side in mobile too) */}
-           <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 mt-8 w-full lg:ml-15">
+           <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-2 mt-1 w-full lg:ml-15 sm:ml-0">
             {/* Stat 1 */}
-              <div className="flex flex-col items-center justify-center text-white text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[137px] md:h-[76px]"
+              <div className="flex flex-col items-center justify-center text-white text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[137px] md:h-[76px]"
                 style={{
                   backgroundColor: "#407499",
                   borderTopLeftRadius: "30px",
@@ -194,9 +194,9 @@ const AboutUs = () => {
               </div>
 
             {/* Stat 2 */}
-              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[126px] md:h-[76px]"
+              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[126px] md:h-[76px]"
                 style={{
-                  backgroundColor: "#DCF1FF",
+                  backgroundColor: "#A4CDE4",
                   borderTopLeftRadius: "30px",
                   borderTopRightRadius: "50px",
                   borderBottomRightRadius: "20px",
@@ -207,7 +207,7 @@ const AboutUs = () => {
               </div>
 
             {/* Stat 3 */}
-              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[126px] md:h-[76px]"
+              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[126px] md:h-[76px]"
                 style={{
                   backgroundColor: "#DCF1FF",
                   borderTopLeftRadius: "30px",
