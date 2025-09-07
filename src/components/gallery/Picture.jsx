@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+    <div className="fixed inset-0 !m-auto bg-deepnavy bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
       <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
         <button
           onClick={onClose}
@@ -92,7 +92,7 @@ const Carousel = ({ images, onImageClick }) => {
   };
 
   return (
-    <div className="relative lg:max-w-[30%] max-w-full  mx-auto overflow-hidden my-8" ref={containerRef}>
+    <div className="relative lg:max-w-[30%] max-w-[85%]  mx-auto overflow-hidden my-2 lg:my-8 z-20" ref={containerRef}>
       <div className="relative w-full h-auto flex items-center justify-center bg-white-200 rounded-lg shadow-lg"
       >
         {/* Image Slider */}
@@ -112,29 +112,29 @@ const Carousel = ({ images, onImageClick }) => {
                 ref={index === 0 ? imageRef : null}
                 src={image}
                 alt={`Slide ${index}`}
-                className="max-h-full object-cont ain border-2 border-firefly cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+                className="max-h-full object-cont  border-2 border-firefly cursor-pointer rounded-lg transition-transform duration-500 hover:scale-105 hover:shadow-xl"
                 onClick={() => onImageClick(images)}
               />
             </div>
           ))}
         </div>
 
-        <div className="none">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="hidden md:block absolute top-1/2 left-50 md:left-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
-          >
-            &#10094;
-          </button>
-          {/* Navigation Buttons */}
-          <button
-            onClick={nextSlide}
-            className="hidden md:block absolute top-1/2 right-50 md:right-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] p-3 rounded-full hover:bg-submarine transition-colors duration-300"
-          >
-            &#10095;
-          </button>
-        </div>
+        {/* <div className=""> */}
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className=" md:block absolute top-1/2  left-0 md:left-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] bg-deepnavy p-3 rounded-full hover:bg-[#00426b] transition-colors duration-300 z-10"
+        >
+          &#10094;
+        </button>
+        {/* Navigation Buttons */}
+        <button
+          onClick={nextSlide}
+          className=" md:block absolute top-1/2 right-0 md:right-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] bg-deepnavy p-3 rounded-full hover:bg-[#00426b] transition-colors duration-300"
+        >
+          &#10095;
+        </button>
+        {/* </div> */}
 
       </div>
 
@@ -181,11 +181,11 @@ const Picture = () => {
   const imageSets = [
     {
       images: [
-        "/gallery/mre1.JPG",
-        "/gallery/mre2.JPG",
-        "/gallery/mre3.JPG",
-        "/gallery/mre4.JPG",
-        "/gallery/mre5.JPG",
+        "/gallery/mre1.jpg",
+        "/gallery/mre2.jpg",
+        "/gallery/mre3.jpg",
+        "/gallery/mre4.jpg",
+        "/gallery/mre5.jpg",
       ],
       title: "Magazine Release Event",
       description:
@@ -193,12 +193,12 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/Manthan_1.JPG",
-        "/gallery/Manthan_2.JPG",
-        "/gallery/Manthan_3.JPG",
-        "/gallery/Manthan_4.JPG",
-        "/gallery/Manthan_5.JPG",
-        "/gallery/Manthan_6.JPG",
+        "/gallery/Manthan_1.jpg",
+        "/gallery/Manthan_2.jpg",
+        "/gallery/Manthan_3.jpg",
+        "/gallery/Manthan_4.jpg",
+        "/gallery/Manthan_5.jpg",
+        "/gallery/Manthan_6.jpg",
       ],
       title: "Manthan",
       description:
@@ -207,10 +207,10 @@ const Picture = () => {
     {
       images: [
         "/gallery/Parichay_1.jpg",
-        "/gallery/Parichay_2.JPG",
+        "/gallery/Parichay_2.jpg",
         "/gallery/Parichay_3.jpg",
         "/gallery/Parichay_4.jpg",
-        "/gallery/Parichay_5.JPG",
+        "/gallery/Parichay_5.jpg",
         "/gallery/Parichay_6.jpg",
       ],
       title: "Parichay",
@@ -236,31 +236,31 @@ const Picture = () => {
         "/gallery/Pictofest_1.jpg",
         "/gallery/Pictofest_2.jpg",
         "/gallery/Pictofest_3.jpg",
-        "/gallery/Pictofest_4.JPG",
+        "/gallery/Pictofest_4.jpg",
         "/gallery/Pictofest_5.jpg",
         "/gallery/Pictofest_6.jpg",
         "/gallery/Pictofest_7.jpg",
         "/gallery/Pictofest_8.jpg",
-        "/gallery/Pictofest_9.JPG",
-        "/gallery/Pictofest_10.JPG",
-        "/gallery/Pictofest_11.JPG",
-        "/gallery/Pictofest_12.JPG",
-        "/gallery/Pictofest_13.JPG",
+        "/gallery/Pictofest_9.jpg",
+        "/gallery/Pictofest_10.jpg",
+        "/gallery/Pictofest_11.jpg",
+        "/gallery/Pictofest_12.jpg",
+        "/gallery/Pictofest_13.jpg",
       ],
       title: "PICTOFEST",
       description: `On February 20th, PICTOREAL hosted its first intercollegiate art festival, PICTOFEST 2025, under the theme “Beachy Vibes.” Over two days, vibrant decor and engaging activities brought the spirit of the sea to life. Events like Manthan (public speaking), Coastal Crimes (mystery-solving), Horizon Hunt (treasure hunt), and Figma Wave (online design contest) saw enthusiastic participation. Hands-on workshops such as Play with Clay, Texture Art, and Craft Your Moon drew 150+ creatives. The PICS-O-REEL exhibition showcased 800+ artworks and drew large crowds across Pune. The festival ended with a grand closing ceremony honoring winners across all events.`,
     },
     {
       images: [
-        "/gallery/BE_1.JPG",
-        "/gallery/BE_2.JPG",
-        "/gallery/BE_3.JPG",
-        "/gallery/BE_4.JPG",
-        "/gallery/BE_5.JPG",
-        "/gallery/BE_6.JPG",
-        "/gallery/BE_7.JPG",
-        "/gallery/BE_8.JPG",
-        "/gallery/BE_9.JPG",
+        "/gallery/BE_1.jpg",
+        "/gallery/BE_2.jpg",
+        "/gallery/BE_3.jpg",
+        "/gallery/BE_4.jpg",
+        "/gallery/BE_5.jpg",
+        "/gallery/BE_6.jpg",
+        "/gallery/BE_7.jpg",
+        "/gallery/BE_8.jpg",
+        "/gallery/BE_9.jpg",
       ],
       title: "BE Photoshoot",
       description:
@@ -268,9 +268,9 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/Int1.JPG",
-        "/gallery/Int2.JPG",
-        "/gallery/Int3.JPG",
+        "/gallery/Int1.jpg",
+        "/gallery/Int2.jpg",
+        "/gallery/Int3.jpg",
         "/gallery/Int4.jpg",
         "/gallery/Int5.jpg",
       ],
@@ -280,11 +280,11 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/Career_1.JPG",
-        "/gallery/Career_2.JPG",
-        "/gallery/Career_3.JPG",
-        "/gallery/Career_4.JPG",
-        "/gallery/Career_5.JPG",
+        "/gallery/Career_1.jpg",
+        "/gallery/Career_2.jpg",
+        "/gallery/Career_3.jpg",
+        "/gallery/Career_4.jpg",
+        "/gallery/Career_5.jpg",
         "/gallery/Career_6.jpg",
         "/gallery/Career_7.jpg",
       ],
@@ -308,10 +308,10 @@ const Picture = () => {
     },
     {
       images: [
-        "/gallery/Picto_Plants1.JPG",
-        "/gallery/Picto_Plants2.JPG",
+        "/gallery/Picto_Plants1.jpg",
+        "/gallery/Picto_Plants2.jpg",
         "/gallery/Picto_Plants3.jpg",
-        "/gallery/Picto_Plants4.JPG",
+        "/gallery/Picto_Plants4.jpg",
       ],
       title: "Picto Plants",
       description:
@@ -365,34 +365,34 @@ const Picture = () => {
   return (
     <>
       <div className={` bg-[${color1}]`}>
-        <div className={`space-y-8 px-10 mb-10`}>
-          <h2 className="text-5xl text-firefly font-bold text-center mb-10">
+        <div className={`space-y-80 lg:px-10 md:px-5 mb-10`}>
+          <h2 className="font-heading text-5xl text-firefly font-bold text-center mb-10">
             GALLERY
           </h2>
           {imageSets.map((set, i) => (
             <div
+              key={i}
               className="m-0"
               style={{ backgroundColor: i % 2 === 0 ? color1 : color2 }}
             >
 
               <div
-                key={i}
                 id={set.title.toLowerCase().replace(/\s+/g, "-")}
                 style={{ backgroundColor: i % 2 === 0 ? color1 : color2 }}
-                className="flex flex-col max-w-full mx-auto p-6 rounded-lg"
+                className="flex flex-col max-w-full mx-auto lg:p-6 px-4 rounded-lg"
               >
                 <div className={`flex flex-col lg:flex-row`}>
                   {/* Carousel */}
                   <Carousel images={set.images} onImageClick={handleImageClick} />
 
-                  <div className="flex flex-col items-center justify-center p-10 px-20 ">
+                  <div className="flex flex-col items-center justify-center w-full lg:p-10 lg:px-20   ">
 
                     {/* Heading */}
-                    <h2 className="text-3xl text-firefly font-bold text-center mb-4">
+                    <h2 className="font-heading text-3xl text-firefly font-bold text-center mb-4">
                       {set.title}
                     </h2>
                     {/* Description */}
-                    <div className="flex justify-center">
+                    <div className="font-body  md:text-xl sm:text-sm flex justify-center">
                       <p className="text-justify text-[#141414] mb-4 max-w-3xl">
                         {set.description}
                       </p>
@@ -404,8 +404,8 @@ const Picture = () => {
 
               </div>
 
-              {(i !== imageSets.length-1) && (
-                <div className={` relative w-full h-15 bg-transparent`}>
+              {(i !== imageSets.length - 1) && (
+                <div className={` relative w-full h-15 bg-transparent -mg-1`}>
                   <svg
                     className="absolute bottom-0 w-full"
                     xmlns="http://www.w3.org/2000/svg"
@@ -439,8 +439,8 @@ const Picture = () => {
         </div>
       </div>
 
-      {/* 
-      <div className=" relative w-full h-15 bg-transparent">
+      {/*       
+      <div className=" relative w-full h-25 bg-transparent">
         <svg
           className="absolute bottom-0 w-full"
           xmlns="http://www.w3.org/2000/svg"
@@ -453,6 +453,21 @@ const Picture = () => {
           ></path>
         </svg>
       </div> */}
+      {/* 
+      <div className={` relative w-full h-15 bg-transparent `}>
+        <svg
+          className="absolute bottom-0 w-full"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill={`red`}
+            fillOpacity="1"
+            d="M0,290 Q200,250 720,290 T1440,290 V320 H0 Z"
+          ></path>
+        </svg>
+      </div> */}
+      {/* <div className="h-20 bg-blue-700"></div> */}
 
 
     </>
