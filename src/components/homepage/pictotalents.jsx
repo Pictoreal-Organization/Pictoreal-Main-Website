@@ -1,9 +1,7 @@
-const PictoTalents = () => {
+export default function PictoTalents() {
   return (
     <div>
-      <p>This is PictoTalents/PictoPods Section.</p>
+      {/* Content for PictoTalents goes here */}
     </div>
   );
-};
-
-export default PictoTalents;
+}
