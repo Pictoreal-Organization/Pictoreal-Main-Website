@@ -11,11 +11,6 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "aos": "^2.3.4",
-    "bcryptjs": "^2.4.3",
-    "lucide-react": "^0.541.0",
-    "next": "^15.5.0",
-    "next-auth": "^4.24.7",
-    "mongoose": "^8.8.1",
     "lucide-react": "^0.476.0",
     "next": "^15.0.1",
     "pictoreal-new": "file:",
