@@ -13,11 +13,11 @@ const color2 = "#A8DCEC";
 
 // Expanded Image View Component
 const ExpandedImage = ({ image, onClose }) => (
-  <div className="fixed inset-0 !m-auto bg-firefly bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+  <div className="fixed inset-0 !m-auto bg-deepnavy/85  flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
     <img
       src={image}
       alt="Expanded"
-      className="max-w-full max-h-full border-[#d0b311] border-2 object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
+      className="max-w-full max-h-full  border-2 object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
     />
     <button
       onClick={onClose}
@@ -33,8 +33,8 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 !m-auto bg-deepnavy bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
-      <div className="relative bg-black p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
+    <div className="fixed inset-0 !m-auto  bg-[#b9dbf2] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+      <div className="relative bg-[#dddddd] p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 hover:scale-100">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-[#141414] z-50 bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
@@ -47,7 +47,7 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
               key={index}
               src={image}
               alt={`Image ${index}`}
-              className="w-full h-64 object-cover border-[#d0b311] border-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              className="w-full h-64 object-cover border-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
               onClick={() => onImageClick(image)}
             />
           ))}
@@ -92,8 +92,8 @@ const Carousel = ({ images, onImageClick }) => {
   };
 
   return (
-    <div className="relative lg:max-w-[30%] max-w-[85%]  mx-auto overflow-hidden my-2 lg:my-8 z-20" ref={containerRef}>
-      <div className="relative w-full h-auto flex items-center justify-center bg-white-200 rounded-lg shadow-lg"
+    <div className="relative lg:max-w-full max-w-[85%] mx-auto overflow-hidden my-2 lg:my-8 z-20" ref={containerRef}>
+      <div className="relative w-full h-auto flex items-center justify-center bg-white-200 rounded-lg"
       >
         {/* Image Slider */}
         <div
@@ -121,19 +121,19 @@ const Carousel = ({ images, onImageClick }) => {
 
         {/* <div className=""> */}
         {/* Navigation Buttons */}
-        <button
+        {/* <button
           onClick={prevSlide}
           className=" md:block absolute top-1/2  left-0 md:left-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] bg-deepnavy p-3 rounded-full hover:bg-[#00426b] transition-colors duration-300 z-10"
         >
           &#10094;
-        </button>
+        </button> */}
         {/* Navigation Buttons */}
-        <button
+        {/* <button
           onClick={nextSlide}
           className=" md:block absolute top-1/2 right-0 md:right-0 transform -translate-y-1/2 bg-firefly text-[#d0b311] bg-deepnavy p-3 rounded-full hover:bg-[#00426b] transition-colors duration-300"
         >
           &#10095;
-        </button>
+        </button> */}
         {/* </div> */}
 
       </div>
@@ -365,8 +365,8 @@ const Picture = () => {
   return (
     <>
       <div className={` bg-[${color1}]`}>
-        <div className={`space-y-80 lg:px-10 md:px-5 mb-10`}>
-          <h2 className="font-heading text-5xl text-firefly font-bold text-center mb-10">
+        <div className={`space-y-80 mb-10`}>
+          <h2 className="font-heading text-5xl font-bold text-center mb-10">
             GALLERY
           </h2>
           {imageSets.map((set, i) => (
@@ -375,17 +375,18 @@ const Picture = () => {
               className="m-0"
               style={{ backgroundColor: i % 2 === 0 ? color1 : color2 }}
             >
-
               <div
                 id={set.title.toLowerCase().replace(/\s+/g, "-")}
                 style={{ backgroundColor: i % 2 === 0 ? color1 : color2 }}
                 className="flex flex-col max-w-full mx-auto lg:p-6 px-4 rounded-lg"
               >
-                <div className={`flex flex-col lg:flex-row`}>
+                <div className={`flex flex-col lg:flex-row mt-10 lg:pt-0`}>
                   {/* Carousel */}
-                  <Carousel images={set.images} onImageClick={handleImageClick} />
+                  <div className="lg:max-w-[40%] pl-10">
+                    <Carousel images={set.images} onImageClick={handleImageClick} />
+                  </div>
 
-                  <div className="flex flex-col items-center justify-center w-full lg:p-10 lg:px-20   ">
+                  <div className="flex flex-col items-center justify-center w-full lg:p-10 lg:px-10 md:pt-5 ">
 
                     {/* Heading */}
                     <h2 className="font-heading text-3xl text-firefly font-bold text-center mb-4">
@@ -405,7 +406,7 @@ const Picture = () => {
               </div>
 
               {(i !== imageSets.length - 1) && (
-                <div className={` relative w-full h-15 bg-transparent -mg-1`}>
+                <div className={` relative w-full h-15 bg-transparent -mb-1`}>
                   <svg
                     className="absolute bottom-0 w-full"
                     xmlns="http://www.w3.org/2000/svg"
