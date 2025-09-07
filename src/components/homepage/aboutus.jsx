@@ -12,6 +12,7 @@ const AboutUs = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +80,7 @@ const AboutUs = () => {
                     height={411}
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black opacity-40"></div>
+                  
                 </div>
               ))}
             </div>
@@ -126,16 +127,47 @@ const AboutUs = () => {
 
           <div className="flex flex-col items-center lg:items-start space-y-8 mt-12 lg:mt-20 w-full">
             {/* Logo Section */}
+            {/* Logo Section with Flip */}
             <div className="flex-shrink-0 mb-4 self-center">
-              <div className="relative w-50 h-50 rounded-full flex flex-col items-center justify-center overflow-hidden ml-0 lg:ml-10">
-                <Image
-                  src="/V27_FINAL_LOGO.png"
-                  alt="Pictoreal logo"
-                  className="w-full h-full object-contain p-4"
-                  loading="lazy"
-                  width={186}
-                  height={186}
-                />
+              <div className="relative w-[186px] h-[186px] perspective">
+                <div className={`flip-inner ${isFlipped ? "flipped" : ""} w-full h-full`}>
+                  {/* Front side */}
+                  <div className="flip-front absolute w-full h-full backface-hidden rounded-full overflow-hidden">
+                    <Image
+                      src="/icon.png"
+                      alt="Volume 26 logo"
+                      className="w-full h-full object-contain p-4"
+                      loading="lazy"
+                      width={186}
+                      height={186}  
+                    />
+                  </div>
+
+                  {/* Back side */}
+                  <div className="flip-back absolute w-full h-full backface-hidden rounded-full overflow-hidden rotate-y-180">
+                    <Image
+                      src="/V27_FINAL_LOGO.png"
+                      alt="Volume 27 logo"
+                      className="w-full h-full object-contain p-4"
+                      loading="lazy"
+                      width={186}
+                      height={186}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Flip Button */}
+              <div className="flex justify-center mt-4">
+                <button onClick={() => setIsFlipped(!isFlipped)}
+                  className="transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[#407499]/30 hover:shadow-lg bg-[#407499] hover:bg-[#0A192E]
+                text-[#DCF1FF] text-sm font-semibold px-3 py-1.5 rounded-md shadow-md border
+                border-[#407499]/30
+                hover:border-[#DCF1FF]/30
+                  backdrop-blur-sm
+                  active:scale-95
+                  hover:bg-opacity-80">Reveal Logo
+                </button>
               </div>
             </div>
 
@@ -147,53 +179,44 @@ const AboutUs = () => {
             </p>
 
             {/* Stats (side by side in mobile too) */}
-            <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-4 mt-8 w-full ml-15">
-              <div
-                className="flex flex-col items-center justify-center text-white text-center sm:max-w-1/3 max-h-1/3"
+           <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 mt-8 w-full lg:ml-15">
+            {/* Stat 1 */}
+              <div className="flex flex-col items-center justify-center text-white text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[137px] md:h-[76px]"
                 style={{
-                  width: "137px",
-                  height: "76px",
                   backgroundColor: "#407499",
                   borderTopLeftRadius: "30px",
                   borderTopRightRadius: "50px",
                   borderBottomRightRadius: "20px",
                   borderBottomLeftRadius: "0px",
-                }}
-              >
-                <span className="text-xl leading-none">35+</span>
-                <span className="text-xs mt-1">Years since inception</span>
+                }}>
+                <span className="text-sm sm:text-base md:text-xl leading-none">35+</span>
+                <span className="text-[10px] sm:text-xs mt-1">Years since inception</span>
               </div>
-              <div
-                className="flex flex-col items-center justify-center text-black text-center"
+
+            {/* Stat 2 */}
+              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[126px] md:h-[76px]"
                 style={{
-                  width: "126px",
-                  height: "76px",
                   backgroundColor: "#DCF1FF",
-                  opacity: 1,
                   borderTopLeftRadius: "30px",
                   borderTopRightRadius: "50px",
                   borderBottomRightRadius: "20px",
                   borderBottomLeftRadius: "10px",
-                }}
-              >
-                <span className="text-xl leading-none">10+</span>
-                <span className="text-xs mt-1">Events every year</span>
+                }}>
+                <span className="text-sm sm:text-base md:text-xl leading-none">10+</span>
+                <span className="text-[10px] sm:text-xs mt-1">Events every year</span>
               </div>
-              <div
-                className="flex flex-col items-center justify-center text-black text-center"
+
+            {/* Stat 3 */}
+              <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[110px] sm:h-[70px] md:w-[126px] md:h-[76px]"
                 style={{
-                  width: "126px",
-                  height: "76px",
                   backgroundColor: "#DCF1FF",
-                  opacity: 1,
                   borderTopLeftRadius: "30px",
                   borderTopRightRadius: "50px",
                   borderBottomRightRadius: "20px",
                   borderBottomLeftRadius: "10px",
-                }}
-              >
-                <span className="text-xl leading-none">120+</span>
-                <span className="text-xs mt-1">Members</span>
+                }}>
+                <span className="text-sm sm:text-base md:text-xl leading-none">120+</span>
+                <span className="text-[10px] sm:text-xs mt-1">Members</span>
               </div>
             </div>
           </div>
