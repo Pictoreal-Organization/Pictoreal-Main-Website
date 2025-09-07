@@ -1,7 +1,7 @@
 import Hero from '../components/homepage/hero';
 import AboutUs from '../components/homepage/aboutus';
 import OurTeams from '../components/homepage/ourteams';
-import OurEvents from '../components/homepage/ourevents';
+import EventCarousel from '../components/homepage/ourevents';
 import RecentBlogs from '../components/homepage/recentblogs';
 import PictoTalents from '../components/homepage/pictotalents';
 
@@ -19,7 +19,7 @@ export default function HomePage() {
         <RecentBlogs />
         <OurTeams />
         <PictoTalents />
-        <OurEvents />
+        <EventCarousel />
       </div>
     </div>
   );
