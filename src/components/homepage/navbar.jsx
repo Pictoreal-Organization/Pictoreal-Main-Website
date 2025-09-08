@@ -11,13 +11,12 @@ const ArrowIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="#0B2D4F"
-    strokeWidth="2"
+    strokeWidth="2.5"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="transition-transform group-hover:translate-x-1"
   >
-    <line x1="5" y1="12" x2="19" y2="12"></line>
-    <polyline points="12 5 19 12 12 19"></polyline>
+    <path d="M7 17L17 7"></path>
+    <polyline points="7 7 17 7 17 17"></polyline>
   </svg>
 );
 
@@ -31,27 +30,27 @@ export default function Navbar() {
   }, []);
   
   // Navigation items
-  const navLinks = ['Home', 'Events', 'Blogs', 'Articles', 'Our Team'];
+  const navLinks = ['Home', 'Gallery', 'Blogs', 'Articles', 'OurTeam'];
 
   return (
-    <nav className="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="relative flex items-center justify-between h-20">
           
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/">
               <img 
-                className="h-12 w-auto" 
-                src="/pictoreal.jpg" 
+                className="h-8 w-auto" 
+                src="/pictoreal.png" 
                 alt="Pictoreal Logo" 
               />
             </a>
           </div>
 
-          {/* Centered Navigation Links */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4 p-2 bg-[#DDF1FF] rounded-full">
+          {/* Centered Navigation Links - Absolutely positioned to ensure perfect centering */}
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+            <div className="flex items-baseline space-x-4 p-2 bg-pastelskyblue rounded-full">
               {navLinks.map((link) => {
                 const href = link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '-')}`;
                 const isActive = activePath === href;
@@ -60,7 +59,7 @@ export default function Navbar() {
                   <a
                     key={link}
                     href={href}
-                    className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300
+                    className={`px-6 py-2 rounded-full text-sm font-body transition-colors 
                       ${
                         isActive
                           ? 'bg-[#0B2D4F] text-white'
