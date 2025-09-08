@@ -84,24 +84,27 @@ export default function RecentBlogs() {
               </p>
 
               {/* Tags + Button */}
-              <div className="flex gap-4 mt-6 items-center">
-                <span className="px-6 py-2 bg-deepnavy text-white rounded-full text-sm">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
+                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
-                <span className="px-6 py-2 bg-deepnavy text-white rounded-full text-sm">
+                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
                 </span>
 
-                <Link
+               <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto px-6 py-2 bg-deepnavy text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2"
+                  className="ml-auto px-5 py-1 bg-deepnavy text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
+                    sm:px-4 sm:py-1 sm:text-sm
+                    max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
                 >
-                  View Magazines{" "}
-                  <span className="bg-white rounded-full p-2 flex items-center justify-center">
+                  View Magazines
+                  <span className="bg-white rounded-full p-2 flex items-center justify-center max-sm:p-1">
                     <ArrowIcon />
                   </span>
                 </Link>
+
               </div>
             </div>
           </div>

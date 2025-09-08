@@ -178,7 +178,9 @@ export default function BlogsPage() {
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="px-8 py-1 bg-deepnavy text-white mx- rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition text-sm md:text-base flex items-center  md:text-left justify-center  sm:mt-0"
+                  className="ml-auto px-6 py-3 bg-deepnavy text-6px text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
+                    sm:px-4 sm:py-1 sm:text-sm
+                    max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
                 >
                   Read More
                 </Link>
