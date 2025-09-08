@@ -126,7 +126,7 @@ const AboutUs = () => {
             About Us
           </h1>
 
-          <div className="flex flex-col items-center lg:items-start space-y-8 mt-3 lg:mt-20 w-full">
+          <div className="flex flex-col items-center space-y-8 mt-3 lg:mt-20 w-full">
             {/* Logo Section */}
             {/* Logo Section with Flip */}
             <div className="flex-shrink-0 mb-4 self-center">
@@ -173,14 +173,14 @@ const AboutUs = () => {
             </div>
 
             {/* Text */}
-            <p className="text-sm text-gray-700 font-body leading-relaxed max-w-md text-center lg:ml-15">
+            <p className="text-sm text-gray-700 font-body max-w-md text-center">
               We are Pictoreal: a community that publishes a magazine and serves
               our community. Join us to write the story and be the change on
               campus this year.
             </p>
 
             {/* Stats (side by side in mobile too) */}
-           <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-2 mt-1 w-full lg:ml-15 sm:ml-0">
+           <div className="flex flex-row flex-wrap justify-center  gap-2 sm:gap-2 mt-1 w-full">
             {/* Stat 1 */}
               <div className="flex flex-col items-center justify-center text-white text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[137px] md:h-[76px]"
                 style={{

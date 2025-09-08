@@ -23,9 +23,11 @@
 
 @theme {
   --color-paleskyblue: #DCF1FF;
+  --color-pastelskyblue: #B3DFFF;
   --color-deepnavy: #111C33;
   --color-greenblue:#407499;
   --color-midnightblue: #0A192E;
+  --color-cream: #F2F2F2;
   --font-heading: Playfair, "serif";
   --font-body: Inter, "sans-serif";
 }
