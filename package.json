@@ -15,6 +15,7 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.476.0",
     "mongoose": "^8.8.1",
     "next": "^15.0.1",
@@ -26,7 +27,8 @@
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "react-swipeable": "^7.0.2",
-    "react-use": "^17.6.0"
+    "react-use": "^17.6.0",
+    "run": "^1.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.12",
