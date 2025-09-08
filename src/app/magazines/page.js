@@ -10,7 +10,7 @@ const magazines = [
     title: "Prahar",
     volume: "27",
     imgLink: "/magazines/vol27.png",
-    iFrameSrc: "https://link-to-your-magazine-27",
+    iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a, facilisis et dolor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a ",
   },
@@ -18,7 +18,7 @@ const magazines = [
     title: "Navras",
     volume: "26",
     imgLink: "/magazines/vol26.png",
-    iFrameSrc: "https://link-to-your-magazine-26",
+    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a, facilisis et dolor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a",
   },
@@ -26,7 +26,7 @@ const magazines = [
     title: "Navras",
     volume: "25",
     imgLink: "/magazines/vol26.png",
-    iFrameSrc: "https://link-to-your-magazine-25",
+    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a, facilisis et dolor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus ex eu eleifend rutrum. Integer felis lorem, egestas vel dignissim a",
   },
