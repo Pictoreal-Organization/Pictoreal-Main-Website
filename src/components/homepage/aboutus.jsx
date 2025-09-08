@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   const images = [
-    "/Pictofam.JPG",
+    "/Pictofam.jpg",
     "/Pictofam2.jpg",
     "/Pictofam3.jpg",
     "/Pictofam4.jpg",
@@ -52,7 +52,8 @@ const AboutUs = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-white shadow-lg p-12 max-w-7xl w-full h-full">
+    <div className="bg-white w-full h-full justify-center items-center flex shadow-lg">
+    <div className="p-5 max-w-7xl w-full h-full sm:p-12 ">
       <div className="flex flex-col lg:flex-row items-start lg:space-x-12">
 
         {/* LEFT: Carousel Section (HIDE on mobile) */}
@@ -125,7 +126,7 @@ const AboutUs = () => {
             About Us
           </h1>
 
-          <div className="flex flex-col items-center lg:items-start space-y-8 mt-12 lg:mt-20 w-full">
+          <div className="flex flex-col items-center lg:items-start space-y-8 mt-3 lg:mt-20 w-full">
             {/* Logo Section */}
             {/* Logo Section with Flip */}
             <div className="flex-shrink-0 mb-4 self-center">
@@ -222,6 +223,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
