@@ -3,7 +3,6 @@ import Link from "next/link";
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
-
 export default function BlogsPage() {
   const blogs = [
     {
@@ -41,37 +40,39 @@ export default function BlogsPage() {
   ];
 
   return (
-    <div className="bg-paleskyblue min-h-screen p-6">
+    <div className="bg-paleskyblue min-h-screen px-4 md:px-6 p-6">
       {/* Header */}
-      <h2 className="text-center font-bold text-3xl mb-4 text-deepnavy">
+      <h2 className="text-center font-bold text-2xl md:text-3xl mb-4 text-deepnavy">
         BLOGS
       </h2>
-      
+
       {/*SVG Design*/}
-       <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '10vh', 
-      width: '100%',  
-      
-    }}>
-      <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="-20 80 1400 200" 
-        preserveAspectRatio="xMidYMid meet"
+      <div
         style={{
-          width: '100%', 
-          maxWidth: '700px', 
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "10vh",
+          width: "100%",
         }}
       >
-        <g
-          transform="translate(0.000000,411.000000) scale(0.100000,-0.100000)"
-          fill="#000000"
-          stroke="none"
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-20 80 1400 200"
+          preserveAspectRatio="xMidYMid meet"
+          style={{
+            width: "100%",
+            maxWidth: "700px",
+          }}
         >
-          <path d="M7465 3231 c-77 -14 -147 -56 -184 -111 -30 -44 -34 -57 -35 -118 0
+          <g
+            transform="translate(0.000000,411.000000) scale(0.100000,-0.100000)"
+            fill="#000000"
+            stroke="none"
+          >
+            <path
+              d="M7465 3231 c-77 -14 -147 -56 -184 -111 -30 -44 -34 -57 -35 -118 0
             -54 5 -76 22 -104 29 -46 85 -96 130 -115 67 -28 164 -14 200 30 24 28 43 102
             37 140 -8 44 -49 97 -75 97 -31 0 -32 -17 -6 -63 30 -51 32 -78 9 -118 -38
             -65 -134 -61 -205 8 -91 89 -70 215 46 275 58 31 165 31 222 1 119 -63 183
@@ -98,19 +99,18 @@ export default function BlogsPage() {
             -92 l-59 -42 -986 2 -986 3 -90 44 c-82 41 -97 45 -168 45 -83 1 -73 7 -139
             -73 -18 -21 -21 -21 -662 -21 -688 0 -656 -2 -670 50 -46 167 -207 279 -361
             251z"
-          />
-        </g>
-      </svg>
-    </div>
+            />
+          </g>
+        </svg>
+      </div>
 
       {/* Search + Filters */}
-      <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-10">
-
+      <div className="flex flex-col md:flex-row gap-4 justify-center w-full px-4 md:px-0 items-center mb-10">
         <div className="relative w-full md:w-1/3">
           <input
             type="text"
             placeholder="Search Stories, Authors, or Themes..."
-            className="w-full px-10 py-2 border-3 border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
+            className="w-full px-10 py-2 border-3 bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
           />
           <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
         </div>
@@ -118,7 +118,7 @@ export default function BlogsPage() {
         <div className="flex gap-4">
           {/* Genres Dropdown */}
           <div className="relative">
-            <select className="appearance-none px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
+            <select className="appearance-none bg-white  px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
               <option>All Genres</option>
               <option>Fiction</option>
               <option>Non-fiction</option>
@@ -129,7 +129,7 @@ export default function BlogsPage() {
 
           {/* Sorting Dropdown */}
           <div className="relative">
-            <select className="appearance-none px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
+            <select className="appearance-none px-4 py-2 border-3 bg-white  border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
               <option>Latest Creation</option>
               <option>Oldest First</option>
               <option>Most Popular</option>
@@ -137,11 +137,10 @@ export default function BlogsPage() {
             <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
           </div>
         </div>
-
       </div>
 
       {/* Blog Cards */}
-      <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+      <div className=" rounded-4xl p-6 flex flex-col md:flex-col mx-auto items-start gap-8 max-w-6xl ">
         {blogs.map((blog) => (
           <div
             key={blog.id}
@@ -151,31 +150,35 @@ export default function BlogsPage() {
             <img
               src={blog.img}
               alt={blog.title}
-              className="w-40 h-40 object-cover border-2 border-deepnavy rounded"
+              className="block w-42 h-52 md:w-50 md:h-50 object-cover border-2 border-deepnavy rounded mx-auto md:mx-0"
             />
 
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-deepnavy">{blog.title}</h3>
-              <p className="text-sm text-deepnavy mt-1">
+              <h3 className="text-lg md:text-xl font-bold text-deepnavy text-center md:text-left">
+                {blog.title}
+              </h3>
+              <p className="text-sm md:text-base text-deepnavy mt-1 text-center md:text-left">
                 <span className="font-semibold">Author: </span>
                 {blog.authors}
               </p>
-              <p className="text-deepnavy/80 mt-3">{blog.excerpt}</p>
+              <p className="text-deepnavy/80 mt-3 text-center md:text-left">
+                {blog.excerpt}
+              </p>
 
               {/* Tags + Button */}
-              <div className="flex gap-4 mt-10">
-                <span className="px-6 py-2 bg-[#1b3b64]  text-white  rounded-full text-sm border ">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
+                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
-                <span className="px-6 py-2 bg-[#1b3b64] text-white  rounded-full text-sm border ">
+                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
                 </span>
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto px-6 py-2 bg-deepnavy text-white rounded-md hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition"
+                  className="px-8 py-1 bg-deepnavy text-white mx- rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition text-sm md:text-base flex items-center  md:text-left justify-center  sm:mt-0"
                 >
                   Read More
                 </Link>
