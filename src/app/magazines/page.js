@@ -21,51 +21,51 @@ const magazines = [
     description: "Navras Vol. 26 celebrates diverse artistic expressions and literary works. This volume showcases poetry, short stories, and visual arts that capture the essence of modern creativity."
   },
   { 
-    title: "Navras", 
+    title: "Odyssey", 
     volume: "25", 
-    imgLink: "/magazines/vol26.png", 
+    imgLink: "/magazines/vol_2024_25.png", 
     iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description: "Navras Vol. 25 delves into human emotions and experiences through various artistic mediums. Features contributions from talented writers and artists exploring themes of identity and belonging."
   },
   { 
-    title: "Prahar", 
+    title: "Phoenix", 
     volume: "24", 
-    imgLink: "/magazines/vol27.png", 
+    imgLink: "/magazines/vol_2023_24.png", 
     iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
     description: "Prahar Vol. 24 addresses current social issues and cultural movements. This edition provides insightful commentary on contemporary society through various literary and artistic forms."
   },
   { 
-    title: "Navras", 
+    title: "Kshitij", 
     volume: "23", 
-    imgLink: "/magazines/vol26.png", 
+    imgLink: "/magazines/vol_2021_23.jpg", 
     iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description: "Navras Vol. 23 is a collection of heartfelt stories and artistic expressions. This volume emphasizes the power of creativity in connecting communities and inspiring positive change."
   },
   { 
-    title: "Navras", 
+    title: "Abstract", 
     volume: "22", 
-    imgLink: "/magazines/vol26.png", 
+    imgLink: "/magazines/vol_2020_22.png", 
     iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description: "Navras Vol. 22 showcases exceptional literary talent and innovative artistic works. Features a diverse range of contributors exploring themes of tradition, modernity, and cultural heritage."
   },
   { 
-    title: "Prahar", 
+    title: "Alchemy", 
     volume: "21", 
-    imgLink: "/magazines/vol27.png", 
+    imgLink: "/magazines/vol_2019_21.jpg", 
     iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
     description: "Prahar Vol. 21 presents critical analyses of societal challenges and cultural phenomena. This edition combines academic insights with creative expressions to offer a comprehensive perspective."
   },
   { 
-    title: "Navras", 
+    title: "Perspective", 
     volume: "20", 
-    imgLink: "/magazines/vol26.png", 
+    imgLink: "/magazines/vol_2018_20.jpg", 
     iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description: "Navras Vol. 20 celebrates the beauty of human expression through literature and arts. This milestone volume features retrospective pieces alongside fresh, contemporary works."
   },
   { 
-    title: "Navras", 
+    title: "Change", 
     volume: "19", 
-    imgLink: "/magazines/vol26.png", 
+    imgLink: "/magazines/vol_2017_19.png", 
     iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
     description: "Navras Vol. 19 explores the intersection of tradition and innovation in creative arts. This volume highlights emerging talents and established voices in literature and visual arts."
   },
@@ -149,7 +149,7 @@ export default function MagazinePage() {
                 </div>
 
                 {/* Description Card - appears on opposite side when hovered (desktop) */}
-                <div className="hidden md:block w-[45%] md:px-16">
+                <div className="hidden md:block w-[45%] md:px-20">
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? 80 : -80 }}
                     animate={{ 
