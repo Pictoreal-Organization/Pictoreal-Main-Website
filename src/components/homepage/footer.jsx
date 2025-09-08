@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 font-sans">
+    <footer id="footer" className="bg-gray-900 text-gray-300 font-sans scroll-mt-20">
       <div className="container mx-auto py-12 px-8">
         <div className="flex flex-col lg:flex-row justify-between gap-10">
           
@@ -32,11 +32,11 @@ const Footer = () => {
           <div className="w-full lg:w-2/12">
             <h3 className="text-xl font-bold text-white mb-4">Useful Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Events</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Gallery</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Our Team</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Contact</a></li>
+              <li><a href="/" className="hover:text-white transition-colors duration-300">Home</a></li>
+              <li><a href="/events" className="hover:text-white transition-colors duration-300">Events</a></li>
+              <li><a href="/gallery" className="hover:text-white transition-colors duration-300">Gallery</a></li>
+              <li><a href="/our-team" className="hover:text-white transition-colors duration-300">Our Team</a></li>
+              <li><a href="#footer" className="hover:text-white transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
 
@@ -61,6 +61,8 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
 
 
 
