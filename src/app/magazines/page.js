@@ -149,7 +149,7 @@ export default function MagazinePage() {
                 </div>
 
                 {/* Description Card - appears on opposite side when hovered (desktop) */}
-                <div className="hidden md:block w-[45%] md:px-8">
+                <div className="hidden md:block w-[45%] md:px-16">
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? 80 : -80 }}
                     animate={{ 
