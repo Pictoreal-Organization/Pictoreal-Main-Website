@@ -11,10 +11,12 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "aos": "^2.3.4",
+
     "axios": "^1.11.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.476.0",
     "mongoose": "^8.8.1",
