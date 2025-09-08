@@ -7,15 +7,13 @@ import PictoTalents from '../components/homepage/pictotalents';
 
 export default function HomePage() {
   return (
-    <div className='bg-paleskyblue'>
-      <div>
+    <div className='bg-paleskyblue'>      
         <Hero />
         <AboutUs />
         <RecentBlogs />
         <OurTeams />
         <PictoTalents />
         <EventCarousel />
-      </div>
     </div>
   );
 }
