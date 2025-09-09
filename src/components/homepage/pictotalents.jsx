@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play, Instagram, Youtube, ExternalLink } from "lucide-react";
+import ArrowBtn from "./arrowbtn.jsx";
 
 const PictoTalentsPods = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -12,35 +13,35 @@ const PictoTalentsPods = () => {
       thumbnail: "/talents-pods/talents1.png",
       title: "Soulful lyrics Singing",
       likes: "180",
-      instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=QkFHaGxuYjl2Qw%3D%3D" 
+      instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=QkFHaGxuYjl2Qw%3D%3D"
     },
     {
       id: 2,
       thumbnail: "/talents-pods/talents2.png",
       title: "Flute melody Musical instrument",
       likes: "144",
-      instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=QkFNck53QVMzYg%3D%3D" 
+      instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=QkFNck53QVMzYg%3D%3D"
     },
     {
       id: 3,
       thumbnail: "/talents-pods/talents3.png",
       title: "Light and Shadow Photography",
       likes: "63",
-      instagramUrl: "https://www.instagram.com/p/DB2zEqzS5Jc/?igsh=QkFLV19hSDdSWA%3D%3D" 
+      instagramUrl: "https://www.instagram.com/p/DB2zEqzS5Jc/?igsh=QkFLV19hSDdSWA%3D%3D"
     },
     {
       id: 4,
       thumbnail: "/talents-pods/talents4.png",
       title: "Waqt Poem",
       likes: "65",
-      instagramUrl: "https://www.instagram.com/p/DAlBJZvogqs/?igsh=QkFUQXhZM1lldg%3D%3D" 
+      instagramUrl: "https://www.instagram.com/p/DAlBJZvogqs/?igsh=QkFUQXhZM1lldg%3D%3D"
     },
     {
       id: 5,
       thumbnail: "/talents-pods/talents5.png",
       title: "Ganesha Painting",
       likes: "108",
-      instagramUrl: "https://www.instagram.com/share/p/BABIjTMQbB" 
+      instagramUrl: "https://www.instagram.com/share/p/BABIjTMQbB"
     }
   ];
 
@@ -73,37 +74,35 @@ const PictoTalentsPods = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-[#DDF1FF] via-[#E8F4FF] to-[#F0F8FF] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="w-full min-h-screen bg-[bg-[#DDF1FF]] py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#001730] mb-6 leading-tight">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#001730] mb-4 font-heading leading-tight">
             Discover Our Creative Universe
           </h1>
-          <p className="text-lg md:text-xl text-[#003A6B] max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-body text-[#003A6B] max-w-6xl mx-auto">
             Explore inspiring content from our Instagram reels and dive deep into conversations on our podcast
           </p>
         </div>
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-6">
           <div className="bg-white/70 backdrop-blur-md rounded-3xl p-2 shadow-xl border border-white/20">
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
               <button
-                onClick={() => {setActiveSection(0); setCurrentSlide(0);}}
-                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
-                  activeSection === 0
-                    ? 'bg-[#001730] text-white shadow-lg scale-105'
-                    : 'text-[#001730] hover:bg-white/50'
-                }`}
+                onClick={() => { setActiveSection(0); setCurrentSlide(0); }}
+                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 0
+                  ? 'bg-[#001730] text-white shadow-lg scale-105'
+                  : 'text-[#001730] hover:bg-white/50'
+                  }`}
               >
                 <Instagram size={20} />
                 <span>PictoTalents</span>
               </button>
               <button
                 onClick={() => setActiveSection(1)}
-                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
-                  activeSection === 1
-                    ? 'bg-[#001730] text-white shadow-lg scale-105'
-                    : 'text-[#001730] hover:bg-white/50'
-                }`}
+                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 1
+                  ? 'bg-[#001730] text-white shadow-lg scale-105'
+                  : 'text-[#001730] hover:bg-white/50'
+                  }`}
               >
                 <Youtube size={20} />
                 <span>PictoPods</span>
@@ -115,16 +114,16 @@ const PictoTalentsPods = () => {
           {activeSection === 0 && (
             <div className="transition-all duration-700 ease-out">
               <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#001730] mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#001730] mb-2">
                   Latest Instagram Reels
                 </h2>
-                <p className="text-[#003A6B]">Swipe through our creative content</p>
+                <p className="text-[#003A6B] font-body">Swipe through our creative content</p>
               </div>
               <div className="relative max-w-6xl mx-auto">
                 <div className="md:hidden">
                   <div className="relative">
                     <div className="overflow-hidden rounded-2xl">
-                      <div 
+                      <div
                         className="flex transition-transform duration-500 ease-out"
                         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                       >
@@ -138,13 +137,13 @@ const PictoTalentsPods = () => {
                                   className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                
+
                                 <div className="absolute bottom-3 left-3 right-3 text-white">
                                   <h3 className="font-bold text-lg leading-tight">{reel.title}</h3>
                                   <div className="flex justify-between items-center text-sm opacity-90 mt-2">
                                     {/* UPDATED: Removed views count */}
                                     <div className="flex items-center">
-                                        <span>{reel.likes} ❤️</span>
+                                      <span>{reel.likes} ❤️</span>
                                     </div>
                                     <a
                                       href={reel.instagramUrl}
@@ -182,11 +181,10 @@ const PictoTalentsPods = () => {
                       <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          currentSlide === index
-                            ? 'bg-[#001730] scale-125'
-                            : 'bg-gray-300 hover:bg-gray-400'
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                          ? 'bg-[#001730] scale-125'
+                          : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
                       />
                     ))}
                   </div>
@@ -206,12 +204,12 @@ const PictoTalentsPods = () => {
                               className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                            
+
                             <div className="absolute bottom-0 left-0 right-0 p-3 pt-8 text-white bg-gradient-to-t from-black/80 to-transparent">
-                                <p className="font-bold text-md mb-2 leading-tight line-clamp-2">{reel.title}</p>
-                                <div className="flex justify-between items-center text-xs opacity-90">
+                              <p className="font-bold text-md mb-2 font-heading leading-tight line-clamp-2">{reel.title}</p>
+                              <div className="flex justify-between items-center text-xs opacity-90">
                                 <div className="flex items-center">
-                                    <span className="text-xs flex items-center">{reel.likes} ❤️</span>
+                                  <span className="text-xs flex items-center">{reel.likes} ❤️</span>
                                 </div>
                                 <a
                                   href={reel.instagramUrl}
@@ -222,7 +220,7 @@ const PictoTalentsPods = () => {
                                   <span>View</span>
                                   <ExternalLink size={12} />
                                 </a>
-                                </div>
+                              </div>
                             </div>
 
                           </div>
@@ -231,13 +229,35 @@ const PictoTalentsPods = () => {
                     ))}
                   </div>
                 </div>
-                <div className="text-center mt-12">
-                  <button 
-                    onClick={() => window.open(`https://www.instagram.com/picto_talents?igsh=ZGwxc256OXM4NGtv`, '_blank')}
-                    className="bg-[#001730] text-white px-8 py-4 rounded-full hover:bg-[#003A6B] transition-colors shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto">
-                    <Instagram size={20} />
-                    <span>Follow on Instagram</span>
-                    <ExternalLink size={16} />
+                <div className="text-center mt-12 flex justify-center items-center">
+                  <button
+                    onClick={() => window.open('https://www.instagram.com/picto_talents?igsh=ZGwxc256OXM4NGtv', '_blank')}
+                    className="group flex items-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full 
+                 transform transition duration-300 ease-in-out hover:scale-105 font-sans cursor-pointer
+                 hover:bg-[#003A6B]"
+                  >
+                    <span className="flex items-center space-x-3">
+                      <Instagram size={20} className="text-[#DDF1FF]" />
+                      <span className="text-[#DDF1FF] font-semibold">Follow on Instagram</span>
+                    </span>
+
+                    <span
+                      className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]"
+                    >
+                      <svg
+                        className="w-5 h-5 transition-transform duration-300 ease-in-out"
+                        fill="none"
+                        stroke="#001730"
+                        strokeWidth={2.5}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17 7L7 17M17 7h-6m6 0v6"
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </div>
@@ -246,10 +266,10 @@ const PictoTalentsPods = () => {
           {activeSection === 1 && (
             <div className="transition-all duration-700 ease-out">
               <div className="text-center mb-6">
-                <h2 className="text-xl md:text-2xl font-bold text-[#001730] mb-2">
+                <h2 className="text-xl font-heading md:text-2xl font-bold text-[#001730] mb-2">
                   Latest Podcast Episode
                 </h2>
-                <p className="text-[#003A6B] text-sm">Deep conversations about creativity and storytelling</p>
+                <p className="text-[#003A6B] font-body">Deep conversations about creativity and storytelling</p>
               </div>
               <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -261,7 +281,7 @@ const PictoTalentsPods = () => {
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                        <button 
+                        <button
                           onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
                           className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition-colors hover:scale-110 transform"
                         >
@@ -275,12 +295,12 @@ const PictoTalentsPods = () => {
                     <div className="md:w-3/5 p-6 flex flex-col justify-center">
                       <div className="flex items-center space-x-2 text-red-600 mb-3">
                         <Youtube size={16} />
-                        <span className="text-xs font-semibold">PODCAST</span>
+                        <span className="text-xs font-heading font-semibold">PODCAST</span>
                       </div>
-                      <p className="text-xl md:text-3xl font-bold text-[#001730] mb-3 leading-tight line-clamp-2">
+                      <p className="text-xl md:text-3xl font-heading font-bold text-[#001730] mb-3 leading-tight line-clamp-2">
                         {pictoPodcast.title}
                       </p>
-                      <p className="text-[#003A6B] mb-4 text-sm leading-relaxed line-clamp-3">
+                      <p className="text-[#003A6B] mb-4 font-body text-sm leading-relaxed line-clamp-3">
                         {pictoPodcast.description}
                       </p>
                       <div className="flex items-center space-x-4 text-xs text-gray-600 mb-4">
@@ -288,18 +308,41 @@ const PictoTalentsPods = () => {
                         <span>{pictoPodcast.publishDate}</span>
                       </div>
                       <div className="space-y-3 mt-auto">
-                        <button 
+                        <button
                           onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition-colors flex items-center justify-center space-x-2 shadow-md text-sm"
+                          className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-2 shadow-md text-sm"
                         >
                           <Youtube size={16} />
                           <span>Watch on YouTube</span>
                         </button>
-                        <button 
-                          onClick={() => window.open(`https://www.youtube.com/@Pictoreal-yt`, '_blank')}
-                          className="w-full border-2 border-[#001730] text-[#001730] py-3 rounded-full hover:bg-[#001730] hover:text-white transition-colors flex items-center justify-center space-x-2 text-sm">
-                          <span>Subscribe to PictoPods</span>
-                          <ExternalLink size={14} />
+                        <button
+                          onClick={() => window.open('https://www.youtube.com/@Pictoreal-yt', '_blank')}
+                          className="w-full group flex items-center justify-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full 
+                 transform transition duration-300 ease-in-out hover:scale-105 font-sans cursor-pointer
+                 hover:bg-[#003A6B]"
+                        >
+                          <span className="flex items-center space-x-3">
+                            <Youtube size={20} className="text-[#DDF1FF]" />
+                            <span className="text-[#DDF1FF] font-semibold">Subscribe to PictoPods</span>
+                          </span>
+
+                          <span
+                            className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]"
+                          >
+                            <svg
+                              className="w-5 h-5 transition-transform duration-300 ease-in-out"
+                              fill="none"
+                              stroke="#001730"
+                              strokeWidth={2.5}
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M17 7L7 17M17 7h-6m6 0v6"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </div>
