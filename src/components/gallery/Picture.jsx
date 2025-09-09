@@ -7,6 +7,7 @@ import ExpandedImage from "./ExpandedImage";
 
 const color1 = "#DCF1FF";
 const color2 = "#A8DCEC";
+const color3 = "#111C33";
 
 const Picture = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -211,7 +212,7 @@ const Picture = () => {
 
     return (
         <>
-            <div className={` bg-[${color1}]`}>
+            <div className={` text-[${color3}] bg-[${color1}]`}>
                 <div className={`space-y-80 mb-10`}>
                     <h2 className="font-heading text-5xl font-bold text-center mb-10">
                         GALLERY
@@ -228,7 +229,7 @@ const Picture = () => {
                                 className="flex flex-col max-w-full mx-auto lg:p-6 px-4 rounded-lg"
                             >
                                 <div className={`flex flex-col lg:flex-row mt-10 lg:pt-0`}>
-                                    <h2 className="lg:hidden font-heading text-3xl text-firefly font-bold text-center mb-4">
+                                    <h2 className="lg:hidden font-heading text-3xl font-bold text-center mb-4">
                                         {set.title}
                                     </h2>
                                     <div className="lg:max-w-[40%] lg:pl-10">
@@ -236,11 +237,11 @@ const Picture = () => {
                                     </div>
 
                                     <div className="flex flex-col items-center justify-center w-full lg:p-10 lg:px-10 md:pt-5 ">
-                                        <h2 className="hidden lg:block font-heading text-3xl text-firefly font-bold text-center mb-4">
+                                        <h2 className="hidden lg:block font-heading text-3xl font-bold text-center mb-4">
                                             {set.title}
                                         </h2>
                                         <div className="font-body  md:text-xl sm:text-sm flex justify-center">
-                                            <p className="text-justify text-[#141414] mb-4 max-w-3xl">
+                                            <p className="text-justify  mb-4 max-w-3xl">
                                                 {set.description}
                                             </p>
                                         </div>
