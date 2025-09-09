@@ -25,49 +25,49 @@ const magazines = [
     volume: "25", 
     imgLink: "/magazines/vol_2024_25.png", 
     iFrameSrc: "https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9",
-    description: "Navras Vol. 25 delves into human emotions and experiences through various artistic mediums. Features contributions from talented writers and artists exploring themes of identity and belonging."
+    description: "Odyssey Vol. 25 delves into human emotions and experiences through various artistic mediums. Features contributions from talented writers and artists exploring themes of identity and belonging."
   },
   { 
     title: "Phoenix", 
     volume: "24", 
     imgLink: "/magazines/vol_2023_24.png", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP",
-    description: "Prahar Vol. 24 addresses current social issues and cultural movements. This edition provides insightful commentary on contemporary society through various literary and artistic forms."
+    description: "Phoenix Vol. 24 addresses current social issues and cultural movements. This edition provides insightful commentary on contemporary society through various literary and artistic forms."
   },
   { 
     title: "Kshitij", 
     volume: "23", 
     imgLink: "/magazines/vol_2021_23.jpg", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/XfPDm7HNEop26LMr",
-    description: "Navras Vol. 23 is a collection of heartfelt stories and artistic expressions. This volume emphasizes the power of creativity in connecting communities and inspiring positive change."
+    description: "Kshitij Vol. 23 is a collection of heartfelt stories and artistic expressions. This volume emphasizes the power of creativity in connecting communities and inspiring positive change."
   },
   { 
     title: "Abstract", 
     volume: "22", 
     imgLink: "/magazines/vol_2020_22.png", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/3makuPpAxhKOsyoj",
-    description: "Navras Vol. 22 showcases exceptional literary talent and innovative artistic works. Features a diverse range of contributors exploring themes of tradition, modernity, and cultural heritage."
+    description: "Abstract Vol. 22 showcases exceptional literary talent and innovative artistic works. Features a diverse range of contributors exploring themes of tradition, modernity, and cultural heritage."
   },
   { 
     title: "Alchemy", 
     volume: "21", 
     imgLink: "/magazines/vol_2019_21.jpg", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/1Nxq8IadrnWpzeBO",
-    description: "Prahar Vol. 21 presents critical analyses of societal challenges and cultural phenomena. This edition combines academic insights with creative expressions to offer a comprehensive perspective."
+    description: "Alchemy Vol. 21 presents critical analyses of societal challenges and cultural phenomena. This edition combines academic insights with creative expressions to offer a comprehensive perspective."
   },
   { 
     title: "Perspective", 
     volume: "20", 
     imgLink: "/magazines/vol_2018_20.jpg", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/ZQWHTJI3yPDF8M1m",
-    description: "Navras Vol. 20 celebrates the beauty of human expression through literature and arts. This milestone volume features retrospective pieces alongside fresh, contemporary works."
+    description: "Perspective Vol. 20 celebrates the beauty of human expression through literature and arts. This milestone volume features retrospective pieces alongside fresh, contemporary works."
   },
   { 
     title: "Change", 
     volume: "19", 
     imgLink: "/magazines/vol_2017_19.png", 
     iFrameSrc: "https://www.yumpu.com/en/embed/view/mi1wtA6cOuJpjSFY",
-    description: "Navras Vol. 19 explores the intersection of tradition and innovation in creative arts. This volume highlights emerging talents and established voices in literature and visual arts."
+    description: "Change Vol. 19 explores the intersection of tradition and innovation in creative arts. This volume highlights emerging talents and established voices in literature and visual arts."
   },
 ];
 
