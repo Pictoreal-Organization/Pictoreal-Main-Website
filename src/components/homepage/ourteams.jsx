@@ -93,7 +93,7 @@ const TeamContent = ({ teamName, teamData }) => {
             <Zap className="w-5 h-5 text-[#407499]" />
             Specializations
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="flex flex-col gap-3">
             {teamData.stats.map((stat) => (
               <div
                 key={stat}
@@ -159,7 +159,7 @@ const OurTeams = () => {
               <React.Fragment key={teamName}>
                 <button
                   onClick={() => handleTeamClick(teamName)}
-                  className={`group w-full relative overflow-hidden rounded-xl px-6 py-4 text-left font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${
+                  className={`group w-full relative overflow-hidden rounded-xl px-4 py-2 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${
                     isActive
                       ? activeClass
                       : "bg-transparent text-[#111C33]/70 hover:bg-black/5 hover:text-[#111C33]"
@@ -173,7 +173,7 @@ const OurTeams = () => {
                           : "group-hover:rotate-6"
                       }`}
                     />
-                    <span className="flex-1">{teamName}</span>
+                    <span>{teamName}</span>
                   </div>
                 </button>
 

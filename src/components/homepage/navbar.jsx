@@ -1,6 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import React, { useState, useLayoutEffect, useRef } from "react";
+import ArrowBtn from "./arrowbtn";
 
 // Arrow Icon SVG Component
 const ArrowIcon = () => (
@@ -22,7 +24,9 @@ const ArrowIcon = () => (
 
 // Main Navbar Component
 export default function Navbar() {
-  const [activePath, setActivePath] = useState("");
+  // const [activePath, setActivePath] = useState("");
+  const pathname = usePathname(); // <- reactive current path
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [sliderStyle, setSliderStyle] = useState({
     left: 0,
@@ -31,18 +35,20 @@ export default function Navbar() {
     transition: "none",
   });
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [prevIndex, setPrevIndex] = useState(null); // <-- keep track of previous active tab
+  const [prevIndex, setPrevIndex] = useState(null);
   const navLinksRef = useRef([]);
 
-  const navLinks = ["Home", "Gallery", "Blogs", "Articles", "OurTeam"];
+  const navLinks = ["Home", "Gallery", "Blogs", "Articles", "Our Team"];
 
   useLayoutEffect(() => {
-    const currentPath = window.location.pathname;
-    setActivePath(currentPath);
+    if (pathname === "/magazines") {
+      setSliderStyle((prev) => ({ ...prev, opacity: 0 })); // hide slider
+      return;
+    }
 
     const activeIndex = navLinks.findIndex((link) => {
-      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-      return href === currentPath;
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
     });
 
     if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
@@ -54,9 +60,9 @@ export default function Navbar() {
         opacity: 1,
         transition: prevIndex !== null ? "all 300ms ease-in-out" : "none", // no animation on first load
       }));
-      setPrevIndex(activeIndex);
     }
-  }, [activePath]);
+    setPrevIndex(activeIndex);
+  }, [pathname]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -74,9 +80,10 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
-    const activeIndex = navLinks.findIndex((link) => {
-      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-      return href === activePath;
+    const activeIndex = pathname === "/magazines" ? -1 :
+    navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
     });
 
     if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
@@ -93,10 +100,12 @@ export default function Navbar() {
     }
   };
 
-  const activeIndex = navLinks.findIndex((link) => {
-    const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-    return href === activePath;
-  });
+  const activeIndex = pathname === "/magazines" ? -1 :
+    navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
+    });
+
 
   return (
     <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
@@ -116,7 +125,7 @@ export default function Navbar() {
               className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
             >
               {navLinks.map((link, index) => {
-                const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
+                const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
                 const isHighlighted =
                   hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
 
@@ -135,7 +144,7 @@ export default function Navbar() {
                 );
               })}
               <div
-                className="absolute top-2 bottom-2 bg-[#0B2D4F] rounded-full"
+                className="absolute top-2 bottom-2 bg-[#00224A] rounded-full"
                 style={{ ...sliderStyle, height: "calc(100% - 1rem)" }}
               />
             </div>
@@ -143,15 +152,7 @@ export default function Navbar() {
 
           {/* Magazines Button */}
           <div className="hidden md:block">
-            <a
-              href="/magazines"
-              className="group flex items-center bg-[#0B2D4F] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              <span className="mr-3">Magazines</span>
-              <span className="bg-white rounded-full p-2 flex items-center justify-center">
-                <ArrowIcon />
-              </span>
-            </a>
+            <ArrowBtn text="Magazines" path="/magazines"/>
           </div>
 
           {/* Mobile Button */}
@@ -189,14 +190,14 @@ export default function Navbar() {
       <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-pastelskyblue mobile-menu-bottom{bg-transparent}">
           {navLinks.map((link) => {
-            const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-            const isActive = activePath === href;
+            const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+            const isActive = pathname === href;
             return (
               <a
                 key={link}
                 href={href}
                 className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                  isActive ? "bg-[#0B2D4F] text-white" : "text-black"
+                  isActive ? "bg-[#00224A] text-white" : "text-black"
                 }`}
               >
                 {link}
@@ -204,15 +205,7 @@ export default function Navbar() {
             );
           })}
           <div className="pt-4 pb-2 flex justify-center">
-            <a
-              href="/magazines"
-              className="group flex items-center bg-[#0B2D4F] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              <span className="mr-3">Magazines</span>
-              <span className="bg-white rounded-full p-2 flex items-center justify-center">
-                <ArrowIcon />
-              </span>
-            </a>
+            <ArrowBtn text="Magazines" path="/magazines"/>
           </div>
         </div>
       </div>
