@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { usePathname } from "next/navigation";
+import React, { useState, useLayoutEffect, useRef } from "react";
+import ArrowBtn from "./arrowbtn";
 
-// You can place this SVG component in the same file or import it
+// Arrow Icon SVG Component
 const ArrowIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,85 +22,193 @@ const ArrowIcon = () => (
   </svg>
 );
 
-
+// Main Navbar Component
 export default function Navbar() {
-  const [activePath, setActivePath] = useState('');
+  // const [activePath, setActivePath] = useState("");
+  const pathname = usePathname(); // <- reactive current path
 
-  useEffect(() => {
-    // On component mount, set the active path from the current window location
-    setActivePath(window.location.pathname);
-  }, []);
-  
-  // Navigation items
-  const navLinks = ['Home', 'Gallery', 'Blogs', 'Articles', 'OurTeam'];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [sliderStyle, setSliderStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+    transition: "none",
+  });
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [prevIndex, setPrevIndex] = useState(null);
+  const navLinksRef = useRef([]);
+
+  const navLinks = ["Home", "Gallery", "Blogs", "Articles", "Our Team"];
+
+  useLayoutEffect(() => {
+    if (pathname === "/magazines") {
+      setSliderStyle((prev) => ({ ...prev, opacity: 0 })); // hide slider
+      return;
+    }
+
+    const activeIndex = navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
+    });
+
+    if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
+      const activeTab = navLinksRef.current[activeIndex];
+      setSliderStyle((prev) => ({
+        ...prev,
+        left: activeTab.offsetLeft,
+        width: activeTab.offsetWidth,
+        opacity: 1,
+        transition: prevIndex !== null ? "all 300ms ease-in-out" : "none", // no animation on first load
+      }));
+    }
+    setPrevIndex(activeIndex);
+  }, [pathname]);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+    if (navLinksRef.current[index]) {
+      const tab = navLinksRef.current[index];
+      setSliderStyle((prev) => ({
+        ...prev,
+        left: tab.offsetLeft,
+        width: tab.offsetWidth,
+        opacity: 1,
+        transition: "all 300ms ease-in-out",
+      }));
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+    const activeIndex = pathname === "/magazines" ? -1 :
+    navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
+    });
+
+    if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
+      const activeTab = navLinksRef.current[activeIndex];
+      setSliderStyle((prev) => ({
+        ...prev,
+        left: activeTab.offsetLeft,
+        width: activeTab.offsetWidth,
+        opacity: 1,
+        transition: "all 300ms ease-in-out",
+      }));
+    } else {
+      setSliderStyle((prev) => ({ ...prev, opacity: 0 }));
+    }
+  };
+
+  const activeIndex = pathname === "/magazines" ? -1 :
+    navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+      return href === pathname;
+    });
+
 
   return (
-    <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50">
+    <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-20">
-          
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/">
-              <img 
-                className="h-8 w-auto" 
-                src="/pictoreal.png" 
-                alt="Pictoreal Logo" 
-              />
+              <img className="h-8 w-auto" src="/pictoreal.png" alt="Pictoreal Logo" />
             </a>
           </div>
 
-          {/* Centered Navigation Links - Absolutely positioned to ensure perfect centering */}
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-            <div className="flex items-baseline space-x-4 p-2 bg-pastelskyblue rounded-full">
-              {navLinks.map((link) => {
-                const href = link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '-')}`;
-                const isActive = activePath === href;
+          {/* Desktop Nav */}
+          <div className="hidden md:flex justify-center flex-grow">
+            <div
+              onMouseLeave={handleMouseLeave}
+              className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
+            >
+              {navLinks.map((link, index) => {
+                const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+                const isHighlighted =
+                  hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
 
                 return (
                   <a
                     key={link}
                     href={href}
-                    className={`px-6 py-2 rounded-full text-sm font-body transition-colors 
-                      ${
-                        isActive
-                          ? 'bg-[#0B2D4F] text-white'
-                          : 'text-[#0B2D4F] hover:bg-[#0B2D4F]/20'
-                      }
-                    `}
+                    ref={(el) => (navLinksRef.current[index] = el)}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                      isHighlighted ? "text-white" : "text-black"
+                    }`}
                   >
                     {link}
                   </a>
                 );
               })}
+              <div
+                className="absolute top-2 bottom-2 bg-[#00224A] rounded-full"
+                style={{ ...sliderStyle, height: "calc(100% - 1rem)" }}
+              />
             </div>
           </div>
-          
+
           {/* Magazines Button */}
           <div className="hidden md:block">
-            <a
-              href="/magazines"
-              className="group flex items-center bg-[#0B2D4F] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              <span className="mr-3">Magazines</span>
-              <span className="bg-white rounded-full p-2 flex items-center justify-center">
-                <ArrowIcon />
-              </span>
-            </a>
+            <ArrowBtn text="Magazines" path="/magazines"/>
           </div>
 
-           {/* Mobile Menu Button (optional) */}
-           <div className="md:hidden flex items-center">
-              <button className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-[#D0E5F7]">
-                  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                  </svg>
-              </button>
-           </div>
+          {/* Mobile Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-[#D0E5F7] focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
+      {/* Mobile Menu */}
+      <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden`} id="mobile-menu">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-pastelskyblue mobile-menu-bottom{bg-transparent}">
+          {navLinks.map((link) => {
+            const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+            const isActive = pathname === href;
+            return (
+              <a
+                key={link}
+                href={href}
+                className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                  isActive ? "bg-[#00224A] text-white" : "text-black"
+                }`}
+              >
+                {link}
+              </a>
+            );
+          })}
+          <div className="pt-4 pb-2 flex justify-center">
+            <ArrowBtn text="Magazines" path="/magazines"/>
+          </div>
         </div>
       </div>
     </nav>
   );
 }
-
