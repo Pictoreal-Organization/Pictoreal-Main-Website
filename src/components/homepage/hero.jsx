@@ -31,8 +31,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center 
-px-4 sm:px-6 lg:px-20 py-4 mb-2 sm:mb-6 md:mb-28 mt-0">
+    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
 
 
       {/* ------------------ DESKTOP / TABLET (≥ md) ------------------ */}
@@ -86,7 +85,7 @@ px-4 sm:px-6 lg:px-20 py-4 mb-2 sm:mb-6 md:mb-28 mt-0">
       </div>
 
       {/* ------------------ MOBILE (< md) ------------------ */}
-      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden mt-0.5 mb-0">
+      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden min-h-[calc(100vh-5rem)]">
         {/* Heading */}
         <div className="text-center mb-8">
           <div className="text-3xl sm:text-4xl font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
