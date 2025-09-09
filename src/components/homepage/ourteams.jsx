@@ -12,6 +12,13 @@ import {
   Users,
   Sparkles,
   Zap,
+  Lightbulb,
+  CheckCircle,
+  CheckCircle2,
+  Award,
+  Compass,
+  Activity,
+  Layers
 } from "lucide-react";
 
 // Data can be kept outside the component
@@ -72,25 +79,25 @@ const TeamContent = ({ teamName, teamData }) => {
   return (
     <div className="bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl p-8 relative overflow-hidden mt-4 md:mt-0">
       <div className="absolute top-8 right-8 opacity-[0.03]">
-        <ActiveIcon className="w-32 h-32 text-[#0A192E] transform -rotate-12" />
+        <ActiveIcon className="w-32 h-32 text-[#111C33] transform -rotate-12" />
       </div>
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-6">
-          <div className="p-4 bg-[#407499] rounded-xl shadow-lg shadow-[#407499]/20">
+          <div className="p-4 bg-[#003366] rounded-xl shadow-lg shadow-[#003366]/20">
             <ActiveIcon className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h3 className="text-3xl font-serif font-bold text-[#0A192E]">
+            <h3 className="text-3xl font-body font-bold text-[#111C33]">
               {teamName} Team
             </h3>
           </div>
         </div>
-        <p className="text-[#111C33]/80 leading-relaxed mb-8 text-base">
+        <p className="text-[#111C33]/80 font-body leading-relaxed mb-8 text-base">
           {teamData.description}
         </p>
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-[#0A192E] mb-4 flex items-center gap-2">
-            <Zap className="w-5 h-5 text-[#407499]" />
+          <h4 className="text-lg font-body text-[#111C33] mb-4 flex items-center gap-2">
+          <Layers className="w-5 h-5 text-[#111C33]" />
             Specializations
           </h4>
           <div className="flex flex-col gap-3">
@@ -99,8 +106,8 @@ const TeamContent = ({ teamName, teamData }) => {
                 key={stat}
                 className="flex items-center gap-3 p-3 bg-black/5 rounded-lg"
               >
-                <div className="w-2 h-2 bg-[#407499] rounded-full"></div>
-                <span className="text-[#111C33] font-medium text-sm">
+                <div className="w-2 h-2 bg-[#003366] rounded-full"></div>
+                <span className="text-[#111C33] font-body font-bold text-sm">
                   {stat}
                 </span>
               </div>
@@ -129,12 +136,12 @@ const OurTeams = () => {
   return (
     <div className="bg-gradient-to-br from-white to-[#DCF1FF] min-h-screen flex flex-col items-center justify-center py-10 font-sans text-[#111C33]">
       <div className="relative mb-12 text-center">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#0A192E] mb-2">
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#0A192E] mb-2">
           Our Teams
-        </h2>
-        <div className="flex justify-center items-center gap-2 text-[#407499]">
+        </h1>
+        <div className="flex justify-center items-center gap-2 text-[#76879E]">
           <Sparkles className="w-4 h-4" />
-          <span className="text-sm font-medium">
+          <span className="text-sm font-body">
             Meet the talented people behind our success
           </span>
           <Sparkles className="w-4 h-4" />
@@ -142,24 +149,21 @@ const OurTeams = () => {
       </div>
 
       {/* 4. The main layout now handles both mobile and desktop structures */}
-      <div className="flex flex-col md:flex-row w-11/12 max-w-7xl gap-8">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center w-11/12 max-w-7xl">
         {/* Left column / Accordion container */}
-        <div className="flex flex-col gap-3 md:w-1/3">
+        <div className="flex flex-col gap-3 md:w-1/4">
           {Object.entries(teams).map(([teamName, teamData], index) => {
             const TeamIcon = teamData.icon;
             const isActive = activeTeam === teamName;
-            const isAlternate = index % 2 === 0;
 
-            const activeClass = isAlternate
-              ? "bg-[#407499] text-white shadow-lg shadow-[#407499]/30"
-              : "bg-[#407499] text-[#DCF1FF] shadow-lg shadow-[#407499]/30";
+            const activeClass = "bg-[#003366] text-white shadow-lg shadow-[#407499]/30"
 
             return (
               // Use React Fragment to group button and its mobile content
               <React.Fragment key={teamName}>
                 <button
                   onClick={() => handleTeamClick(teamName)}
-                  className={`group w-full relative overflow-hidden rounded-xl px-4 py-2 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${
+                  className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-2 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${
                     isActive
                       ? activeClass
                       : "bg-transparent text-[#111C33]/70 hover:bg-black/5 hover:text-[#111C33]"
@@ -193,10 +197,10 @@ const OurTeams = () => {
           {activeTeam ? (
             <TeamContent teamName={activeTeam} teamData={teams[activeTeam]} />
           ) : (
-            <div className="h-full flex items-center justify-center bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl">
-              <p className="text-[#111C33]/60">
+            <div className="h-80 flex items-center justify-center bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl">
+              <div className="text-[#111C33]/60 font-body">
                 Select a team to see the details
-              </p>
+              </div>
             </div>
           )}
         </div>
