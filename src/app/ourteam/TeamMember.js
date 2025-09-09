@@ -5,9 +5,9 @@ const TeamMember = ({ names, imageSrc, altText, hoverKey }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="w-full md:w-5/6 p-0 md:p-4 "style={{ margin: '0' }}>
+    <div className="w-full md:w-full p-0 md:p-4 "style={{ margin: '0' }}>
       <div
-        className="member relative shadow-md overflow-hidden rounded-md grid grid-cols-1"
+        className="member relative shadow-md shadow-black overflow-hidden rounded-md grid grid-cols-1"
         onMouseEnter={() => setHovered(hoverKey)}
         onMouseLeave={() => setHovered(null)}
         style={{
