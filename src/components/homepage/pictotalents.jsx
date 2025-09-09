@@ -9,55 +9,50 @@ const PictoTalentsPods = () => {
   const pictoTalentsReels = [
     {
       id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=400&h=600&fit=crop",
-      title: "Creative Writing Workshop",
-      views: "12K",
-      likes: "890",
-      instagramUrl: "#"
+      thumbnail: "/talents-pods/talents1.png",
+      title: "Soulful lyrics Singing",
+      likes: "180",
+      instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=QkFHaGxuYjl2Qw%3D%3D" 
     },
     {
       id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=600&fit=crop",
-      title: "Photography Tips & Tricks",
-      views: "8.5K",
-      likes: "654",
-      instagramUrl: "#"
+      thumbnail: "/talents-pods/talents2.png",
+      title: "Flute melody Musical instrument",
+      likes: "144",
+      instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=QkFNck53QVMzYg%3D%3D" 
     },
     {
       id: 3,
-      thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=600&fit=crop",
-      title: "Storytelling Techniques",
-      views: "15K",
-      likes: "1.2K",
-      instagramUrl: "#"
+      thumbnail: "/talents-pods/talents3.png",
+      title: "Light and Shadow Photography",
+      likes: "63",
+      instagramUrl: "https://www.instagram.com/p/DB2zEqzS5Jc/?igsh=QkFLV19hSDdSWA%3D%3D" 
     },
     {
       id: 4,
-      thumbnail: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop",
-      title: "Magazine Layout Design",
-      views: "9.8K",
-      likes: "723",
-      instagramUrl: "#"
+      thumbnail: "/talents-pods/talents4.png",
+      title: "Waqt Poem",
+      likes: "65",
+      instagramUrl: "https://www.instagram.com/p/DAlBJZvogqs/?igsh=QkFUQXhZM1lldg%3D%3D" 
     },
     {
       id: 5,
-      thumbnail: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=600&fit=crop",
-      title: "Interview Skills Masterclass",
-      views: "11K",
-      likes: "956",
-      instagramUrl: "#"
+      thumbnail: "/talents-pods/talents5.png",
+      title: "Ganesha Painting",
+      likes: "108",
+      instagramUrl: "https://www.instagram.com/share/p/BABIjTMQbB" 
     }
   ];
 
   const pictoPodcast = {
     id: 1,
-    thumbnail: "/talents-pods/Thumbnail.png",
+    thumbnail: "/talents-pods/pods1.png",
     title: "The Story Behind The Voice ft. Mr. Anand Bhate",
-    description: "Join us for an inspiring conversation with the legendary Mr. Anand Bhate as we explore his journey and the powerful stories behind his voice.",
-    duration: "38:15",
-    views: "5.1K",
-    youtubeUrl: "#",
-    publishDate: "5 days ago"
+    description: `What does it take to become a legend at just 10 years old? In this episode, we bring you the extraordinary journey of Anand Bhate, the iconic voice that has kept the spirit of Marathi music alive across generations.`,
+    duration: "1:17:02",
+    views: "600",
+    youtubeUrl: "https://www.youtube.com/watch?v=-j2gEDCxtJ0",
+    publishDate: "Jun 20 2025"
   };
 
   useEffect(() => {
@@ -143,14 +138,24 @@ const PictoTalentsPods = () => {
                                   className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                                  <Play className="text-white ml-1" size={20} />
-                                </button>
-                                <div className="absolute bottom-2 left-2 right-2 text-white">
-                                  <h3 className="font-bold text-sm leading-tight">{reel.title}</h3>
-                                  <div className="flex justify-between text-xs opacity-90 mt-1">
-                                    <span>{reel.views} views</span>
-                                    <span>❤️ {reel.likes}</span>
+                                
+                                <div className="absolute bottom-3 left-3 right-3 text-white">
+                                  <h3 className="font-bold text-lg leading-tight">{reel.title}</h3>
+                                  <div className="flex justify-between items-center text-sm opacity-90 mt-2">
+                                    {/* UPDATED: Removed views count */}
+                                    <div className="flex items-center">
+                                        <span>{reel.likes} ❤️</span>
+                                    </div>
+                                    <a
+                                      href={reel.instagramUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="bg-white/20 text-white px-3 py-1 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <span>View</span>
+                                      <ExternalLink size={12} />
+                                    </a>
                                   </div>
                                 </div>
                               </div>
@@ -188,11 +193,10 @@ const PictoTalentsPods = () => {
                 </div>
                 <div className="hidden md:flex md:justify-center">
                   <div className="grid md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-4xl">
-                    {pictoTalentsReels.map((reel, index) => (
+                    {pictoTalentsReels.map((reel) => (
                       <div
                         key={reel.id}
-                        className="group cursor-pointer transition-transform duration-300 hover:scale-105"
-                        onClick={() => setCurrentSlide(index)}
+                        className="group relative transition-transform duration-300 hover:scale-105"
                       >
                         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                           <div className="relative aspect-[9/16]">
@@ -202,16 +206,25 @@ const PictoTalentsPods = () => {
                               className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                            <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-transform hover:scale-110">
-                              <Play className="text-white ml-0.5" size={12} />
-                            </button>
-                            <div className="absolute bottom-1.5 left-1.5 right-1.5 text-white">
-                              <p className="text-xl font-bold mb-0.5 leading-tight">{reel.title}</p>
-                              <div className="flex justify-between text-xs opacity-90">
-                                <span className="text-xs">{reel.views}</span>
-                                <span className="text-xs">❤️ {reel.likes}</span>
-                              </div>
+                            
+                            <div className="absolute bottom-0 left-0 right-0 p-3 pt-8 text-white bg-gradient-to-t from-black/80 to-transparent">
+                                <p className="font-bold text-md mb-2 leading-tight line-clamp-2">{reel.title}</p>
+                                <div className="flex justify-between items-center text-xs opacity-90">
+                                <div className="flex items-center">
+                                    <span className="text-xs flex items-center">{reel.likes} ❤️</span>
+                                </div>
+                                <a
+                                  href={reel.instagramUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-white/20 text-white px-3 py-1.5 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
+                                >
+                                  <span>View</span>
+                                  <ExternalLink size={12} />
+                                </a>
+                                </div>
                             </div>
+
                           </div>
                         </div>
                       </div>
@@ -219,7 +232,9 @@ const PictoTalentsPods = () => {
                   </div>
                 </div>
                 <div className="text-center mt-12">
-                  <button className="bg-[#001730] text-white px-8 py-4 rounded-full hover:bg-[#003A6B] transition-colors shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto">
+                  <button 
+                    onClick={() => window.open(`https://www.instagram.com/picto_talents?igsh=ZGwxc256OXM4NGtv`, '_blank')}
+                    className="bg-[#001730] text-white px-8 py-4 rounded-full hover:bg-[#003A6B] transition-colors shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto">
                     <Instagram size={20} />
                     <span>Follow on Instagram</span>
                     <ExternalLink size={16} />
@@ -239,9 +254,6 @@ const PictoTalentsPods = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                   <div className="flex flex-col md:flex-row">
-                    
-                    {/* ===== START OF CORRECTED CODE ===== */}
-                    {/* The structure here is changed to remove the fixed aspect ratio and allow the image to fill the container. */}
                     <div className="aspect-video md:aspect-auto md:w-2/5 relative">
                       <img
                         src={pictoPodcast.thumbnail}
@@ -251,25 +263,23 @@ const PictoTalentsPods = () => {
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                         <button 
                           onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors hover:scale-110 transform"
+                          className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition-colors hover:scale-110 transform"
                         >
-                          <Play className="text-white ml-1" size={24} />
+                          <Play className="text-white fill-white" size={28} />
                         </button>
                       </div>
                       <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
                         {pictoPodcast.duration}
                       </div>
                     </div>
-                    {/* ===== END OF CORRECTED CODE ===== */}
-
                     <div className="md:w-3/5 p-6 flex flex-col justify-center">
                       <div className="flex items-center space-x-2 text-red-600 mb-3">
                         <Youtube size={16} />
                         <span className="text-xs font-semibold">PODCAST</span>
                       </div>
-                      <h3 className="text-lg md:text-xl font-bold text-[#001730] mb-3 leading-tight line-clamp-2">
+                      <p className="text-xl md:text-3xl font-bold text-[#001730] mb-3 leading-tight line-clamp-2">
                         {pictoPodcast.title}
-                      </h3>
+                      </p>
                       <p className="text-[#003A6B] mb-4 text-sm leading-relaxed line-clamp-3">
                         {pictoPodcast.description}
                       </p>
@@ -285,7 +295,9 @@ const PictoTalentsPods = () => {
                           <Youtube size={16} />
                           <span>Watch on YouTube</span>
                         </button>
-                        <button className="w-full border-2 border-[#001730] text-[#001730] py-3 rounded-full hover:bg-[#001730] hover:text-white transition-colors flex items-center justify-center space-x-2 text-sm">
+                        <button 
+                          onClick={() => window.open(`https://www.youtube.com/@Pictoreal-yt`, '_blank')}
+                          className="w-full border-2 border-[#001730] text-[#001730] py-3 rounded-full hover:bg-[#001730] hover:text-white transition-colors flex items-center justify-center space-x-2 text-sm">
                           <span>Subscribe to PictoPods</span>
                           <ExternalLink size={14} />
                         </button>
