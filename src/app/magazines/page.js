@@ -24,50 +24,50 @@ const magazines = [
     title: "Odyssey", 
     volume: "25", 
     imgLink: "/magazines/vol_2024_25.png", 
-    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
-    description: "Navras Vol. 25 delves into human emotions and experiences through various artistic mediums. Features contributions from talented writers and artists exploring themes of identity and belonging."
+    iFrameSrc: "https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9",
+    description: "Odyssey Vol. 25 delves into human emotions and experiences through various artistic mediums. Features contributions from talented writers and artists exploring themes of identity and belonging."
   },
   { 
     title: "Phoenix", 
     volume: "24", 
     imgLink: "/magazines/vol_2023_24.png", 
-    iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
-    description: "Prahar Vol. 24 addresses current social issues and cultural movements. This edition provides insightful commentary on contemporary society through various literary and artistic forms."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/s9BzGkJ7FHwVhtYP",
+    description: "Phoenix Vol. 24 addresses current social issues and cultural movements. This edition provides insightful commentary on contemporary society through various literary and artistic forms."
   },
   { 
     title: "Kshitij", 
     volume: "23", 
     imgLink: "/magazines/vol_2021_23.jpg", 
-    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
-    description: "Navras Vol. 23 is a collection of heartfelt stories and artistic expressions. This volume emphasizes the power of creativity in connecting communities and inspiring positive change."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/XfPDm7HNEop26LMr",
+    description: "Kshitij Vol. 23 is a collection of heartfelt stories and artistic expressions. This volume emphasizes the power of creativity in connecting communities and inspiring positive change."
   },
   { 
     title: "Abstract", 
     volume: "22", 
     imgLink: "/magazines/vol_2020_22.png", 
-    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
-    description: "Navras Vol. 22 showcases exceptional literary talent and innovative artistic works. Features a diverse range of contributors exploring themes of tradition, modernity, and cultural heritage."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/3makuPpAxhKOsyoj",
+    description: "Abstract Vol. 22 showcases exceptional literary talent and innovative artistic works. Features a diverse range of contributors exploring themes of tradition, modernity, and cultural heritage."
   },
   { 
     title: "Alchemy", 
     volume: "21", 
     imgLink: "/magazines/vol_2019_21.jpg", 
-    iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
-    description: "Prahar Vol. 21 presents critical analyses of societal challenges and cultural phenomena. This edition combines academic insights with creative expressions to offer a comprehensive perspective."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/1Nxq8IadrnWpzeBO",
+    description: "Alchemy Vol. 21 presents critical analyses of societal challenges and cultural phenomena. This edition combines academic insights with creative expressions to offer a comprehensive perspective."
   },
   { 
     title: "Perspective", 
     volume: "20", 
     imgLink: "/magazines/vol_2018_20.jpg", 
-    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
-    description: "Navras Vol. 20 celebrates the beauty of human expression through literature and arts. This milestone volume features retrospective pieces alongside fresh, contemporary works."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/ZQWHTJI3yPDF8M1m",
+    description: "Perspective Vol. 20 celebrates the beauty of human expression through literature and arts. This milestone volume features retrospective pieces alongside fresh, contemporary works."
   },
   { 
     title: "Change", 
     volume: "19", 
     imgLink: "/magazines/vol_2017_19.png", 
-    iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1",
-    description: "Navras Vol. 19 explores the intersection of tradition and innovation in creative arts. This volume highlights emerging talents and established voices in literature and visual arts."
+    iFrameSrc: "https://www.yumpu.com/en/embed/view/mi1wtA6cOuJpjSFY",
+    description: "Change Vol. 19 explores the intersection of tradition and innovation in creative arts. This volume highlights emerging talents and established voices in literature and visual arts."
   },
 ];
 
@@ -130,10 +130,10 @@ export default function MagazinePage() {
 
                       {/* Text */}
                       <div className="flex-1 flex flex-col justify-center">
-                        <p className="text-[#0A192E] font-bold mb-1 text-lg md:text-xl">
+                        <p className="text-[#0A192E] font-bold mb-1 text-lg md:text-4xl">
                           {magazine.title}
                         </p>
-                        <h2 className="text-lg md:text-xl font-bold text-gray-400 mb-3">
+                        <h2 className="text-lg md:text-sm font-bold text-gray-400 mb-3">
                           VOLUME {magazine.volume}
                         </h2>
                         <Link
