@@ -41,20 +41,26 @@ export default function RecentBlogs() {
   return (
     <section className="bg-deepnavy text-white py-12 px-4 md:px-12">
       {/* Header */}
-      <div className="flex items-center justify-between mx-a mb-10">
-        <h2 className="flex-1 text-3xl font-bold text-center">
-          Recent Blogs
-        </h2>
-        <Link
-          href="/blogs"
-          className="flex items-center gap-2  px-5 py-2 border border-white rounded-full hover:bg-paleskyblue hover:text-deepnavy transition ml-4"
-        >
-          Read Our Blogs{" "}
-          <span className="bg-white rounded-full p-2 flex items-center justify-center">
-            <ArrowIcon />
-          </span>
-        </Link>
+      <div className="relative mb-10">
+        <h2 className="text-3xl font-bold text-center">Recent Blogs</h2>
+
+        {/* CTA Button */}
+        <div className="absolute top-0 right-0 sm:static sm:mt-4 w-full flex justify-end">
+          <Link
+            href="/blogs"
+            className="flex items-center gap-2 px-4 py-1 mt-12 rounded-full hover:bg-paleskyblue hover:text-deepnavy transition
+                      sm:px-4 sm:py-1 sm:text-sm
+                      max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
+          >
+            <span>Read Our Blogs</span>
+            <span className="bg-white rounded-full p-2 sm:p-3 flex items-center justify-center max-sm:p-1">
+              <ArrowIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            </span>
+          </Link>
+        </div>
       </div>
+
+
 
       {/* Blog Cards */}
       <div className="flex flex-col gap-8 max-w-6xl mx-auto">
@@ -67,7 +73,7 @@ export default function RecentBlogs() {
             <img
               src={blog.img}
               alt={blog.title}
-              className="w-32 h-32 md:w-50 md:h-50 object-cover border-2 border-deepnavy rounded"
+              className="block w-42 h-52 md:w-50 md:h-50 object-cover border-2 border-deepnavy rounded mx-auto md:mx-0"
             />
 
             {/* Content */}

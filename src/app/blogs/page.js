@@ -4,6 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function BlogsPage() {
+  
   const blogs = [
     {
       id: "blog5",
@@ -117,24 +118,27 @@ export default function BlogsPage() {
 
         <div className="flex gap-4">
           {/* Genres Dropdown */}
-          <div className="relative">
-            <select className="appearance-none bg-white  px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
-              <option>All Genres</option>
-              <option>Fiction</option>
-              <option>Non-fiction</option>
-              <option>Poetry</option>
-            </select>
-            <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
-          </div>
+          <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
+            {/* Genre Dropdown */}
+            <div className="relative w-full sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+                <option>All Genres</option>
+                <option>Fiction</option>
+                <option>Non-fiction</option>
+                <option>Poetry</option>
+              </select>
+              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+            </div>
 
-          {/* Sorting Dropdown */}
-          <div className="relative">
-            <select className="appearance-none px-4 py-2 border-3 bg-white  border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none">
-              <option>Latest Creation</option>
-              <option>Oldest First</option>
-              <option>Most Popular</option>
-            </select>
-            <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+            {/* Sorting Dropdown */}
+            <div className="relative w-full sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto px-4 py-2 border-3 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+                <option>Latest Creation</option>
+                <option>Oldest First</option>
+                <option>Most Popular</option>
+              </select>
+              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+            </div>
           </div>
         </div>
       </div>
@@ -178,8 +182,8 @@ export default function BlogsPage() {
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto px-6 py-3 bg-deepnavy text-6px text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
-                    sm:px-4 sm:py-1 sm:text-sm
+                  className="ml-auto px-4 py-1 bg-deepnavy text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
+                    sm:px-3 sm:py-2 sm:text-base
                     max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
                 >
                   Read More
