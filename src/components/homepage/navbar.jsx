@@ -135,7 +135,7 @@ export default function Navbar() {
                 );
               })}
               <div
-                className="absolute top-2 bottom-2 bg-[#0B2D4F] rounded-full"
+                className="absolute top-2 bottom-2 bg-[#111C33] rounded-full"
                 style={{ ...sliderStyle, height: "calc(100% - 1rem)" }}
               />
             </div>
@@ -145,10 +145,10 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a
               href="/magazines"
-              className="group flex items-center bg-[#0B2D4F] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
+              className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
             >
               <span className="mr-3">Magazines</span>
-              <span className="bg-white rounded-full p-2 flex items-center justify-center">
+              <span className="bg-paleskyblue rounded-full p-2 flex items-center justify-center">
                 <ArrowIcon />
               </span>
             </a>
@@ -187,7 +187,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden`} id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-pastelskyblue mobile-menu-bottom{bg-transparent}">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white mobile-menu-bottom{bg-transparent}">
           {navLinks.map((link) => {
             const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
             const isActive = activePath === href;
@@ -196,7 +196,7 @@ export default function Navbar() {
                 key={link}
                 href={href}
                 className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                  isActive ? "bg-[#0B2D4F] text-white" : "text-black"
+                  isActive ? "bg-[#111C33] text-white" : "text-black"
                 }`}
               >
                 {link}
@@ -206,10 +206,10 @@ export default function Navbar() {
           <div className="pt-4 pb-2 flex justify-center">
             <a
               href="/magazines"
-              className="group flex items-center bg-[#0B2D4F] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
+              className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
             >
               <span className="mr-3">Magazines</span>
-              <span className="bg-white rounded-full p-2 flex items-center justify-center">
+              <span className="bg-paleskyblue rounded-full p-2 flex items-center justify-center">
                 <ArrowIcon />
               </span>
             </a>
