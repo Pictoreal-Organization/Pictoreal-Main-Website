@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Image from "next/image";
 
 const TeamMember = ({ names, imageSrc, altText, hoverKey }) => {
   const [hovered, setHovered] = useState(null);
@@ -17,10 +18,13 @@ const TeamMember = ({ names, imageSrc, altText, hoverKey }) => {
         }}
       >
         <div className="pic overflow-hidden w-full rounded-t-md">
-          <img
+          <Image
             className="w-full h-auto object-cover rounded-t-md"
             src={imageSrc}
             alt={altText}
+            loading="lazy"
+            width={500}   // pick something reasonable
+            height={500}
           />
         </div>
         <div
