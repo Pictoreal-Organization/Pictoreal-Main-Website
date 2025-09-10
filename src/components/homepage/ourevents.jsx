@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react"; // ✅ Arrow button
 
 const EventsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +20,7 @@ const EventsCarousel = () => {
     { id: 9, name: "Old Age Home Visit", image: "./home_page/Old_Age_Home_Visit.jpg" },
     { id: 10, name: "Picto Plants", image: "./home_page/Pictoplants.jpg" },
     { id: 11, name: "Orphanage Visit", image: "./home_page/Orphange_Visit.jpg" },
-    { id: 12, name: "Cleanliness Drive", image: "./home_page/CD.jpg" },
+    { id: 12, name: "Cleanliness Drive", image: "./home_page/Cleanliness.jpg" },
     { id: 13, name: "Amche Bappa", image: "./home_page/amche_bappa.jpg" },
   ];
 
@@ -45,67 +47,94 @@ const EventsCarousel = () => {
 
       {/* Carousel */}
       <div
-        className="relative flex items-center justify-center w-full max-w-6xl"
+        className="relative flex items-center justify-center w-full max-w-6xl overflow-hidden"
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
       >
         {/* Previous (smaller) */}
-        <div className="absolute left-0 md:left-20 transform scale-75 opacity-70 transition-all duration-700">
-          <div className="relative group">
-            <img
-              src={events[getPrevIndex()].image}
-              alt={events[getPrevIndex()].name}
-              className="w-52 h-72 object-cover rounded-xl shadow-lg"
-            />
-            {/* Hover name */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-              <p className="text-white text-lg font-semibold text-center px-2">
-                {events[getPrevIndex()].name}
-              </p>
+        <motion.div
+          key={`prev-${getPrevIndex()}`}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 0.7, x: 0, scale: 0.75 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.6 }}
+          className="absolute left-0 md:left-20"
+        >
+          <Link href="/gallery">
+            <div className="relative group cursor-pointer">
+              <img
+                src={events[getPrevIndex()].image}
+                alt={events[getPrevIndex()].name}
+                className="w-52 h-72 object-cover rounded-xl shadow-lg"
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold text-center px-2">
+                  {events[getPrevIndex()].name}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
+          </Link>
+        </motion.div>
 
-        {/* Current (center, wider horizontally) */}
-        <div className="z-10 transform scale-100 transition-all duration-700">
-          <div className="relative group">
-            <img
-              src={events[currentIndex].image}
-              alt={events[currentIndex].name}
-              className="w-[32rem] h-80 object-cover rounded-2xl shadow-2xl"
-            />
-            {/* Hover name */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-              <p className="text-white text-2xl font-bold text-center px-4">
-                {events[currentIndex].name}
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Current (center, animated) */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -200 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="z-10"
+          >
+            <Link href="/gallery">
+              <div className="relative group cursor-pointer">
+                <img
+                  src={events[currentIndex].image}
+                  alt={events[currentIndex].name}
+                  className="w-[32rem] h-80 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                  <p className="text-white text-2xl font-bold text-center px-4">
+                    {events[currentIndex].name}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Next (smaller) */}
-        <div className="absolute right-0 md:right-20 transform scale-75 opacity-70 transition-all duration-700">
-          <div className="relative group">
-            <img
-              src={events[getNextIndex()].image}
-              alt={events[getNextIndex()].name}
-              className="w-52 h-72 object-cover rounded-xl shadow-lg"
-            />
-            {/* Hover name */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-              <p className="text-white text-lg font-semibold text-center px-2">
-                {events[getNextIndex()].name}
-              </p>
+        <motion.div
+          key={`next-${getNextIndex()}`}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 0.7, x: 0, scale: 0.75 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={{ duration: 0.6 }}
+          className="absolute right-0 md:right-20"
+        >
+          <Link href="/gallery">
+            <div className="relative group cursor-pointer">
+              <img
+                src={events[getNextIndex()].image}
+                alt={events[getNextIndex()].name}
+                className="w-52 h-72 object-cover rounded-xl shadow-lg"
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold text-center px-2">
+                  {events[getNextIndex()].name}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
+          </Link>
+        </motion.div>
       </div>
 
-      {/* Explore Button */}
+      {/* Explore Button with Arrow */}
       <div className="text-center mt-12">
         <Link href="/gallery">
-          <button className="bg-[#191970] hover:bg-[#1e1e90] text-white font-semibold py-4 px-12 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+          <button className="bg-[#191970] hover:bg-[#1e1e90] text-white font-semibold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center gap-2">
             Explore
+            <ArrowRight size={22} />
           </button>
         </Link>
       </div>
