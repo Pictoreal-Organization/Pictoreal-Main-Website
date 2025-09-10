@@ -1,11 +1,12 @@
 import React from 'react';
+import { AiFillHeart } from 'react-icons/ai';
 
 const Footer = () => {
   return (
     <footer id="footer" className="bg-gray-900 text-gray-300 font-sans scroll-mt-20">
       <div className="container mx-auto py-12 px-8">
         <div className="flex flex-col lg:flex-row justify-between gap-10">
-          
+
           {/* Left Section: Address and Map */}
           <div className="w-full lg:w-5/12">
             <h3 className="text-xl font-bold text-white mb-4">PICTOREAL</h3>
@@ -32,11 +33,11 @@ const Footer = () => {
           <div className="w-full lg:w-2/12">
             <h3 className="text-xl font-bold text-white mb-4">Useful Links</h3>
             <ul className="space-y-2">
-              <li><a href="/" className="hover:text-white transition-colors duration-300">Home</a></li>
-              <li><a href="/events" className="hover:text-white transition-colors duration-300">Events</a></li>
-              <li><a href="/gallery" className="hover:text-white transition-colors duration-300">Gallery</a></li>
-              <li><a href="/ourteam" className="hover:text-white transition-colors duration-300">Our Team</a></li>
-              <li><a href="#footer" className="hover:text-white transition-colors duration-300">Contact</a></li>
+              <li><a href="/" className="hover:text-[#b3dfff] hover:underline transition-colors duration-300">Home</a></li>
+              <li><a href="/events" className="hover:text-[#b3dfff] hover:underline transition-colors duration-300">Events</a></li>
+              <li><a href="/gallery" className="hover:text-[#b3dfff] hover:underline transition-colors duration-300">Gallery</a></li>
+              <li><a href="/ourteam" className="hover:text-[#b3dfff] hover:underline transition-colors duration-300">Our Team</a></li>
+              <li><a href="#footer" className="hover:text-[#b3dfff] hover:underline transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
 
@@ -53,8 +54,14 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className="border-t border-gray-800 text-center py-4">
-        <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Pictoreal. All Rights Reserved.</p>
+      <div className="text-center">
+        <p className="text-sm text-gray-500 mt-10">&copy; {new Date().getFullYear()} Pictoreal. All Rights Reserved.</p>
+      </div>
+      <div className="text-center border-t border-gray-800 bg-[#112b45] mt-2 p-2">
+        Made with <AiFillHeart className="inline text-red-500" /> by{' '}
+        <a href="/developers" className="hover:text-[#b3dfff] font-semibold transition-colors hover:underline">
+          Pictoreal Tech Team
+        </a>
       </div>
     </footer>
   );

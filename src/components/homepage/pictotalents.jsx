@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play, Instagram, Youtube, ExternalLink } from "lucide-react";
-import ArrowBtn from "./arrowbtn.jsx";
 
 const PictoTalentsPods = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -11,14 +11,14 @@ const PictoTalentsPods = () => {
     {
       id: 1,
       thumbnail: "/talents-pods/talents1.png",
-      title: "Soulful lyrics Singing",
+      title: "Soulful lyrics Singing",
       likes: "180",
       instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=QkFHaGxuYjl2Qw%3D%3D"
     },
     {
       id: 2,
       thumbnail: "/talents-pods/talents2.png",
-      title: "Flute melody Musical instrument",
+      title: "Flute melody Musical instrument",
       likes: "144",
       instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=QkFNck53QVMzYg%3D%3D"
     },
@@ -74,8 +74,9 @@ const PictoTalentsPods = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[bg-[#DDF1FF]] py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="w-full min-h-screen bg-[#DDF1FF] py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#001730] mb-4 font-heading leading-tight">
             Discover Our Creative Universe
@@ -84,6 +85,8 @@ const PictoTalentsPods = () => {
             Explore inspiring content from our Instagram reels and dive deep into conversations on our podcast
           </p>
         </div>
+
+        {/* Tabs */}
         <div className="flex justify-center mb-6">
           <div className="bg-white/70 backdrop-blur-md rounded-3xl p-2 shadow-xl border border-white/20">
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
@@ -110,6 +113,8 @@ const PictoTalentsPods = () => {
             </div>
           </div>
         </div>
+
+        {/* Content */}
         <div className="relative">
           {activeSection === 0 && (
             <div className="transition-all duration-700 ease-out">
@@ -119,154 +124,146 @@ const PictoTalentsPods = () => {
                 </h2>
                 <p className="text-[#003A6B] font-body">Swipe through our creative content</p>
               </div>
-              <div className="relative max-w-6xl mx-auto">
-                <div className="md:hidden">
-                  <div className="relative">
-                    <div className="overflow-hidden rounded-2xl">
-                      <div
-                        className="flex transition-transform duration-500 ease-out"
-                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                      >
-                        {pictoTalentsReels.map((reel) => (
-                          <div key={reel.id} className="w-full flex-shrink-0">
-                            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-full max-w-[calc(100vw-48px)] mx-auto">
-                              <div className="relative aspect-[9/16]">
-                                <img
-                                  src={reel.thumbnail}
-                                  alt={reel.title}
-                                  className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-                                <div className="absolute bottom-3 left-3 right-3 text-white">
-                                  <h3 className="font-bold text-lg leading-tight">{reel.title}</h3>
-                                  <div className="flex justify-between items-center text-sm opacity-90 mt-2">
-                                    {/* UPDATED: Removed views count */}
-                                    <div className="flex items-center">
-                                      <span>{reel.likes} ❤️</span>
-                                    </div>
-                                    <a
-                                      href={reel.instagramUrl}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="bg-white/20 text-white px-3 py-1 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
-                                      onClick={(e) => e.stopPropagation()}
-                                    >
-                                      <span>View</span>
-                                      <ExternalLink size={12} />
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
-                    >
-                      <ChevronLeft className="text-[#001730]" size={20} />
-                    </button>
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
-                    >
-                      <ChevronRight className="text-[#001730]" size={20} />
-                    </button>
-                  </div>
-                  <div className="flex justify-center mt-6 space-x-2">
-                    {pictoTalentsReels.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                          ? 'bg-[#001730] scale-125'
-                          : 'bg-gray-300 hover:bg-gray-400'
-                          }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="hidden md:flex md:justify-center">
-                  <div className="grid md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-4xl">
+              {/* Mobile Carousel */}
+              <div className="relative max-w-6xl mx-auto md:hidden">
+                <div className="overflow-hidden rounded-2xl">
+                  <div
+                    className="flex transition-transform duration-500 ease-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
                     {pictoTalentsReels.map((reel) => (
-                      <div
-                        key={reel.id}
-                        className="group relative transition-transform duration-300 hover:scale-105"
-                      >
-                        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                      <div key={reel.id} className="w-full flex-shrink-0">
+                        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-full max-w-[calc(100vw-48px)] mx-auto">
                           <div className="relative aspect-[9/16]">
-                            <img
+                            <Image
                               src={reel.thumbnail}
                               alt={reel.title}
-                              className="w-full h-full object-cover"
+                              fill
+                              className="object-cover"
+                              sizes="100vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                            <div className="absolute bottom-0 left-0 right-0 p-3 pt-8 text-white bg-gradient-to-t from-black/80 to-transparent">
-                              <p className="font-bold text-md mb-2 font-heading leading-tight line-clamp-2">{reel.title}</p>
-                              <div className="flex justify-between items-center text-xs opacity-90">
-                                <div className="flex items-center">
-                                  <span className="text-xs flex items-center">{reel.likes} ❤️</span>
-                                </div>
+                            <div className="absolute bottom-3 left-3 right-3 text-white">
+                              <h3 className="font-bold text-lg leading-tight">{reel.title}</h3>
+                              <div className="flex justify-between items-center text-sm opacity-90 mt-2">
+                                <span>{reel.likes} ❤️</span>
                                 <a
                                   href={reel.instagramUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="bg-white/20 text-white px-3 py-1.5 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
+                                  className="bg-white/20 text-white px-3 py-1 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
+                                  onClick={(e) => e.stopPropagation()}
                                 >
                                   <span>View</span>
                                   <ExternalLink size={12} />
                                 </a>
                               </div>
                             </div>
-
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="text-center mt-12 flex justify-center items-center">
-                  <button
-                    onClick={() => window.open('https://www.instagram.com/picto_talents?igsh=ZGwxc256OXM4NGtv', '_blank')}
-                    className="group flex items-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full 
-                 transform transition duration-300 ease-in-out hover:scale-105 font-sans cursor-pointer
-                 hover:bg-[#003A6B]"
-                  >
-                    <span className="flex items-center space-x-3">
-                      <Instagram size={20} className="text-[#DDF1FF]" />
-                      <span className="text-[#DDF1FF] font-semibold">Follow on Instagram</span>
-                    </span>
+                {/* Nav buttons */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
+                >
+                  <ChevronLeft className="text-[#001730]" size={20} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
+                >
+                  <ChevronRight className="text-[#001730]" size={20} />
+                </button>
 
-                    <span
-                      className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]"
-                    >
-                      <svg
-                        className="w-5 h-5 transition-transform duration-300 ease-in-out"
-                        fill="none"
-                        stroke="#001730"
-                        strokeWidth={2.5}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17 7L7 17M17 7h-6m6 0v6"
-                        />
-                      </svg>
-                    </span>
-                  </button>
+                {/* Dots */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {pictoTalentsReels.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                        ? 'bg-[#001730] scale-125'
+                        : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                    />
+                  ))}
                 </div>
+              </div>
+
+              {/* Desktop Grid */}
+              <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                {pictoTalentsReels.map((reel) => (
+                  <div
+                    key={reel.id}
+                    className="group relative transition-transform duration-300 hover:scale-105"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                      <div className="relative aspect-[9/16]">
+                        <Image
+                          src={reel.thumbnail}
+                          alt={reel.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 50vw, 20vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-3 pt-8 text-white bg-gradient-to-t from-black/80 to-transparent">
+                          <p className="font-bold text-md mb-2 font-heading leading-tight line-clamp-2">{reel.title}</p>
+                          <div className="flex justify-between items-center text-xs opacity-90">
+                            <span>{reel.likes} ❤️</span>
+                            <a
+                              href={reel.instagramUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-white/20 text-white px-3 py-1.5 text-xs rounded-full hover:bg-white/40 transition-colors flex items-center space-x-1"
+                            >
+                              <span>View</span>
+                              <ExternalLink size={12} />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="text-center mt-12 flex justify-center items-center">
+                <button
+                  onClick={() => window.open('https://www.instagram.com/picto_talents?igsh=ZGwxc256OXM4NGtv', '_blank')}
+                  className="group flex items-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full hover:scale-105 font-sans cursor-pointer hover:bg-[#003A6B] transition duration-300"
+                >
+                  <span className="flex items-center space-x-3">
+                    <Instagram size={20} className="text-[#DDF1FF]" />
+                    <span className="text-[#DDF1FF] font-semibold">Follow on Instagram</span>
+                  </span>
+                  <span className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="#001730"
+                      strokeWidth={2.5}
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 7L7 17M17 7h-6m6 0v6" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           )}
+
+          {/* Podcast Section */}
           {activeSection === 1 && (
             <div className="transition-all duration-700 ease-out">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-heading md:text-2xl font-bold text-[#001730] mb-2">
+                <h2 className="text-xl md:text-2xl font-heading font-bold text-[#001730] mb-2">
                   Latest Podcast Episode
                 </h2>
                 <p className="text-[#003A6B] font-body">Deep conversations about creativity and storytelling</p>
@@ -274,16 +271,18 @@ const PictoTalentsPods = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                   <div className="flex flex-col md:flex-row">
-                    <div className="aspect-video md:aspect-auto md:w-2/5 relative">
-                      <img
+                    <div className="relative aspect-video md:w-2/5">
+                      <Image
                         src={pictoPodcast.thumbnail}
                         alt={pictoPodcast.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 40vw"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                         <button
                           onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition-colors hover:scale-110 transform"
+                          className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition hover:scale-110"
                         >
                           <Play className="text-white fill-white" size={28} />
                         </button>
@@ -310,37 +309,28 @@ const PictoTalentsPods = () => {
                       <div className="space-y-3 mt-auto">
                         <button
                           onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-2 shadow-md text-sm"
+                          className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition transform hover:scale-105 flex items-center justify-center space-x-2 shadow-md text-sm"
                         >
                           <Youtube size={16} />
                           <span>Watch on YouTube</span>
                         </button>
                         <button
                           onClick={() => window.open('https://www.youtube.com/@Pictoreal-yt', '_blank')}
-                          className="w-full group flex items-center justify-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full 
-                 transform transition duration-300 ease-in-out hover:scale-105 font-sans cursor-pointer
-                 hover:bg-[#003A6B]"
+                          className="w-full group flex items-center justify-center bg-[#001730] text-white pl-6 pr-2 py-2 rounded-full hover:scale-105 font-sans cursor-pointer hover:bg-[#003A6B] transition"
                         >
                           <span className="flex items-center space-x-3">
                             <Youtube size={20} className="text-[#DDF1FF]" />
                             <span className="text-[#DDF1FF] font-semibold">Subscribe to PictoPods</span>
                           </span>
-
-                          <span
-                            className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]"
-                          >
+                          <span className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#DDF1FF]">
                             <svg
-                              className="w-5 h-5 transition-transform duration-300 ease-in-out"
+                              className="w-5 h-5"
                               fill="none"
                               stroke="#001730"
                               strokeWidth={2.5}
                               viewBox="0 0 24 24"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M17 7L7 17M17 7h-6m6 0v6"
-                              />
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 7L7 17M17 7h-6m6 0v6" />
                             </svg>
                           </span>
                         </button>
