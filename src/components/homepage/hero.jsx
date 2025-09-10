@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ArrowBtn from "./arrowbtn.jsx";
+import Image from "next/image";
 
 const Hero = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -56,10 +57,13 @@ const Hero = () => {
 
             <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
             <div className="w-[180px] sm:w-[200px] md:w-[220px] rounded-[10px] overflow-hidden shadow-lg bg-white">
-              <img
+              <Image
                 src="/know-your-prahar.png"
                 alt="Know Your Prahar"
                 className="w-full h-full object-cover"
+                priority={true}
+                width={220}   // add some width
+                height={300}
               />
             </div>
           </div>
@@ -67,10 +71,13 @@ const Hero = () => {
           {/* Right Box */}
           <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16">
             <div className="w-[180px] sm:w-[200px] md:w-[230px] rounded-[10px] overflow-hidden shadow-lg bg-white">
-              <img
+              <Image
                 src="/magazines/vol27.png"
                 alt="Pictoreal Magazine"
                 className="w-full h-full object-cover"
+                priority={true}
+                width={220}
+                height={300}
               />
             </div>
             <ArrowBtn text="Magazine V27" path={iFrameSrc} />
@@ -85,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* ------------------ MOBILE (< md) ------------------ */}
-      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden min-h-[calc(100vh-5rem)]">
+      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-8">
           <div className="text-3xl sm:text-4xl font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
