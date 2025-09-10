@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useLayoutEffect, useRef, useEffect } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 
 // Arrow Icon SVG Component
 const ArrowIcon = () => (
@@ -20,7 +20,6 @@ const ArrowIcon = () => (
   </svg>
 );
 
-// Main Navbar Component
 export default function Navbar() {
   const [activePath, setActivePath] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,73 +30,18 @@ export default function Navbar() {
     transition: "none",
   });
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [prevIndex, setPrevIndex] = useState(null); // <-- keep track of previous active tab
-  const navLinksRef = useRef([]);
+  const [prevIndex, setPrevIndex] = useState(null);
 
+  const navLinksRef = useRef([]);
   const navLinks = ["Home", "Gallery", "Blogs", "Articles", "OurTeam"];
 
-  // Effect for setting active path and desktop slider position
   useLayoutEffect(() => {
-    // Check if window is defined (for server-side rendering safety)
-    if (typeof window !== "undefined") {
-      const currentPath = window.location.pathname;
-      setActivePath(currentPath);
+    const currentPath = window.location.pathname;
+    setActivePath(currentPath);
 
-      const activeIndex = navLinks.findIndex((link) => {
-        const href =
-          link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-        return href === currentPath;
-      });
-
-      if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
-        const activeTab = navLinksRef.current[activeIndex];
-        setSliderStyle((prev) => ({
-          ...prev,
-          left: activeTab.offsetLeft,
-          width: activeTab.offsetWidth,
-          opacity: 1,
-          transition:
-            prevIndex !== null ? "all 300ms ease-in-out" : "none", // no animation on first load
-        }));
-        setPrevIndex(activeIndex);
-      }
-    }
-  }, [activePath, prevIndex]);
-
-  // Effect to disable body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    // Cleanup function to reset scroll on component unmount
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMobileMenuOpen]);
-
-
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
-    if (navLinksRef.current[index]) {
-      const tab = navLinksRef.current[index];
-      setSliderStyle((prev) => ({
-        ...prev,
-        left: tab.offsetLeft,
-        width: tab.offsetWidth,
-        opacity: 1,
-        transition: "all 300ms ease-in-out",
-      }));
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
     const activeIndex = navLinks.findIndex((link) => {
-      const href =
-        link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-      return href === activePath;
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
+      return href === currentPath;
     });
 
     if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
@@ -107,17 +51,47 @@ export default function Navbar() {
         left: activeTab.offsetLeft,
         width: activeTab.offsetWidth,
         opacity: 1,
-        transition: "all 300ms ease-in-out",
+        transition: prevIndex !== null ? "all 300ms ease-in-out" : "none",
       }));
+      setPrevIndex(activeIndex);
+    }
+  }, [activePath]);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+    if (navLinksRef.current[index]) {
+      const tab = navLinksRef.current[index];
+      setSliderStyle({
+        left: tab.offsetLeft,
+        width: tab.offsetWidth,
+        opacity: 1,
+        transition: "all 300ms ease-in-out",
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+    const activeIndex = navLinks.findIndex((link) => {
+      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
+      return href === activePath;
+    });
+
+    if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
+      const activeTab = navLinksRef.current[activeIndex];
+      setSliderStyle({
+        left: activeTab.offsetLeft,
+        width: activeTab.offsetWidth,
+        opacity: 1,
+        transition: "all 300ms ease-in-out",
+      });
     } else {
-      // If no active link, hide the slider
-      setSliderStyle((prev) => ({ ...prev, opacity: 0, width: 0 }));
+      setSliderStyle((prev) => ({ ...prev, opacity: 0 }));
     }
   };
 
   const activeIndex = navLinks.findIndex((link) => {
-    const href =
-      link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
+    const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
     return href === activePath;
   });
 
@@ -129,11 +103,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/">
-                <img
-                  className="h-8 w-auto"
-                  src="https://placehold.co/150x40/ffffff/111C33?text=Pictoreal"
-                  alt="Pictoreal Logo"
-                />
+                <img className="h-8 w-auto" src="/pictoreal.png" alt="Pictoreal Logo" />
               </a>
             </div>
 
@@ -141,17 +111,12 @@ export default function Navbar() {
             <div className="hidden md:flex justify-center flex-grow">
               <div
                 onMouseLeave={handleMouseLeave}
-                className="relative flex items-center space-x-4 p-2 bg-gray-100/80 rounded-full"
+                className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
               >
                 {navLinks.map((link, index) => {
-                  const href =
-                    link === "Home"
-                      ? "/"
-                      : `/${link.toLowerCase().replace(" ", "-")}`;
+                  const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
                   const isHighlighted =
-                    hoveredIndex !== null
-                      ? index === hoveredIndex
-                      : index === activeIndex;
+                    hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
 
                   return (
                     <a
@@ -167,6 +132,8 @@ export default function Navbar() {
                     </a>
                   );
                 })}
+
+                {/* Slider */}
                 <div
                   className="absolute top-2 bottom-2 bg-[#111C33] rounded-full"
                   style={{ ...sliderStyle, height: "calc(100% - 1rem)" }}
@@ -181,13 +148,13 @@ export default function Navbar() {
                 className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
               >
                 <span className="mr-3">Magazines</span>
-                <span className="bg-white/20 rounded-full p-2 flex items-center justify-center">
+                <span className="bg-paleskyblue rounded-full p-2 flex items-center justify-center">
                   <ArrowIcon />
                 </span>
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -196,12 +163,7 @@ export default function Navbar() {
                 aria-expanded={isMobileMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
-                <svg
-                  className="h-6 w-6"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                   {isMobileMenuOpen ? (
                     <path
                       strokeLinecap="round"
@@ -224,39 +186,23 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- Mobile Menu & Overlay --- */}
-
-      {/* Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-hidden="true"
-        ></div>
-      )}
-
-      {/* Menu Content */}
+      {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 left-0 h-full w-1/2 max-w-xs bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`md:hidden fixed top-0 right-0 h-full w-1/2 max-w-xs bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="pt-24 px-2 space-y-2 sm:px-3">
           {navLinks.map((link) => {
-            const href =
-              link === "Home"
-                ? "/"
-                : `/${link.toLowerCase().replace(" ", "-")}`;
+            const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
             const isActive = activePath === href;
             return (
               <a
                 key={link}
                 href={href}
                 className={`block w-full text-center px-3 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
-                  isActive
-                    ? "bg-[#111C33] text-white"
-                    : "text-black hover:bg-gray-100"
+                  isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
                 }`}
               >
                 {link}
