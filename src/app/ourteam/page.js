@@ -20,7 +20,7 @@ const Team = () => {
         />
       
         {/* Team Photo - Large and centered */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-12 w-3/4">
           <TeamMember
             names={["TEAM PICTOREAL"]}
             imageSrc="our_team/slide_img_1.jpg"
