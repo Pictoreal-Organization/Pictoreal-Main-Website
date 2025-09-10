@@ -49,6 +49,63 @@ const EventsCarousel = () => {
     setIsAutoPlaying(false);
   };
 
+  // Animation variants
+  const centerImageVariants = {
+    enterFromRight: {
+      x: [300, 150, 0],
+      scale: [0.75, 0.87, 1],
+      opacity: [0.7, 0.85, 1],
+      width: ["20rem", "30rem", "40rem"],
+      height: ["24rem", "28rem", "32rem"],
+      borderRadius: ["0.75rem", "1rem", "1rem"],
+    },
+    enterFromLeft: {
+      x: [-300, -150, 0],
+      scale: [0.75, 0.87, 1],
+      opacity: [0.7, 0.85, 1],
+      width: ["20rem", "30rem", "40rem"],
+      height: ["24rem", "28rem", "32rem"],
+      borderRadius: ["0.75rem", "1rem", "1rem"],
+    },
+    center: {
+      x: 0,
+      scale: 1,
+      opacity: 1,
+      width: "40rem",
+      height: "32rem",
+      borderRadius: "1rem",
+    },
+    exitToLeft: {
+      x: [0, -150, -300],
+      scale: [1, 0.87, 0.75],
+      opacity: [1, 0.85, 0.7],
+      width: ["40rem", "30rem", "20rem"],
+      height: ["32rem", "28rem", "24rem"],
+      borderRadius: ["1rem", "1rem", "0.75rem"],
+    },
+    exitToRight: {
+      x: [0, 150, 300],
+      scale: [1, 0.87, 0.75],
+      opacity: [1, 0.85, 0.7],
+      width: ["40rem", "30rem", "20rem"],
+      height: ["32rem", "28rem", "24rem"],
+      borderRadius: ["1rem", "1rem", "0.75rem"],
+    },
+  };
+
+  const sideImageVariants = {
+    leftSide: {
+      x: [-300, -200, -150],
+      scale: [0.6, 0.7, 0.75],
+      opacity: [0, 0.5, 0.7],
+    },
+    rightSide: {
+      x: [300, 200, 150],
+      scale: [0.6, 0.7, 0.75],
+      opacity: [0, 0.5, 0.7],
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#0A1631] py-12 flex flex-col items-center">
       {/* Header */}
@@ -59,7 +116,7 @@ const EventsCarousel = () => {
         </p>
       </div>
 
-      {/* Carousel Section */}
+      {/* Carousel */}
       <div className="relative w-full max-w-[90rem]">
         {/* Left Arrow */}
         <button
@@ -89,12 +146,12 @@ const EventsCarousel = () => {
           <motion.div
             key={`left-${getPrevIndex()}`}
             className="absolute left-20 z-10"
-            initial={{ x: direction === -1 ? 200 : -300, opacity: 0 }}
-            animate={{ x: 0, opacity: 0.7, scale: 0.75 }}
-            exit={{ x: direction === -1 ? 300 : -300, opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            variants={sideImageVariants}
+            initial="leftSide"
+            animate={{ x: -150, scale: 0.75, opacity: 0.7 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
-            <Link href="/gallery">
+            <Link href="/gallery" className="block">
               <div className="relative group cursor-pointer">
                 <img
                   src={events[getPrevIndex()].image}
@@ -114,30 +171,22 @@ const EventsCarousel = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={`center-${currentIndex}`}
-              className="z-20"
-              initial={{ 
-                x: direction === 1 ? 300 : -300,
-                opacity: 0,
-                scale: 0.75
-              }}
-              animate={{ 
-                x: 0,
-                opacity: 1,
-                scale: 1
-              }}
-              exit={{ 
-                x: direction === 1 ? -300 : 300,
-                opacity: 0,
-                scale: 0.75
-              }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="z-20 absolute"
+              variants={centerImageVariants}
+              initial={direction === 1 ? "enterFromRight" : "enterFromLeft"}
+              animate="center"
+              exit={direction === 1 ? "exitToLeft" : "exitToRight"}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              layout
             >
-              <Link href="/gallery">
+              <Link href="/gallery" className="block">
                 <div className="relative group cursor-pointer">
-                  <img
+                  <motion.img
                     src={events[currentIndex].image}
                     alt={events[currentIndex].name}
-                    className="w-[40rem] h-[32rem] object-cover rounded-2xl shadow-[0_0_30px_8px_rgba(190,227,248,0.9)] hover:shadow-[0_0_35px_10px_rgba(190,227,248,1)] transition-shadow duration-300"
+                    className="object-cover rounded-2xl shadow-[0_0_30px_8px_rgba(190,227,248,0.9)] hover:shadow-[0_0_35px_10px_rgba(190,227,248,1)] transition-shadow duration-300"
+                    style={{ width: "100%", height: "100%" }}
+                    layoutId={`image-${events[currentIndex].id}`}
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-2xl">
                     <p className="text-white text-3xl font-bold text-center px-4">
@@ -153,12 +202,12 @@ const EventsCarousel = () => {
           <motion.div
             key={`right-${getNextIndex()}`}
             className="absolute right-20 z-10"
-            initial={{ x: direction === 1 ? -200 : 300, opacity: 0 }}
-            animate={{ x: 0, opacity: 0.7, scale: 0.75 }}
-            exit={{ x: direction === 1 ? -300 : 300, opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            variants={sideImageVariants}
+            initial="rightSide"
+            animate={{ x: 150, scale: 0.75, opacity: 0.7 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
-            <Link href="/gallery">
+            <Link href="/gallery" className="block">
               <div className="relative group cursor-pointer">
                 <img
                   src={events[getNextIndex()].image}
@@ -174,7 +223,7 @@ const EventsCarousel = () => {
             </Link>
           </motion.div>
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
             {events.map((_, index) => (
               <button
@@ -186,8 +235,8 @@ const EventsCarousel = () => {
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-cyan-300 scale-125 shadow-[0_0_10px_2px_rgba(190,227,248,0.6)]'
-                    : 'bg-white/30 hover:bg-white/50'
+                    ? "bg-cyan-300 scale-125 shadow-[0_0_10px_2px_rgba(190,227,248,0.6)]"
+                    : "bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -196,31 +245,32 @@ const EventsCarousel = () => {
         </div>
       </div>
 
-      {/* Event Name Display */}
-      <motion.div 
+      {/* Event Name */}
+      <motion.div
         key={currentIndex}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center mt-16 mb-6"
       >
-        <h2 className="text-3xl font-bold text-white mb-2">
-          {events[currentIndex].name}
-        </h2>
+        <Link href="/gallery" className="block">
+          <h2 className="text-3xl font-bold text-white mb-2 cursor-pointer hover:text-cyan-300 transition-colors">
+            {events[currentIndex].name}
+          </h2>
+        </Link>
         <div className="w-20 h-1 bg-gradient-to-r from-cyan-300 to-blue-400 mx-auto rounded-full"></div>
       </motion.div>
 
       {/* Explore Button */}
       <div className="text-center mt-6">
-        <Link href="/gallery">
-          <button 
-            className="flex items-center text-[#DDF1FF] pl-6 pr-2 py-1.5 rounded-full transform transition duration-500 ease-in-out hover:scale-110 font-body cursor-pointer bg-[#111C33] hover:bg-[#003366]"
-          >
-            <span>Explore Gallery</span>
-            <span className="ml-3 w-8 h-8 flex items-center justify-center rounded-full bg-[#DDF1FF]">
-              <ArrowRight size={18} className="text-[#111C33]" />
-            </span>
-          </button>
+        <Link
+          href="/gallery"
+          className="flex items-center text-[#DDF1FF] pl-6 pr-2 py-1.5 rounded-full transform transition duration-500 ease-in-out hover:scale-110 font-body cursor-pointer bg-[#111C33] hover:bg-[#003366]"
+        >
+          <span>Explore Gallery</span>
+          <span className="ml-3 w-8 h-8 flex items-center justify-center rounded-full bg-[#DDF1FF]">
+            <ArrowRight size={18} className="text-[#111C33]" />
+          </span>
         </Link>
       </div>
     </div>
