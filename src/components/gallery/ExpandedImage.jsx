@@ -1,9 +1,13 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 const ExpandedImage = ({ image, onClose }) => (
   <div className="fixed inset-0 !m-auto bg-[#A8DCEC]  flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
-    <img
+    <Image
+      priority={false}
+      height={700}
+      width={900}
       src={image}
       alt="Expanded"
       className="max-w-full max-h-full  border-2 object-contain transition-transform duration-300 ease-in-out transform"
