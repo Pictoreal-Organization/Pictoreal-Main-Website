@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* ------------------ MOBILE (< md) ------------------ */}
-      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
+      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden mt-20">
         {/* Heading */}
         <div className="text-center mb-8">
           <div className="text-3xl sm:text-4xl font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
