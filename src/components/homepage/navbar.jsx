@@ -110,10 +110,10 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <div className="hidden md:flex justify-center flex-grow">
-              <div
-                onMouseLeave={handleMouseLeave}
-                className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
-              >
+            <div
+               onMouseLeave={handleMouseLeave}
+               className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
+>
                 {navLinks.map((link, index) => {
                   const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
                   const isHighlighted =
@@ -121,14 +121,14 @@ export default function Navbar() {
 
                   return (
                     <a
-                      key={link}
-                      href={href}
-                      ref={(el) => (navLinksRef.current[index] = el)}
-                      onMouseEnter={() => handleMouseEnter(index)}
-                      className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                        isHighlighted ? "text-white" : "text-black"
-                      }`}
-                    >
+                       key={link}
+                       href={href}
+                       ref={(el) => (navLinksRef.current[index] = el)}
+                       onMouseEnter={() => handleMouseEnter(index)}
+                       className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                      isHighlighted ? "text-white" : "text-black"
+                       }`}
+                      >
                       {link}
                     </a>
                   );
