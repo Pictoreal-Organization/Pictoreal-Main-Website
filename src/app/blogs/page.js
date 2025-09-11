@@ -196,3 +196,40 @@ export default function BlogsPage() {
     </div>
   );
 }
+
+
+
+
+
+// import Link from 'next/link';
+// import dbConnect from '../../lib/mongodb';
+// import Blog from '../../models/Blog';
+
+// export default async function BlogListPage() {
+//   // Connect to MongoDB
+//   await dbConnect();
+
+//   // Fetch all published blogs
+//   const blogs = await Blog.find({ draft: false }).sort({ publishedAt: -1 });
+
+//   return (
+//     <div className="p-4">
+//       <h1 className="text-3xl font-bold mb-6">All Blogs</h1>
+//       {blogs.length === 0 && <p>No blogs found.</p>}
+//       <div className="space-y-4">
+//         {blogs.map((blog) => (
+//           <div key={blog._id} className="p-4 border rounded shadow">
+//             <h2 className="text-xl font-semibold">{blog.title}</h2>
+//             <p className="mt-2">{blog.content.substring(0, 100)}...</p>
+//             <Link
+//               href={`/blogs/${blog._id}`}
+//               className="text-blue-600 mt-2 inline-block"
+//             >
+//               Read more
+//             </Link>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }

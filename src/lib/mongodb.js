@@ -1,39 +1,27 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const globalWithMongoose = global;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-let cached = globalWithMongoose.mongoose;
-if (!cached) {
-  cached = globalWithMongoose.mongoose = { conn: null, promise: null };
+if (!MONGODB_URI) {
+  throw new Error("Please define MONGODB_URI in your .env file");
 }
 
-async function connectToDatabase() {
-  if (cached.conn) {
-    console.log("Database already connected.");
-    return cached.conn;
-  }
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+async function dbConnect() {
+  if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    const uri = process.env.MONGODB_URI;
-    if (!uri) {
-      throw new Error("MONGODB_URI is not set");
-    }
-    cached.promise = mongoose
-      .connect(uri, {
-        dbName: "pictoblogs",
-      })
-      .then((mongooseInstance) => {
-        console.log("Database connected successfully.");
-        return mongooseInstance;
-      })
-      .catch((err) => {
-        console.error("Database connection failed:", err);
-        throw err;
-      });
+    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
+      return mongoose;
+    });
   }
-
   cached.conn = await cached.promise;
   return cached.conn;
 }
 
-module.exports = { connectToDatabase };
+export default dbConnect;
