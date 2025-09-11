@@ -2,23 +2,7 @@
 
 import React, { useState, useLayoutEffect, useRef } from "react";
 
-// Arrow Icon SVG Component
-const ArrowIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#0B2D4F"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M7 17L17 7"></path>
-    <polyline points="7 7 17 7 17 17"></polyline>
-  </svg>
-);
+import ArrowBtn from "./arrowbtn.jsx";
 
 export default function Navbar() {
   const [activePath, setActivePath] = useState("");
@@ -110,8 +94,8 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <div className="hidden md:flex justify-center flex-grow">
               <div
-                onMouseLeave={handleMouseLeave}
-                className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
+                 onMouseLeave={handleMouseLeave}
+                 className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
               >
                 {navLinks.map((link, index) => {
                   const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
@@ -119,17 +103,18 @@ export default function Navbar() {
                     hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
 
                   return (
-                    <a
-                      key={link}
-                      href={href}
-                      ref={(el) => (navLinksRef.current[index] = el)}
-                      onMouseEnter={() => handleMouseEnter(index)}
-                      className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                        isHighlighted ? "text-white" : "text-black"
-                      }`}
-                    >
-                      {link}
+                  <a
+                    key={link}
+                    href={href}
+                    ref={(el) => (navLinksRef.current[index] = el)}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    className={`relative z-10 px-6 py-2 rounded-full text-sm font-body transition-colors duration-300 ${
+                    isHighlighted ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {link}
                     </a>
+
                   );
                 })}
 
@@ -143,15 +128,7 @@ export default function Navbar() {
 
             {/* Magazines Button */}
             <div className="hidden md:block">
-              <a
-                href="/magazines"
-                className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-              >
-                <span className="mr-3">Magazines</span>
-                <span className="bg-paleskyblue rounded-full p-2 flex items-center justify-center">
-                  <ArrowIcon />
-                </span>
-              </a>
+               <ArrowBtn text="Magazine" path="/magazines" />
             </div>
 
             {/* Mobile Button */}
@@ -201,7 +178,7 @@ export default function Navbar() {
               <a
                 key={link}
                 href={href}
-                className={`block w-full text-center px-3 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block w-full text-center px-3 py-3 rounded-md text-base font-body transition-colors duration-300 ${
                   isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
                 }`}
               >
@@ -210,15 +187,7 @@ export default function Navbar() {
             );
           })}
           <div className="pt-6 pb-2 flex justify-center">
-            <a
-              href="/magazines"
-              className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              <span className="mr-3">Magazines</span>
-              <span className="bg-white/20 rounded-full p-2 flex items-center justify-center">
-                <ArrowIcon />
-              </span>
-            </a>
+            <ArrowBtn text="Magazine" path="/magazines" />
           </div>
         </div>
       </div>
