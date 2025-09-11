@@ -32,13 +32,13 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
+    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-screen pt-20">
 
 
       {/* ------------------ DESKTOP / TABLET (≥ md) ------------------ */}
-      <div className="hidden md:flex flex-col items-center justify-center w-full">
+      <div className="hidden md:flex  flex-col items-center justify-center w-full">
         {/* Center Text */}
-        <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 mt-16 md:mt-20">
+        <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 md:mt-20">
           <h1 className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[110px] font-heading font-normal leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#001730]">
             Welcome to <br /> Pictoreal
           </h1>
