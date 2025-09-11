@@ -182,11 +182,11 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 right-0 h-full w-1/2 max-w-xs bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-20 right-0 h-auto w-1/2 rounded-3xl max-w-xs bg-[#EAF7FF]   shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="pt-24 px-2 space-y-2 sm:px-3">
+        <div className="pt-4 px-4 space-y-2 sm:px-3">
           {navLinks.map((link) => {
             const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
             const isActive = activePath === href;
@@ -194,7 +194,7 @@ export default function Navbar() {
               <a
                 key={link}
                 href={href}
-                className={`block w-full text-center px-3 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block w-full text-center py-3 rounded-3xl text-base font-medium transition-colors duration-300 ${
                   isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
                 }`}
               >
@@ -202,7 +202,7 @@ export default function Navbar() {
               </a>
             );
           })}
-          <div className="pt-6 pb-2 flex justify-center">
+          <div className="pt-2 pb-4 flex justify-center">
             <ArrowBtn text="Magazines" path="/magazines" />
           </div>
         </div>
