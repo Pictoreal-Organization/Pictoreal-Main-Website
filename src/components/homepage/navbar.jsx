@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useLayoutEffect, useRef } from "react";
+import ArrowBtn from "./arrowbtn";
 
 // Arrow Icon SVG Component
 const ArrowIcon = () => (
@@ -97,7 +98,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
+      <nav className="w-full bg-transparent backdrop-blur-md fixed top-0 z-50 border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -143,15 +144,7 @@ export default function Navbar() {
 
             {/* Magazines Button */}
             <div className="hidden md:block">
-              <a
-                href="/magazines"
-                className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-              >
-                <span className="mr-3">Magazines</span>
-                <span className="bg-paleskyblue rounded-full p-2 flex items-center justify-center">
-                  <ArrowIcon />
-                </span>
-              </a>
+              <ArrowBtn text="Magazines" path="/magazines" />
             </div>
 
             {/* Mobile Button */}
@@ -210,15 +203,7 @@ export default function Navbar() {
             );
           })}
           <div className="pt-6 pb-2 flex justify-center">
-            <a
-              href="/magazines"
-              className="group flex items-center bg-[#111C33] text-white pl-6 pr-1 py-1 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              <span className="mr-3">Magazines</span>
-              <span className="bg-white/20 rounded-full p-2 flex items-center justify-center">
-                <ArrowIcon />
-              </span>
-            </a>
+            <ArrowBtn text="Magazines" path="/magazines" />
           </div>
         </div>
       </div>
