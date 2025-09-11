@@ -53,7 +53,7 @@ const Hero = () => {
         {/* Cards Section */}
         <div className="flex flex-col md:block w-full items-center justify-center gap-10 mt-10 ">
           {/* Left Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16 mt-20">
+          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16 mt-10">
 
             <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
             <div className="w-[180px] sm:w-[200px] md:w-[220px] rounded-[10px] overflow-hidden shadow-lg bg-white">
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
 
           {/* Right Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16 mt-20">
+          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16 mt-6">
             <div className="w-[180px] sm:w-[200px] md:w-[230px] rounded-[10px] overflow-hidden shadow-lg bg-white">
               <Image
                 src="/magazines/vol27.png"
