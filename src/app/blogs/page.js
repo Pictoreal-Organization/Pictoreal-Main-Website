@@ -10,7 +10,7 @@ export default function BlogsPage() {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
-      img: "/blogs/blog5-poster-img.png",
+      img: "/blog/blog5-poster-img.png",
       excerpt:
         "Balancing academics and personal interests isn’t about sacrificing moments—it’s about weaving them together. A journey through 4 years of student life...",
     },
@@ -18,7 +18,7 @@ export default function BlogsPage() {
       id: "blog2",
       title: "Mysteries of Particle Physics",
       authors: "Shrihari Kulkarni",
-      img: "/blogs/blog2-poster-img.png",
+      img: "/blog/blog2-poster-img.png",
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
     },
@@ -26,7 +26,7 @@ export default function BlogsPage() {
       id: "blog3",
       title: "Error 500 - The Flawed Beauty of Your Day",
       authors: "Nehal Shivane, Sampada Tagalpallewar, Shruti Mone",
-      img: "/blogs/blog3-poster-img.png",
+      img: "/blog/blog3-poster-img.png",
       excerpt:
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
@@ -34,7 +34,7 @@ export default function BlogsPage() {
       id: "dakhni",
       title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
       authors: "Ayan Pathan",
-      img: "/blogs/blog-dakhni-poster.png",
+      img: "/blog/blog-dakhni-poster.png",
       excerpt:
         "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
     },

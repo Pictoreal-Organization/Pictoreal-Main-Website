@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import ArrowBtn from "./arrowbtn";
 
 const EventsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -233,16 +234,8 @@ const EventsCarousel = () => {
       </motion.div>
 
       {/* Explore Button */}
-      <div className="text-center mt-6">
-        <Link
-          href="/gallery"
-          className="flex items-center text-[#DDF1FF] pl-6 pr-2 py-1.5 rounded-full transform transition duration-300 ease-in-out hover:scale-110 font-body cursor-pointer bg-[#111C33] hover:bg-[#003366]"
-        >
-          <span>Explore Gallery</span>
-          <span className="ml-3 w-8 h-8 flex items-center justify-center rounded-full bg-[#DDF1FF]">
-            <ArrowRight size={18} className="text-[#111C33]" />
-          </span>
-        </Link>
+      <div className="flex justify-center mt-10">
+        <ArrowBtn text="Explore " path="/gallery" bgColor="#DDF1FF" textColor="#111C33" circleBg="#111C33" hoverColor="#EAF7FF" arrowColor="#DDF1FF"/>
       </div>
     </div>
   );

@@ -180,7 +180,7 @@ export default function AudioPage() {
   }, [selectedLang, step]);
 
   return (
-    <div className="h-full min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
+    <div className="min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
       {step === 0 ? (
         // ---------- Language Selection Page ----------
         <div className="flex flex-col items-center justify-center flex-1">
