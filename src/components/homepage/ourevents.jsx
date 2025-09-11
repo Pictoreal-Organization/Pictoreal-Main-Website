@@ -98,7 +98,7 @@ const EventsCarousel = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A1631] py-12 flex flex-col items-center">
+    <div className="min-h-screen max-w-screen bg-[#0A1631] py-12 flex flex-col items-center">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-white mb-4">Our Events</h1>
@@ -112,19 +112,19 @@ const EventsCarousel = () => {
         {/* Left Arrow */}
         <button
           onClick={handlePrevClick}
-          className="absolute -left-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={36} />
+          <ChevronLeft size={20} />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={handleNextClick}
-          className="absolute -right-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Next slide"
         >
-          <ChevronRight size={36} />
+          <ChevronRight size={20} />
         </button>
 
         {/* 3-Image Layout */}
