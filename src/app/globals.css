@@ -32,6 +32,10 @@
   --font-body: Inter, "sans-serif";
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   font-weight: 400;

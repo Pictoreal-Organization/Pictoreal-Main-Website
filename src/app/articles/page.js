@@ -180,7 +180,7 @@ export default function AudioPage() {
   }, [selectedLang, step]);
 
   return (
-    <div className="h-full min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
+    <div className="min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
       {step === 0 ? (
         // ---------- Language Selection Page ----------
         <div className="flex flex-col items-center justify-center flex-1">
@@ -219,12 +219,28 @@ export default function AudioPage() {
 
 
           {/* Back button */}
-          <button
-            onClick={() => setStep(0)}
-            className="mb-6 self-center px-5 py-2 bg-white border border-transparent hover:border-[#003366] rounded-lg transition-all duration-300"
-          >
-            🔙 Change Language
-          </button>
+           {/* Back button */}
+<div className="flex gap-3 flex-wrap justify-center">
+  {languages.map((lang) => (
+    <button
+      key={lang}
+      onClick={() => {
+        setSelectedLang(lang);
+        setStep(1);
+      }}
+      className={`px-4 py-2 mb-2 rounded-lg shadow text-sm transition-all duration-300 border ${
+        selectedLang === lang
+          ? "bg-[#003366] text-white border-[#003366]" // Selected
+          : "bg-white text-gray-700 border-transparent hover:border-[#003366] hover:text-black" // Unselected
+      }`}
+    >
+      {lang.toUpperCase()}
+    </button>
+  ))}
+</div>
+
+
+
 
 
 

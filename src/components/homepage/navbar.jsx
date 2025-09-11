@@ -1,8 +1,25 @@
 "use client";
 
 import React, { useState, useLayoutEffect, useRef } from "react";
+import ArrowBtn from "./arrowbtn";
 
-import ArrowBtn from "./arrowbtn.jsx";
+// Arrow Icon SVG Component
+const ArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#0B2D4F"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17L17 7"></path>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+);
 
 export default function Navbar() {
   const [activePath, setActivePath] = useState("");
@@ -81,7 +98,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-transparent backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
+      <nav className="w-full bg-transparent backdrop-blur-md fixed top-0 z-50 border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -94,8 +111,8 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <div className="hidden md:flex justify-center flex-grow">
               <div
-                 onMouseLeave={handleMouseLeave}
-                 className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
+                onMouseLeave={handleMouseLeave}
+                className="relative flex items-center space-x-4 p-2 bg-pastelskyblue rounded-full"
               >
                 {navLinks.map((link, index) => {
                   const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
@@ -103,18 +120,17 @@ export default function Navbar() {
                     hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
 
                   return (
-                  <a
-                    key={link}
-                    href={href}
-                    ref={(el) => (navLinksRef.current[index] = el)}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    className={`relative z-10 px-6 py-2 rounded-full text-sm font-body transition-colors duration-300 ${
-                    isHighlighted ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {link}
+                    <a
+                      key={link}
+                      href={href}
+                      ref={(el) => (navLinksRef.current[index] = el)}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                        isHighlighted ? "text-white" : "text-black"
+                      }`}
+                    >
+                      {link}
                     </a>
-
                   );
                 })}
 
@@ -128,7 +144,7 @@ export default function Navbar() {
 
             {/* Magazines Button */}
             <div className="hidden md:block">
-               <ArrowBtn text="Magazine" path="/magazines" />
+              <ArrowBtn text="Magazines" path="/magazines" />
             </div>
 
             {/* Mobile Button */}
@@ -166,11 +182,11 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 right-0 h-full w-1/2 max-w-xs bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-20 right-0 h-auto w-1/2 rounded-3xl max-w-xs bg-[#EAF7FF]   shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="pt-24 px-2 space-y-2 sm:px-3">
+        <div className="pt-4 px-4 space-y-2 sm:px-3">
           {navLinks.map((link) => {
             const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
             const isActive = activePath === href;
@@ -178,7 +194,7 @@ export default function Navbar() {
               <a
                 key={link}
                 href={href}
-                className={`block w-full text-center px-3 py-3 rounded-md text-base font-body transition-colors duration-300 ${
+                className={`block w-full text-center py-3 rounded-3xl text-base font-medium transition-colors duration-300 ${
                   isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
                 }`}
               >
@@ -186,8 +202,8 @@ export default function Navbar() {
               </a>
             );
           })}
-          <div className="pt-6 pb-2 flex justify-center">
-            <ArrowBtn text="Magazine" path="/magazines" />
+          <div className="pt-2 pb-4 flex justify-center">
+            <ArrowBtn text="Magazines" path="/magazines" />
           </div>
         </div>
       </div>
