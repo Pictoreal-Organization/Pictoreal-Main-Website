@@ -30,7 +30,7 @@ const EventsCarousel = () => {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % events.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, events.length]);
 
@@ -49,63 +49,6 @@ const EventsCarousel = () => {
     setIsAutoPlaying(false);
   };
 
-  // Animation variants
-  const centerImageVariants = {
-    enterFromRight: {
-      x: [300, 150, 0],
-      scale: [0.75, 0.87, 1],
-      opacity: [0.7, 0.85, 1],
-      width: ["20rem", "30rem", "40rem"],
-      height: ["24rem", "28rem", "32rem"],
-      borderRadius: ["0.75rem", "1rem", "1rem"],
-    },
-    enterFromLeft: {
-      x: [-300, -150, 0],
-      scale: [0.75, 0.87, 1],
-      opacity: [0.7, 0.85, 1],
-      width: ["20rem", "30rem", "40rem"],
-      height: ["24rem", "28rem", "32rem"],
-      borderRadius: ["0.75rem", "1rem", "1rem"],
-    },
-    center: {
-      x: 0,
-      scale: 1,
-      opacity: 1,
-      width: "40rem",
-      height: "32rem",
-      borderRadius: "1rem",
-    },
-    exitToLeft: {
-      x: [0, -150, -300],
-      scale: [1, 0.87, 0.75],
-      opacity: [1, 0.85, 0.7],
-      width: ["40rem", "30rem", "20rem"],
-      height: ["32rem", "28rem", "24rem"],
-      borderRadius: ["1rem", "1rem", "0.75rem"],
-    },
-    exitToRight: {
-      x: [0, 150, 300],
-      scale: [1, 0.87, 0.75],
-      opacity: [1, 0.85, 0.7],
-      width: ["40rem", "30rem", "20rem"],
-      height: ["32rem", "28rem", "24rem"],
-      borderRadius: ["1rem", "1rem", "0.75rem"],
-    },
-  };
-
-  const sideImageVariants = {
-    leftSide: {
-      x: [-300, -200, -150],
-      scale: [0.6, 0.7, 0.75],
-      opacity: [0, 0.5, 0.7],
-    },
-    rightSide: {
-      x: [300, 200, 150],
-      scale: [0.6, 0.7, 0.75],
-      opacity: [0, 0.5, 0.7],
-    },
-  };
-
   return (
     <div className="min-h-screen bg-[#0A1631] py-12 flex flex-col items-center">
       {/* Header */}
@@ -117,48 +60,48 @@ const EventsCarousel = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative w-full max-w-[90rem]">
+      <div className="relative w-full max-w-[90rem] flex items-center justify-center">
         {/* Left Arrow */}
         <button
           onClick={handlePrevClick}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 backdrop-blur-sm shadow-lg hover:scale-110"
+          className="absolute -left-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft size={36} />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={handleNextClick}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 backdrop-blur-sm shadow-lg hover:scale-110"
+          className="absolute -right-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Next slide"
         >
-          <ChevronRight size={32} />
+          <ChevronRight size={36} />
         </button>
 
-        {/* Carousel Container */}
+        {/* 3-Image Layout */}
         <div
-          className="relative flex items-center justify-center h-[600px] px-32"
+          className="relative flex items-center justify-center h-[600px] gap-12"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
           {/* Left Image */}
           <motion.div
             key={`left-${getPrevIndex()}`}
-            className="absolute left-20 z-10"
-            variants={sideImageVariants}
-            initial="leftSide"
-            animate={{ x: -150, scale: 0.75, opacity: 0.7 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 0.75, opacity: 0.7 }}
+            exit={{ scale: 0.6, opacity: 0 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+            className="z-10"
           >
             <Link href="/gallery" className="block">
               <div className="relative group cursor-pointer">
                 <img
                   src={events[getPrevIndex()].image}
                   alt={events[getPrevIndex()].name}
-                  className="w-80 h-96 object-cover rounded-xl shadow-[0_0_20px_4px_rgba(190,227,248,0.6)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.8)] transition-shadow duration-300"
+                  className="w-72 h-96 object-cover rounded-xl shadow-[0_0_20px_4px_rgba(190,227,248,0.6)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.8)] transition-shadow duration-500"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 rounded-xl">
                   <p className="text-white text-lg font-semibold text-center px-2">
                     {events[getPrevIndex()].name}
                   </p>
@@ -171,24 +114,21 @@ const EventsCarousel = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={`center-${currentIndex}`}
-              className="z-20 absolute"
-              variants={centerImageVariants}
-              initial={direction === 1 ? "enterFromRight" : "enterFromLeft"}
-              animate="center"
-              exit={direction === 1 ? "exitToLeft" : "exitToRight"}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-              layout
+              initial={{ scale: 0.7, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.7, opacity: 0 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="z-20"
             >
               <Link href="/gallery" className="block">
                 <div className="relative group cursor-pointer">
                   <motion.img
                     src={events[currentIndex].image}
                     alt={events[currentIndex].name}
-                    className="object-cover rounded-2xl shadow-[0_0_30px_8px_rgba(190,227,248,0.9)] hover:shadow-[0_0_35px_10px_rgba(190,227,248,1)] transition-shadow duration-300"
-                    style={{ width: "100%", height: "100%" }}
+                    className="w-[40rem] h-[32rem] object-cover rounded-2xl shadow-[0_0_30px_8px_rgba(190,227,248,0.9)] hover:shadow-[0_0_35px_10px_rgba(190,227,248,1)] transition-shadow duration-500"
                     layoutId={`image-${events[currentIndex].id}`}
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-2xl">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 rounded-2xl">
                     <p className="text-white text-3xl font-bold text-center px-4">
                       {events[currentIndex].name}
                     </p>
@@ -201,20 +141,20 @@ const EventsCarousel = () => {
           {/* Right Image */}
           <motion.div
             key={`right-${getNextIndex()}`}
-            className="absolute right-20 z-10"
-            variants={sideImageVariants}
-            initial="rightSide"
-            animate={{ x: 150, scale: 0.75, opacity: 0.7 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 0.75, opacity: 0.7 }}
+            exit={{ scale: 0.6, opacity: 0 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+            className="z-10"
           >
             <Link href="/gallery" className="block">
               <div className="relative group cursor-pointer">
                 <img
                   src={events[getNextIndex()].image}
                   alt={events[getNextIndex()].name}
-                  className="w-80 h-96 object-cover rounded-xl shadow-[0_0_20px_4px_rgba(190,227,248,0.6)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.8)] transition-shadow duration-300"
+                  className="w-72 h-96 object-cover rounded-xl shadow-[0_0_20px_4px_rgba(190,227,248,0.6)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.8)] transition-shadow duration-500"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 rounded-xl">
                   <p className="text-white text-lg font-semibold text-center px-2">
                     {events[getNextIndex()].name}
                   </p>
@@ -222,26 +162,6 @@ const EventsCarousel = () => {
               </div>
             </Link>
           </motion.div>
-
-          {/* Dots */}
-          <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
-            {events.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1);
-                  setCurrentIndex(index);
-                  setIsAutoPlaying(false);
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-cyan-300 scale-125 shadow-[0_0_10px_2px_rgba(190,227,248,0.6)]"
-                    : "bg-white/30 hover:bg-white/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
@@ -250,7 +170,7 @@ const EventsCarousel = () => {
         key={currentIndex}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="text-center mt-16 mb-6"
       >
         <Link href="/gallery" className="block">
