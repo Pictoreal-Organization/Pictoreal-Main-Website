@@ -42,7 +42,7 @@ export default function SelectLanguagePage() {
 
   return (
     <>
-      {/* Custom CSS for the scrolling animation */}
+      {/* Custom CSS for the vertical scrolling animation */}
       <style jsx global>{`
         @keyframes scroll {
           from {
@@ -57,9 +57,9 @@ export default function SelectLanguagePage() {
         }
       `}</style>
 
-      <div className="min-h-screen bg-[#111C33] flex flex-col items-center justify-center p-4 overflow-hidden relative">
+      <div className="min-h-screen bg-[#DDF1FF] flex flex-col items-center justify-center p-4 -mt-20 overflow-hidden relative">
         {/* Background Scrolling Columns */}
-        <div className="absolute inset-0 w-full h-full flex justify-center gap-4 opacity-20 [mask-image:radial-gradient(ellipse_at_center,rgba(0,0,0,0.8)_40%,transparent_100%)]">
+        <div className="absolute inset-0 w-full h-full flex justify-center gap-4 opacity-25">
           <div className="w-1/4 h-full">
             <ImageColumn articles={articleImages.eng} duration="45s" />
           </div>
@@ -74,24 +74,27 @@ export default function SelectLanguagePage() {
           </div>
         </div>
 
+        {/* Fading overlay to create a vignette effect */}
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,_#DDF1FF_35%,transparent_70%)]"></div>
+
         {/* Foreground Content */}
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
+        <div className="relative z-10 text-center w-full px-4">
+          <h1 className="text-5xl text-[#001730] font-heading md:text-6xl font-bold mb-3 drop-shadow-lg">
             Audio Articles
           </h1>
-          <p className="text-lg text-gray-300 mb-10">
+          <p className="text-lg font-body text-gray-600 mb-10">
             Please select a language to begin
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-5">
+          <div className="flex flex-col sm:flex-row items-center gap-5 w-full justify-center">
             {languages.map((lang) => (
               <Link
                 key={lang.code}
                 href={`/audio/v27/${lang.code}`}
-                className="group"
+                className="group w-full max-w-xs sm:w-auto"
               >
                 <div
-                  className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-xl font-semibold w-60 rounded-xl shadow-lg p-5 text-center transition-all duration-300 ease-in-out hover:bg-white/20 hover:border-white/40 hover:scale-105"
+                  className="bg-[#111C33] text-[#DDF1FF] text-xl font-semibold w-full sm:w-60 rounded-full shadow-lg p-4 sm:p-5 text-center transition-all duration-500 ease-in-out hover:bg-[#003366] hover:scale-110"
                 >
                   {lang.name}
                 </div>
@@ -103,3 +106,4 @@ export default function SelectLanguagePage() {
     </>
   );
 }
+

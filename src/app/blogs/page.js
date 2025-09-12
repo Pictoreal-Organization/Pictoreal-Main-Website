@@ -41,7 +41,7 @@ export default function BlogsPage() {
   ];
 
   return (
-    <div className="bg-paleskyblue min-h-screen px-4 md:px-6 p-6">
+    <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
       <h2 className="text-center font-bold text-2xl md:text-3xl mb-4 text-deepnavy">
         BLOGS
@@ -111,7 +111,7 @@ export default function BlogsPage() {
           <input
             type="text"
             placeholder="Search Stories, Authors, or Themes..."
-            className="w-full px-10 py-2 border-3 bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
+            className="w-full px-10 py-2 border-2 bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
           />
           <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
         </div>
@@ -120,8 +120,8 @@ export default function BlogsPage() {
           {/* Genres Dropdown */}
           <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
             {/* Genre Dropdown */}
-            <div className="relative w-full sm:w-auto">
-              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+            <div className="relative w-full shadow-md sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>All Genres</option>
                 <option>Fiction</option>
                 <option>Non-fiction</option>
@@ -131,7 +131,7 @@ export default function BlogsPage() {
             </div>
 
             {/* Sorting Dropdown */}
-            <div className="relative w-full sm:w-auto">
+            <div className="relative shadow-md w-full sm:w-auto">
               <select className="appearance-none w-full sm:w-auto px-4 py-2 border-3 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>Latest Creation</option>
                 <option>Oldest First</option>
@@ -172,11 +172,11 @@ export default function BlogsPage() {
 
               {/* Tags + Button */}
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
                 </span>
 
