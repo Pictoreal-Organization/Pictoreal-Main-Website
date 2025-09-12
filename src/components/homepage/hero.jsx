@@ -46,7 +46,7 @@ const Hero = () => {
 
 
         {/* Subtitle */}
-        <p className="mt-4 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#001730] text-center px-4 font-subheading">
+        <p className="mt-4 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#001730] text-center px-4 font-body">
           We are the official magazine club of PICT.
         </p>
 
@@ -62,7 +62,7 @@ const Hero = () => {
                 alt="Know Your Prahar"
                 className="w-full h-full object-cover"
                 priority={true}
-                width={220}   // add some width
+                width={220}
                 height={300}
               />
             </div>
@@ -99,7 +99,7 @@ const Hero = () => {
             Welcome to <br />
             <span className="text-[#001730]">Pictoreal</span>
           </div>
-          <p className="text-sm sm:text-base text-[#001730] font-subheading px-4">
+          <p className="text-sm sm:text-base text-[#001730] font-body px-4">
             We are the official magazine club of PICT.
           </p>
         </div>
