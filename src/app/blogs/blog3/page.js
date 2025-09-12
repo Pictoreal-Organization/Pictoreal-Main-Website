@@ -12,7 +12,7 @@ export default function Blog3() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-heading font-medium pt-10 text-5xl text-firefly text-center">
+          <div className="font-heading pt-2 text-5xl font-extrabold text-center mt-14 mb-5">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex items-center justify-center">
@@ -34,7 +34,7 @@ export default function Blog3() {
             </div>
           </div>
 
-          <div className="text-justify  font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="p-2 lg:p-5">
               <p>
                 '500- That's an error. The server encountered an error and could

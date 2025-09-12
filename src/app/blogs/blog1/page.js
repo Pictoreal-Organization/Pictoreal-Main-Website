@@ -5,7 +5,7 @@ export default function Blog1() {
     <>
       <div className="flex flex-col p-2 mt-[10vh]  md:p-10 pt-10">
         <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
-          <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
+          <div className="font-heading font-extrabold pt-2 text-5xl text-center mt-14 mb-5">
             Uncanny Valley
           </div>
           <div className="flex items-center justify-center">

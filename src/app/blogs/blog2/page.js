@@ -12,7 +12,7 @@ export default function Blog2() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-heading font-medium pt-10 text-[50px] text-firefly text-left mt-5 md:mt-0">
+          <div className="font-heading font-extrabold pt-2 text-5xl text-center mt-14 mb-5">
             Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and
             Universal Forces
           </div>
@@ -37,7 +37,7 @@ export default function Blog2() {
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] font-body text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] font-body text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
               <p className="mb-4">
                 Once upon a time, in a universe far, far smaller than we can
@@ -51,7 +51,7 @@ export default function Blog2() {
                 becomes monumental.
               </p>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl font-bold py-4 mt-4">
                 Chapter 1: The Intro - Our Subatomic Stage
               </h3>
               <p className="mb-4">
@@ -78,10 +78,10 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl font-bold py-4 mt-4">
                 Chapter 2: The Cast of Characters
               </h3>
-              <div className="md:flex mb-4">
+              <div className="flex flex-col md:flex-row justify-center items-center mb-4">
                 <div className="flex-shrink-0 mr-2 ">
                   <img
                     src="../blog/blog2-content-3.png"
@@ -89,7 +89,7 @@ export default function Blog2() {
                     alt="Image 3"
                   />
                 </div>
-                <p className="flex-1">
+                <p className="flex-1 px-4">
                   In the subatomic realm, particles are the stars of the show.
                   Meet the quarks,{" "}
                   <b className="text-base">
@@ -104,7 +104,7 @@ export default function Blog2() {
                 </p>
               </div>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold mt-4">
                 Chapter 3: The Forces at Play
               </h3>
               <p className="mb-4">
@@ -126,11 +126,11 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold mt-4">
                 Chapter 4: The Quantum Quest
               </h3>
               <div className="md:flex mb-4">
-                <div className="flex-1">
+                <div className="flex-1 px-4">
                   <p>
                     No journey through particle physics would be complete
                     without delving into the mysterious realm of quantum
@@ -151,7 +151,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold mt-4">
                 Chapter 5: The Higgs Boson – The Celestial Composer
               </h3>
               <div className="md:flex mb-4">
@@ -162,7 +162,7 @@ export default function Blog2() {
                     alt="Image 6"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 px-4">
                   <p>
                     In the grand finale of our particle physics saga, we
                     encounter the Higgs boson, a celestial composer that imparts
@@ -185,7 +185,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold mt-4">
                 Chapter 6: The Fundamental Forces - Cosmic Choreography
               </h3>
               <p className="mb-4">
@@ -230,7 +230,7 @@ export default function Blog2() {
                     grand, Shape the universe with an unseen hand.
                   </i>
                 </p>
-                <div className="flex-shrink-0">
+                <div className="flex md:flex-shrink-0 justify-center items-center">
                   <img
                     src="../blog/blog2-content-8.png"
                     className="border-[5px] border-[#1a365d]"
