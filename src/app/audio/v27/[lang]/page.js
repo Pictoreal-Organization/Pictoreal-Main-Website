@@ -5,7 +5,7 @@ import Link from "next/link";
 // 1. Import the useParams hook
 import { useParams } from "next/navigation";
 
-const backendUrl = process.env.NEXT_PUBLIC_AUDIO_API_URL || "https://pictoreal-main-website-backend.onrender.com";
+const backendUrl = "https://pictoreal-main-website-backend.onrender.com";
 
 // 2. Remove `params` from the component's props
 export default function AudioArticlePage() {
