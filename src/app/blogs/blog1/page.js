@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Blog1() {
   return (
     <>
-      <div className="flex flex-col p-2 md:p-10 pt-10">
+      <div className="flex flex-col p-2 mt-[10vh]  md:p-10 pt-10">
         <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Uncanny Valley
@@ -24,13 +24,13 @@ export default function Blog1() {
                 className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8 text-center">
+            <div className="font-poppins text-[20px] font-body text-firefly pl-8 pt-8 text-center">
               <span className="text-firefly">Author: </span>Prem Rahinj, Spondon
               Nath
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
               <p>
                 When we picture an ideal being, what do we think of? One can say
@@ -174,7 +174,7 @@ export default function Blog1() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center hover:text-white h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>

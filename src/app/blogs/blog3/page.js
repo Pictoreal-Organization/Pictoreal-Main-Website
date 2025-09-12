@@ -12,7 +12,7 @@ export default function Blog3() {
               </div>
             </Link>
           </div> */}
-          <div className="font-raleway font-medium pt-10 text-5xl text-firefly text-center">
+          <div className="font-raleway font-heading font-medium pt-10 text-5xl text-firefly text-center">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex items-center justify-center">
@@ -24,7 +24,7 @@ export default function Blog3() {
               <img
                 src="/blog/blog3-poster-img.png"
                 alt="Blog Poster"
-                className="w-full md:w-1/2 border-[5px] border-[#1a365d]"
+                className="w-full md:w-6/11 border-[5px] border-[#1a365d]"
               />
             </div>
 
@@ -34,7 +34,7 @@ export default function Blog3() {
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify  font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="p-2 lg:p-5">
               <p>
                 '500- That's an error. The server encountered an error and could
@@ -258,7 +258,7 @@ export default function Blog3() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center hover:text-white h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>
