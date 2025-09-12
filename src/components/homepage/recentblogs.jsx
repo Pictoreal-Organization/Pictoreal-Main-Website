@@ -254,7 +254,7 @@ export default function RecentBlogs() {
               borderColor="#DDF1FF"
             />
           </div>
-          <ArrowBtn
+          {/* <ArrowBtn
             text="Write a Blog"
             path="/blogs/write"
             bgColor="#DDF1FF"
@@ -262,7 +262,7 @@ export default function RecentBlogs() {
             circleBg="#111C33"
             hoverColor="#EAF7FF"
             arrowColor="#DDF1FF"
-          />
+          /> */}
         </div>
       </div>
     </section>
