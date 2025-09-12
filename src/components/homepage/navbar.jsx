@@ -2,6 +2,7 @@
 
 import React, { useState, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image"; // 1. IMPORT NEXT/IMAGE
 import ArrowBtn from "./arrowbtn";
 
 // Arrow Icon SVG Component (omitted for brevity)
@@ -26,7 +27,7 @@ export default function Navbar() {
 
   const navLinks = [
     { text: "Home", href: "/" },
-    { text: "Events", href: "/events" }, // CHANGED THIS LINE
+    { text: "Events", href: "/events" },
     { text: "Blogs", href: "/blogs" },
     { text: "Articles", href: "/audio/v27" },
     { text: "OurTeam", href: "/ourteam" },
@@ -101,7 +102,15 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/">
-                <img className="h-8 w-auto" src="/pictoreal.png" alt="Pictoreal Logo" />
+                {/* 2. REPLACED <img> WITH <Image> and added priority */}
+                <Image
+                  className="h-8 w-auto"
+                  src="/pictoreal.png"
+                  alt="Pictoreal Logo"
+                  width={150}
+                  height={32}
+                  priority={true}
+                />
               </a>
             </div>
 
@@ -145,7 +154,7 @@ export default function Navbar() {
 
             {/* Mobile Button (omitted for brevity but logic is the same) */}
             <div className="md:hidden flex items-center">
-                 <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-gray-100 focus:outline-none z-50" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen} > <span className="sr-only">Open main menu</span> <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"> {isMobileMenuOpen ? ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> ) : ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /> )} </svg> </button>
+                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-gray-100 focus:outline-none z-50" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen} > <span className="sr-only">Open main menu</span> <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"> {isMobileMenuOpen ? ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> ) : ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /> )} </svg> </button>
             </div>
           </div>
         </div>
