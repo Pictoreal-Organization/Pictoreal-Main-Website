@@ -50,9 +50,9 @@ export default function BlogsPage() {
   ];
 
   return (
-    <div className="bg-paleskyblue  mt-[5vh] min-h-screen px-4 md:p-6">
+    <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
-      <h1 className="text-center font-bold mt-10 font-heading text-2xl md:text-3xl mb-4 text-deepnavy">
+      <h1 className="text-center font-bold text-[#111c33] font-heading text-2xl md:text-3xl mb-4">
         BLOGS
       </h1>
 

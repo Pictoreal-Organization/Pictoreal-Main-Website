@@ -5,7 +5,7 @@ import { text } from 'stream/consumers';
 const Team = () => {
   const Title = ({ text, style }) => {
     return (
-      <h1 className={`text-3xl font-bold text-center mb-10 mt-6 font-heading text-[#001730]`} style={style}>
+      <h1 className={`text-3xl font-bold text-center mb-10 -mt-3 font-heading text-[#001730]`} style={style}>
         {text}
       </h1>
     );

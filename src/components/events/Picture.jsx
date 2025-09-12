@@ -43,9 +43,9 @@ const Picture = () => {
         <>
             <div className={` text-[${color3}] bg-[${color1}]`}>
                 <div className={`space-y-80 mb-10`}>
-                    <h2 className="font-heading text-5xl mt-6 font-bold text-center sm:-mb-6 mb-16">
+                    <h1 className="font-heading text-2xl md:text-3xl mt-6 font-bold text-center sm:-mb-6 mb-16">
                         GALLERY
-                    </h2>
+                    </h1>
                     {imageSets.map((set, i) => (
                         <div
                             key={i}
