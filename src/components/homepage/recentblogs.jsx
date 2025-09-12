@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import ArrowBtn from "./arrowbtn";
 
 // Arrow Icon SVG Component
 const ArrowIcon = () => (
@@ -26,7 +27,7 @@ export default function RecentBlogs() {
       authors: "Harshit Vora, Omkar Desai",
       excerpt:
         "Summary of the above blog Summary of the above blog, Summary of the above blog",
-      img: "/blogs/blog5-poster-img.png",
+      img: "/blog/blog5-poster-img.png",
     },
     {
       id: "blog2",
@@ -34,7 +35,7 @@ export default function RecentBlogs() {
       authors: "Shrihari Kulkarni",
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
-      img: "/blogs/blog2-poster-img.png",
+      img: "/blog/blog2-poster-img.png",
     },
   ];
 
@@ -46,21 +47,9 @@ export default function RecentBlogs() {
 
         {/* CTA Button */}
         <div className="absolute top-0 right-0 sm:static sm:mt-4 w-full flex justify-end">
-          <Link
-            href="/blogs"
-            className="flex items-center gap-2 px-4 py-1cd mt-12 rounded-full hover:bg-paleskyblue hover:text-deepnavy transition
-                      sm:px-4 sm:py-1 sm:text-sm
-                      max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
-          >
-            <span>Read Our Blogs</span>
-            <span className="bg-white rounded-full p-2 sm:p-3 flex items-center justify-center max-sm:p-1">
-              <ArrowIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-            </span>
-          </Link>
+          <ArrowBtn text="Read Our Blogs" path="/blogs" borderColor="#DDF1FF" />
         </div>
       </div>
-
-
 
       {/* Blog Cards */}
       <div className="flex flex-col gap-8 max-w-6xl mx-auto">
@@ -90,41 +79,39 @@ export default function RecentBlogs() {
               </p>
 
               {/* Tags + Button */}
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
-                  Featured
-                </span>
-
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
-                  Student Life
-                </span>
-
-               <Link
-                  href={`/blogs/${blog.id}`}
-                  className="ml-auto px-5 py-1 bg-deepnavy text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
-                    sm:px-4 sm:py-1 sm:text-sm
-                    max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
-                >
-                  View Magazines
-                  <span className="bg-white rounded-full p-2 flex items-center justify-center max-sm:p-1">
-                    <ArrowIcon />
+              <div className=" flex justify-between">
+                <div className="flex justify-center items-center">
+                  <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                    Featured
                   </span>
-                </Link>
+                  <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                    Student Life
+                  </span>
+                </div>
 
+                <div className="">
+                  <ArrowBtn
+                    text="View Blog"
+                    path={`/blogs/${blog.id}`}
+                    borderColor="#DDF1FF"
+                  />
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Footer Button */}
       <div className="flex justify-center mt-10">
-        <button className="group flex items-center  pl-6 pr-1 py-1 gap-3  text-1xl font-medium bg-paleskyblue text-deepnavy rounded-full border border-deepnavy transition">
-          Write
-          <span className="bg-deepnavy text-white rounded-full w-12 h-12 flex items-center justify-center">
-            ↗
-          </span>
-        </button>
+        <ArrowBtn
+          text="Write"
+          path="/blogs"
+          bgColor="#DDF1FF"
+          textColor="#111C33"
+          circleBg="#111C33"
+          hoverColor="#EAF7FF"
+          arrowColor="#DDF1FF"
+        />
       </div>
     </section>
   );

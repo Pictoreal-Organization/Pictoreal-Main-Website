@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        heading: "#001730"
       },
       fontFamily: {
         heading: ["Playfair Display", "serif"],

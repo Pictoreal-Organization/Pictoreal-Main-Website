@@ -12,8 +12,8 @@ export default function HomePage() {
         <AboutUs />
         <RecentBlogs />
         <OurTeams />
-        <PictoTalents />
         <EventCarousel />
+        <PictoTalents />
     </div>
   );
 }
