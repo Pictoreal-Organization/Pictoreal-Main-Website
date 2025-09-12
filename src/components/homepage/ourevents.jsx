@@ -26,8 +26,6 @@ const EventsCarousel = () => {
     { id: 13, name: "Amche Bappa", image: "/home_page/amche_bappa.jpg" },
   ];
   
-  // Helper function to create a URL-friendly ID from the event name
-  // This MUST match the logic in your gallery page
   const generateEventId = (name) => {
     return name.toLowerCase().replace(/\s+/g, "-");
   };
@@ -94,9 +92,9 @@ const EventsCarousel = () => {
           
           {/* Left Image Link - UPDATED */}
           <Link 
-            href={`/gallery?eventId=${generateEventId(events[getPrevIndex()].name)}`} 
+            href={`/events?eventId=${generateEventId(events[getPrevIndex()].name)}`} 
             className="hidden md:block z-10" 
-            aria-label={`View gallery for ${events[getPrevIndex()].name}`}
+            aria-label={`View event for ${events[getPrevIndex()].name}`}
           >
             <div className="relative group cursor-pointer">
               <Image src={events[getPrevIndex()].image} alt={events[getPrevIndex()].name} width={224} height={288} loading="lazy" className="w-40 h-56 lg:w-56 lg:h-72 object-cover rounded-xl shadow-[0_0_15px_3px_rgba(190,227,248,0.3)] hover:shadow-[0_0_20px_4px_rgba(190,227,248,0.4)] transition-all duration-300"/>
@@ -109,9 +107,9 @@ const EventsCarousel = () => {
           <div className="flex flex-col items-center">
             {/* Center Image Link - UPDATED */}
             <Link 
-              href={`/gallery?eventId=${generateEventId(events[currentIndex].name)}`} 
+              href={`/events?eventId=${generateEventId(events[currentIndex].name)}`} 
               className="block z-20" 
-              aria-label={`View gallery for ${events[currentIndex].name}`}
+              aria-label={`View event for ${events[currentIndex].name}`}
             >
               <div className="relative group cursor-pointer">
                 <Image src={events[currentIndex].image} alt={events[currentIndex].name} width={512} height={416} loading="lazy" className="w-[80vw] h-auto max-h-[60vh] md:w-[28rem] md:h-[22rem] lg:w-[32rem] lg:h-[26rem] object-cover rounded-2xl shadow-[0_0_20px_5px_rgba(190,227,248,0.4)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.5)] transition-all duration-300"/>
@@ -129,9 +127,9 @@ const EventsCarousel = () => {
 
           {/* Right Image Link - UPDATED */}
           <Link 
-            href={`/gallery?eventId=${generateEventId(events[getNextIndex()].name)}`}
+            href={`/events?eventId=${generateEventId(events[getNextIndex()].name)}`}
             className="hidden md:block z-10" 
-            aria-label={`View gallery for ${events[getNextIndex()].name}`}
+            aria-label={`View event for ${events[getNextIndex()].name}`}
           >
             <div className="relative group cursor-pointer">
               <Image src={events[getNextIndex()].image} alt={events[getNextIndex()].name} width={224} height={288} loading="lazy" className="w-40 h-56 lg:w-56 lg:h-72 object-cover rounded-xl shadow-[0_0_15px_3px_rgba(190,227,248,0.3)] hover:shadow-[0_0_20px_4px_rgba(190,227,248,0.4)] transition-all duration-300"/>
@@ -146,7 +144,7 @@ const EventsCarousel = () => {
       <div className="text-center mt-8">
         <ArrowBtn
           text="Explore Events"
-          path="/gallery"
+          path="/events"
           bgColor="#DDF1FF"
           textColor="#111C33"
           circleBg="#111C33"

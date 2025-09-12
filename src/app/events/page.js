@@ -1,8 +1,12 @@
-export default function EventsPage() {
+// src/pages/Page.js
+import React from 'react';
+import Picture from '../../components/events/Picture'
+const Page = () => {
   return (
     <div>
-      <h1>Welcome to Pictoreal</h1>
-      <p>This is the new events page.</p>
+      <Picture />
     </div>
   );
-}
+};
+
+export default Page;

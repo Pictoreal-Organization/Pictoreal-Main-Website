@@ -24,27 +24,22 @@ export default function Navbar() {
   const navLinksRef = useRef([]);
   const pathname = usePathname();
 
-  // 1. CHANGE navLinks to an array of objects
   const navLinks = [
     { text: "Home", href: "/" },
-    { text: "Gallery", href: "/gallery" },
+    { text: "Events", href: "/events" }, // CHANGED THIS LINE
     { text: "Blogs", href: "/blogs" },
-    { text: "Articles", href: "/audio/v27" }, // The custom href
+    { text: "Articles", href: "/audio/v27" },
     { text: "OurTeam", href: "/ourteam" },
   ];
 
-  // 2. UPDATE the active index logic to handle the special case
   const getActiveIndex = () => {
     return navLinks.findIndex((link) => {
-      // For "Articles", check if the path starts with /audio
       if (link.text === "Articles") {
         return pathname.startsWith("/audio");
       }
-      // For Home, use strict equality
       if (link.href === "/") {
         return pathname === "/";
       }
-      // For all other links, check if the path starts with their href
       return pathname.startsWith(link.href);
     });
   };
@@ -66,7 +61,7 @@ export default function Navbar() {
     } else {
       setSliderStyle((prev) => ({ ...prev, opacity: 0, transition: "all 300ms ease-in-out" }));
     }
-  }, [pathname]);
+  }, [pathname, prevIndex]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -116,7 +111,6 @@ export default function Navbar() {
                 onMouseLeave={handleMouseLeave}
                 className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
               >
-                {/* 3. UPDATE the map function to use object properties */}
                 {navLinks.map((link, index) => {
                   const isHighlighted =
                     hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
