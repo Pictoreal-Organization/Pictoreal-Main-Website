@@ -36,7 +36,7 @@ const Carousel = ({ images, onImageClick }) => {
       className="relative lg:max-w-full max-w-[85%] mx-auto my-2 lg:my-8 z-5"
       ref={containerRef}
     >
-      <div className="relative w-full h-auto flex overflow-hidden items-center py-10 justify-center bg-white-200 rounded-lg">
+      <div className="relative w-full h-auto flex overflow-hidden items-center py-2 sm:py-10 justify-center bg-white-200 rounded-lg">
         <div
           className="flex transition-transform  duration-1000 ease-in-out"
           style={{
