@@ -12,36 +12,36 @@ const PictoTalentsPods = () => {
       id: 1,
       thumbnail: "/talents-pods/talents1.png",
       title: "Soulful lyrics Singing",
-      likes: "180",
-      instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=QkFHaGxuYjl2Qw%3D%3D"
+      likes: "181",
+      instagramUrl: "https://www.instagram.com/reel/DHiLwRYIUfR/?igsh=MXcyN3Nta3Q1dm9qbg=="
     },
     {
       id: 2,
       thumbnail: "/talents-pods/talents2.png",
       title: "Flute melody Musical instrument",
-      likes: "144",
-      instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=QkFNck53QVMzYg%3D%3D"
+      likes: "145",
+      instagramUrl: "https://www.instagram.com/reel/DEkGZ8tI7yW/?igsh=ajJpYWFsaGlpeGxr"
     },
     {
       id: 3,
       thumbnail: "/talents-pods/talents3.png",
       title: "Light and Shadow Photography",
       likes: "63",
-      instagramUrl: "https://www.instagram.com/p/DB2zEqzS5Jc/?igsh=QkFLV19hSDdSWA%3D%3D"
+      instagramUrl: "https://www.instagram.com/p/DB2zEqzS5Jc/?igsh=MW9xdGxlZXRpeGkydQ=="
     },
     {
       id: 4,
       thumbnail: "/talents-pods/talents4.png",
       title: "Waqt Poem",
       likes: "65",
-      instagramUrl: "https://www.instagram.com/p/DAlBJZvogqs/?igsh=QkFUQXhZM1lldg%3D%3D"
+      instagramUrl: "https://www.instagram.com/p/DAlBJZvogqs/?igsh=bHh6NjhhbGk2cHpj"
     },
     {
       id: 5,
       thumbnail: "/talents-pods/talents5.png",
       title: "Ganesha Painting",
-      likes: "108",
-      instagramUrl: "https://www.instagram.com/share/p/BABIjTMQbB"
+      likes: "109",
+      instagramUrl: "https://www.instagram.com/p/DOBCmtmiLuK/?igsh=ZGg2cTd6MGc5MTZp"
     }
   ];
 
