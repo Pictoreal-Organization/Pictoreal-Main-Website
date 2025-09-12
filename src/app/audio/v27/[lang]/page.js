@@ -50,8 +50,8 @@ export default function AudioArticlePage() {
   return (
     <div className="min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
       {/* Title */}
-      <h1 className="text-3xl font-bold text-center mb-4 text-[#003366] drop-shadow-lg">
-        Audio Articles
+      <h1 className="text-3xl font-heading font-bold text-center mb-4 text-[#111C33] drop-shadow-lg">
+        AUDIO ARTICLES
       </h1>
 
       {/* Language switcher */}

@@ -80,7 +80,7 @@ export default function SelectLanguagePage() {
         {/* Foreground Content */}
         <div className="relative z-10 text-center w-full px-4">
           <h1 className="text-5xl text-[#001730] font-heading md:text-6xl font-bold mb-3 drop-shadow-lg">
-            Audio Articles
+            AUDIO ARTICLES
           </h1>
           <p className="text-lg font-body text-gray-600 mb-10">
             Please select a language to begin
