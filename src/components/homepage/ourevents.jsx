@@ -60,19 +60,19 @@ const EventsCarousel = () => {
         {/* Left Arrow */}
         <button
           onClick={handlePrevClick}
-          className="absolute -left-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
+          className="absolute left-0 translate-x-2 top-1/2 -translate-y-1/2 z-35 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hover:scale-110"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={36} />
+          <ChevronLeft size={18} />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={handleNextClick}
-          className="absolute -right-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
+          className="absolute right-0 -translate-x-2 top-1/2 -translate-y-1/2 z-35 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hover:scale-110"
           aria-label="Next slide"
         >
-          <ChevronRight size={36} />
+          <ChevronRight size={18} />
         </button>
 
         {/* 3-Image Layout */}
