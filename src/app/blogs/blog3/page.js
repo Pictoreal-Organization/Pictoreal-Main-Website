@@ -12,7 +12,7 @@ export default function Blog3() {
               </div>
             </Link>
           </div> */}
-          <div className="font-heading pt-2 text-5xl font-extrabold text-center mt-14 mb-5">
+          <div className="font-heading pt-2 text-[#111c33] text-5xl font-extrabold text-center mt-14 mb-5">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex items-center justify-center">

@@ -12,7 +12,7 @@ export default function Blog2() {
               </div>
             </Link>
           </div> */}
-          <div className="font-heading font-extrabold pt-2 text-5xl text-center mt-14 mb-5">
+          <div className="font-heading font-extrabold pt-2 text-5xl text-[#111c33] text-center mt-14 mb-5">
             Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and
             Universal Forces
           </div>
