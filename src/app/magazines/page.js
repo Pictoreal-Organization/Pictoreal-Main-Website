@@ -52,7 +52,7 @@ export default function MagazinePage() {
             <div className="w-full pl-6 md:pl-0 ">
               <div className={`w-full flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                 {/* Card */}
-                <div className="w-full md:w-[48%] md:px-8">
+                <div className="w-full md:w-[48%] md:px-6">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     onHoverStart={() => setHoveredIndex(index)}
