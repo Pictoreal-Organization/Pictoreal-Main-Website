@@ -6,7 +6,8 @@ import { IoIosArrowDown } from "react-icons/io";
 export default function BlogsPage() {
   
   const blogs = [
-    {
+    
+     {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
@@ -15,12 +16,12 @@ export default function BlogsPage() {
         "Balancing academics and personal interests isn’t about sacrificing moments—it’s about weaving them together. A journey through 4 years of student life...",
     },
     {
-      id: "blog2",
-      title: "Mysteries of Particle Physics",
-      authors: "Shrihari Kulkarni",
-      img: "/blog/blog2-poster-img.png",
+      id: "blog4",
+      title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
+      authors: "Ayan Pathan",
+      img: "/blog/blog-dakhni-poster.png",
       excerpt:
-        "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
+        "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
     },
     {
       id: "blog3",
@@ -30,13 +31,21 @@ export default function BlogsPage() {
       excerpt:
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
-    {
-      id: "blog4",
-      title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
-      authors: "Ayan Pathan",
-      img: "/blog/blog-dakhni-poster.png",
+   {
+      id: "blog2",
+      title: "Mysteries of Particle Physics",
+      authors: "Shrihari Kulkarni",
+      img: "/blog/blog2-poster-img.png",
       excerpt:
-        "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
+        "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
+    },
+    {
+      id: "blog1",
+      title: "Uncanny Valley",
+      authors: "Prem Rahinj, SpondonNath",
+      img: "/blog/blog1-poster-img.jpg",
+      excerpt:
+        "Uncanny Valley is where AI gets eerily close to being human—so close, it’s unsettling. As AI becomes more lifelike, even small imperfections in appearance or behavior can trigger discomfort or unease in us.",
     },
   ];
 
@@ -98,7 +107,7 @@ export default function BlogsPage() {
             <img
               src={blog.img}
               alt={blog.title}
-              className="block w-42 h-52 md:w-50 md:h-50 object-cover border-2 border-deepnavy rounded mx-auto md:mx-0"
+              className="w-[140px] lg:w-[160px] aspect-[7/8] object-cover border-2 border-[#1a365d] rounded"
             />
 
             {/* Content */}
