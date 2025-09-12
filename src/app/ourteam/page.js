@@ -1,11 +1,10 @@
 import React from 'react';
 import TeamMember from './TeamMember';
-import { text } from 'stream/consumers';
 
 const Team = () => {
   const Title = ({ text, style }) => {
     return (
-      <h1 className={`text-3xl font-bold text-center mb-10 -mt-3 font-heading text-[#001730]`} style={style}>
+      <h1 className="text-3xl font-bold text-center mb-10 -mt-3 font-heading text-[#001730]" style={style}>
         {text}
       </h1>
     );
@@ -15,27 +14,22 @@ const Team = () => {
     <div className="w-full min-h-screen flex justify-center flex-col items-center md:bg-cover bg-no-repeat py-10" style={{ backgroundImage: "url('images/our_team/x27884380_stain_halftone_background 1.svg')" }}>
 
       <div className="max-w-4xl flex flex-col items-center px-4 md:w-3/4">
-        <Title 
-          text="TEAM PHOTO" 
-          style={{ }} 
-        />
-      
-        {/* Team Photo - Large and centered */}
+        <Title text="TEAM PHOTO" />
+
+        {/* Team Photo*/}
         <div className="flex justify-center mb-12 w-3/4">
           <TeamMember
             names={["TEAM PICTOREAL"]}
             imageSrc="/our_team/slide_img_1.jpg"
             altText="team pictoreal"
             hoverKey="team pictoreal"
+            height={400}  
           />
         </div>
 
-        <Title 
-          text="MEET OUR TEAM" 
-          style={{ }} 
-        />
+        <Title text="MEET OUR TEAM" />
 
-        {/* Magazine Coordinator - Centered and smaller than team photo */}
+        {/* Magazine Coordinator */}
         <div className="flex flex-col items-center mb-12 w-3/4 max-w-xl">
           <h3 className="font-heading text-lg mb-4 text-center text-[#001730]">Magazine Coordinator</h3>
           <TeamMember
@@ -43,12 +37,12 @@ const Team = () => {
             imageSrc="/our_team/asmita-joshi.jpg"
             altText="Magazine Coordinator"
             hoverKey="magazine_coordinators"
+            height={400}  
           />
         </div>
 
-        {/* Grid for team roles - two per row, properly centered */}
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
-          
+        {/* Grid for team roles */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
           {/* Magazine Secretaries */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Magazine Secretaries</h4>
@@ -114,7 +108,7 @@ const Team = () => {
               hoverKey="editorial_heads"
             />
           </div>
-          
+
           {/* Picto-Social Heads */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Picto-Social Heads</h4>
@@ -125,7 +119,7 @@ const Team = () => {
               hoverKey="picto_social_heads"
             />
           </div>
-          
+
           {/* Event Managers */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Event Managers</h4>
@@ -136,7 +130,7 @@ const Team = () => {
               hoverKey="event_managers"
             />
           </div>
-          
+
           {/* Public Relations Officers */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Public Relations Officers</h4>
@@ -147,7 +141,7 @@ const Team = () => {
               hoverKey="public_relations_officers"
             />
           </div>
-          
+
           {/* Social Media Heads */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Social Media Heads</h4>
@@ -158,7 +152,7 @@ const Team = () => {
               hoverKey="social_media_heads"
             />
           </div>
-          
+
           {/* Tech Heads */}
           <div className="flex flex-col items-center">
             <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Tech Heads</h4>
@@ -210,3 +204,4 @@ const Team = () => {
 };
 
 export default Team;
+``
