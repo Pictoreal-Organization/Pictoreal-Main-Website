@@ -27,7 +27,7 @@ export default function RecentBlogs() {
       authors: "Harshit Vora, Omkar Desai",
       excerpt:
         "Summary of the above blog Summary of the above blog, Summary of the above blog",
-      img: "/blogs/blog5-poster-img.png",
+      img: "/blog/blog5-poster-img.png",
     },
     {
       id: "blog2",
@@ -35,7 +35,7 @@ export default function RecentBlogs() {
       authors: "Shrihari Kulkarni",
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
-      img: "/blogs/blog2-poster-img.png",
+      img: "/blog/blog2-poster-img.png",
     },
   ];
 
@@ -50,8 +50,6 @@ export default function RecentBlogs() {
           <ArrowBtn text="Read Our Blogs" path="/blogs" borderColor="#DDF1FF" />
         </div>
       </div>
-
-
 
       {/* Blog Cards */}
       <div className="flex flex-col gap-8 max-w-6xl mx-auto">
@@ -90,9 +88,13 @@ export default function RecentBlogs() {
                     Student Life
                   </span>
                 </div>
-                
+
                 <div className="">
-                  <ArrowBtn text="View Blog" path={`/blogs/${blog.id}`} borderColor="#DDF1FF" />
+                  <ArrowBtn
+                    text="View Blog"
+                    path={`/blogs/${blog.id}`}
+                    borderColor="#DDF1FF"
+                  />
                 </div>
               </div>
             </div>
@@ -101,7 +103,15 @@ export default function RecentBlogs() {
       </div>
 
       <div className="flex justify-center mt-10">
-        <ArrowBtn text="Write" path="/blogs" bgColor="#DDF1FF" textColor="#111C33" circleBg="#111C33" hoverColor="#EAF7FF" arrowColor="#DDF1FF"/>
+        <ArrowBtn
+          text="Write"
+          path="/blogs"
+          bgColor="#DDF1FF"
+          textColor="#111C33"
+          circleBg="#111C33"
+          hoverColor="#EAF7FF"
+          arrowColor="#DDF1FF"
+        />
       </div>
     </section>
   );

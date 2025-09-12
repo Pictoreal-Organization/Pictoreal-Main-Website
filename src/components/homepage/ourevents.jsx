@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import ArrowBtn from "./arrowbtn";
 
 const EventsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +46,7 @@ const EventsCarousel = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A1631] py-12 flex flex-col items-center">
+    <div className="min-h-screen max-w-screen bg-[#0A1631] py-12 flex flex-col items-center">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-white mb-4">Our Events</h1>
@@ -59,19 +60,19 @@ const EventsCarousel = () => {
         {/* Left Arrow */}
         <button
           onClick={handlePrevClick}
-          className="absolute -left-10 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hover:scale-110"
+          className="absolute -left-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={36} />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={handleNextClick}
-          className="absolute -right-10 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hover:scale-110"
+          className="absolute -right-20 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-xl hover:scale-110"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={36} />
         </button>
 
         {/* 3-Image Layout */}
@@ -134,11 +135,11 @@ const EventsCarousel = () => {
       <div className="text-center mt-6">
         <Link
           href="/gallery"
-          className="flex items-center text-[#DDF1FF] pl-4 pr-1.5 py-1 rounded-full transform transition duration-300 ease-in-out hover:scale-110 font-body cursor-pointer bg-[#111C33] hover:bg-[#003366] text-sm"
+          className="flex items-center text-[#DDF1FF] pl-6 pr-2 py-1.5 rounded-full transform transition duration-300 ease-in-out hover:scale-110 font-body cursor-pointer bg-[#111C33] hover:bg-[#003366]"
         >
           <span>Explore Gallery</span>
-          <span className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-[#DDF1FF]">
-            <ArrowRight size={14} className="text-[#111C33]" />
+          <span className="ml-3 w-8 h-8 flex items-center justify-center rounded-full bg-[#DDF1FF]">
+            <ArrowRight size={18} className="text-[#111C33]" />
           </span>
         </Link>
       </div>

@@ -10,7 +10,7 @@ export default function BlogsPage() {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
-      img: "/blogs/blog5-poster-img.png",
+      img: "/blog/blog5-poster-img.png",
       excerpt:
         "Balancing academics and personal interests isn’t about sacrificing moments—it’s about weaving them together. A journey through 4 years of student life...",
     },
@@ -18,7 +18,7 @@ export default function BlogsPage() {
       id: "blog2",
       title: "Mysteries of Particle Physics",
       authors: "Shrihari Kulkarni",
-      img: "/blogs/blog2-poster-img.png",
+      img: "/blog/blog2-poster-img.png",
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
     },
@@ -26,7 +26,7 @@ export default function BlogsPage() {
       id: "blog3",
       title: "Error 500 - The Flawed Beauty of Your Day",
       authors: "Nehal Shivane, Sampada Tagalpallewar, Shruti Mone",
-      img: "/blogs/blog3-poster-img.png",
+      img: "/blog/blog3-poster-img.png",
       excerpt:
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
@@ -34,7 +34,7 @@ export default function BlogsPage() {
       id: "dakhni",
       title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
       authors: "Ayan Pathan",
-      img: "/blogs/blog-dakhni-poster.png",
+      img: "/blog/blog-dakhni-poster.png",
       excerpt:
         "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
     },
@@ -196,3 +196,40 @@ export default function BlogsPage() {
     </div>
   );
 }
+
+
+
+
+
+// import Link from 'next/link';
+// import dbConnect from '../../lib/mongodb';
+// import Blog from '../../models/Blog';
+
+// export default async function BlogListPage() {
+//   // Connect to MongoDB
+//   await dbConnect();
+
+//   // Fetch all published blogs
+//   const blogs = await Blog.find({ draft: false }).sort({ publishedAt: -1 });
+
+//   return (
+//     <div className="p-4">
+//       <h1 className="text-3xl font-bold mb-6">All Blogs</h1>
+//       {blogs.length === 0 && <p>No blogs found.</p>}
+//       <div className="space-y-4">
+//         {blogs.map((blog) => (
+//           <div key={blog._id} className="p-4 border rounded shadow">
+//             <h2 className="text-xl font-semibold">{blog.title}</h2>
+//             <p className="mt-2">{blog.content.substring(0, 100)}...</p>
+//             <Link
+//               href={`/blogs/${blog._id}`}
+//               className="text-blue-600 mt-2 inline-block"
+//             >
+//               Read more
+//             </Link>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }

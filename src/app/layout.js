@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Head>
-      <body className={`antialiased bg-[#DDF1FF] bg-repeat`}>
+      <body className={`antialiased bg-[#DDF1FF] bg-repeat pt-20`}>
         <Providers>
           <Navbar />
-          <div className="grid grid-cols-12 gap-4">
-            <main className="col-span-12 flex-grow">{children}</main>
+          <div className="grid grid-cols-12 gap-4 ">
+            <main className="col-span-12 flex-grow ">{children}</main>
           </div>
           <Footer />
         </Providers>
