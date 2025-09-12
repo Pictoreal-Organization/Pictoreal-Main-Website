@@ -48,7 +48,7 @@ export default function RecentBlogs() {
         <div className="absolute top-0 right-0 sm:static sm:mt-4 w-full flex justify-end">
           <Link
             href="/blogs"
-            className="flex items-center gap-2 px-4 py-1 mt-12 rounded-full hover:bg-paleskyblue hover:text-deepnavy transition
+            className="flex items-center gap-2 px-4 py-1cd mt-12 rounded-full hover:bg-paleskyblue hover:text-deepnavy transition
                       sm:px-4 sm:py-1 sm:text-sm
                       max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
           >
