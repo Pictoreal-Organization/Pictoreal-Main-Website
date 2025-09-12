@@ -41,7 +41,7 @@ export default function BlogsPage() {
   ];
 
   return (
-    <div className="bg-paleskyblue min-h-screen px-4 md:px-6 p-6">
+    <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
       <h2 className="text-center font-bold text-2xl md:text-3xl mb-4 text-deepnavy">
         BLOGS
