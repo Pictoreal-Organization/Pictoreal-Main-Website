@@ -174,7 +174,7 @@ export default function Blog1() {
                 />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center hover:text-white h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#394553] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center hover:text-white h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform transform hover:scale-110">
                   Back
                 </div>
               </Link>
