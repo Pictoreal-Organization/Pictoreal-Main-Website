@@ -73,7 +73,7 @@ const EventsCarousel = () => {
           Our Events
         </h1>
         <p className="text-lg font-body md:text-xl text-gray-300 italic">
-          "Where connections are made and memories are created."
+          "Catch a glimpse of the events hosted by Pictoreal"
         </p>
       </div>
 
