@@ -4,10 +4,8 @@ import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function BlogsPage() {
-  
   const blogs = [
-    
-     {
+    {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
@@ -31,7 +29,7 @@ export default function BlogsPage() {
       excerpt:
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
-   {
+    {
       id: "blog2",
       title: "Mysteries of Particle Physics",
       authors: "Shrihari Kulkarni",
@@ -56,8 +54,6 @@ export default function BlogsPage() {
         BLOGS
       </h1>
 
-     
-
       {/* Search + Filters */}
       <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
         <div className="relative w-full md:w-1/3">
@@ -69,9 +65,9 @@ export default function BlogsPage() {
           <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full md:w-auto">
           {/* Genres Dropdown */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
+          <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full">
             {/* Genre Dropdown */}
             <div className="relative w-full shadow-md sm:w-auto">
               <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
@@ -97,46 +93,49 @@ export default function BlogsPage() {
       </div>
 
       {/* Blog Cards */}
-      <div className=" rounded-4xl p-6 flex showdow-md flex-col md:flex-col mx-auto items-start gap-8 max-w-6xl ">
+      <div className="rounded-4xl p-6 flex flex-col mx-auto items-start gap-8 max-w-6xl">
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="bg-white shadow-md rounded-4xl p-6 flex flex-col md:flex-row items-start gap-6 border border-white"
+            // CHANGE 1: Centered items on mobile and aligned them to the start on desktop.
+            className="bg-white shadow-md rounded-4xl p-6 flex flex-col items-center md:flex-row md:items-start gap-6 border border-white"
           >
             {/* Image */}
             <img
               src={blog.img}
               alt={blog.title}
-              className="w-[140px] lg:w-[160px] aspect-[7/8] object-cover border-2 border-[#1a365d] rounded"
+              // CHANGE 2: Made image full-width on mobile and fixed-width on larger screens.
+              className="w-auto max-h-40 md:max-h-max object-cover object-top md:w-[140px] lg:w-[160px] aspect-[7/8] border-2 border-[#1a365d] rounded"
             />
 
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-lg md:text-xl font-heading font-bold text-deepnavy text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-deepnavy text-center md:text-left">
                 {blog.title}
-              </h3>
+              </p>
               <p className="text-sm md:text-base font-body text-deepnavy mt-1 text-center md:text-left">
                 <span className="font-semibold">Author: </span>
                 {blog.authors}
               </p>
-              <p className="text-deepnavy/80 font-body mt-3 text-center md:text-left">
+              <p className="text-deepnavy/80 font-body mt-3 text-sm text-center md:text-left">
                 {blog.excerpt}
               </p>
 
               {/* Tags + Button */}
-              <div className="flex flex-row sm:flex-row sm:flex-wrap gap-2 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
+              {/* CHANGE 3: Centered tags/button on mobile and used flex-wrap for better flow. */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-6 md:justify-start">
                 <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
-                <span className="whitespace-nowrap  px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                <span className="whitespace-nowrap px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
                 </span>
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto whitespace-nowrap px-4 py-2 duration-500 transition-transform transform hover:scale-120 bg-deepnavy text-white rounded-full hover:bg-[#003366] hover:text-white transition flex items-center justify-center text-xs md:text-sm border
-    max-sm:ml-0 max-sm:w-auto max-sm:px-auto  max-sm:py-1"
+                  // CHANGE 4: Pushed button to the right ONLY on desktop and removed invalid 'max-sm' classes.
+                  className="md:ml-auto whitespace-nowrap px-4 py-2 duration-500 transition-transform transform hover:scale-120 bg-deepnavy text-white rounded-full hover:bg-[#003366] hover:text-white transition flex items-center justify-center text-xs md:text-sm border"
                 >
                   Read More
                 </Link>
@@ -148,7 +147,6 @@ export default function BlogsPage() {
     </div>
   );
 }
-
 
 
 
