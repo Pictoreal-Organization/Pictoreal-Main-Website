@@ -4,7 +4,7 @@ export default function blog5() {
   return (
     <>
       <div className="flex mt-[10vh]  flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
+        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-heading text-[#111c33] font-extrabold pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Dreams and Deadlines
           </div>

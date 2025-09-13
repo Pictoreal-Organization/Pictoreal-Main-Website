@@ -4,7 +4,7 @@ export default function Blog2() {
   return (
     <>
       <div className="flex flex-col mt-[10vh] p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-[#1a365d] mx-auto">
+        <div className="relative bg-[#a4cde4] lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-[#1a365d] mx-auto">
           {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
             <Link href="/blogs">
               <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">

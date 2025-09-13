@@ -5,7 +5,7 @@ export default function BlogDakhni() {
   return (
     <>
       <div className="flex flex-col mt-[10vh] shadow-md p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#1a365d] mx-auto">
+        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] py-10 md:p-5 border-[10px] border-[#1a365d] mx-auto">
           <div className="font-heading font-extrabold text-[#111c33] pt-2 text-5xl text-center mt-14 mb-5">
             अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया
           </div>
