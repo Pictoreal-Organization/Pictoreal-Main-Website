@@ -4,7 +4,6 @@ import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function BlogsPage() {
-  
   const blogs = [
     {
       id: "blog5",
@@ -15,12 +14,12 @@ export default function BlogsPage() {
         "Balancing academics and personal interests isn’t about sacrificing moments—it’s about weaving them together. A journey through 4 years of student life...",
     },
     {
-      id: "blog2",
-      title: "Mysteries of Particle Physics",
-      authors: "Shrihari Kulkarni",
-      img: "/blog/blog2-poster-img.png",
+      id: "blog4",
+      title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
+      authors: "Ayan Pathan",
+      img: "/blog/blog-dakhni-poster.png",
       excerpt:
-        "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
+        "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
     },
     {
       id: "blog3",
@@ -31,97 +30,47 @@ export default function BlogsPage() {
         "Life, just like programming, is full of unexpected errors. Instead of fearing mistakes, embrace them as opportunities to learn, grow, and redefine success...",
     },
     {
-      id: "dakhni",
-      title: "अरे बैगन! – चलिये, जानते है दक्खनी की दुनिया",
-      authors: "Ayan Pathan",
-      img: "/blog/blog-dakhni-poster.png",
+      id: "blog2",
+      title: "Mysteries of Particle Physics",
+      authors: "Shrihari Kulkarni",
+      img: "/blog/blog2-poster-img.png",
       excerpt:
-        "Dakhni isn’t just Hyderabadi slang—it’s a centuries-old language shaped by Hindi, Urdu, Marathi, Kannada, and Telugu influences. Let’s explore its roots...",
+        "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape the universe around us...",
+    },
+    {
+      id: "blog1",
+      title: "Uncanny Valley",
+      authors: "Prem Rahinj, SpondonNath",
+      img: "/blog/blog1-poster-img.jpg",
+      excerpt:
+        "Uncanny Valley is where AI gets eerily close to being human—so close, it’s unsettling. As AI becomes more lifelike, even small imperfections in appearance or behavior can trigger discomfort or unease in us.",
     },
   ];
 
   return (
-    <div className="bg-paleskyblue min-h-screen px-4 md:px-6 p-6">
+    <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
-      <h2 className="text-center font-bold text-2xl md:text-3xl mb-4 text-deepnavy">
+      <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
         BLOGS
-      </h2>
-
-      {/*SVG Design*/}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "10vh",
-          width: "100%",
-        }}
-      >
-        <svg
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-20 80 1400 200"
-          preserveAspectRatio="xMidYMid meet"
-          style={{
-            width: "100%",
-            maxWidth: "700px",
-          }}
-        >
-          <g
-            transform="translate(0.000000,411.000000) scale(0.100000,-0.100000)"
-            fill="#000000"
-            stroke="none"
-          >
-            <path
-              d="M7465 3231 c-77 -14 -147 -56 -184 -111 -30 -44 -34 -57 -35 -118 0
-            -54 5 -76 22 -104 29 -46 85 -96 130 -115 67 -28 164 -14 200 30 24 28 43 102
-            37 140 -8 44 -49 97 -75 97 -31 0 -32 -17 -6 -63 30 -51 32 -78 9 -118 -38
-            -65 -134 -61 -205 8 -91 89 -70 215 46 275 58 31 165 31 222 1 119 -63 183
-            -223 140 -346 -19 -56 -80 -124 -136 -152 -40 -20 -64 -25 -128 -25 -161 0
-            -265 62 -497 296 -152 153 -227 213 -312 250 -70 29 -158 54 -194 54 -42 0
-            -131 -24 -174 -47 -70 -37 -155 -142 -155 -190 0 -10 -7 -29 -16 -41 l-15 -22
-            -645 0 -645 0 -30 32 c-16 18 -29 35 -29 39 0 16 -64 31 -117 27 -42 -4 -84
-            -18 -148 -49 l-90 -44 -986 -3 -985 -2 -77 52 c-42 29 -101 71 -132 92 -48 35
-            -58 38 -78 28 -12 -7 -35 -16 -52 -21 -16 -5 -88 -33 -160 -61 -71 -28 -150
-            -59 -175 -68 -39 -14 -117 -17 -615 -22 -547 -5 -570 -6 -573 -24 -2 -10 2
-            -22 10 -27 7 -5 268 -9 580 -9 471 0 573 -2 600 -14 18 -8 85 -35 148 -59 63
-            -25 145 -57 182 -71 81 -32 84 -32 122 -2 17 13 71 51 119 85 l88 61 994 0
-            995 0 97 -47 c80 -38 109 -46 155 -47 63 -1 103 20 126 67 l13 27 653 0 c511
-            0 656 -3 664 -12 5 -7 13 -29 17 -48 17 -85 109 -185 202 -220 134 -50 268 2
-            324 125 55 120 -31 275 -151 275 -56 -1 -141 -48 -166 -94 -24 -43 -21 -76 7
-            -76 12 0 24 13 33 35 38 91 169 100 220 15 23 -39 21 -115 -4 -156 -71 -114
-            -253 -111 -353 7 -120 140 -67 350 108 428 82 36 209 20 305 -38 19 -11 42
-            -24 50 -28 39 -17 118 -87 265 -232 169 -167 210 -199 315 -247 59 -26 75 -29
-            170 -29 95 0 110 3 160 28 91 47 158 126 175 209 4 18 12 39 17 46 8 9 152 12
-            658 12 l647 0 32 -40 c36 -45 90 -65 149 -54 20 4 79 27 130 51 l92 43 995 0
-            994 0 122 -87 c135 -96 117 -92 229 -48 19 8 89 35 155 60 66 25 135 53 153
-            61 27 12 129 14 597 14 310 0 570 3 579 6 9 3 16 17 16 30 l0 24 -564 0 -563
-            0 -64 24 c-198 73 -262 98 -372 144 l-37 15 -72 -49 c-40 -27 -99 -68 -132
-            -92 l-59 -42 -986 2 -986 3 -90 44 c-82 41 -97 45 -168 45 -83 1 -73 7 -139
-            -73 -18 -21 -21 -21 -662 -21 -688 0 -656 -2 -670 50 -46 167 -207 279 -361
-            251z"
-            />
-          </g>
-        </svg>
-      </div>
+      </p>
 
       {/* Search + Filters */}
-      <div className="flex flex-col md:flex-row gap-4 justify-center w-full px-4 md:px-0 items-center mb-10">
+      <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
         <div className="relative w-full md:w-1/3">
           <input
             type="text"
             placeholder="Search Stories, Authors, or Themes..."
-            className="w-full px-10 py-2 border-3 bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
+            className="w-full px-10 py-2 border-2 shadow-md bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
           />
           <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full md:w-auto">
           {/* Genres Dropdown */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
+          <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full">
             {/* Genre Dropdown */}
-            <div className="relative w-full sm:w-auto">
-              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-3 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+            <div className="relative w-full shadow-md sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>All Genres</option>
                 <option>Fiction</option>
                 <option>Non-fiction</option>
@@ -131,8 +80,8 @@ export default function BlogsPage() {
             </div>
 
             {/* Sorting Dropdown */}
-            <div className="relative w-full sm:w-auto">
-              <select className="appearance-none w-full sm:w-auto px-4 py-2 border-3 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+            <div className="relative shadow-md w-full sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto px-4 py-2 border-2 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>Latest Creation</option>
                 <option>Oldest First</option>
                 <option>Most Popular</option>
@@ -144,47 +93,49 @@ export default function BlogsPage() {
       </div>
 
       {/* Blog Cards */}
-      <div className=" rounded-4xl p-6 flex flex-col md:flex-col mx-auto items-start gap-8 max-w-6xl ">
+      <div className="rounded-4xl p-6 flex flex-col mx-auto items-start gap-8 max-w-6xl">
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="bg-white shadow-md rounded-4xl p-6 flex flex-col md:flex-row items-start gap-6 border border-white"
+            // CHANGE 1: Centered items on mobile and aligned them to the start on desktop.
+            className="bg-white shadow-md rounded-4xl p-6 flex flex-col items-center md:flex-row md:items-start gap-6 border border-white"
           >
             {/* Image */}
             <img
               src={blog.img}
               alt={blog.title}
-              className="block w-42 h-52 md:w-50 md:h-50 object-cover border-2 border-deepnavy rounded mx-auto md:mx-0"
+              // CHANGE 2: Made image full-width on mobile and fixed-width on larger screens.
+              className="w-auto max-h-40 md:max-h-max object-cover object-top md:w-[140px] lg:w-[160px] aspect-[7/8] border-2 border-[#1a365d] rounded"
             />
 
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-lg md:text-xl font-bold text-deepnavy text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-deepnavy text-center md:text-left">
                 {blog.title}
-              </h3>
-              <p className="text-sm md:text-base text-deepnavy mt-1 text-center md:text-left">
+              </p>
+              <p className="text-sm md:text-base font-body text-deepnavy mt-1 text-center md:text-left">
                 <span className="font-semibold">Author: </span>
                 {blog.authors}
               </p>
-              <p className="text-deepnavy/80 mt-3 text-center md:text-left">
+              <p className="text-deepnavy/80 font-body mt-3 text-sm text-center md:text-left">
                 {blog.excerpt}
               </p>
 
               {/* Tags + Button */}
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mt-6 items-center md:items-start sm:justify-start">
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+              {/* CHANGE 3: Centered tags/button on mobile and used flex-wrap for better flow. */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-6 md:justify-start">
+                <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
-                <span className="px-4 py-1 bg-[#1b3b64] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                <span className="whitespace-nowrap px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
                 </span>
 
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className="ml-auto px-4 py-1 bg-deepnavy text-white rounded-full hover:bg-paleskyblue hover:text-deepnavy border border-deepnavy transition flex items-center gap-2
-                    sm:px-3 sm:py-2 sm:text-base
-                    max-sm:w-full max-sm:justify-center max-sm:text-sm max-sm:px-3 max-sm:py-2 max-sm:rounded-md"
+                  // CHANGE 4: Pushed button to the right ONLY on desktop and removed invalid 'max-sm' classes.
+                  className="md:ml-auto whitespace-nowrap px-4 py-2 duration-500 transition-transform transform hover:scale-120 bg-deepnavy text-white rounded-full hover:bg-[#003366] hover:text-white transition flex items-center justify-center text-xs md:text-sm border"
                 >
                   Read More
                 </Link>
@@ -196,7 +147,6 @@ export default function BlogsPage() {
     </div>
   );
 }
-
 
 
 

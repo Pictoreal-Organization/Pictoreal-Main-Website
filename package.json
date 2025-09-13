@@ -41,5 +41,8 @@
     "tailwindcss": "^4.1.12",
     "typescript": "5.9.2"
   },
-  "proxy": "https://cd9392g9-5000.inc1.devtunnels.ms"
+  "proxy": "https://cd9392g9-5000.inc1.devtunnels.ms",
+  "engines": {
+    "node": "22.x"
+  }
 }

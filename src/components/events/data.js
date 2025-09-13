@@ -56,7 +56,6 @@ export const imageSets = [
     {
         images: [
             "/gallery/Pictofest_1.jpg",
-            "/gallery/Pictofest_2.jpg",
             "/gallery/Pictofest_3.jpg",
             "/gallery/Pictofest_4.jpg",
             "/gallery/Pictofest_5.jpg",

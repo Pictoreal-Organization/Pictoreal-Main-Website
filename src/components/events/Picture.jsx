@@ -43,9 +43,9 @@ const Picture = () => {
         <>
             <div className={` text-[${color3}] bg-[${color1}]`}>
                 <div className={`space-y-80 mb-10`}>
-                    <h2 className="font-heading text-5xl mt-6 font-bold text-center sm:-mb-6 mb-16">
+                    <p className="font-heading text-3xl text-[#001730] md:text-5xl mt-6 font-bold text-center sm:-mb-6 -mb-1">
                         GALLERY
-                    </h2>
+                    </p>
                     {imageSets.map((set, i) => (
                         <div
                             key={i}
@@ -58,9 +58,9 @@ const Picture = () => {
                                 className="flex flex-col max-w-full mx-auto lg:p-6 px-4 rounded-lg"
                             >
                                 <div className={`flex flex-col lg:flex-row mt-10 lg:pt-0`}>
-                                    <h2 className="lg:hidden font-heading text-3xl font-bold text-center mb-4">
+                                    <p className="lg:hidden font-heading text-xl text-[#001730] md:text-3xl font-bold text-center mb-4">
                                         {set.title}
-                                    </h2>
+                                    </p>
                                     <div className="lg:max-w-[40%] lg:pl-10">
                                         <Carousel images={set.images} onImageClick={handleImageClick} />
                                     </div>

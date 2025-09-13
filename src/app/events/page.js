@@ -1,8 +1,13 @@
+// src/app/events/page.js
+"use client";
+
+import { Suspense } from "react";
+import Picture from "../../components/events/Picture";
+
 export default function EventsPage() {
   return (
-    <div>
-      <h1>Welcome to Pictoreal</h1>
-      <p>This is the new events page.</p>
-    </div>
+    <Suspense fallback={<div>Loading gallery...</div>}>
+      <Picture />
+    </Suspense>
   );
 }

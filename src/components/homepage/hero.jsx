@@ -86,7 +86,7 @@ const Hero = () => {
 
         {/* Bottom Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mt-10">
-          <ArrowBtn text="Audio Articles" path="/articles" />
+          <ArrowBtn text="Audio Articles" path="/audio/v27" />
           <ArrowBtn text="Blogs" path="/blogs" />
         </div>
       </div>
