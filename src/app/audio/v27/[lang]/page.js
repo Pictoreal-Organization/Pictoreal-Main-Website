@@ -248,9 +248,9 @@ export default function AudioArticlePage() {
   return (
     <div className="min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
       {/* Title */}
-      <h1 className="text-3xl font-heading font-bold text-center mb-4 text-[#111C33] drop-shadow-lg">
+      <p className="text-3xl md:text-5xl font-heading font-bold text-center mb-4 text-[#111C33] drop-shadow-lg">
         AUDIO ARTICLES
-      </h1>
+      </p>
 
       {/* Language switcher */}
       <div className="flex gap-3 flex-wrap justify-center mb-6">
@@ -343,10 +343,10 @@ export default function AudioArticlePage() {
               </div>
 
               {/* Title with enhanced styling */}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#111C33] to-[#003366] bg-clip-text text-transparent mb-2 leading-tight">
+              <div className="text-center">
+                <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#111C33] to-[#003366] bg-clip-text text-transparent mb-2 leading-tight">
                   {selectedArticle.title ?? selectedArticle.name ?? "Untitled"}
-                </h3>
+                </p>
               </div>
 
               {/* Audio player (no extra rectangle) */}
