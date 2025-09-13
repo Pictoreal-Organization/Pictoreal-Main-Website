@@ -90,7 +90,7 @@ const AboutUs = () => {
             <button
               onClick={handlePrev}
               disabled={isTransitioning}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
+              className="absolute opacity-50 left-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
             >
               ‹
             </button>
@@ -99,7 +99,7 @@ const AboutUs = () => {
             <button
               onClick={handleNext}
               disabled={isTransitioning}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
+              className="absolute opacity-50 right-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
             >
               ›
             </button>
@@ -174,9 +174,7 @@ const AboutUs = () => {
 
             {/* Text */}
             <p className="text-sm text-gray-700 font-body max-w-md text-center">
-              We are Pictoreal: a community that publishes a magazine and serves
-              our community. Join us to write the story and be the change on
-              campus this year.
+              We are Pictoreal:a community that publishes a magazine and serves our community. Join us to write the story and be the change on campus this year.
             </p>
 
             {/* Stats (side by side in mobile too) */}
