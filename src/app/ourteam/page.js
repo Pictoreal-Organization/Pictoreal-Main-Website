@@ -4,11 +4,18 @@ import TeamMember from './TeamMember';
 const Team = () => {
   const Title = ({ text, style }) => {
     return (
-      <h1 className="text-3xl font-bold text-center mb-10 -mt-3 font-heading text-[#001730]" style={style}>
+      <div className="text-3xl md:text-5xl font-bold text-center mb-10 -mt-3 font-heading text-[#111C33]" style={style}>
         {text}
-      </h1>
+      </div>
     );
   };
+  const Position = ({ text, style }) => {
+    return (
+      <div className="font-heading font-bold text-2xl md:text-3xl mb-4 text-center text-[#111C33]" style={style}>
+        {text}
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen flex justify-center flex-col items-center md:bg-cover bg-no-repeat py-10" style={{ backgroundImage: "url('images/our_team/x27884380_stain_halftone_background 1.svg')" }}>
@@ -17,35 +24,38 @@ const Team = () => {
         <Title text="TEAM PHOTO" />
 
         {/* Team Photo*/}
-        <div className="flex justify-center mb-12 w-3/4">
-          <TeamMember
+        <div className="flex justify-center mb-12 w-full md:w-3/4">
+        <TeamMember
             names={["TEAM PICTOREAL"]}
             imageSrc="/our_team/slide_img_1.jpg"
             altText="team pictoreal"
             hoverKey="team pictoreal"
-            height={400}  
+            responsiveMobile={true} // ✅ special prop
+            height={500}  
           />
         </div>
 
         <Title text="MEET OUR TEAM" />
 
         {/* Magazine Coordinator */}
-        <div className="flex flex-col items-center mb-12 w-3/4 max-w-xl">
-          <h3 className="font-heading text-lg mb-4 text-center text-[#001730]">Magazine Coordinator</h3>
+        <div className="flex flex-col items-center mb-12 w-full md:w-3/4 max-w-xl">
+          <Position text="Magazine Coordinator"/>
           <TeamMember
             names={["Mrs. Asmita Joshi"]}
             imageSrc="/our_team/asmita-joshi.jpg"
             altText="Magazine Coordinator"
             hoverKey="magazine_coordinators"
+            responsiveMobile={true} // ✅ special prop
             height={400}  
           />
+
         </div>
 
         {/* Grid for team roles */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
           {/* Magazine Secretaries */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Magazine Secretaries</h4>
+            <Position text="Magazine Secretaries"/>
             <TeamMember
               names={["Amulya Agrawal", "Prem Rahinj"]}
               imageSrc="/our_team/magazine-secretaries.JPG"
@@ -56,7 +66,7 @@ const Team = () => {
 
           {/* Joint Secretaries */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Joint Secretaries</h4>
+            <Position text="Joint Secretaries"/>
             <TeamMember
               names={["Sampada Tagalpallewar", "Kshitij Dhake"]}
               imageSrc="/our_team/joint-secretaries.JPG"
@@ -67,7 +77,7 @@ const Team = () => {
 
           {/* General Secretaries */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">General Secretaries</h4>
+            <Position text="General Secretaries"/>
             <TeamMember
               names={["Aarya Badhe", "Unnati Rathi"]}
               imageSrc="/our_team/general-secretaries.JPG"
@@ -78,7 +88,7 @@ const Team = () => {
 
           {/* Treasurer */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Treasurer</h4>
+            <Position text="Treasurer"/>
             <TeamMember
               names={["Kartik Tichkule"]}
               imageSrc="/our_team/TR.JPG"
@@ -89,7 +99,7 @@ const Team = () => {
 
           {/* Design Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Design Heads</h4>
+            <Position text="Design Heads"/>
             <TeamMember
               names={["Saanvi Bhavsar", "Anjani Gulve", "Sanvi Waghmode"]}
               imageSrc="/our_team/design-heads.JPG"
@@ -100,7 +110,7 @@ const Team = () => {
 
           {/* Editorial Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Editorial Heads</h4>
+            <Position text="Editorial Heads"/>
             <TeamMember
               names={["Spondon Nath", "Sanavi Kulkarni", "Ayan Pathan"]}
               imageSrc="/our_team/editorial-heads.JPG"
@@ -111,7 +121,7 @@ const Team = () => {
 
           {/* Picto-Social Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Picto-Social Heads</h4>
+            <Position text="Picto-Social Heads"/>
             <TeamMember
               names={["Dhanashri Mahadik", "Harshit Vora", "Sukanya Gupta"]}
               imageSrc="/our_team/picto-social-heads.JPG"
@@ -122,7 +132,7 @@ const Team = () => {
 
           {/* Event Managers */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Event Managers</h4>
+            <Position text="Event Managers"/>
             <TeamMember
               names={["Vedika Bopche", "Omkar Desai", "Jeet Amin"]}
               imageSrc="/our_team/event-managers.JPG"
@@ -133,7 +143,7 @@ const Team = () => {
 
           {/* Public Relations Officers */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Public Relations Officers</h4>
+            <Position text="Public Relations Officers"/>
             <TeamMember
               names={["Shraddha Dolas", "Trishit Guin", "Maria Shaikh"]}
               imageSrc="/our_team/public-relations-officers.JPG"
@@ -144,7 +154,7 @@ const Team = () => {
 
           {/* Social Media Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Social Media Heads</h4>
+            <Position text="Social Media Heads"/>
             <TeamMember
               names={["Pushkar Mulajkar", "Aditya Tidake", "Samierra Arora"]}
               imageSrc="/our_team/social-media-heads.JPG"
@@ -155,7 +165,7 @@ const Team = () => {
 
           {/* Tech Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Tech Heads</h4>
+            <Position text="Tech Heads"/>
             <TeamMember
               names={["Madhura Deshmukh", "Manas Gawali", "Riddhi Lahare"]}
               imageSrc="/our_team/tech-heads.JPG"
@@ -166,7 +176,7 @@ const Team = () => {
 
           {/* Marketing Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Marketing Heads</h4>
+            <Position text="Marketing Heads"/>
             <TeamMember
               names={["Manas Yeola", "Pratik Chavan", "Gauravi Muttha"]}
               imageSrc="/our_team/marketing-heads.jpg"
@@ -177,7 +187,7 @@ const Team = () => {
 
           {/* Production Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Production Heads</h4>
+            <Position text="Production Heads"/>
             <TeamMember
               names={["Vihan Wani", "Pranav Wagh"]}
               imageSrc="/our_team/video-editing-heads.jpg"
@@ -188,7 +198,7 @@ const Team = () => {
 
           {/* Photography Heads */}
           <div className="flex flex-col items-center">
-            <h4 className="font-heading text-lg mb-4 text-center text-[#001730]">Photography Heads</h4>
+            <Position text="Photography Heads"/>
             <TeamMember
               names={["Shantanu Sable", "Mahesh Loya"]}
               imageSrc="/our_team/photography-heads.JPG"
@@ -204,4 +214,3 @@ const Team = () => {
 };
 
 export default Team;
-``
