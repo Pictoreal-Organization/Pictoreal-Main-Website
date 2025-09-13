@@ -147,9 +147,9 @@ export default function RecentBlogs() {
       <div className="max-w-6xl w-full mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-center md:text-left">
+          <p className="text-3xl md:text-5xl font-bold font-heading text-center md:text-left">
             Recent Blogs
-          </h2>
+          </p>
           <div className="hidden md:block">
             <ArrowBtn
               text="Read All Blogs"
@@ -204,9 +204,9 @@ export default function RecentBlogs() {
                 {/* Content Section */}
                 <div className="md:w-3/5 p-5 md:p-6 flex flex-col justify-between h-full">
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-heading font-bold text-[#111C33] mb-2 leading-tight group-hover:text-[#003366] transition-colors duration-300">
+                    <p className="text-xl md:text-2xl font-heading font-bold text-[#111C33] mb-2 leading-tight group-hover:text-[#003366] transition-colors duration-300">
                       {blog.title}
-                    </h3>
+                    </p>
 
                     <p className="text-[#111C33]/60 font-medium mb-3 text-sm">
                       By {blog.authors}
