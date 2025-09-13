@@ -205,6 +205,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 const backendUrl = "https://pictoreal-main-website-backend.onrender.com";
 
@@ -297,7 +298,7 @@ export default function AudioArticlePage() {
                       : "bg-[#f5f8fa] text-[#111C33]/70 hover:bg-white/80 hover:transform hover:text-[#111C33] hover:shadow-md"
                   }`}
                 >
-                  <img
+                  {/* <img
                     src={`${backendUrl}/images/${
                       article.image ?? article.cover ?? ""
                     }`}
@@ -307,6 +308,15 @@ export default function AudioArticlePage() {
                         ? "border-white/30 shadow-md"
                         : "border-gray-300 group-hover:shadow-sm"
                     }`}
+                  /> */}
+
+                  <Image
+                    src={`${backendUrl}/images/${article.image ?? article.cover ?? ""}`}
+                    alt={article.title ?? article.name ?? "Article"}
+                    width={48} // replace w-12
+                    height={48} // replace h-12
+                    unoptimized // ✅ prevents Next.js image optimization timeout
+                    className="object-cover rounded-md mr-3 flex-shrink-0 border transition-all duration-300"
                   />
                   <div
                     className={`text-sm font-medium line-clamp-2 transition-all duration-300 ${
@@ -332,13 +342,22 @@ export default function AudioArticlePage() {
               <div className="flex justify-center items-center mb-6 relative">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#407499] to-[#0A192E] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-                  <img
+                  {/* <img
                     src={`${backendUrl}/images/${
                       selectedArticle.image ?? selectedArticle.cover ?? ""
                     }`}
                     alt={selectedArticle.title ?? "Selected article"}
                     className="relative max-w-full max-h-[45vh] object-contain rounded-2xl shadow-2xl border-2 border-white/50"
+                  /> */}
+                  <Image
+                    src={`${backendUrl}/images/${selectedArticle.image ?? selectedArticle.cover ?? ""}`}
+                    alt={selectedArticle.title ?? "Selected article"}
+                    width={270}
+                    height={400}
+                    unoptimized
+                    className="relative max-w-full max-h-[45vh] object-contain rounded-2xl shadow-2xl border-2 border-white/50"
                   />
+
                 </div>
               </div>
 
