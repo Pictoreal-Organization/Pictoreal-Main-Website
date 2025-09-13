@@ -58,8 +58,8 @@ export default function AudioArticlePage() {
             href={`/audio/v27/${lang}`}
             className={`px-4 py-2 rounded-lg shadow text-sm transition-all duration-300 border ${
               selectedLang === lang
-                ? "bg-[#003366] text-white border-[#003366]"
-                : "bg-white text-gray-700 border-transparent hover:border-[#003366] hover:text-black"
+                ? "bg-[#001730] text-white border-[#001730]"
+                : "bg-white text-gray-700 border-transparent hover:border-[#001730] hover:text-black"
             }`}
           >
             {lang.toUpperCase()}
@@ -92,8 +92,8 @@ export default function AudioArticlePage() {
                   onClick={() => setSelectedArticle(article)}
                   className={`flex items-center bg-white rounded-lg p-3 cursor-pointer transition ${
                     isSelected
-                      ? "border-2 border-[#003366] bg-[#003366] bg-opacity-10 shadow-md"
-                      : "border border-gray-200 hover:border-[#003366]"
+                      ? "border-2 border-[] bg-[#001730] bg-opacity-10 shadow-md"
+                      : "border border-gray-200 hover:border-[#001730]"
                   }`}
                 >
                   <img
