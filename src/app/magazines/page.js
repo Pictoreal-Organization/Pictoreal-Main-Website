@@ -28,9 +28,9 @@ export default function MagazinePage() {
 
   return (
     <div className="min-h-screen bg-[#DDF1FF] px-4 pb-4 md:p-6">
-      <h1 className="text-3xl md:text-4xl font-heading font-bold text-center text-[#111C33] mb-12 md:mb-16 tracking-widest">
+      <p className="text-3xl text-[#001730] md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 ">
         MAGAZINES
-      </h1>
+      </p>
 
       {/* Desktop Timeline */}
       <div ref={timelineRef} className="hidden md:block max-w-7xl mx-auto relative">

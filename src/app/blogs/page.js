@@ -50,9 +50,9 @@ export default function BlogsPage() {
   return (
     <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
-      <h1 className="text-center font-bold text-[#111c33] font-heading text-2xl md:text-3xl mb-4">
+      <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
         BLOGS
-      </h1>
+      </p>
 
       {/* Search + Filters */}
       <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">

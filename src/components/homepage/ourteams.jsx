@@ -107,23 +107,23 @@ const TeamContent = ({ teamName, teamData }) => {
       </div>
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-6">
-          <div className="p-4 bg-[#003366] rounded-xl shadow-lg shadow-[#003366]/20">
-            <ActiveIcon className="w-8 h-8 text-white" />
+          <div className="p-2 md:p-4 bg-[#003366] rounded-xl shadow-lg shadow-[#003366]/20">
+            <ActiveIcon className="w-4 h-4 md:w-8 md:h-8 text-white" />
           </div>
           <div>
-            <h3 className="text-3xl font-body font-bold text-[#111C33]">
+            <p className="text-2xl md:text-3xl font-body font-bold text-[#111C33]">
               {teamName} Team
-            </h3>
+            </p>
           </div>
         </div>
         <p className="text-[#111C33]/80 font-body leading-relaxed mb-8 text-base">
           {teamData.description}
         </p>
         <div className="mb-6">
-          <h4 className="text-lg font-body text-[#111C33] mb-4 flex items-center gap-2">
+          <p className="md:text-base font-body text-[#111C33] mb-4 flex items-center gap-2">
             <Layers className="w-5 h-5 text-[#111C33]" />
             Specializations
-          </h4>
+          </p>
           <div className="flex flex-col gap-3">
             {teamData.stats.map((stat) => (
               <div
@@ -160,12 +160,12 @@ const OurTeams = () => {
   return (
     <div className="bg-gradient-to-br from-white to-[#DCF1FF] min-h-screen flex flex-col items-center justify-center py-10 font-sans text-[#111C33]">
       <div className="relative mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#0A192E] mb-2">
+        <p className="text-3xl md:text-5xl font-heading font-bold text-[#0A192E] mb-2">
           Our Teams
-        </h1>
+        </p>
         <div className="flex justify-center items-center gap-2 text-[#76879E]">
           <Sparkles className="w-4 h-4" />
-          <span className="text-sm font-body">
+          <span className="text-sm md:text-lg font-body">
             Meet the talented people behind our success
           </span>
           <Sparkles className="w-4 h-4" />
