@@ -160,7 +160,8 @@ export default function RecentBlogs() {
         </div>
 
         {/* Blog Cards */}
-        <div className="space-y-6">
+        <div className="flex flex-col items-center justify-center md:gap-20">
+        <div className="w-10/12 sm:w-full space-y-6">
           {blogs.map((blog, index) => (
             <article
               key={blog.id}
@@ -234,6 +235,7 @@ export default function RecentBlogs() {
               </div>
             </article>
           ))}
+        </div>
         </div>
 
         {/* Action Buttons */}
