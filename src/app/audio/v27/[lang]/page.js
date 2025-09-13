@@ -355,7 +355,7 @@ export default function AudioArticlePage() {
                     width={270}
                     height={400}
                     unoptimized
-                    className="relative max-w-full max-h-[45vh] object-contain rounded-2xl shadow-2xl border-2 border-white/50"
+                    className="relative max-w-full md:max-h-[45vh] max-h-[50vh] md:object-contain rounded-2xl shadow-2xl border-2 border-white/50"
                   />
 
                 </div>
