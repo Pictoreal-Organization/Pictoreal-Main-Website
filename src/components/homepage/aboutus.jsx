@@ -122,9 +122,9 @@ const AboutUs = () => {
 
         {/* RIGHT: About Us Content */}
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left relative w-full">
-          <h1 className="text-5xl font-heading font-light text-gray-800 lg:absolute top-0 lg:left-1/2 lg:-translate-x-1/2 z-10 lg:w-auto text-center">
+          <p className="text-3xl md:text-5xl font-heading font-bold text-gray-800 lg:absolute top-0 lg:left-1/2 lg:-translate-x-1/2 z-10 lg:w-auto text-center">
             About Us
-          </h1>
+          </p>
 
           <div className="flex flex-col items-center space-y-8 mt-3 lg:mt-20 w-full">
             {/* Logo Section */}

@@ -67,10 +67,10 @@ const EventsCarousel = () => {
   return (
     <section id="events-carousel" className="w-full bg-[#0A1631] py-12 flex flex-col items-center" aria-labelledby="events-heading">
       <div className="text-center mb-8">
-        <h1 id="events-heading" className="text-3xl font-heading md:text-5xl font-bold text-white mb-3">
+        <p id="events-heading" className="text-3xl font-heading md:text-5xl font-bold text-white mb-3">
           Our Events
-        </h1>
-        <p className="text-lg font-body md:text-xl text-gray-300 italic">
+        </p>
+        <p className="text-base font-body md:text-xl text-gray-300 italic">
           "Catch a glimpse of the events hosted by Pictoreal"
         </p>
       </div>
@@ -119,9 +119,9 @@ const EventsCarousel = () => {
               </div>
             </Link>
             <div className="block md:hidden text-center mt-4">
-              <h3 className="text-white font-heading text-xl font-bold px-4">
+              <p className="text-white font-heading text-base font-bold px-4">
                 {events[currentIndex].name}
-              </h3>
+              </p>
             </div>
           </div>
 
