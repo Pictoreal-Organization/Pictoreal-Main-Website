@@ -18,58 +18,82 @@ import {
   Award,
   Compass,
   Activity,
-  Layers
+  Layers,
 } from "lucide-react";
 
 // Data can be kept outside the component
 const teams = {
   Design: {
     description:
-      "We are the architects of aesthetics, crafting intuitive and beautiful user experiences. Our design philosophy centers on user-centric solutions that are both functional and delightful.",
+      "The Design Team is where creativity meets impact. From festival posters and event branding to magazine design and campus décor, we bring ideas to life with color and craft. Through Photoshop and design SIGs, members gain hands-on skills that are applied in designing the entire college magazine. Along the way, these experiences open doors to freelancing in graphic and UI/UX design. At heart, we’re the team that makes Pictoreal look and feel unforgettable on paper, on screen, and across campus",
     icon: Palette,
-    stats: ["UI/UX Design", "Brand Identity", "Product Design"],
+    stats: [
+      "Magazine Design and Layouts",
+      "Creative Posters & Event Branding",
+      "⁠Campus Decor",
+    ],
   },
   Editorial: {
     description:
-      "Crafting compelling narratives is our passion. We create and refine content that engages, informs, and resonates with audiences, ensuring every word serves a purpose.",
+      "The Editorial Team creates and manages all content, from editing articles and blogs to drafting captions for festivals and important days. We also edit the entire college magazine, which includes articles, poems, and contributions from students across the campus.",
     icon: Edit3,
-    stats: ["Content Strategy", "Copywriting", "SEO Optimization"],
+    stats: ["⁠ Magazine Editing", "Feature Articles & Blogs", "Draft Captions"],
   },
   Pictosocial: {
     description:
-      "We build and nurture online communities. Our team develops strategies to connect with audiences across social platforms, fostering engagement and building lasting relationships.",
+      "The Pictosocial Team is where compassion meets community. From planting trees and teaching in schools to cleanliness drives, donation camps, and social hackathons, we bring people together to create change that matters. Through every activity, members discover the joy of giving back, while growing friendships and values that last far beyond campus life.",
     icon: Users,
-    stats: ["Social Strategy", "Community Management", "Influencer Relations"],
+    stats: [
+      "Environmental Care & Cleanliness",
+      "Educational Outreach",
+      "Health & Donation Campaigns",
+    ],
   },
   "Social Media": {
     description:
-      "Our mission is to amplify brand voices in the digital world. We manage social channels, create impactful content, and analyze data to drive growth and engagement.",
+      "The Social Media Team looks after content creation, which involves designing visuals; to create appealing posts, stories, reels, and infographics; digital branding, focusing on promoting the club and increasing online reach; and strategic planning, used for organizing content schedules and running social media campaigns and contests. The team also promotes PictoTalents - our platform to celebrate and appreciate the talent of PICT students. People having various talents like singing, dancing, painting, playing musical instruments, poetry writing, story telling etc. showcase their skills through this platform.",
     icon: MessageCircle,
-    stats: ["Content Creation", "Platform Management", "Analytics & Reporting"],
+    stats: [
+      "Digital branding",
+      "⁠⁠Content Creation & Design",
+      "Creative Brainstorming and Engagement",
+    ],
   },
   PictoTech: {
     description:
-      "We are the builders of the digital future. Our developers create robust, scalable, and cutting-edge web and mobile applications that solve real-world problems.",
+      "The Tech Team is where coding turns into real impact. We start with the basics: web development, app building, and backend systems - training members in tools and practices that matter in the industry. Inside the club, these skills come alive through projects like event websites, apps for tracking, and digital platforms that keep Pictoreal connected. Beyond the club, this experience becomes a launchpad: members step into freelancing, internships, hackathons, and career paths as confident developers and problem-solvers.",
     icon: Code2,
-    stats: ["Web Development", "Mobile Apps", "Cloud Solutions"],
+    stats: ["Web Development", "Mobile App Development", "Automation & Tools"],
   },
   Photography: {
     description:
-      "Through our lens, we capture moments that tell a story. We specialize in creating high-quality visual assets that elevate brands and capture imaginations.",
+      "The Photography Team is about more than just taking pictures , it’s about freezing moments, capturing memories, and bringing stories to life. Every photo tells a tale: the highlights of college events, the moments preserved for the annual magazine, the milestones of the graduating batch (BE photoshoots), or the narratives expressed through photo stories. Through our lens, we create images that don’t just illustrate, but connect, inspire, and stay with you.",
     icon: Camera,
-    stats: ["Product Photography", "Event Coverage", "Creative Shoots"],
+    stats: [
+      "Event Coverage",
+      "Annual Magazine & BE Photoshoots",
+      "Photo Stories, Contests & Workshops",
+    ],
   },
   Marketing: {
     description:
-      "We are the engine of growth. Our team devises and executes strategic marketing campaigns that build brand awareness, drive leads, and deliver measurable results.",
+      "The Marketing Team is where strategy meets opportunity. From securing monetary sponsorships to collaborating with brands for coupons, vouchers and support, we ensure every partnership adds value to our events. Our role goes beyond funding, we build strong connections that enhance the magazine’s reach and impact. At core, we’re the team that fuels Pictoreal by bringing sponsors, benefits and lasting collaborations.",
     icon: TrendingUp,
-    stats: ["Campaign Strategy", "Brand Marketing", "Growth Hacking"],
+    stats: [
+      "Sponsorship Acquisition",
+      "Partnerships & Collaborations",
+      "Brand engagement",
+    ],
   },
   Production: {
     description:
-      "From concept to final cut, we bring ideas to life. Our production team creates high-quality video and audio content that captivates and inspires.",
+      "The Production Team brings ideas to life through videos and sound.Whether it’s highlight videos, podcasts or animations, we create the multimedia pieces that make Pictoreal stand out. Members sharpen their skills in filming, editing and motion graphics through SIGs and practice. Our proud project Pictopods, is fully produced in-house, reflecting the team’s creativity and effort.At heart, we are the team that captures stories and transforms them into videos and podcasts that last forever.",
     icon: Play,
-    stats: ["Video Production", "Audio Engineering", "Post-Production"],
+    stats: [
+      "⁠Event Highlights & Recaps",
+      "Podcast Editing",
+      "⁠Motion Graphics & Animations",
+    ],
   },
 };
 
@@ -97,7 +121,7 @@ const TeamContent = ({ teamName, teamData }) => {
         </p>
         <div className="mb-6">
           <h4 className="text-lg font-body text-[#111C33] mb-4 flex items-center gap-2">
-          <Layers className="w-5 h-5 text-[#111C33]" />
+            <Layers className="w-5 h-5 text-[#111C33]" />
             Specializations
           </h4>
           <div className="flex flex-col gap-3">
@@ -156,7 +180,8 @@ const OurTeams = () => {
             const TeamIcon = teamData.icon;
             const isActive = activeTeam === teamName;
 
-            const activeClass = "bg-[#003366] text-white shadow-lg shadow-[#407499]/30"
+            const activeClass =
+              "bg-[#003366] text-white shadow-lg shadow-[#407499]/30";
 
             return (
               // Use React Fragment to group button and its mobile content
