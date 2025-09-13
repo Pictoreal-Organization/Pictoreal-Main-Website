@@ -78,7 +78,7 @@ const PictoTalentsPods = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <p className="text-3xl md:text-5xl lg:text-7xl font-bold text-[#001730] mb-4 font-heading leading-tight">
+          <p className="text-3xl md:text-5xl font-bold text-[#001730] mb-4 font-heading leading-tight">
             Discover Our Creative Universe
           </p>
           <p className="text-base md:text-xl font-body text-[#003A6B] max-w-6xl mx-auto">
