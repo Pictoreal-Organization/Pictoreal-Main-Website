@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useLayoutEffect, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image"; 
 import ArrowBtn from "./arrowbtn";
 
 // Arrow Icon SVG Component
@@ -22,7 +24,6 @@ const ArrowIcon = () => (
 );
 
 export default function Navbar() {
-  const [activePath, setActivePath] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [sliderStyle, setSliderStyle] = useState({
     left: 0,
@@ -32,21 +33,37 @@ export default function Navbar() {
   });
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [prevIndex, setPrevIndex] = useState(null);
+  const [bgOpaque, setBgOpaque] = useState(false);
 
   const navLinksRef = useRef([]);
-  const navLinks = ["Home", "Gallery", "Blogs", "Articles", "OurTeam"];
+  const pathname = usePathname();
+
+  const navLinks = [
+    { text: "Home", href: "/" },
+    { text: "Events", href: "/events" },
+    { text: "Blogs", href: "/blogs" },
+    { text: "Articles", href: "/audio/v27" },
+    { text: "OurTeam", href: "/ourteam" },
+  ];
+
+  const getActiveIndex = () => {
+    return navLinks.findIndex((link) => {
+      if (link.text === "Articles") {
+        return pathname.startsWith("/audio");
+      }
+      if (link.href === "/") {
+        return pathname === "/";
+      }
+      return pathname.startsWith(link.href);
+    });
+  };
+
+  const activeIndex = getActiveIndex();
 
   useLayoutEffect(() => {
-    const currentPath = window.location.pathname;
-    setActivePath(currentPath);
-
-    const activeIndex = navLinks.findIndex((link) => {
-      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-      return href === currentPath;
-    });
-
-    if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
-      const activeTab = navLinksRef.current[activeIndex];
+    const currentActiveIndex = getActiveIndex();
+    if (currentActiveIndex !== -1 && navLinksRef.current[currentActiveIndex]) {
+      const activeTab = navLinksRef.current[currentActiveIndex];
       setSliderStyle((prev) => ({
         ...prev,
         left: activeTab.offsetLeft,
@@ -54,9 +71,15 @@ export default function Navbar() {
         opacity: 1,
         transition: prevIndex !== null ? "all 300ms ease-in-out" : "none",
       }));
-      setPrevIndex(activeIndex);
+      setPrevIndex(currentActiveIndex);
+    } else {
+      setSliderStyle((prev) => ({
+        ...prev,
+        opacity: 0,
+        transition: "all 300ms ease-in-out",
+      }));
     }
-  }, [activePath]);
+  }, [pathname, prevIndex]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -73,13 +96,10 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
-    const activeIndex = navLinks.findIndex((link) => {
-      const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-      return href === activePath;
-    });
+    const currentActiveIndex = getActiveIndex();
 
-    if (activeIndex !== -1 && navLinksRef.current[activeIndex]) {
-      const activeTab = navLinksRef.current[activeIndex];
+    if (currentActiveIndex !== -1 && navLinksRef.current[currentActiveIndex]) {
+      const activeTab = navLinksRef.current[currentActiveIndex];
       setSliderStyle({
         left: activeTab.offsetLeft,
         width: activeTab.offsetWidth,
@@ -91,45 +111,93 @@ export default function Navbar() {
     }
   };
 
-  const activeIndex = navLinks.findIndex((link) => {
-    const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-    return href === activePath;
-  });
+  // Scroll-based section detection
+  useEffect(() => {
+    if (pathname !== "/") {
+      setBgOpaque(false);
+      return;
+    }
+
+    const events = document.getElementById("events-carousel");
+    const blogs = document.getElementById("recent-blogs");
+    const footer = document.getElementById("footer");
+    const sections = [events, blogs ,footer].filter(Boolean);
+
+    if (sections.length === 0) return;
+
+    const navHeight = 80; // navbar height
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY + navHeight;
+      let inside = false;
+
+      sections.forEach((sec) => {
+        const top = sec.offsetTop;
+        const bottom = sec.offsetTop + sec.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          inside = true;
+        }
+      });
+
+      setBgOpaque(inside);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
 
   return (
     <>
-      <nav className="w-full bg-transparent backdrop-blur-md fixed top-0 z-50 border-b border-gray-200/50">
+      <nav
+        className={`w-full fixed top-0 z-50 border-b border-gray-200/50 transition-colors duration-300 ${
+          pathname === "/"
+            ? bgOpaque
+              ? "bg-paleskyblue shadow-md"
+              : "bg-transparent backdrop-blur-md"
+            : "bg-transparent backdrop-blur-md"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/">
-                <img className="h-8 w-auto" src="/pictoreal.png" alt="Pictoreal Logo" />
+                <Image
+                  className="h-8 w-auto"
+                  src="/pictoreal.png"
+                  alt="Pictoreal Logo"
+                  width={150}
+                  height={32}
+                  priority={true}
+                />
               </a>
             </div>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex justify-center flex-grow">
-            <div
-               onMouseLeave={handleMouseLeave}
-               className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
->
+              <div
+                onMouseLeave={handleMouseLeave}
+                className="relative flex items-center px-2 py-2 bg-pastelskyblue rounded-full"
+              >
                 {navLinks.map((link, index) => {
-                  const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
                   const isHighlighted =
-                    hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
+                    hoveredIndex !== null
+                      ? index === hoveredIndex
+                      : index === activeIndex;
 
                   return (
                     <a
-                       key={link}
-                       href={href}
-                       ref={(el) => (navLinksRef.current[index] = el)}
-                       onMouseEnter={() => handleMouseEnter(index)}
-                       className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                      isHighlighted ? "text-white" : "text-black"
-                       }`}
-                      >
-                      {link}
+                      key={link.text}
+                      href={link.href}
+                      ref={(el) => (navLinksRef.current[index] = el)}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                        isHighlighted ? "text-white" : "text-black"
+                      }`}
+                    >
+                      {link.text}
                     </a>
                   );
                 })}
@@ -156,7 +224,12 @@ export default function Navbar() {
                 aria-expanded={isMobileMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
-                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <svg
+                  className="h-6 w-6"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
                   {isMobileMenuOpen ? (
                     <path
                       strokeLinecap="round"
@@ -188,17 +261,18 @@ export default function Navbar() {
       >
         <div className="pt-4 px-4 space-y-2 sm:px-3">
           {navLinks.map((link) => {
-            const href = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-")}`;
-            const isActive = activePath === href;
+            const isActive = activeIndex === navLinks.indexOf(link);
             return (
               <a
-                key={link}
-                href={href}
+                key={link.text}
+                href={link.href}
                 className={`block w-full text-center py-3 rounded-3xl text-base font-medium transition-colors duration-300 ${
-                  isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
+                  isActive
+                    ? "bg-[#111C33] text-white"
+                    : "text-black hover:bg-gray-100"
                 }`}
               >
-                {link}
+                {link.text}
               </a>
             );
           })}

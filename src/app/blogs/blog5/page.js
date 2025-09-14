@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function blog5() {
   return (
     <>
-      <div className="flex flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
-          <div className="font-raleway font-medium pt-2 text-5xl text-firefly text-center mt-14 mb-5">
+      <div className="flex mt-[10vh]  flex-col p-2 md:p-10 pt-10">
+        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
+          <div className="font-heading text-[#111c33] font-extrabold pt-2 text-5xl text-firefly text-center mt-14 mb-5">
             Dreams and Deadlines
           </div>
           <div className="flex items-center justify-center">
@@ -17,7 +17,7 @@ export default function blog5() {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex justify-center w-auto md:w-2/3 gap-8 mx-auto md:mx-32">
+            <div className="flex justify-center w-auto md:w-1/2 gap-8 mx-auto md:mx-32">
               <img
                 src="/blog/blog5-poster-img.png"
                 alt="Blog Poster"
@@ -30,7 +30,7 @@ export default function blog5() {
             </div>
           </div>
 
-          <div className="text-justify font-poppins text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-poppins font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
               <p className="mb-5 text-center">
                 <strong>A life of learning and leisure</strong>
@@ -75,7 +75,7 @@ export default function blog5() {
                 maybe more than a year. It struck me that I had been so occupied
                 with my academic schedule that I had forgotten about my hobbies.
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
+              <h2 className="font-body text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Embracing the New Me, Nurturing the Old Self :</strong>
               </h2>
               <p className="mb-5">
@@ -121,7 +121,7 @@ export default function blog5() {
                   became more productive.
                 </strong>
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
+              <h2 className="font-body text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Evolving Through Exploration :</strong>
               </h2>
               <p className="mb-5">
@@ -147,7 +147,7 @@ export default function blog5() {
                 doing this, I could enhance my hobby without hindering my
                 academic commitments.
               </p>
-              <h2 className="font-raleway font-medium text-3xl text-firefly mb-3 mt-8">
+              <h2 className="font-body text-3xl text-firefly mb-3 mt-8">
                 <strong>Small Steps To Big Wins</strong>
               </h2>
               <p className="mb-5">
@@ -272,7 +272,7 @@ export default function blog5() {
                 <img src="/blog/3.svg" alt="Content Image" className="w-7/10" />
               </div>
               <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform transform hover:scale-110">
+                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform hover:text-white transform hover:scale-110">
                   Back
                 </div>
               </Link>

@@ -34,9 +34,9 @@ const Footer = () => {
             <h3 className="text-xl font-heading text-white mb-4">Useful Links</h3>
             <ul className="space-y-2">
               <li><a href="/" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Home</a></li>
-              <li><a href="/gallery" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Gallery</a></li>
+              <li><a href="/events" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Events</a></li>
               <li><a href="/blogs" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Blogs</a></li>
-              <li><a href="/article" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Article</a></li>
+              <li><a href="/audio/v27" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Article</a></li>
               <li><a href="/ourteam" className="hover:text-[#EAF7FF] hover:underline transition-colors duration-300">Our Team</a></li>
             </ul>
           </div>
