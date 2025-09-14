@@ -112,7 +112,7 @@ const EventsCarousel = () => {
               aria-label={`View event for ${events[currentIndex].name}`}
             >
               <div className="relative group cursor-pointer">
-                <Image src={events[currentIndex].image} alt={events[currentIndex].name} width={512} height={416} loading="lazy" className="w-[80vw] h-auto max-h-[60vh] md:w-[28rem] md:h-[22rem] lg:w-[32rem] lg:h-[26rem] object-cover rounded-2xl shadow-[0_0_20px_5px_rgba(190,227,248,0.4)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.5)] transition-all duration-300"/>
+                <Image src={events[currentIndex].image} alt={events[currentIndex].name} width={512} height={416} loading="lazy" className="w-[80vw] h-52 sm:h-auto max-h-[60vh] md:w-[28rem] md:h-[22rem] lg:w-[32rem] lg:h-[26rem] object-cover rounded-2xl shadow-[0_0_20px_5px_rgba(190,227,248,0.4)] hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.5)] transition-all duration-300"/>
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 hidden md:flex items-center justify-center transition-opacity duration-300 rounded-2xl">
                   <p className="text-white font-heading text-xl md:text-3xl font-bold text-center px-4">{events[currentIndex].name}</p>
                 </div>

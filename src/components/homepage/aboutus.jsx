@@ -90,7 +90,7 @@ const AboutUs = () => {
             <button
               onClick={handlePrev}
               disabled={isTransitioning}
-              className="absolute opacity-50 left-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
+              className="absolute opacity-50 left-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:opacity-75 transition disabled:opacity-50"
             >
               ‹
             </button>
@@ -99,7 +99,7 @@ const AboutUs = () => {
             <button
               onClick={handleNext}
               disabled={isTransitioning}
-              className="absolute opacity-50 right-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition disabled:opacity-50"
+              className="absolute opacity-50 right-3 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 rounded-full p-2 text-white hover:opacity-75 transition disabled:opacity-50"
             >
               ›
             </button>
