@@ -1,15 +1,27 @@
 "use client";
 
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useLayoutEffect, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image"; // 1. IMPORT NEXT/IMAGE
+import Image from "next/image"; 
 import ArrowBtn from "./arrowbtn";
 
-// Arrow Icon SVG Component (omitted for brevity)
+// Arrow Icon SVG Component
 const ArrowIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B2D4F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" > <path d="M7 17L17 7"></path> <polyline points="7 7 17 7 17 17"></polyline> </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#0B2D4F"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17L17 7"></path>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
 );
-
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,6 +33,7 @@ export default function Navbar() {
   });
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [prevIndex, setPrevIndex] = useState(null);
+  const [bgOpaque, setBgOpaque] = useState(false);
 
   const navLinksRef = useRef([]);
   const pathname = usePathname();
@@ -60,7 +73,11 @@ export default function Navbar() {
       }));
       setPrevIndex(currentActiveIndex);
     } else {
-      setSliderStyle((prev) => ({ ...prev, opacity: 0, transition: "all 300ms ease-in-out" }));
+      setSliderStyle((prev) => ({
+        ...prev,
+        opacity: 0,
+        transition: "all 300ms ease-in-out",
+      }));
     }
   }, [pathname, prevIndex]);
 
@@ -94,15 +111,59 @@ export default function Navbar() {
     }
   };
 
+  // Scroll-based section detection
+  useEffect(() => {
+    if (pathname !== "/") {
+      setBgOpaque(false);
+      return;
+    }
+
+    const events = document.getElementById("events-carousel");
+    const blogs = document.getElementById("recent-blogs");
+    const footer = document.getElementById("footer");
+    const sections = [events, blogs ,footer].filter(Boolean);
+
+    if (sections.length === 0) return;
+
+    const navHeight = 80; // navbar height
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY + navHeight;
+      let inside = false;
+
+      sections.forEach((sec) => {
+        const top = sec.offsetTop;
+        const bottom = sec.offsetTop + sec.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          inside = true;
+        }
+      });
+
+      setBgOpaque(inside);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
+
   return (
     <>
-      <nav className="w-full bg-transparent backdrop-blur-md fixed top-0 z-50 border-b border-gray-200/50">
+      <nav
+        className={`w-full fixed top-0 z-50 border-b border-gray-200/50 transition-colors duration-300 ${
+          pathname === "/"
+            ? bgOpaque
+              ? "bg-paleskyblue shadow-md"
+              : "bg-transparent backdrop-blur-md"
+            : "bg-transparent backdrop-blur-md"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/">
-                {/* 2. REPLACED <img> WITH <Image> and added priority */}
                 <Image
                   className="h-8 w-auto"
                   src="/pictoreal.png"
@@ -122,7 +183,9 @@ export default function Navbar() {
               >
                 {navLinks.map((link, index) => {
                   const isHighlighted =
-                    hoveredIndex !== null ? index === hoveredIndex : index === activeIndex;
+                    hoveredIndex !== null
+                      ? index === hoveredIndex
+                      : index === activeIndex;
 
                   return (
                     <a
@@ -152,9 +215,38 @@ export default function Navbar() {
               <ArrowBtn text="Magazines" path="/magazines" />
             </div>
 
-            {/* Mobile Button (omitted for brevity but logic is the same) */}
+            {/* Mobile Button */}
             <div className="md:hidden flex items-center">
-                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-gray-100 focus:outline-none z-50" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen} > <span className="sr-only">Open main menu</span> <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"> {isMobileMenuOpen ? ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> ) : ( <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /> )} </svg> </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-gray-100 focus:outline-none z-50"
+                aria-controls="mobile-menu"
+                aria-expanded={isMobileMenuOpen}
+              >
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className="h-6 w-6"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -175,7 +267,9 @@ export default function Navbar() {
                 key={link.text}
                 href={link.href}
                 className={`block w-full text-center py-3 rounded-3xl text-base font-medium transition-colors duration-300 ${
-                  isActive ? "bg-[#111C33] text-white" : "text-black hover:bg-gray-100"
+                  isActive
+                    ? "bg-[#111C33] text-white"
+                    : "text-black hover:bg-gray-100"
                 }`}
               >
                 {link.text}
