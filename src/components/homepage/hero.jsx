@@ -32,13 +32,13 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-screen -mt-20">
+    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
 
 
       {/* ------------------ DESKTOP / TABLET (≥ md) ------------------ */}
-      <div className="hidden md:flex  flex-col items-center justify-center w-full">
+      <div className="hidden md:flex flex-col items-center justify-center w-full">
         {/* Center Text */}
-        <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2">
+        <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 mt-16 md:mt-20">
           <h1 className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[110px] font-heading font-normal leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#001730]">
             Welcome to <br /> Pictoreal
           </h1>
@@ -51,9 +51,9 @@ const Hero = () => {
         </p>
 
         {/* Cards Section */}
-        <div className="flex flex-col md:block w-full items-center justify-center gap-10 mt-10 ">
+        <div className="flex flex-col md:block w-full items-center justify-center mt-10 gap-10">
           {/* Left Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16 mt-10">
+          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16">
 
             <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
             <div className="w-[180px] sm:w-[200px] md:w-[220px] rounded-[10px] overflow-hidden shadow-lg bg-white">
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
 
           {/* Right Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16 mt-6">
+          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16">
             <div className="w-[180px] sm:w-[200px] md:w-[230px] rounded-[10px] overflow-hidden shadow-lg bg-white">
               <Image
                 src="/magazines/vol27.png"
@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* ------------------ MOBILE (< md) ------------------ */}
-      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden mt-20">
+      <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-8">
           <div className="text-3xl sm:text-4xl font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
