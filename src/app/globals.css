@@ -32,6 +32,16 @@
   --font-body: Inter, "sans-serif";
 }
 
+@keyframes glowing-border {
+  0% { box-shadow: 0 0 5px rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(34, 197, 94, 0.4); }
+}
+
+.border-2.border-green-500.rounded-lg.p-4 {
+  animation: glowing-border 2s infinite;
+}
+
 html, body {
   overflow-x: hidden;
 }
