@@ -84,7 +84,7 @@ const TeamPage = () => {
       id: 11,
       name: "Aditya Tidake",
       image: "/developers/Aditya_Tidake.jpg",
-      github: "https://github.com/AdityaTidake",
+      github: "https://github.com/Aditya_Tidake",
       linkedin: "https://www.linkedin.com/in/aditya-tidake-977504292/",
     },
     {
