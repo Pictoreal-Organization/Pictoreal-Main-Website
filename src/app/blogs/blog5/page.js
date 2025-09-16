@@ -204,9 +204,9 @@ export default function blog5() {
                   alt="Balancing activities"
                 />
               </div>
-              <h2 className="font-heading text-3xl text-firefly mb-3 mt-8">
+              <h3 className="font-heading text-3xl text-firefly mb-3 mt-8">
                 <strong>Finding Peace Amid The Chaos:</strong>
-              </h2>
+              </h3>
               <p className="mb-5">
                 By the time I reached my final year, I had found a rhythm. The
                 pressure of placements, final year projects, and looming
