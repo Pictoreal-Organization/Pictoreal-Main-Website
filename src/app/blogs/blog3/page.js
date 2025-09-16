@@ -28,7 +28,7 @@ export default function Blog3() {
               />
             </div>
 
-            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8">
+            <div className="font-body text-[20px] text-firefly pl-8 pt-8">
               <span className="text-firefly">Author: </span>Nehal Shivane,
               Sampada Tagalpallewar, Shruti Mone
             </div>

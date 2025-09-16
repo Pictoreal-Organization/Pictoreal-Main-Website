@@ -24,13 +24,13 @@ export default function Blog1() {
                 className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-poppins text-[20px] font-body text-firefly pl-8 pt-8 text-center">
+            <div className="font-body text-[20px] text-firefly pl-8 pt-8 text-center">
               <span className="text-firefly">Author: </span>Prem Rahinj, Spondon
               Nath
             </div>
           </div>
 
-          <div className="text-justify font-poppins font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
               <p>
                 When we picture an ideal being, what do we think of? One can say
@@ -64,7 +64,7 @@ export default function Blog1() {
                 />
               </div>
               <br />
-              <p className="mb-5">
+              <p className="mb-5 font-body">
                 Ready to dive into the real-world{" "}
                 <b className="text-lg">Uncanny Valley?</b> It's a place where AI
                 meets humanity in ways that might make one reconsider their

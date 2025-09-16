@@ -29,7 +29,7 @@ export default function Blog2() {
                 className="w-full border-5 border-[#1a365d]"
               />
             </div>
-            <div className="font-poppins text-[20px] text-firefly pt-8">
+            <div className="font-body text-[20px] text-firefly pt-8">
               <span className="text-firefly text-center justify-center">
                 Author:{" "}
               </span>
@@ -37,7 +37,7 @@ export default function Blog2() {
             </div>
           </div>
 
-          <div className="text-justify font-body text-[17px] font-body text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
               <p className="mb-4">
                 Once upon a time, in a universe far, far smaller than we can
@@ -51,7 +51,7 @@ export default function Blog2() {
                 becomes monumental.
               </p>
 
-              <h3 className="text-xl font-bold py-4 mt-4">
+              <h3 className="text-xl font-bold font-heading py-4 mt-4">
                 Chapter 1: The Intro - Our Subatomic Stage
               </h3>
               <p className="mb-4">
@@ -78,7 +78,7 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl font-bold py-4 mt-4">
+              <h3 className="text-xl font-bold font-heading py-4 mt-4">
                 Chapter 2: The Cast of Characters
               </h3>
               <div className="flex flex-col md:flex-row justify-center items-center mb-4">
@@ -104,7 +104,7 @@ export default function Blog2() {
                 </p>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 3: The Forces at Play
               </h3>
               <p className="mb-4">
@@ -126,7 +126,7 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 4: The Quantum Quest
               </h3>
               <div className="md:flex mb-4">
@@ -151,7 +151,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 5: The Higgs Boson – The Celestial Composer
               </h3>
               <div className="md:flex mb-4">
@@ -185,7 +185,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 6: The Fundamental Forces - Cosmic Choreography
               </h3>
               <p className="mb-4">
@@ -223,7 +223,7 @@ export default function Blog2() {
               </p>
 
               <div className="md:flex mb-4">
-                <p className="font-caveat text-2xl font-semibold italic mr-2">
+                <p className="font-body text-2xl font-semibold italic mr-2">
                   <i>
                     In the cosmic ballet of quarks and light, Particles dance in
                     the depths of the night. Fundamental forces, silent and
