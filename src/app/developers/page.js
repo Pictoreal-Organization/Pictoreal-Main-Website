@@ -48,7 +48,7 @@ const TeamPage = () => {
       id: 6,
       name: "Jay Kotwal",
       image: "/developers/Jay_kotwal.jpg",
-      github: "htthttps://github.com/Jkotwal01",
+      github: "https://github.com/Jkotwal01",
       linkedin: "https://www.linkedin.com/in/jay-kotwal/",
     },
     {
@@ -84,7 +84,7 @@ const TeamPage = () => {
       id: 11,
       name: "Aditya Tidake",
       image: "/developers/Aditya_Tidake.jpeg",
-      github: "https://github.com/Aditya_Tidake",
+      github: "https://github.com/AdityaTidake",
       linkedin: "https://www.linkedin.com/in/aditya-tidake-977504292/",
     },
     {
@@ -138,7 +138,7 @@ const TeamPage = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-firefly mb-4">Development Team</h1>
+        <h1 className="text-4xl font-heading font-bold text-firefly mb-4">Development Team</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
