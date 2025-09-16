@@ -20,7 +20,7 @@ const TeamPage = () => {
       name: "Hemangi Patil",
       image: "/developers/Hemangi_Patil.jpg",
       github: "https://GitHub.com/hemangi1324",
-      linkedin: "https://www.linkedin.com/in//hemangi-patil-85854132b/",
+      linkedin: "https://www.linkedin.com/in/hemangi-patil-85854132b/",
     },
     {
       id: 3,
