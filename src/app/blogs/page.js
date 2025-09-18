@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import ArrowBtn from "@/components/homepage/arrowbtn";
 
 export default function BlogsPage() {
   const blogs = [
@@ -53,9 +54,9 @@ export default function BlogsPage() {
       <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
         BLOGS
       </p>
-
+      
       {/* Search + Filters */}
-      <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
+      {/* <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
         <div className="relative w-full md:w-1/3">
           <input
             type="text"
@@ -65,11 +66,11 @@ export default function BlogsPage() {
           <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
         </div>
 
-        <div className="flex gap-4 w-full md:w-auto">
+        <div className="flex gap-4 w-full md:w-auto"> */}
           {/* Genres Dropdown */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full">
+          {/* <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full"> */}
             {/* Genre Dropdown */}
-            <div className="relative w-full shadow-md sm:w-auto">
+            {/* <div className="relative w-full shadow-md sm:w-auto">
               <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>All Genres</option>
                 <option>Fiction</option>
@@ -77,10 +78,10 @@ export default function BlogsPage() {
                 <option>Poetry</option>
               </select>
               <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
-            </div>
+            </div> */}
 
             {/* Sorting Dropdown */}
-            <div className="relative shadow-md w-full sm:w-auto">
+            {/* <div className="relative shadow-md w-full sm:w-auto">
               <select className="appearance-none w-full sm:w-auto px-4 py-2 border-2 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
                 <option>Latest Creation</option>
                 <option>Oldest First</option>
@@ -90,7 +91,7 @@ export default function BlogsPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Blog Cards */}
       <div className="rounded-4xl p-6 flex flex-col mx-auto items-start gap-8 max-w-6xl">
@@ -124,21 +125,23 @@ export default function BlogsPage() {
               {/* Tags + Button */}
               {/* CHANGE 3: Centered tags/button on mobile and used flex-wrap for better flow. */}
               <div className="flex flex-wrap items-center justify-center gap-4 mt-6 md:justify-start">
-                <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                {/* <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Featured
                 </span>
 
                 <span className="whitespace-nowrap px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
                   Student Life
-                </span>
-
-                <Link
+                </span> */}
+                <div className="md:ml-auto flex">
+                  <ArrowBtn text="Read More" path={`/blogs/${blog.id}`}/>
+                </div>                    
+                {/* <Link
                   href={`/blogs/${blog.id}`}
                   // CHANGE 4: Pushed button to the right ONLY on desktop and removed invalid 'max-sm' classes.
                   className="md:ml-auto whitespace-nowrap px-4 py-2 duration-500 transition-transform transform hover:scale-120 bg-deepnavy text-white rounded-full hover:bg-[#003366] hover:text-white transition flex items-center justify-center text-xs md:text-sm border"
                 >
                   Read More
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
