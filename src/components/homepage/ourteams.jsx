@@ -96,7 +96,7 @@ const teams = {
 const TeamContent = ({ teamName, teamData }) => {
   const ActiveIcon = teamData.icon;
   return (
-    <div className="bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl p-8 relative overflow-hidden mt-4 md:mt-0">
+    <div className="bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl p-8 relative overflow-hidden">
       <div className="absolute top-8 right-8 opacity-[0.03]">
         <ActiveIcon className="w-32 h-32 text-[#111C33] transform -rotate-12" />
       </div>
@@ -196,7 +196,7 @@ const OurTeams = () => {
                       : "hover:bg-white/80 bg-transparent md:border-0 text-[#111C33]/70 md:hover:bg-black/5"
                     }`}
                 >
-                  <div className="flex items-center w-full">
+                  <div className="flex items-center w-full p-2">
                     <TeamIcon
                       className={`w-5 h-5 mr-4 transition-transform duration-300 ${isActive
                           ? "rotate-12 scale-110"

@@ -101,7 +101,7 @@ export default function BlogsPage() {
           <div
             key={blog.id}
             // CHANGE 1: Centered items on mobile and aligned them to the start on desktop.
-            className="bg-white shadow-md rounded-4xl p-6 flex flex-col items-center md:flex-row md:items-start gap-6 border border-white"
+            className="bg-white shadow-md rounded-4xl p-6 flex flex-col pt-8 sm:pt-6 items-center md:flex-row md:items-start gap-6 border border-white"
           >
             {/* Image */}
             <Image

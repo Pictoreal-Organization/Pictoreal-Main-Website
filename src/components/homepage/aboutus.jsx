@@ -52,7 +52,7 @@ const AboutUs = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-white w-full h-full justify-center items-center flex shadow-lg">
+    <div className="bg-white w-full h-full justify-center p-3 items-center flex shadow-lg">
       <div className="p-5 max-w-7xl w-full h-full sm:p-12 ">
         <div className="flex flex-col lg:flex-row items-start lg:space-x-12">
 

@@ -145,7 +145,7 @@ export default function RecentBlogs() {
   return (
     <section 
     id="recent-blogs" 
-    className="bg-[#111C33] text-white min-h-screen flex flex-col justify-center py-16 px-4 sm:px-6 lg:px-8">
+    className="bg-[#111C33] text-white min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl w-full mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
