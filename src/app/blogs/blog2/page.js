@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ArrowBtn from "@/components/homepage/arrowbtn";
 
 export default function Blog2() {
   return (
@@ -227,11 +228,9 @@ export default function Blog2() {
               </div>
             </article>
             <div className="flex flex-col items-center w-full">
-              <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 hover:text-white rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform transform hover:scale-110">
-                  Back
-                </div>
-              </Link>
+              <div className="flex">
+                <ArrowBtn text="Back" path={`/blogs`} />
+              </div>
             </div>
           </div>
         </div>

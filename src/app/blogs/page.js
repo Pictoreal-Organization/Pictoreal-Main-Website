@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+// The 'next/image' component is now being used as requested.
+import Image from "next/image"; 
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import ArrowBtn from "@/components/homepage/arrowbtn";
@@ -54,44 +56,44 @@ export default function BlogsPage() {
       <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
         BLOGS
       </p>
-      
+
       {/* Search + Filters */}
       {/* <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
-        <div className="relative w-full md:w-1/3">
-          <input
-            type="text"
-            placeholder="Search Stories, Authors, or Themes..."
-            className="w-full px-10 py-2 border-2 shadow-md bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
-          />
-          <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
-        </div>
+        <div className="relative w-full md:w-1/3">
+          <input
+            type="text"
+            placeholder="Search Stories, Authors, or Themes..."
+            className="w-full px-10 py-2 border-2 shadow-md bg-white border-deepnavy rounded-lg focus:outline-none text-deepnavy placeholder:text-deepnavy"
+          />
+          <IoIosSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-deepnavy text-xl" />
+        </div>
 
-        <div className="flex gap-4 w-full md:w-auto"> */}
-          {/* Genres Dropdown */}
-          {/* <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full"> */}
-            {/* Genre Dropdown */}
-            {/* <div className="relative w-full shadow-md sm:w-auto">
-              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
-                <option>All Genres</option>
-                <option>Fiction</option>
-                <option>Non-fiction</option>
-                <option>Poetry</option>
-              </select>
-              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
-            </div> */}
+        <div className="flex gap-4 w-full md:w-auto"> */}
+      {/* Genres Dropdown */}
+      {/* <div className="flex flex-wrap gap-4 sm:gap-6 items-center w-full"> */}
+      {/* Genre Dropdown */}
+      {/* <div className="relative w-full shadow-md sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto bg-white px-4 py-2 border-2 border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+                <option>All Genres</option>
+                <option>Fiction</option>
+                <option>Non-fiction</option>
+                <option>Poetry</option>
+              </select>
+              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+            </div> */}
 
-            {/* Sorting Dropdown */}
-            {/* <div className="relative shadow-md w-full sm:w-auto">
-              <select className="appearance-none w-full sm:w-auto px-4 py-2 border-2 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
-                <option>Latest Creation</option>
-                <option>Oldest First</option>
-                <option>Most Popular</option>
-              </select>
-              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
-            </div>
-          </div>
-        </div>
-      </div> */}
+      {/* Sorting Dropdown */}
+      {/* <div className="relative shadow-md w-full sm:w-auto">
+              <select className="appearance-none w-full sm:w-auto px-4 py-2 border-2 bg-white border-deepnavy rounded-lg text-deepnavy pr-10 focus:outline-none text-sm sm:text-base">
+                <option>Latest Creation</option>
+                <option>Oldest First</option>
+                <option>Most Popular</option>
+              </select>
+              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-deepnavy pointer-events-none" />
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       {/* Blog Cards */}
       <div className="rounded-4xl p-6 flex flex-col mx-auto items-start gap-8 max-w-6xl">
@@ -102,11 +104,13 @@ export default function BlogsPage() {
             className="bg-white shadow-md rounded-4xl p-6 flex flex-col items-center md:flex-row md:items-start gap-6 border border-white"
           >
             {/* Image */}
-            <img
+            <Image
               src={blog.img}
               alt={blog.title}
-              // CHANGE 2: Made image full-width on mobile and fixed-width on larger screens.
-              className="w-auto max-h-40 md:max-h-max object-cover object-top md:w-[140px] lg:w-[160px] aspect-[7/8] border-2 border-[#1a365d] rounded"
+              width={160}
+              height={182}
+              // CHANGE 2: Made image responsive while maintaining aspect ratio.
+              className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-auto object-cover object-top rounded border-2 border-[#1a365d] aspect-[7/8]"
             />
 
             {/* Content */}
@@ -125,23 +129,17 @@ export default function BlogsPage() {
               {/* Tags + Button */}
               {/* CHANGE 3: Centered tags/button on mobile and used flex-wrap for better flow. */}
               <div className="flex flex-wrap items-center justify-center gap-4 mt-6 md:justify-start">
-                {/* <span className="px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
-                  Featured
-                </span>
+                {/* <span className="px-4 py-1 bg-[#003666] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                  Featured
+                </span>
 
-                <span className="whitespace-nowrap px-4 py-1 bg-[#003366] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
-                  Student Life
-                </span> */}
+                <span className="whitespace-nowrap px-4 py-1 bg-[#003666] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                  Student Life
+                </span> */}
+
                 <div className="md:ml-auto flex">
                   <ArrowBtn text="Read More" path={`/blogs/${blog.id}`}/>
-                </div>                    
-                {/* <Link
-                  href={`/blogs/${blog.id}`}
-                  // CHANGE 4: Pushed button to the right ONLY on desktop and removed invalid 'max-sm' classes.
-                  className="md:ml-auto whitespace-nowrap px-4 py-2 duration-500 transition-transform transform hover:scale-120 bg-deepnavy text-white rounded-full hover:bg-[#003366] hover:text-white transition flex items-center justify-center text-xs md:text-sm border"
-                >
-                  Read More
-                </Link> */}
+                </div> 
               </div>
             </div>
           </div>
@@ -151,38 +149,3 @@ export default function BlogsPage() {
   );
 }
 
-
-
-
-// import Link from 'next/link';
-// import dbConnect from '../../lib/mongodb';
-// import Blog from '../../models/Blog';
-
-// export default async function BlogListPage() {
-//   // Connect to MongoDB
-//   await dbConnect();
-
-//   // Fetch all published blogs
-//   const blogs = await Blog.find({ draft: false }).sort({ publishedAt: -1 });
-
-//   return (
-//     <div className="p-4">
-//       <h1 className="text-3xl font-bold mb-6">All Blogs</h1>
-//       {blogs.length === 0 && <p>No blogs found.</p>}
-//       <div className="space-y-4">
-//         {blogs.map((blog) => (
-//           <div key={blog._id} className="p-4 border rounded shadow">
-//             <h2 className="text-xl font-semibold">{blog.title}</h2>
-//             <p className="mt-2">{blog.content.substring(0, 100)}...</p>
-//             <Link
-//               href={`/blogs/${blog._id}`}
-//               className="text-blue-600 mt-2 inline-block"
-//             >
-//               Read more
-//             </Link>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
