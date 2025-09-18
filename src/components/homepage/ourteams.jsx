@@ -191,7 +191,7 @@ const OurTeams = () => {
               <React.Fragment key={teamName}>
                 <button
                   onClick={() => handleTeamClick(teamName)}
-                  className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-3 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${isActive
+                  className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-1 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${isActive
                       ? activeClass
                       : "hover:bg-white/80 bg-transparent md:border-0 text-[#111C33]/70 md:hover:bg-black/5"
                     }`}
