@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Palette,
   Edit3,
@@ -11,14 +11,9 @@ import {
   Play,
   Users,
   Sparkles,
-  Zap,
-  Lightbulb,
-  CheckCircle,
-  CheckCircle2,
-  Award,
-  Compass,
-  Activity,
   Layers,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 // Data can be kept outside the component
@@ -144,11 +139,19 @@ const TeamContent = ({ teamName, teamData }) => {
 };
 
 const OurTeams = () => {
-  // 2. Updated state to allow for 'null' (nothing selected/collapsed)
-  // We keep "Design" as default for a better desktop experience on first load.
-  const [activeTeam, setActiveTeam] = useState("Design");
+  const [activeTeam, setActiveTeam] = useState(null);
 
-  // 3. New handler to toggle selection
+  useEffect(() => {
+    // This code only runs on the client, after the component has loaded
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+    if (isDesktop) {
+      setActiveTeam("Design");
+    }
+    // The empty array [] means this effect runs only once on mount
+  }, []);
+
+  // New handler to toggle selection
   const handleTeamClick = (teamName) => {
     if (activeTeam === teamName) {
       setActiveTeam(null); // Collapse if the same team is clicked again
@@ -172,11 +175,11 @@ const OurTeams = () => {
         </div>
       </div>
 
-      {/* 4. The main layout now handles both mobile and desktop structures */}
+      {/* The main layout now handles both mobile and desktop structures */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center w-11/12 max-w-7xl">
         {/* Left column / Accordion container */}
         <div className="flex flex-col gap-3 md:w-1/4">
-          {Object.entries(teams).map(([teamName, teamData], index) => {
+          {Object.entries(teams).map(([teamName, teamData]) => {
             const TeamIcon = teamData.icon;
             const isActive = activeTeam === teamName;
 
@@ -188,36 +191,44 @@ const OurTeams = () => {
               <React.Fragment key={teamName}>
                 <button
                   onClick={() => handleTeamClick(teamName)}
-                  className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-2 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${
-                    isActive
+                  className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-3 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${isActive
                       ? activeClass
-                      : "bg-transparent text-[#111C33]/70 hover:bg-black/5 hover:text-[#111C33]"
-                  }`}
+                      : "hover:bg-white/80 bg-transparent md:border-0 text-[#111C33]/70 md:hover:bg-black/5"
+                    }`}
                 >
                   <div className="flex items-center w-full">
                     <TeamIcon
-                      className={`w-5 h-5 mr-4 transition-transform duration-300 ${
-                        isActive
+                      className={`w-5 h-5 mr-4 transition-transform duration-300 ${isActive
                           ? "rotate-12 scale-110"
                           : "group-hover:rotate-6"
-                      }`}
+                        }`}
                     />
                     <span>{teamName}</span>
+
+                    {/* This container will now be hidden on desktop screens */}
+                    <div className="ml-auto pl-2 md:hidden">
+                      {isActive ? (
+                        <ChevronUp className="w-5 h-5" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5" />
+                      )}
+                    </div>
                   </div>
                 </button>
 
-                {/* 5. Mobile-only accordion content, appears below the button */}
-                {isActive && (
-                  <div className="md:hidden">
-                    <TeamContent teamName={teamName} teamData={teamData} />
-                  </div>
-                )}
+                {/* Mobile-only accordion content, now with smooth transition */}
+                <div
+                  className={`md:hidden overflow-hidden transition-[max-height] duration-500 ease-in-out ${isActive ? "max-h-[1000px]" : "max-h-0"
+                    }`}
+                >
+                  <TeamContent teamName={teamName} teamData={teamData} />
+                </div>
               </React.Fragment>
             );
           })}
         </div>
 
-        {/* 6. Desktop-only content panel, appears on the right */}
+        {/* Desktop-only content panel, appears on the right */}
         <div className="hidden md:block md:w-2/3">
           {activeTeam ? (
             <TeamContent teamName={activeTeam} teamData={teams[activeTeam]} />
