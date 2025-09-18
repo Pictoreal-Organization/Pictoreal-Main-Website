@@ -193,7 +193,7 @@ export default function AudioArticlePage() {
                       // Show Play button when paused
                       <button
                         onClick={handlePlayPause}
-                        className="p-5 bg-[#003366]/80 rounded-full text-white transform transition hover:scale-110 backdrop-blur-md"
+                        className="p-5 bg-[#111c33]/80 rounded-full text-white transform transition hover:scale-110 backdrop-blur-md"
                         aria-label="Play"
                       >
                         <Play className="w-12 h-12 fill-current" />
@@ -203,21 +203,21 @@ export default function AudioArticlePage() {
                       <div className="flex items-center gap-8 text-white">
                         <button
                           onClick={() => handleSeek(-5)}
-                          className="p-3 bg-[#003366]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-3 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Rewind 5 seconds"
                         >
                           <Rewind className="w-8 h-8" />
                         </button>
                         <button
                           onClick={handlePlayPause}
-                          className="p-5 bg-[#003366]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-5 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Pause"
                         >
                           <Pause className="w-10 h-10" />
                         </button>
                         <button
                           onClick={() => handleSeek(5)}
-                          className="p-3 bg-[#003366]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-3 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Fast-forward 5 seconds"
                         >
                           <FastForward className="w-8 h-8" />
