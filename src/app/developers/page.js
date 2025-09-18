@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdError } from "react-icons/md";
+import Image from "next/image";
 
 const TeamPage = () => {
   const [linkErrors, setLinkErrors] = useState({});
@@ -138,7 +139,9 @@ const TeamPage = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-heading font-bold text-firefly mb-4">Development Team</h1>
+        <h1 className="text-4xl font-heading font-bold text-firefly mb-4">
+          Development Team
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
@@ -147,16 +150,22 @@ const TeamPage = () => {
             key={member.id}
             className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500 min-h-[20rem] mb-10"
           >
-            <div className="relative pb-80">
-              <img
+            <div className="relative w-full h-80">
+              <Image
                 src={member.image}
                 alt={member.name}
-                className="absolute h-full w-full object-cover"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       25vw"
               />
             </div>
 
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-900">
+                {member.name}
+              </h3>
               <div className="mt-4 flex items-center space-x-4">
                 <button
                   onClick={() => handleProfileClick(member.github, member.id)}
