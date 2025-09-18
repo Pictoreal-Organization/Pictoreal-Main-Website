@@ -3,18 +3,18 @@ import Link from "next/link";
 export default function blog5() {
   return (
     <>
-      <div className="flex mt-[10vh]  flex-col p-2 md:p-10 pt-10">
+      <div className="flex sm:mt-[10vh] flex-col p-2 md:p-10 sm:pt-10">
         <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 text-5xl text-firefly text-center mt-14 mb-5">
+          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Dreams and Deadlines
           </div>
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <img
               src="/blog/1.svg"
               alt="Design"
               className="m-auto max-w-full h-auto"
             />
-          </div>
+          </div> */}
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex justify-center w-auto md:w-1/2 gap-8 mx-auto md:mx-32">
@@ -24,9 +24,8 @@ export default function blog5() {
                 className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-body text-[20px] text-firefly pl-8 pt-8 text-center">
-              <span className="text-firefly">Author: </span>Harshit Vora, Omkar
-              Desai
+            <div className="font-body text-[20px] text-firefly flex px-4 pt-8 text-center">
+              <p className="text-firefly">Author: Harshit Vora, Omkar Desai </p>
             </div>
           </div>
 
@@ -268,9 +267,9 @@ export default function blog5() {
               </div>
             </article>
             <div className="flex flex-col items-center w-full">
-              <div className="flex justify-center w-full mb-4">
+              {/* <div className="flex justify-center w-full mb-4">
                 <img src="/blog/3.svg" alt="Content Image" className="w-7/10" />
-              </div>
+              </div> */}
               <Link href="/blogs">
                 <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform hover:text-white transform hover:scale-110">
                   Back
