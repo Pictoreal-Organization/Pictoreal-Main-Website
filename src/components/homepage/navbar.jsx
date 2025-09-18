@@ -435,7 +435,7 @@ export default function Navbar() {
         className={`w-full fixed top-0 z-50 border-b border-gray-200/50 transition-colors duration-300 ${
           pathname === "/"
             ? bgOpaque
-              ? "bg-paleskyblue shadow-md"
+              ? "bg-paleskyblue/25 backdrop-blur-md shadow-md"
               : "bg-transparent backdrop-blur-md"
             : "bg-transparent backdrop-blur-md"
         }`}
