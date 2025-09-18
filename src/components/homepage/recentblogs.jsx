@@ -127,7 +127,7 @@ export default function RecentBlogs() {
       excerpt:
         "A deep dive into balancing creative aspirations with the practicalities of project timelines and client expectations.",
       img: "/blog/blog5-poster-img.png",
-      tags: ["Productivity", "Student Life"],
+      //tags: ["Productivity", "Student Life"],
       imagePosition: "top", // 👈 first card: show top
     },
     {
@@ -137,7 +137,7 @@ export default function RecentBlogs() {
       excerpt:
         "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape our universe.",
       img: "/blog/blog2-poster-img.png",
-      tags: ["Science", "Featured"],
+      //tags: ["Science", "Featured"],
       imagePosition: "center", // 👈 second card: show center
     },
   ];
@@ -191,7 +191,7 @@ export default function RecentBlogs() {
                     }`}
                   />
 
-                  {/* Floating Tags */}
+                  {/* Floating Tags
                   <div className="absolute top-3 left-3 z-20 flex gap-2">
                     {blog.tags.map((tag) => (
                       <span
@@ -201,7 +201,7 @@ export default function RecentBlogs() {
                         {tag}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content Section */}
