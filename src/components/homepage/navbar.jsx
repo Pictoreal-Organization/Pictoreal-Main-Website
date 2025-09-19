@@ -148,7 +148,7 @@
 //               <a href="/">
 //                 <Image
 //                   className="h-8 w-auto"
-//                   src="/pictoreal.png"
+//                   src="/navbar_logo.png"
 //                   alt="Pictoreal Logo"
 //                   width={150}
 //                   height={32}
@@ -447,7 +447,7 @@ export default function Navbar() {
               <a href="/">
                 <Image
                   className="h-8 w-auto"
-                  src="/pictoreal.png"
+                  src="/navbar_logo.png"
                   alt="Pictoreal Logo"
                   width={150}
                   height={32}
