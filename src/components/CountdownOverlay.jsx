@@ -207,11 +207,11 @@ export default function CountdownOverlay() {
       const diff = getTimeLeft();
       if (diff <= 0) {
         setIsTransitioning(true);
-        setTimeout(() => setShowWordmark(true), 800);
+        setTimeout(() => setShowWordmark(true), 2000);
         setTimeout(() => {
           setShowOverlay(false);
           clearInterval(timer);
-        }, 2500);
+        }, 6000);
       } else {
         setTimeLeft(diff);
       }
@@ -233,7 +233,7 @@ export default function CountdownOverlay() {
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
   const TimeUnit = ({ value, label }) => (
-    <div className={`flex flex-col items-center mx-2 md:mx-6 transform transition-all duration-700 ease-out ${
+    <div className={`flex flex-col items-center mx-2 md:mx-6 transform transition-all duration-[1500ms] ease-out ${
       isTransitioning ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
     }`}>
       <div className="relative w-20 h-24 md:w-28 md:h-32 flex items-center justify-center bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-[#407499]/20 overflow-hidden group hover:shadow-2xl hover:shadow-[#407499]/20 transition-all duration-300">
@@ -282,7 +282,7 @@ export default function CountdownOverlay() {
         {/* Logo Section with flip transition - Better centered */}
         <div className="relative flex justify-center items-center" style={{ perspective: '1000px' }}>
           {/* Front side - Main Logo */}
-          <div className={`transition-transform duration-600 ease-in-out transform-gpu ${
+          <div className={`transition-transform duration-[1500ms] ease-in-out transform-gpu ${
             showNavbarLogo ? 'rotate-y-180' : 'rotate-y-0'
           } ${isTransitioning ? "scale-150 opacity-0" : "scale-100 opacity-100"}`}
           style={{
@@ -300,7 +300,7 @@ export default function CountdownOverlay() {
           </div>
           
           {/* Back side - Navbar Logo */}
-          <div className={`absolute inset-0 flex justify-center items-center transition-transform duration-600 ease-in-out transform-gpu ${
+          <div className={`absolute inset-0 flex justify-center items-center transition-transform duration-[1500ms] ease-in-out transform-gpu ${
             showNavbarLogo ? 'rotate-y-0' : 'rotate-y-180'
           }`}
           style={{
@@ -322,7 +322,7 @@ export default function CountdownOverlay() {
         </div>
 
         {/* WORDMARK */}
-        <div className={`mb-8 md:mb-12 mt-20 md:mt-8 flex flex-col items-center transition-all duration-1000 ease-out ${
+        <div className={`mb-8 md:mb-12 mt-20 md:mt-8 flex flex-col items-center transition-all duration-[2000ms] ease-out ${
           showWordmark ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}>
           <p className="text-sm md:text-xl font-body font-medium text-[#001730]/80 text-center">
@@ -331,7 +331,7 @@ export default function CountdownOverlay() {
         </div>
 
         {/* Countdown timer - Moved up slightly */}
-        <div className={`flex justify-center items-center mb-4 md:mb-8 transition-all duration-700 ease-out ${
+        <div className={`flex justify-center items-center mb-4 md:mb-8 transition-all duration-[1500ms] ease-out ${
           isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         }`}>
           {minutes > 0 && <TimeUnit value={minutes} label="Minutes" />}
