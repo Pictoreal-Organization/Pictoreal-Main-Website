@@ -229,6 +229,7 @@ export default function CountdownOverlay() {
 
   if (!showOverlay) return null;
 
+  const hours = Math.floor(timeLeft / (1000 * 60 * 60));
   const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
@@ -334,6 +335,7 @@ export default function CountdownOverlay() {
         <div className={`flex justify-center items-center mb-4 md:mb-8 transition-all duration-[1500ms] ease-out ${
           isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         }`}>
+          {hours > 0 && <TimeUnit value={hours} label="Hours" />}
           {minutes > 0 && <TimeUnit value={minutes} label="Minutes" />}
           <TimeUnit value={seconds} label="Seconds" />
         </div>
