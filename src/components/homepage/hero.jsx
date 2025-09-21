@@ -80,7 +80,7 @@ const Hero = () => {
         </div>
 
         {/* Subtitle */}
-        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#001730] text-center px-4 font-body">
+        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#001730] text-center px-4 font-heading">
           Where thoughts, colours, and words prevail!
         </p>
 
@@ -132,7 +132,7 @@ const Hero = () => {
             Pictoreal
             {/* <span className="text-[#001730]">It's Pictoreal</span> */}
           </div>
-          <p className="text-[15px] sm:text-[20px] text-[#001730] font-body px-4">
+          <p className="text-[15px] sm:text-[20px] text-[#001730] font-heading px-4">
             Where thoughts, colours, and words prevail!
           </p>
         </div>
