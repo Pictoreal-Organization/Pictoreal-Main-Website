@@ -170,28 +170,28 @@ export default function CountdownOverlay({ onTransitionComplete }) {
             : "opacity-100 transform translate-y-0 scale-100"
         }`}
       >
-        {/* Logo flip with corrected transform logic */}
-        <div className="relative flex justify-center items-center" style={{ perspective: "1000px" }}>
-          {/* Front */}
+        {/* Logo flip with iOS-friendly approach */}
+        <div className="relative flex justify-center items-center w-48 h-48 md:w-56 md:h-56">
+          {/* Front Logo */}
           <div
-            className={`transition-transform duration-[1500ms] ease-in-out transform-gpu ${
-              isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"
+            className={`absolute inset-0 flex justify-center items-center transition-all duration-[1500ms] ease-in-out ${
+              isTransitioning ? "scale-110" : "scale-100"
+            } ${
+              showNavbarLogo ? "opacity-0 rotate-y-180" : "opacity-100 rotate-y-0"
             }`}
             style={{
+              transform: showNavbarLogo 
+                ? `rotateY(180deg) scale(${isTransitioning ? 1.1 : 1})` 
+                : `rotateY(0deg) scale(${isTransitioning ? 1.1 : 1})`,
               transformStyle: "preserve-3d",
               backfaceVisibility: "hidden",
-              transform: `${
-                showNavbarLogo ? "rotateY(180deg)" : "rotateY(0deg)"
-              } translateZ(0px)`,
             }}
           >
             <div className="relative flex justify-center">
               <img
                 src="/V27_FINAL_LOGO.png"
                 alt="Pictoreal Logo"
-                className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? "w-40 h-40 md:w-56 md:h-56" : "w-32 h-32 md:w-48 md:h-48"
-                }`}
+                className="drop-shadow-2xl object-contain w-32 h-32 md:w-48 md:h-48"
               />
               <div
                 className={`absolute inset-0 bg-gradient-to-br from-[#407499]/10 to-[#001730]/10 rounded-full blur-3xl -z-10 transition-all duration-[2000ms] ${
@@ -200,17 +200,20 @@ export default function CountdownOverlay({ onTransitionComplete }) {
               ></div>
             </div>
           </div>
-          {/* Back */}
+
+          {/* Back Logo */}
           <div
-            className={`absolute inset-0 flex justify-center items-center transition-transform duration-[1500ms] ease-in-out transform-gpu ${
-              isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"
+            className={`absolute inset-0 flex justify-center items-center transition-all duration-[1500ms] ease-in-out ${
+              isTransitioning ? "scale-110" : "scale-100"
+            } ${
+              showNavbarLogo ? "opacity-100 rotate-y-0" : "opacity-0 rotate-y-180"
             }`}
             style={{
+              transform: showNavbarLogo 
+                ? `rotateY(0deg) scale(${isTransitioning ? 1.1 : 1})` 
+                : `rotateY(-180deg) scale(${isTransitioning ? 1.1 : 1})`,
               transformStyle: "preserve-3d",
               backfaceVisibility: "hidden",
-              transform: `${
-                showNavbarLogo ? "rotateY(0deg)" : "rotateY(180deg)"
-              } translateZ(0px)`,
             }}
           >
             <div className="flex flex-col items-center">
@@ -310,6 +313,12 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           100% {
             opacity: 1;
           }
+        }
+        .rotate-y-0 {
+          transform: rotateY(0deg);
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
         }
       `}</style>
     </div>
