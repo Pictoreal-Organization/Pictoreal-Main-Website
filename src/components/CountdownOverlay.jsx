@@ -63,21 +63,50 @@ export default function CountdownOverlay({ onTransitionComplete }) {
       const originalStyle = window.getComputedStyle(document.body);
       const originalOverflow = originalStyle.overflow;
       const originalPosition = originalStyle.position;
+      const originalTop = originalStyle.top;
+      const originalLeft = originalStyle.left;
+      const originalWidth = originalStyle.width;
+      const originalHeight = originalStyle.height;
 
+      // Get the current scroll position
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
+
+      // Apply styles to prevent scrolling
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
-      document.body.style.width = "100%";
-      document.body.style.height = "100%";
-      document.body.style.top = "0";
-      document.body.style.left = "0";
+      document.body.style.width = "100vw";
+      document.body.style.height = "100vh";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = `-${scrollX}px`;
+      document.body.style.margin = "0";
+      document.body.style.padding = "0";
+
+      // Also apply to html element for extra security
+      const htmlElement = document.documentElement;
+      const originalHtmlOverflow = htmlElement.style.overflow;
+      const originalHtmlHeight = htmlElement.style.height;
+      
+      htmlElement.style.overflow = "hidden";
+      htmlElement.style.height = "100vh";
 
       return () => {
+        // Restore original styles
         document.body.style.overflow = originalOverflow;
         document.body.style.position = originalPosition;
-        document.body.style.width = "";
-        document.body.style.height = "";
-        document.body.style.top = "";
-        document.body.style.left = "";
+        document.body.style.width = originalWidth;
+        document.body.style.height = originalHeight;
+        document.body.style.top = originalTop;
+        document.body.style.left = originalLeft;
+        document.body.style.margin = "";
+        document.body.style.padding = "";
+
+        // Restore html styles
+        htmlElement.style.overflow = originalHtmlOverflow;
+        htmlElement.style.height = originalHtmlHeight;
+
+        // Restore scroll position
+        window.scrollTo(scrollX, scrollY);
       };
     }
   }, [showOverlay]);
@@ -112,13 +141,16 @@ export default function CountdownOverlay({ onTransitionComplete }) {
 
   return (
     <div
-      className="fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4 overflow-y-auto"
+      className="fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4"
       style={{
         minHeight: "100vh",
-        minHeight: "100dvh",
+        minHeight: "100dvh", 
         width: "100vw",
         width: "100dvw",
         background: "linear-gradient(to bottom right, #DDF1FF, white, #DDF1FF)",
+        overflow: "hidden",
+        touchAction: "none",
+        WebkitOverflowScrolling: "touch",
       }}
     >
       {/* Floating elements */}
