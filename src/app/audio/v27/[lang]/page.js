@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Play, Pause, Rewind, FastForward } from "lucide-react";
 
-const backendUrl = "https://pictoreal-main-website-backend.onrender.com";
+const backendUrl = process.env.NEXT_PUBLIC_AUDIO_API_URL;
 
 export default function AudioArticlePage() {
   const params = useParams();

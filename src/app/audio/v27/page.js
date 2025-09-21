@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const backendUrl =  "https://pictoreal-main-website-backend.onrender.com";
+const backendUrl = process.env.NEXT_PUBLIC_AUDIO_API_URL;
 
 // A single column component for the scrolling background effect
 const ImageColumn = ({ articles, duration = "40s" }) => (
