@@ -104,20 +104,41 @@ const TeamPage = () => {
     },
     {
       id: 14,
+      name: "Abhijeet Bhosale",
+      image:"/developers/Abhijeet_Bhosale.jpg",
+      github:"https://github.com/Abhijeet212004",
+      linkedin: "https://www.linkedin.com/in/abhijeet-bhosale-5728772b5/"
+    },
+    {
+      id: 15,
+      name: "Khanak Kumar",
+      image: "/developers/Khanak_Kumar.jpg",
+      github: "https://github.com/KhanakKumar",
+      linkedin: "https://www.linkedin.com/in/khanak-kumar-133a1226b/",
+    },
+    {
+      id: 16,
+      name: "Spondon Nath",
+      image: "/developers/Spondon_Nath.jpg",
+      github: "https://github.com/tailblazer24",
+      linkedin: "https://www.linkedin.com/in/spondon-nath-0249291a9/",
+    },
+    {
+      id: 17,
       name: "Madhura Deshmukh",
       image: "/developers/Madhura_Deshmukh.jpg",
       github: "https://github.com/madhura0805",
       linkedin: "https://www.linkedin.com/in/madhura-deshmukh-0692a5277",
     },
     {
-      id: 15,
+      id: 18,
       name: "Riddhi Lahare",
       image: "/developers/Riddhi_Lahare.jpg",
       github: "https://github.com/riddhilahare14",
       linkedin: "https://www.linkedin.com/in/riddhi-lahare?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
     },
     {
-      id: 16,
+      id: 19,
       name: "Manas Gawali",
       image: "/developers/Manas_Gawali.jpg",
       github: "https://github.com/ManasGawali",

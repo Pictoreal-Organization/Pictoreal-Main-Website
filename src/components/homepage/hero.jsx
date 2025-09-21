@@ -74,13 +74,13 @@ const Hero = () => {
       <div className="hidden md:flex flex-col items-center justify-center w-full">
         {/* Center Text */}
         <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 mt-16 md:mt-20">
-          <h1 className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[110px] font-heading font-normal leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#001730]">
-            More than a Magazine, <br /> It's Pictoreal
-          </h1>
+          <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-heading font-bold leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#001730]">
+            Pictoreal
+          </div>
         </div>
 
         {/* Subtitle */}
-        <p className="mt-4 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#001730] text-center px-4 font-body">
+        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#001730] text-center px-4 font-body">
           Where thoughts, colours, and words prevail!
         </p>
 
@@ -128,11 +128,11 @@ const Hero = () => {
       <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-8">
-          <div className="text-3xl sm:text-4xl font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
-            More than a Magazine, <br />
-            <span className="text-[#001730]">It's Pictoreal</span>
+          <div className="text-[3rem] sm:text-[4rem] font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
+            Pictoreal
+            {/* <span className="text-[#001730]">It's Pictoreal</span> */}
           </div>
-          <p className="text-sm sm:text-base text-[#001730] font-body px-4">
+          <p className="text-[15px] sm:text-[20px] text-[#001730] font-body px-4">
             Where thoughts, colours, and words prevail!
           </p>
         </div>
