@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function CountdownOverlay({ onTransitionComplete }) {
+  // Time is explicitly set to the IST timezone (+05:30)
   const launchDate = new Date("2025-09-21T18:35:00+05:30").getTime();
   const getTimeLeft = () => launchDate - Date.now();
 
@@ -28,9 +28,9 @@ export default function CountdownOverlay({ onTransitionComplete }) {
     }
   }, [onTransitionComplete]);
 
-  // ... (the other useEffect hooks remain exactly the same)
   useEffect(() => {
     if (timeLeft === null || timeLeft <= 0) return;
+
     const timer = setInterval(() => {
       const diff = getTimeLeft();
       if (diff <= 0) {
@@ -47,6 +47,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
         setTimeLeft(diff);
       }
     }, 1000);
+
     return () => clearInterval(timer);
   }, [timeLeft, onTransitionComplete]);
 
@@ -62,12 +63,14 @@ export default function CountdownOverlay({ onTransitionComplete }) {
       const originalStyle = window.getComputedStyle(document.body);
       const originalOverflow = originalStyle.overflow;
       const originalPosition = originalStyle.position;
+
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
       document.body.style.width = "100%";
       document.body.style.height = "100%";
       document.body.style.top = "0";
       document.body.style.left = "0";
+
       return () => {
         document.body.style.overflow = originalOverflow;
         document.body.style.position = originalPosition;
@@ -78,14 +81,11 @@ export default function CountdownOverlay({ onTransitionComplete }) {
       };
     }
   }, [showOverlay]);
-  
-  // CHANGE #1: Remove `!isClient` and `timeLeft === null` from this condition.
-  // We only return null if the overlay is explicitly hidden.
+
   if (!showOverlay) {
     return null;
   }
 
-  // We can calculate these even if timeLeft is null. They will just be 0, which is fine.
   const hours = Math.floor((timeLeft ?? 0) / (1000 * 60 * 60));
   const minutes = Math.floor(((timeLeft ?? 0) / (1000 * 60)) % 60);
   const seconds = Math.floor(((timeLeft ?? 0) / 1000) % 60);
@@ -112,18 +112,16 @@ export default function CountdownOverlay({ onTransitionComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4 overflow-hidden bg-gradient-to-br from-[#DDF1FF] via-white to-[#DDF1FF] transition-all duration-1000 ease-in-out ${
-        fadeOut ? "opacity-0 scale-110" : "opacity-100 scale-100"
-      }`}
+      className="fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4 overflow-y-auto"
       style={{
         minHeight: "100vh",
         minHeight: "100dvh",
         width: "100vw",
         width: "100dvw",
+        background: "linear-gradient(to bottom right, #DDF1FF, white, #DDF1FF)",
       }}
     >
       {/* Floating elements */}
-      {/* ... (rest of the JSX is the same) */}
       <div
         className={`absolute inset-0 opacity-30 pointer-events-none transition-all duration-1000 ${
           fadeOut ? "opacity-0 scale-150" : "opacity-30 scale-100"
@@ -163,39 +161,34 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           style={{ animationDelay: "2s", animationDuration: "3s" }}
         ></div>
       </div>
+
+      {/* Main container with flexible padding for mobile layout */}
       <div
-        className={`relative z-10 flex flex-col items-center justify-center max-w-4xl w-full min-h-screen -mt-8 md:mt-32 transition-all duration-1000 ease-in-out ${
-          fadeOut ? "opacity-0 transform translate-y-8 scale-95" : "opacity-100 transform translate-y-0 scale-100"
+        className={`relative z-10 flex flex-col items-center justify-center max-w-4xl w-full px-4 py-16 transition-all duration-1000 ease-in-out ${
+          fadeOut
+            ? "opacity-0 transform translate-y-8 scale-95"
+            : "opacity-100 transform translate-y-0 scale-100"
         }`}
       >
+        {/* Logo flip with corrected transform logic */}
         <div className="relative flex justify-center items-center" style={{ perspective: "1000px" }}>
+          {/* Front */}
           <div
             className={`transition-transform duration-[1500ms] ease-in-out transform-gpu ${
-              showNavbarLogo ? "rotate-y-180" : "rotate-y-0"
-            } ${isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"}`}
-            style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
+              isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"
+            }`}
+            style={{
+              transformStyle: "preserve-3d",
+              backfaceVisibility: "hidden",
+              transform: `${
+                showNavbarLogo ? "rotateY(180deg)" : "rotateY(0deg)"
+              } translateZ(0px)`,
+            }}
           >
-            {/* <div className="relative flex justify-center">
+            <div className="relative flex justify-center">
               <img
                 src="/V27_FINAL_LOGO.png"
                 alt="Pictoreal Logo"
-                className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? "w-40 h-40 md:w-56 md:h-56" : "w-32 h-32 md:w-48 md:h-48"
-                }`}
-              />
-              <div
-                className={`absolute inset-0 bg-gradient-to-br from-[#407499]/10 to-[#001730]/10 rounded-full blur-3xl -z-10 transition-all duration-[2000ms] ${
-                  isTransitioning ? "animate-pulse scale-125" : "animate-pulse scale-100"
-                }`}
-              ></div>
-            </div> */}
-            <div className="relative flex justify-center">
-              <Image
-                src="/V27_FINAL_LOGO.png"
-                alt="Pictoreal Logo"
-                width={224} // same as md:w-56
-                height={224} // same as md:h-56
-                priority
                 className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
                   isTransitioning ? "w-40 h-40 md:w-56 md:h-56" : "w-32 h-32 md:w-48 md:h-48"
                 }`}
@@ -207,37 +200,23 @@ export default function CountdownOverlay({ onTransitionComplete }) {
               ></div>
             </div>
           </div>
+          {/* Back */}
           <div
             className={`absolute inset-0 flex justify-center items-center transition-transform duration-[1500ms] ease-in-out transform-gpu ${
-              showNavbarLogo ? "rotate-y-0" : "rotate-y-180"
-            } ${isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"}`}
+              isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"
+            }`}
             style={{
               transformStyle: "preserve-3d",
               backfaceVisibility: "hidden",
-              transform: showNavbarLogo ? "rotateY(0deg)" : "rotateY(180deg)",
+              transform: `${
+                showNavbarLogo ? "rotateY(0deg)" : "rotateY(180deg)"
+              } translateZ(0px)`,
             }}
           >
-            {/* <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center">
               <img
                 src="/navbar_logo.png"
                 alt="Navbar Logo"
-                className={`object-contain mb-2 transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? "h-20 md:h-28" : "h-16 md:h-24"
-                }`}
-              />
-              <p className="text-sm md:text-lg font-body text-[#001730]/80 text-center whitespace-nowrap">
-                Where thoughts, colours, and words prevail!
-              </p>
-            </div> */}
-
-            {/* Navbar logo */}
-            <div className="flex flex-col items-center">
-              <Image
-                src="/navbar_logo.png"
-                alt="Navbar Logo"
-                width={1069} // ~ h-28
-                height={169}
-                priority
                 className={`object-contain mb-2 transition-all duration-[2000ms] ease-out ${
                   isTransitioning ? "h-20 md:h-28" : "h-16 md:h-24"
                 }`}
@@ -248,13 +227,15 @@ export default function CountdownOverlay({ onTransitionComplete }) {
             </div>
           </div>
         </div>
+
+        {/* Wordmark with balanced vertical margin */}
         <div
-          className={`mb-8 md:mb-12 mt-20 md:mt-8 flex flex-col items-center transition-all duration-[2000ms] ease-out ${
+          className={`my-8 flex flex-col items-center transition-all duration-[2000ms] ease-out ${
             showWordmark ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         ></div>
 
-        {/* CHANGE #2: Only show the numbers when the client has loaded. */}
+        {/* Countdown - only renders numbers on the client to prevent flash */}
         {isClient && (
           <div
             className={`flex justify-center items-center mb-4 md:mb-8 transition-all duration-[1500ms] ease-out ${
@@ -267,6 +248,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           </div>
         )}
 
+        {/* Launch message */}
         {!isTransitioning && (
           <div className="text-center opacity-80">
             <p className="text-[#001730]/60 font-body text-xs md:text-base">
@@ -275,6 +257,8 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           </div>
         )}
       </div>
+
+      {/* Transition effects */}
       {isTransitioning && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-8 h-8 rounded-full animate-ping" style={{ backgroundColor: "#407499", opacity: 0.6 }}></div>
@@ -304,6 +288,8 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           </div>
         </div>
       )}
+
+      {/* Final fade overlay */}
       {fadeOut && (
         <div
           className="absolute inset-0 bg-[#DDF1FF] animate-pulse"
@@ -312,6 +298,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           }}
         ></div>
       )}
+
       <style jsx>{`
         @keyframes fadeToHomepage {
           0% {
