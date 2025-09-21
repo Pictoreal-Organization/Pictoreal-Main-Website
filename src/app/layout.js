@@ -3,7 +3,6 @@ import Footer from "../components/homepage/footer";
 import Navbar from "../components/homepage/navbar";
 import Head from "next/head";
 import CountdownOverlay from "../components/CountdownOverlay";
-import Providers from "./providers";
 
 export const metadata = {
   title: "PICTOREAL",
@@ -25,14 +24,12 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
       </Head>
       <body className={`antialiased bg-[#DDF1FF] bg-repeat pt-20`}>
-        <Providers>
           <CountdownOverlay />
           <Navbar />
           <div className="grid grid-cols-12 gap-4 ">
             <main className="col-span-12 flex-grow ">{children}</main>
           </div>
           <Footer />
-        </Providers>
       </body>
     </html>
   );
