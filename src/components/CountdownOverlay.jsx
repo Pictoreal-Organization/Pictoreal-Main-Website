@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function CountdownOverlay({ onTransitionComplete }) {
-  const launchDate = new Date("2025-09-22T14:45:00+05:30").getTime();
+  const launchDate = new Date("2025-09-21T18:35:00+05:30").getTime();
   const getTimeLeft = () => launchDate - Date.now();
 
   const [timeLeft, setTimeLeft] = useState(null);
@@ -174,10 +175,27 @@ export default function CountdownOverlay({ onTransitionComplete }) {
             } ${isTransitioning ? "scale-110 opacity-100" : "scale-100 opacity-100"}`}
             style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
           >
-            <div className="relative flex justify-center">
+            {/* <div className="relative flex justify-center">
               <img
                 src="/V27_FINAL_LOGO.png"
                 alt="Pictoreal Logo"
+                className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
+                  isTransitioning ? "w-40 h-40 md:w-56 md:h-56" : "w-32 h-32 md:w-48 md:h-48"
+                }`}
+              />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br from-[#407499]/10 to-[#001730]/10 rounded-full blur-3xl -z-10 transition-all duration-[2000ms] ${
+                  isTransitioning ? "animate-pulse scale-125" : "animate-pulse scale-100"
+                }`}
+              ></div>
+            </div> */}
+            <div className="relative flex justify-center">
+              <Image
+                src="/V27_FINAL_LOGO.png"
+                alt="Pictoreal Logo"
+                width={224} // same as md:w-56
+                height={224} // same as md:h-56
+                priority
                 className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
                   isTransitioning ? "w-40 h-40 md:w-56 md:h-56" : "w-32 h-32 md:w-48 md:h-48"
                 }`}
@@ -199,10 +217,27 @@ export default function CountdownOverlay({ onTransitionComplete }) {
               transform: showNavbarLogo ? "rotateY(0deg)" : "rotateY(180deg)",
             }}
           >
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <img
                 src="/navbar_logo.png"
                 alt="Navbar Logo"
+                className={`object-contain mb-2 transition-all duration-[2000ms] ease-out ${
+                  isTransitioning ? "h-20 md:h-28" : "h-16 md:h-24"
+                }`}
+              />
+              <p className="text-sm md:text-lg font-body text-[#001730]/80 text-center whitespace-nowrap">
+                Where thoughts, colours, and words prevail!
+              </p>
+            </div> */}
+
+            {/* Navbar logo */}
+            <div className="flex flex-col items-center">
+              <Image
+                src="/navbar_logo.png"
+                alt="Navbar Logo"
+                width={1069} // ~ h-28
+                height={169}
+                priority
                 className={`object-contain mb-2 transition-all duration-[2000ms] ease-out ${
                   isTransitioning ? "h-20 md:h-28" : "h-16 md:h-24"
                 }`}
