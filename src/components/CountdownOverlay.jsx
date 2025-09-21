@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function CountdownOverlay({ onTransitionComplete }) {
-  const launchDate = new Date("2025-09-21T15:53:00+05:30").getTime();
+  const launchDate = new Date("2025-09-21T15:57:00+05:30").getTime();
   const getTimeLeft = () => launchDate - Date.now();
 
   const [timeLeft, setTimeLeft] = useState(null);
