@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function CountdownOverlay({ onTransitionComplete }) {
   // Time is explicitly set to the IST timezone (+05:30)
-  const launchDate = new Date("2025-09-22T14:40:00+05:30").getTime();
+  const launchDate = new Date("2025-09-22T14:50:00+05:30").getTime();
   const getTimeLeft = () => launchDate - Date.now();
 
   const [timeLeft, setTimeLeft] = useState(null);
