@@ -18,6 +18,7 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "framer-motion": "^12.23.12",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.476.0",
     "mongoose": "^8.18.1",
     "multer": "^2.0.2",
