@@ -25,10 +25,14 @@ export async function POST(req) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // 👇 auto-assign admin for specific email (optional)
+    const role = email === "admin@example.com" ? "admin" : "user";
+
     const newUser = new User({
       name,
       email,
       password: hashedPassword,
+      role,
     });
 
     await newUser.save();

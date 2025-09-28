@@ -1,4 +1,3 @@
-// /api/auth/login.js
 import dbConnect from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
@@ -25,7 +24,7 @@ export async function POST(req) {
     console.log("[User Found] ID:", user._id.toString());
 
     // 2️⃣ Compare passwords
-    const passwordField = user.password || user.passwordHash; // support both
+    const passwordField = user.password || user.passwordHash;
     if (!passwordField) {
       console.log("[Login Failed] No password field found in user document");
       return new Response(
@@ -62,8 +61,6 @@ export async function POST(req) {
         user: {
           email: user.email,
           name: user.name,
-          department: user.department,
-          passingYear: user.passingYear,
           role: user.role,
         },
       }),

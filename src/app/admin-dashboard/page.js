@@ -90,12 +90,24 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const AdminDashboard = () => {
   const [pendingBlogs, setPendingBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
-  // Fetch pending blogs from admin API
+  // ✅ Protect route: only allow admins
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    if (!token || role !== "admin") {
+      router.push("/auth/signup"); // redirect if not admin
+    }
+  }, [router]);
+
+  // Fetch pending blogs
   const fetchPendingBlogs = async () => {
     setLoading(true);
     try {
@@ -117,18 +129,16 @@ const AdminDashboard = () => {
     fetchPendingBlogs();
   }, []);
 
-  // Handle Accept / Reject actions
   const handleAction = async (blogId, action) => {
     const rejectionReason = action === "reject" ? prompt("Enter rejection reason:") : null;
     if (action === "reject" && !rejectionReason) {
       return alert("Rejection reason is required to reject a blog.");
     }
 
-    // Prepare data for PUT request
     const updateData = {
       _id: blogId,
       status: action === "accept" ? "published" : "rejected",
-      reviewedBy: "admin-123", // Replace with actual admin name or ID
+      reviewedBy: "admin-123", // TODO: Replace with actual admin id/name
       reviewedAt: new Date(),
       rejectionReason: rejectionReason,
     };
@@ -144,7 +154,6 @@ const AdminDashboard = () => {
         throw new Error("Failed to perform action");
       }
 
-      // Refresh pending blogs list
       fetchPendingBlogs();
     } catch (err) {
       console.error(err);
@@ -200,3 +209,4 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+

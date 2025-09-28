@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -31,11 +30,16 @@ export default function LoginPage() {
         return;
       }
 
-      // Save token (localStorage here, can switch to cookies if needed)
+      // Save token & role
       localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.user.role);
 
-      // Redirect to blogs or homepage
-      router.push("/editor");
+      // Redirect based on role
+      if (data.user.role === "admin") {
+        router.push("/admin-dashboard");
+      } else {
+        router.push("/editor");
+      }
     } catch (err) {
       console.error("Login error:", err);
       setError("Something went wrong. Please try again.");
