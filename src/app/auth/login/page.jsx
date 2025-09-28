@@ -17,7 +17,7 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const res = await fetch("/api/login", {
+      const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -35,7 +35,7 @@ export default function LoginPage() {
       localStorage.setItem("token", data.token);
 
       // Redirect to blogs or homepage
-      router.push("/blogs");
+      router.push("/editor");
     } catch (err) {
       console.error("Login error:", err);
       setError("Something went wrong. Please try again.");

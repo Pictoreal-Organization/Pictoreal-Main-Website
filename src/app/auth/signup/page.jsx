@@ -48,7 +48,7 @@ export default function SignupPage() {
       }
 
       // On success → redirect to login
-      router.push("/pictoblogs/login");
+      router.push("/auth/login");
     } catch (err) {
       console.error("Signup error:", err);
       setError("Something went wrong. Please try again.");

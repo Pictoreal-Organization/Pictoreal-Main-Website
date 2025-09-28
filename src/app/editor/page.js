@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import BlogBanner from '../../components/blogs/BlogBanner';
@@ -10,6 +10,23 @@ import Preview from '../preview/page';
 
 export default function BlogEditor() {
   const router = useRouter();
+
+  // ------------------- Auth Protection -------------------
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // Redirect to signup if not logged in
+      router.replace('/auth/signup');
+    }
+  }, [router]);
+
+  // Optional loading state while checking token
+  const token = typeof window !== 'undefined' && localStorage.getItem('token');
+  if (!token) {
+    return <p className="text-center mt-20">Redirecting to signup...</p>;
+  }
+  // -------------------------------------------------------
+
   const [banner, setBanner] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState([{ id: '1', type: 'text', content: '' }]);
