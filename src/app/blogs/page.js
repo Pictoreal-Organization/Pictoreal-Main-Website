@@ -343,7 +343,7 @@ export default async function BlogListPage() {
         </h1>
         <div className="flex gap-4">
           <Link
-            href="/login"
+            href="/auth/login"
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           >
             Login
