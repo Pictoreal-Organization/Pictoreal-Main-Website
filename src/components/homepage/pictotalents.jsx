@@ -78,10 +78,10 @@ const PictoTalentsPods = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#001730] mb-4 font-heading leading-tight">
+          <p className="text-3xl md:text-5xl font-bold text-[#001730] mb-4 font-heading leading-tight">
             Discover Our Creative Universe
-          </h1>
-          <p className="text-lg md:text-xl font-body text-[#003A6B] max-w-6xl mx-auto">
+          </p>
+          <p className="text-base md:text-xl font-body text-[#003A6B] max-w-6xl mx-auto">
             Explore inspiring content from our Instagram reels and dive deep into conversations on our podcast
           </p>
         </div>
@@ -119,10 +119,10 @@ const PictoTalentsPods = () => {
           {activeSection === 0 && (
             <div className="transition-all duration-700 ease-out">
               <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#001730] mb-2">
+                <p className="text-2xl md:text-3xl font-heading font-bold text-[#001730] mb-2">
                   Latest Instagram Reels
-                </h2>
-                <p className="text-[#003A6B] font-body">Swipe through our creative content</p>
+                </p>
+                <p className="text-[#003A6B] text-base font-body">Swipe through our creative content</p>
               </div>
 
               {/* Mobile Carousel */}
@@ -167,7 +167,7 @@ const PictoTalentsPods = () => {
                   </div>
                 </div>
                 {/* Nav buttons */}
-                <button
+                {/* <button
                   onClick={prevSlide}
                   className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
                 >
@@ -178,7 +178,7 @@ const PictoTalentsPods = () => {
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all z-10"
                 >
                   <ChevronRight className="text-[#001730]" size={20} />
-                </button>
+                </button> */}
 
                 {/* Dots */}
                 <div className="flex justify-center mt-6 space-x-2">
@@ -263,10 +263,10 @@ const PictoTalentsPods = () => {
           {activeSection === 1 && (
             <div className="transition-all duration-700 ease-out">
               <div className="text-center mb-6">
-                <h2 className="text-xl md:text-2xl font-heading font-bold text-[#001730] mb-2">
+                <p className="text-2xl md:text-3xl font-heading font-bold text-[#001730] mb-2">
                   Latest Podcast Episode
-                </h2>
-                <p className="text-[#003A6B] font-body">Deep conversations about creativity and storytelling</p>
+                </p>
+                <p className="text-[#003A6B] text-base font-body">Deep conversations about creativity and storytelling</p>
               </div>
               <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

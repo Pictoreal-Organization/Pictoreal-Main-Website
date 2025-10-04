@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center">
-        <p className="text-sm text-gray-500 mt-10">&copy; {new Date().getFullYear()} Pictoreal. All Rights Reserved.</p>
+        <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Pictoreal. All Rights Reserved.</p>
       </div>
       <div className="text-center border-t border-gray-800 bg-[#112b45] mt-2 p-2">
         Made with <AiFillHeart className="inline text-red-500" /> by{' '}

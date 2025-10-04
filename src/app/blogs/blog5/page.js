@@ -1,20 +1,21 @@
 import Link from "next/link";
+import ArrowBtn from "@/components/homepage/arrowbtn";
 
 export default function blog5() {
   return (
     <>
-      <div className="flex mt-[10vh]  flex-col p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#1a365d] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 text-5xl text-firefly text-center mt-14 mb-5">
+      <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
+        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
+          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Dreams and Deadlines
           </div>
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <img
               src="/blog/1.svg"
               alt="Design"
               className="m-auto max-w-full h-auto"
             />
-          </div>
+          </div> */}
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex justify-center w-auto md:w-1/2 gap-8 mx-auto md:mx-32">
@@ -24,13 +25,12 @@ export default function blog5() {
                 className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
               />
             </div>
-            <div className="font-poppins text-[20px] text-firefly pl-8 pt-8 text-center">
-              <span className="text-firefly">Author: </span>Harshit Vora, Omkar
-              Desai
+            <div className="font-body text-[20px] text-firefly flex px-4 pt-8 text-center">
+              <p className="text-firefly">Author: Harshit Vora, Omkar Desai </p>
             </div>
           </div>
 
-          <div className="text-justify font-poppins font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article>
               <p className="mb-5 text-center">
                 <strong>A life of learning and leisure</strong>
@@ -75,9 +75,9 @@ export default function blog5() {
                 maybe more than a year. It struck me that I had been so occupied
                 with my academic schedule that I had forgotten about my hobbies.
               </p>
-              <h2 className="font-body text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
+              <h3 className="font-heading text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Embracing the New Me, Nurturing the Old Self :</strong>
-              </h2>
+              </h3>
               <p className="mb-5">
                 By the time my first year began, I had already distanced myself
                 from my passion due to the two years of extreme study and hard
@@ -121,9 +121,9 @@ export default function blog5() {
                   became more productive.
                 </strong>
               </p>
-              <h2 className="font-body text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
+              <h3 className="font-heading text-3xl text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                 <strong>Evolving Through Exploration :</strong>
-              </h2>
+              </h3>
               <p className="mb-5">
                 By my second year, I had started finding a rhythm between
                 academics and personal interests. Now I also had some extra time
@@ -147,9 +147,9 @@ export default function blog5() {
                 doing this, I could enhance my hobby without hindering my
                 academic commitments.
               </p>
-              <h2 className="font-body text-3xl text-firefly mb-3 mt-8">
+              <h3 className="font-heading text-3xl text-firefly mb-3 mt-8">
                 <strong>Small Steps To Big Wins</strong>
-              </h2>
+              </h3>
               <p className="mb-5">
                 The third year brought challenges of its own---internships,
                 projects, and a heavier workload. My time was stretched thinner
@@ -204,9 +204,9 @@ export default function blog5() {
                   alt="Balancing activities"
                 />
               </div>
-              <h2 className="font-raleway font-medium text-3xl text-firefly mb-3 mt-8">
+              <h3 className="font-heading text-3xl text-firefly mb-3 mt-8">
                 <strong>Finding Peace Amid The Chaos:</strong>
-              </h2>
+              </h3>
               <p className="mb-5">
                 By the time I reached my final year, I had found a rhythm. The
                 pressure of placements, final year projects, and looming
@@ -268,14 +268,12 @@ export default function blog5() {
               </div>
             </article>
             <div className="flex flex-col items-center w-full">
-              <div className="flex justify-center w-full mb-4">
+              {/* <div className="flex justify-center w-full mb-4">
                 <img src="/blog/3.svg" alt="Content Image" className="w-7/10" />
+              </div> */}
+              <div className="flex">
+                <ArrowBtn text="Back" path={`/blogs`} />
               </div>
-              <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform hover:text-white transform hover:scale-110">
-                  Back
-                </div>
-              </Link>
             </div>
           </div>
         </div>

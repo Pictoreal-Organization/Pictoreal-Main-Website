@@ -1,12 +1,13 @@
-// src/pages/Page.js
-import React from 'react';
-import Picture from '../../components/events/Picture'
-const Page = () => {
-  return (
-    <div>
-      <Picture />
-    </div>
-  );
-};
+// src/app/events/page.js
+"use client";
 
-export default Page;
+import { Suspense } from "react";
+import Picture from "../../components/events/Picture";
+
+export default function EventsPage() {
+  return (
+    <Suspense fallback={<div>Loading gallery...</div>}>
+      <Picture />
+    </Suspense>
+  );
+}

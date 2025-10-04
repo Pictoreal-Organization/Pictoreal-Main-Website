@@ -1,26 +1,15 @@
 import Link from "next/link";
+import ArrowBtn from "@/components/homepage/arrowbtn";
 
 export default function Blog2() {
   return (
     <>
-      <div className="flex flex-col mt-[10vh] p-2 md:p-10 pt-10">
-        <div className="relative bg-submarine lg:w-4/5 max-w-[1200px] p-2 lg:p-5 border-[10px] border-[#1a365d] mx-auto">
-          {/* <div className="flex items-center justify-center gap-2 absolute top-4 left-4">
-            <Link href="/blogs">
-              <div className="flex items-center justify-center h-10 w-24 rounded-2xl border-2 border-black bg-[#6f2143] text-white shadow-md hover:bg-[#561A34] transition-transform transform hover:scale-110">
-                Back
-              </div>
-            </Link>
-          </div> */}
-          <div className="font-heading font-extrabold pt-2 text-5xl text-[#111c33] text-center mt-14 mb-5">
+      <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
+        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
+          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and
             Universal Forces
           </div>
-
-          <div className="flex items-center justify-center">
-            <img src="/blog/1.svg" alt="Design" className="m-auto" />
-          </div>
-
           <div className="flex flex-col items-center justify-center">
             <div className="flex w-7/11 gap-8 border-[5px] border-[#1a365d] mx-16">
               <img
@@ -29,15 +18,14 @@ export default function Blog2() {
                 className="w-full border-5 border-[#1a365d]"
               />
             </div>
-            <div className="font-poppins text-[20px] text-firefly pt-8">
-              <span className="text-firefly text-center justify-center">
-                Author:{" "}
-              </span>
-              Shrihari Kulkarni
+            <div className="font-body text-[20px] flex text-cenetr text-firefly pt-8">
+              <p className="text-firefly text-center justify-center">
+                Author: Shrihari Kulkarni
+              </p>
             </div>
           </div>
 
-          <div className="text-justify font-body text-[17px] font-body text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
               <p className="mb-4">
                 Once upon a time, in a universe far, far smaller than we can
@@ -51,7 +39,7 @@ export default function Blog2() {
                 becomes monumental.
               </p>
 
-              <h3 className="text-xl font-bold py-4 mt-4">
+              <h3 className="text-xl font-bold font-heading py-4 mt-4">
                 Chapter 1: The Intro - Our Subatomic Stage
               </h3>
               <p className="mb-4">
@@ -78,7 +66,7 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl font-bold py-4 mt-4">
+              <h3 className="text-xl font-bold font-heading py-4 mt-4">
                 Chapter 2: The Cast of Characters
               </h3>
               <div className="flex flex-col md:flex-row justify-center items-center mb-4">
@@ -104,7 +92,7 @@ export default function Blog2() {
                 </p>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 3: The Forces at Play
               </h3>
               <p className="mb-4">
@@ -126,7 +114,7 @@ export default function Blog2() {
                 />
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 4: The Quantum Quest
               </h3>
               <div className="md:flex mb-4">
@@ -151,7 +139,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 5: The Higgs Boson – The Celestial Composer
               </h3>
               <div className="md:flex mb-4">
@@ -185,7 +173,7 @@ export default function Blog2() {
                 </div>
               </div>
 
-              <h3 className="text-xl py-4 font-bold mt-4">
+              <h3 className="text-xl py-4 font-bold font-heading mt-4">
                 Chapter 6: The Fundamental Forces - Cosmic Choreography
               </h3>
               <p className="mb-4">
@@ -223,7 +211,7 @@ export default function Blog2() {
               </p>
 
               <div className="md:flex mb-4">
-                <p className="font-caveat text-2xl font-semibold italic mr-2">
+                <p className="font-body text-2xl font-semibold italic mr-2">
                   <i>
                     In the cosmic ballet of quarks and light, Particles dance in
                     the depths of the night. Fundamental forces, silent and
@@ -240,18 +228,9 @@ export default function Blog2() {
               </div>
             </article>
             <div className="flex flex-col items-center w-full">
-              <div className="flex justify-center w-full mb-4">
-                <img
-                  src="/blog/3.svg"
-                  alt="Content Image"
-                  className="w-7/10 "
-                />
+              <div className="flex">
+                <ArrowBtn text="Back" path={`/blogs`} />
               </div>
-              <Link href="/blogs">
-                <div className="flex items-center justify-center h-10 w-24 hover:text-white rounded-2xl border-2 border-[#1a365d] bg-lynch text-shadow-deepnavy shadow-md hover:bg-[#111c33] transition-transform transform hover:scale-110">
-                  Back
-                </div>
-              </Link>
             </div>
           </div>
         </div>
