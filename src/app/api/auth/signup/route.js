@@ -1,16 +1,17 @@
 import dbConnect from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export async function POST(req) {
   try {
     await dbConnect();
 
-    const { name, email, password } = await req.json();
+    const { name, email, password, role, department, passingYear } = await req.json();
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !role) {
       return new Response(
-        JSON.stringify({ error: "All fields are required" }),
+        JSON.stringify({ error: "Name, email , password , role are required" }),
         { status: 400, headers: { "Content-Type": "application/json" } }
       );
     }
@@ -25,22 +26,42 @@ export async function POST(req) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // 👇 auto-assign admin for specific email (optional)
-    const role = email === "admin@example.com" ? "admin" : "user";
-
     const newUser = new User({
       name,
       email,
       password: hashedPassword,
-      role,
+      role: role || "user", // Use role from frontend, default to "user"
+      department,
+      passingYear,
     });
 
     await newUser.save();
 
+    // Generate JWT token for auto-login
+    const token = jwt.sign(
+      { 
+        id: newUser._id, 
+        email: newUser.email, 
+        role: newUser.role 
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    // Return token and user data for auto-login
     return new Response(
       JSON.stringify({
         success: true,
         message: "User created successfully",
+        token,
+        user: {
+          id: newUser._id,
+          name: newUser.name,
+          email: newUser.email,
+          role: newUser.role,
+          department: newUser.department,
+          passingYear: newUser.passingYear,
+        }
       }),
       { status: 201, headers: { "Content-Type": "application/json" } }
     );
