@@ -24,23 +24,33 @@ export default function LoginPage() {
       });
 
       const data = await res.json();
+      console.log("Login response:", data);
 
       if (!res.ok) {
-        setError(data.message || data.error || "Login failed");
+        setError(data.message || "Login failed");
         setLoading(false);
         return;
       }
 
-      // Save token & role
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("role", data.user.role);
+      // Clear old data first
+      localStorage.clear();
 
-      // Redirect based on role
-      if (data.user.role === "admin") {
-        router.push("/admin-dashboard");
-      } else {
-        router.push("/editor");
-      }
+      // Store token and user data
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      
+      console.log("Stored token:", localStorage.getItem("token"));
+      console.log("Stored user:", localStorage.getItem("user"));
+
+      // Use window.location.href for full page reload to ensure localStorage is written
+      setTimeout(() => {
+        if (data.user.role === "admin") {
+          window.location.href = "/admin-dashboard";
+        } else {
+          window.location.href = "/editor";
+        }
+      }, 100);
+      
     } catch (err) {
       console.error("Login error:", err);
       setError("Something went wrong. Please try again.");
