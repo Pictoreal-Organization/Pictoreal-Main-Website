@@ -60,9 +60,12 @@
 import dbConnect from '../../../lib/mongodb';
 import Blog from '../../../models/Blog';
 import mongoose from 'mongoose';
+import ArrowBtn from "@/components/homepage/arrowbtn";
 
-const BlogPage = async ({ params }) => {
+const BlogPage = async (context) => {
+  const { params } = context;
   const { id } = params;
+
 
   await dbConnect();
 
@@ -102,42 +105,70 @@ const BlogPage = async ({ params }) => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      {blog.banner && (
-        <img
-          src={blog.banner}
-          className="w-full h-64 object-cover rounded mb-6"
-          alt="Blog banner"
-        />
-      )}
+    <div className="min-h-screen bg-gray-50 py-10 px-4">
+  <div className="relative  w-full md:w-4/5 max-w-[1200px] mx-auto bg-paleskyblue rounded-3xl border-2 shadow-border-20 shadow-[0_8px_15px_rgba(0,51,102,1)] shadow-4xl px-6 md:px-10 py-8">
+    
+       {/* Title */}
+    <h1 className="font-heading text-[#111c33] text-sm font-bold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5 mx-auto max-w-4xl">
+  {blog.title}
+</h1>
 
-      <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-      <p className="text-gray-600 mb-2">
-        By {blog.authorDetails?.name || "Unknown Author"}
+
+    {/* Banner Section */}
+    {blog.banner && (
+     <div className="flex justify-center items-center mb-8">
+  <div className="max-w-md py-8 mx-auto"> 
+    <img
+      src={blog.banner}
+      alt="Blog banner"
+      className="w-full h-auto rounded-xl object-cover  transition-transform duration-300 hover:scale-105" 
+    />
+  </div>
+</div>
+
+    )}
+
+ 
+
+    {/* Author */}
+    <div className="font-body text-[20px] text-firefly flex justify-center px-4 pt-4 text-center md:text-center">
+    <p className="text-firefly">
+  <strong className="font-body text-bold">Author: </strong> {blog.authorDetails?.name || "Unknown Author"}
+</p>
+
+    </div>
+
+
+    {/* Co-Authors */}
+    {blog.coAuthors?.length > 0 && (
+      <p className="text-base font-body leading-relaxed mb-8 font-body text-[20px] text-firefly flex justify-center px-4 pt-4 text-center md:text-center">
+        <strong>Co-Authors: </strong> {blog.coAuthors.join(", ")}
       </p>
+    )}
 
-      {blog.coAuthors?.length > 0 && (
-        <p className="text-gray-600 mb-2">
-          Co-Authors: {blog.coAuthors.join(", ")}
-        </p>
-      )}
+    {/* Editors */}
+    {blog.copyEditors?.length > 0 && (
+      <p className="text-base font-body md:text-lg text-gray-800 mb-4">
+        <strong>Editors:</strong> {blog.copyEditors.join(", ")}
+      </p>
+    )}
 
-      {blog.copyEditors?.length > 0 && (
-        <p className="text-gray-600 mb-2">
-          Editors: {blog.copyEditors.join(", ")}
-        </p>
-      )}
+    {/* Tags */}
+    {blog.tags?.length > 0 && (
+      <p className="text-base font-body md:text-lg text-gray-800 mb-4">
+        <strong>Tags:</strong> {blog.tags.join(", ")}
+      </p>
+    )}
 
-      {blog.tags?.length > 0 && (
-        <p className="text-gray-600 mb-2">
-          Tags: {blog.tags.join(", ")}
-        </p>
-      )}
-
-      <p className="text-lg mb-6">{blog.description}</p>
+    {/* Description */}
+    <p className="font-body text-base pt-4 mb-4 md:text-lg leading-relaxed text-gray-800">
+      <strong>Description: </strong> {blog.description}
+    </p>
+ 
 
       {/* ✅ Render content blocks */}
-      <div className="prose max-w-none">
+      <div className="prose max-w-none font-body relative shadow-[0_8px_15px_rgba(0,51,102,0.4)]
+ p-6 rounded-xl  p-2 md:p-5 shadow-4xl bg-[#B3DFFF]  mx-auto">
         {contentBlocks.map((block, idx) => {
           switch (block.type) {
             case "heading":
@@ -176,6 +207,12 @@ const BlogPage = async ({ params }) => {
           }
         })}
       </div>
+      <div className="flex flex-col items-center pt-8  w-full">
+              <div className="flex">
+                <ArrowBtn text="Back" path={`/blogs`} />
+              </div>
+    </div>
+    </div>
     </div>
   );
 };
