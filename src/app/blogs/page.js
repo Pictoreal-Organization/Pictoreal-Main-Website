@@ -4,9 +4,9 @@
 // import { IoIosArrowDown } from "react-icons/io";
 
 // export default function BlogsPage() {
-  
+
 //   const blogs = [
-    
+
 //      {
 //       id: "blog5",
 //       title: "Dreams and Deadlines",
@@ -55,8 +55,6 @@
 //       <h1 className="text-center font-bold text-[#111c33] font-heading text-2xl md:text-3xl mb-4">
 //         BLOGS
 //       </h1>
-
-     
 
 //       {/* Search + Filters */}
 //       <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center w-full px-4 md:px-0 items-center mb-10">
@@ -149,12 +147,6 @@
 //   );
 // }
 
-
-
-
-
-
-
 // import Link from 'next/link';
 // import dbConnect from '../../lib/mongodb';
 // import Blog from '../../models/Blog';
@@ -224,7 +216,6 @@
 //     </div>
 //   );
 // }
-
 
 // import Link from "next/link";
 // import dbConnect from "../../lib/mongodb";
@@ -320,107 +311,124 @@
 //   );
 // }
 import Link from "next/link";
+import Image from "next/image";
+import { IoIosSearch, IoIosArrowDown } from "react-icons/io";
+import ArrowBtn from "@/components/homepage/arrowbtn";
 import dbConnect from "../../lib/mongodb";
 import Blog from "../../models/Blog";
 
-export default async function BlogListPage() {
+export default async function BlogsPage() {
   await dbConnect();
 
   // Fetch published blogs sorted by newest first
-  const blogs = await Blog.find({ status: "published" })
+  const blogsData = await Blog.find({ status: "published" })
     .sort({ publishedAt: -1 })
     .lean();
 
+  // Transform the data to match your frontend structure
+  const blogs = blogsData.map((blog) => ({
+    id: blog._id.toString(),
+    title: blog.title,
+    authors: blog.isFeaturedByPictoreal
+      ? "Team Pictoreal"
+      : blog.authorDetails?.name || "Unknown Author",
+    img: blog.banner || "/blog/default-poster.png", // fallback image
+    excerpt:
+      blog.description?.substring(0, 140) +
+        (blog.description?.length > 140 ? "..." : "") || "",
+    isFeaturedByPictoreal: blog.isFeaturedByPictoreal || false,
+    copyEditors: blog.copyEditors || [],
+  }));
+
   return (
-    <div className="p-6">
-      {/* Header Section */}
-      <div className="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <h1 className="text-3xl font-bold">
-          Write your blog here! <br className="md:hidden" />
-          <span className="text-gray-600 text-lg font-normal">
-            Sign up to get started
-          </span>
-        </h1>
-        <div className="flex gap-4">
-          <Link
-            href="/auth/login"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            Login
-          </Link>
-          <Link
-            href="/auth/signup"
-            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-          >
-            Sign Up
-          </Link>
+    <div className="bg-paleskyblue min-h-screen px-4 md:p-6 font-body">
+      {/* New Header Section */}
+      <div className="p-6 ">
+        <div className="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <h1 className="text-xl  w-full flex justify-center  ">
+            Write your blog here! <br className="md:hidden" />
+            
+          </h1>
+          
         </div>
+        <div className="flex gap-4 justify-end">
+            <Link
+              href="/auth/login"
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            >
+              Login
+            </Link>
+            <Link
+              href="/auth/signup"
+              className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              Sign Up
+            </Link>
+          </div>
       </div>
 
-      {/* Blog List */}
-      {blogs.length === 0 && <p>No blogs found.</p>}
+      {/* Existing Blogs Header */}
+      <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
+        BLOGS
+      </p>
 
-      <div className="space-y-8">
-        {blogs.map((blog) => (
-          <div
-            key={blog._id}
-            className={`flex flex-col md:flex-row items-start gap-4 border-b pb-6 ${
-              blog.isFeaturedByPictoreal ? "border-2 border-green-500 rounded-lg p-4" : ""
-            }`}
-          >
-            <div className="flex-1">
-              {/* Author */}
-              <div className="text-sm text-gray-500 mb-2">
-                By{" "}
-                <span className="font-medium text-gray-700">
-                  {blog.isFeaturedByPictoreal
-                    ? "Team Pictoreal"
-                    : blog.authorDetails?.name || "Unknown Author"}
-                </span>
-                {!blog.isFeaturedByPictoreal && blog.copyEditors && blog.copyEditors.length > 0 && (
-                  <span className="text-gray-500">
-                    {" "}
-                    (Editors: {blog.copyEditors.join(", ")})
-                  </span>
-                )}
-              </div>
+      {/* Blog Cards */}
+      <div className="rounded-4xl p-6 flex flex-col mx-auto items-start gap-8 max-w-6xl">
+        {blogs.length === 0 ? (
+          <div className="text-center w-full py-12">
+            <p className="text-deepnavy text-xl">No blogs found.</p>
+          </div>
+        ) : (
+          blogs.map((blog) => (
+            <div
+              key={blog.id}
+              className="bg-white shadow-md rounded-4xl p-6 flex flex-col pt-8 sm:pt-6 items-center md:flex-row md:items-start gap-6 border border-white w-[70vw]"
+            >
+              {/* Image */}
+              <Image
+                src={blog.img}
+                alt={blog.title}
+                width={160}
+                height={182}
+                className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-auto object-cover object-top rounded border-2 border-[#1a365d] aspect-[7/8]"
+              />
 
-              {/* Title */}
-              <Link href={`/blogs/${blog._id}`}>
-                <h2 className="text-2xl font-bold hover:underline">{blog.title}</h2>
-              </Link>
+              {/* Content */}
+              <div className="flex-1">
+                <p className="text-2xl md:text-3xl font-heading font-bold text-deepnavy text-center md:text-left">
+                  {blog.title}
+                </p>
+                <p className="text-sm md:text-base font-body text-deepnavy mt-1 text-center md:text-left">
+                  <span className="font-semibold">Author: </span>
+                  {blog.authors}
+                  {blog.copyEditors && blog.copyEditors.length > 0 && (
+                    <span className="text-deepnavy/80">
+                      {" "}
+                      (Editors: {blog.copyEditors.join(", ")})
+                    </span>
+                  )}
+                </p>
+                <p className="text-deepnavy/80 font-body mt-3 text-sm text-center md:text-left">
+                  {blog.excerpt}
+                </p>
 
-              {/* Description */}
-              <p className="text-gray-600 mt-2">
-                {blog.description?.substring(0, 140) || ""}
-              </p>
+                {/* Tags + Button */}
+                <div className="flex flex-wrap items-center justify-center gap-4 mt-6 md:justify-start">
+                  {blog.isFeaturedByPictoreal && (
+                    <span className="px-4 py-1 bg-[#003666] text-white rounded-full text-xs md:text-sm border flex items-center justify-center">
+                      Featured
+                    </span>
+                  )}
 
-              {/* Read more */}
-              <div className="mt-3">
-                <Link
-                  href={`/blogs/${blog._id}`}
-                  className="text-blue-600 hover:underline text-sm"
-                >
-                  Read more
-                </Link>
+                  <div className="md:ml-auto flex">
+                    <ArrowBtn text="Read More" path={`/blogs/${blog.id}`} />
+                  </div>
+                </div>
               </div>
             </div>
-
-            {/* Banner */}
-            {blog.banner && (
-              <div className="w-full md:w-56 h-32 flex-shrink-0">
-                <img
-                  src={blog.banner}
-                  alt={blog.title}
-                  className="w-full h-full object-cover rounded"
-                />
-              </div>
-            )}
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
 }
-
-

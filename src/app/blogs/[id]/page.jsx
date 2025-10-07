@@ -106,7 +106,7 @@ const BlogPage = async (context) => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
-  <div className="relative  w-full md:w-4/5 max-w-[1200px] mx-auto bg-paleskyblue rounded-3xl border-2 shadow-border-20 shadow-[0_8px_15px_rgba(0,51,102,1)] shadow-4xl px-6 md:px-10 py-8">
+  <div className="relative  w-full md:w-4/5 max-w-[70vw] mx-auto bg-paleskyblue rounded-3xl border-2 shadow-border-20 shadow-[0_8px_15px_rgba(0,51,102,1)] shadow-4xl px-6 md:px-10 py-8">
     
        {/* Title */}
     <h1 className="font-heading text-[#111c33] text-sm font-bold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5 mx-auto max-w-4xl">
@@ -116,24 +116,23 @@ const BlogPage = async (context) => {
 
     {/* Banner Section */}
     {blog.banner && (
-     <div className="flex justify-center items-center mb-8">
-  <div className="max-w-md py-8 mx-auto"> 
-    <img
-      src={blog.banner}
-      alt="Blog banner"
-      className="w-full h-auto rounded-xl object-cover  transition-transform duration-300 hover:scale-105" 
-    />
-  </div>
+ <div className="md:max-w-lg  w-full py-5 mx-auto"> 
+  <img
+    src={blog.banner}
+    alt="Blog banner"
+    className="w-full h-auto rounded-xl object-cover transition-transform duration-300 hover:scale-105" 
+  />
 </div>
+
 
     )}
 
  
 
     {/* Author */}
-    <div className="font-body text-[20px] text-firefly flex justify-center px-4 pt-4 text-center md:text-center">
+    <div className="text-base md:text-base lg:text-[20px] font-body mb-8 text-firefly flex justify-center mt-4 px-4 mb-3 text-center ">
     <p className="text-firefly">
-  <strong className="font-body text-bold">Author: </strong> {blog.authorDetails?.name || "Unknown Author"}
+  <strong >Author: </strong> {blog.authorDetails?.name || "Unknown Author"}
 </p>
 
     </div>
@@ -141,8 +140,8 @@ const BlogPage = async (context) => {
 
     {/* Co-Authors */}
     {blog.coAuthors?.length > 0 && (
-      <p className="text-base font-body leading-relaxed mb-8 font-body text-[20px] text-firefly flex justify-center px-4 pt-4 text-center md:text-center">
-        <strong>Co-Authors: </strong> {blog.coAuthors.join(", ")}
+      <p className="text-base md:text-base lg:text-[20px] font-body mb-8 text-firefly flex md-justify-center px-4 text-left md-text-center">
+        <strong>Co-Authors:</strong> {blog.coAuthors.join(", ")}
       </p>
     )}
 
@@ -161,7 +160,7 @@ const BlogPage = async (context) => {
     )}
 
     {/* Description */}
-    <p className="font-body text-base pt-4 mb-4 md:text-lg leading-relaxed text-gray-800">
+    <p className="font-body text-base relative pt-4 mb-4 md:text-lg leading-relaxed text-gray-800">
       <strong>Description: </strong> {blog.description}
     </p>
  
