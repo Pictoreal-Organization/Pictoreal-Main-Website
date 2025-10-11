@@ -174,11 +174,13 @@ const PublishPreview = () => {
               </div>
 
               {blogData.banner && (
-                <img
-                  src={blogData.banner}
-                  alt="Blog banner"
-                  className="w-full h-56 object-cover rounded-2xl mb-6 shadow-md"
-                />
+                <div className="md:max-w-lg w-full py-5 mx-auto mb-6">
+                  <img
+                    src={blogData.banner}
+                    alt="Blog banner"
+                    className="w-full h-auto rounded-xl object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
               )}
 
               <h1 className="text-4xl font-bold mb-4 text-[#001730]" style={{ fontFamily: "serif" }}>
@@ -195,11 +197,18 @@ const PublishPreview = () => {
                       <h3 className="text-2xl font-bold text-[#001730]">{block.content}</h3>
                     )}
                     {block.type === "image" && block.content && (
-                      <img
-                        src={block.content}
-                        alt={block.caption || "Blog image"}
-                        className="w-full rounded-xl shadow-sm"
-                      />
+                      <figure className="mb-6">
+                        <img
+                          src={block.content}
+                          alt={block.caption || "Blog image"}
+                          className="w-full rounded"
+                        />
+                        {block.caption && (
+                          <figcaption className="text-sm text-gray-500 text-center mt-2">
+                            {block.caption}
+                          </figcaption>
+                        )}
+                      </figure>
                     )}
                   </div>
                 ))}
