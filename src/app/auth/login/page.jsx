@@ -23,7 +23,13 @@ export default function LoginPage() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error("Invalid server response");
+      }
+
       console.log("Login response:", data);
 
       if (!res.ok) {
@@ -32,25 +38,24 @@ export default function LoginPage() {
         return;
       }
 
-      // Clear old data first
+      // Clear and store token/user data
       localStorage.clear();
-
-      // Store token and user data
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-      
+      localStorage.setItem("role", data.user.role);
+
       console.log("Stored token:", localStorage.getItem("token"));
       console.log("Stored user:", localStorage.getItem("user"));
 
-      // Use window.location.href for full page reload to ensure localStorage is written
-      setTimeout(() => {
-        if (data.user.role === "admin") {
-          window.location.href = "/admin-dashboard";
-        } else {
-          window.location.href = "/editor";
-        }
-      }, 100);
-      
+      setLoading(false);
+
+      // Smooth Next.js navigation
+      if (data.user.role === "admin") {
+        router.push("/admin-dashboard");
+      } else {
+        router.push("/editor");
+      }
+
     } catch (err) {
       console.error("Login error:", err);
       setError("Something went wrong. Please try again.");

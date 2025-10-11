@@ -24,6 +24,8 @@ export default function SignupPage() {
     let mounted = true;
     async function checkAuth() {
       const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+      const role = typeof window !== "undefined" ? localStorage.getItem("role") : null;
+      
       if (!token) {
         if (mounted) {
           setVerifying(false);
@@ -44,11 +46,18 @@ export default function SignupPage() {
         if (!mounted) return;
 
         if (res.ok && data.valid) {
+          // If user is already logged in as admin, redirect to admin dashboard
+          if (data.decoded?.role === "admin") {
+            router.push("/admin-dashboard");
+            return;
+          }
+          // If user is already logged in as regular user, show the "already logged in" message
           setVerified(data.decoded || {});
           setVerifying(false);
         } else {
           localStorage.removeItem("token");
           localStorage.removeItem("role");
+          localStorage.removeItem("user");
           setVerified(null);
           setVerifying(false);
         }
@@ -56,6 +65,7 @@ export default function SignupPage() {
         console.error("Token verification failed:", err);
         localStorage.removeItem("token");
         localStorage.removeItem("role");
+        localStorage.removeItem("user");
         if (mounted) {
           setVerified(null);
           setVerifying(false);
@@ -67,7 +77,7 @@ export default function SignupPage() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,6 +113,7 @@ export default function SignupPage() {
       if (data.token && data.user) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("role", data.user.role);
         
         console.log("Stored user data:", data.user);
         
@@ -128,6 +139,7 @@ export default function SignupPage() {
   const handleLogoutAndContinue = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
+    localStorage.removeItem("user");
     setVerified(null);
     setVerifying(false);
   };

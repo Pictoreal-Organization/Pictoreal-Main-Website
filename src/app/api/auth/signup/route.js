@@ -40,11 +40,11 @@ export async function POST(req) {
     // Generate JWT token for auto-login
     const token = jwt.sign(
       { 
-        id: newUser._id, 
+        userId: newUser._id.toString(), 
         email: newUser.email, 
         role: newUser.role 
       },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || "default_secret_key",
       { expiresIn: "7d" }
     );
 

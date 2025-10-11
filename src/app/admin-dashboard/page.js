@@ -100,10 +100,31 @@ const AdminDashboard = () => {
   // ✅ Protect route: only allow admins
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const userStr = localStorage.getItem("user");
     const role = localStorage.getItem("role");
 
-    if (!token || role !== "admin") {
-      router.push("/auth/signup"); // redirect if not admin
+    if (!token || (!userStr && !role)) {
+      router.push("/auth/login");
+      return;
+    }
+
+    // Check if user is admin
+    let isAdmin = false;
+    if (userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        isAdmin = user.role === "admin";
+      } catch (e) {
+        console.error("Error parsing user data:", e);
+      }
+    }
+    
+    if (role) {
+      isAdmin = role === "admin";
+    }
+
+    if (!isAdmin) {
+      router.push("/auth/login");
     }
   }, [router]);
 
@@ -128,6 +149,13 @@ const AdminDashboard = () => {
   useEffect(() => {
     fetchPendingBlogs();
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+    router.push("/auth/login");
+  };
 
   const handleAction = async (blogId, action) => {
     const rejectionReason = action === "reject" ? prompt("Enter rejection reason:") : null;
@@ -162,12 +190,35 @@ const AdminDashboard = () => {
   };
 
   if (loading) {
-    return <div className="p-6">Loading admin dashboard...</div>;
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#DDF1FF] via-[#B8E4FF] to-[#DDF1FF] flex items-center justify-center">
+        <div className="text-center">
+          <div className="relative">
+            <div className="w-20 h-20 border-4 border-[#001730] border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+            <div className="absolute inset-0 w-20 h-20 border-4 border-transparent border-t-[#003a5f] rounded-full animate-spin mx-auto" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+          </div>
+          <h2 className="text-2xl font-bold text-[#001730] mb-2">Loading Admin Dashboard</h2>
+          <p className="text-gray-600">Please wait while we fetch your data...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Admin Blog Review Portal</h1>
+      {/* Header with Logout Button */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Admin Blog Review Portal</h1>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
 
       {pendingBlogs.length === 0 && <p>No blogs are pending review.</p>}
 
