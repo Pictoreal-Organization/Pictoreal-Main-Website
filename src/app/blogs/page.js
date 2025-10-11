@@ -409,6 +409,8 @@ export default async function BlogsPage() {
                       Featured
                     </span>
                   )}
+                  
+                  {/* dyanamic Tag cooming soon..*/}
 
                   <div className="md:ml-auto flex">
                     <ArrowBtn text="Read More" path={`/blogs/${blog.id}`} />
