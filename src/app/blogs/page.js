@@ -314,6 +314,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoIosSearch, IoIosArrowDown } from "react-icons/io";
 import ArrowBtn from "@/components/homepage/arrowbtn";
+import AuthButtons from "@/components/blogs/AuthButtons";
 import dbConnect from "../../lib/mongodb";
 import Blog from "../../models/Blog";
 
@@ -351,20 +352,7 @@ export default async function BlogsPage() {
           </h1>
           
         </div>
-        <div className="flex gap-4 justify-end">
-            <Link
-              href="/auth/login"
-              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              Login
-            </Link>
-            <Link
-              href="/auth/signup"
-              className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-            >
-              Sign Up
-            </Link>
-          </div>
+        <AuthButtons />
       </div>
 
       {/* Existing Blogs Header */}
@@ -385,13 +373,15 @@ export default async function BlogsPage() {
               className="bg-white shadow-md rounded-4xl p-6 flex flex-col pt-8 sm:pt-6 items-center md:flex-row md:items-start gap-6 border border-white w-[70vw]"
             >
               {/* Image */}
-              <Image
-                src={blog.img}
-                alt={blog.title}
-                width={160}
-                height={182}
-                className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-auto object-cover object-top rounded border-2 border-[#1a365d] aspect-[7/8]"
-              />
+              <div className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-[200px] md:h-[180px] lg:h-[200px] overflow-hidden rounded border-2 border-[#1a365d]">
+                <Image
+                  src={blog.img}
+                  alt={blog.title}
+                  width={160}
+                  height={200}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
 
               {/* Content */}
               <div className="flex-1">
