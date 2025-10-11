@@ -72,16 +72,21 @@ export default function AuthButtons() {
   }
 
   return (
-    <div className="flex gap-4 justify-end">
+    <div className="flex gap-4 justify-end text-[#DDF1FF] p-3 rounded-full">
+      {/* LOGIN button — same as Blogs / ArrowBtn dark theme */}
       <Link
         href="/auth/login"
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        className="px-6 py-2 rounded-full font-body font-medium transition-transform duration-300 ease-in-out 
+               text-[#DDF1FF] bg-[#111C33] hover:bg-[#003366] hover:scale-110"
       >
         Login
       </Link>
+
+      {/* SIGNUP button — opposite theme of Login */}
       <Link
         href="/auth/signup"
-        className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+        className="px-6 py-2 rounded-full font-body font-medium transition-transform duration-300 ease-in-out 
+               text-[#111C33] bg-[#DDF1FF] border border-[#111C33] hover:bg-[#B9E3FF] hover:scale-110"
       >
         Sign Up
       </Link>
