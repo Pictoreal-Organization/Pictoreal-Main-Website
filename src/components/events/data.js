@@ -11,7 +11,7 @@ export const imageSets = [
         ],
         title: "Magazine Release Event",
         description:
-            "The Magazine Release Event, the flagship event of Pictoreal, showcased a unique and captivating theme this year, Navras, symbolizing a magazine brimming with emotions. A classical dance performance depicting the nine rasas enhanced the event’s charm. The magazine was unveiled by dignitaries alongside student members of Pictoreal.The essence of Navras was truly felt as team members shared their experiences of magazine creation. Nostalgia peaked when the journey was relived through a heartfelt behind-the-scenes video. The magazine’s success was evident in the emotional involvement of all attendees, marking the fulfillment of a year-long dream.",
+            'The Magazine Release Event, the flagship event of Pictoreal, showcased a unique theme this year, “Prahar”, inspired by the ancient Indian concept of time division, where each day was segmented into eight distinct parts or prahars.Each prahar signifies a unique phase of the day, representing transition, balance, and purpose, ranging from the calm of Brahma Muhurta to the intensity of Madhyahna , the serenity of Sayankal, and the stillness of Nishitha. The magazine was unveiled by dignitaries alongside student members of Pictoreal, beautifully capturing the spirit of Prahar, symbolizing dedication through every phase of time and effort that led to this creation.',
     },
     {
         images: [
@@ -168,7 +168,7 @@ export const imageSets = [
             "/gallery/bappa3.jpg",
             "/gallery/bappa4.jpg",
         ],
-        title: "Amche Bappa",
+        title: "Aamche Bappa",
         description:
             "Amche Bappa, spanned for 10 days featuring contests where participants displayed creativity and devotion to Ganpati Bappa. They uploaded photos of home decorations and showcased mandal art, enriching community festivities. Reels and videos added dynamic storytelling to express devotion. Overall, Amche Bappa celebrated Ganesh Chaturthi with enthusiasm, creativity, and community spirit.",
     },
