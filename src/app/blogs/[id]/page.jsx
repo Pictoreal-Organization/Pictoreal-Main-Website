@@ -102,8 +102,8 @@ const BlogPage = async (context) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4">
-      <div className="relative  w-full md:w-4/5 max-w-[75vw] mx-auto bg-paleskyblue rounded-3xl border-2 shadow-border-20 shadow-[0_8px_15px_rgba(0,51,102,1)] shadow-4xl px-6 md:px-10 py-8">
+    <div className="min-h-screen bg-[#ddf1ff] py-10 px-4">
+      <div className="relative  w-full md:w-4/5 max-w-[75vw] mx-auto bg-[#b3dfff] rounded-3xl border-3 shadow-border-20 shadow-[0_8px_15px_rgba(0,51,102,1)] shadow-4xl px-6 md:px-10 py-8">
         {/* Title */}
         <div className="  w-auto">
           <div className="font-heading text-[#111c33]  pt-2 sm:text-5xl text-2xl font-extrabold text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5 ">
@@ -113,17 +113,17 @@ const BlogPage = async (context) => {
 
         {/* Banner Section */}
         {blog.banner && (
-          <div className="md:max-w-lg  w-full py-5 mx-auto">
+          <div className="max-h-auto md:max-w-lg  w-full py-5 mx-auto justify-items-center">
             <img
               src={blog.banner}
               alt="Blog banner"
-              className="w-full h-auto rounded-xl object-cover transition-transform duration-300 hover:scale-105"
+              className=" w-2/3 h-auto rounded-xl object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
         )}
 
         {/* Author */}
-        <div className="text-base md:text-base lg:text-[20px] font-body mb-8 text-firefly flex justify-center mt-4 px-4 mb-3 text-center ">
+        <div className="text-base md:text-base lg:text-[20px] font-body mb-8 text-firefly flex justify-center mt-4 px-4 text-center ">
           <p className="text-firefly">
             <strong>Author: </strong>{" "}
             {blog.authorDetails?.name || "Unknown Author"}
@@ -152,28 +152,25 @@ const BlogPage = async (context) => {
         )}
 
         {/* Description */}
-        <p className="font-body text-base relative pt-4 mb-4 md:text-lg leading-relaxed text-gray-800">
+        {/* <p className="font-body text-base relative pt-4 mb-4 md:text-lg leading-relaxed text-gray-800">
           <strong>Description: </strong> {blog.description}
-        </p>
+        </p> */}
 
         {/* ✅ Render content blocks */}
-        <div
-          className="prose max-w-none font-body relative shadow-[0_8px_15px_rgba(0,51,102,0.4)]
- p-6 rounded-xl  p-2 md:p-5 shadow-4xl bg-[#B3DFFF]  mx-auto"
-        >
+        <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px] ">
           {contentBlocks.map((block, idx) => {
             switch (block.type) {
               case "heading":
                 return (
-                  <h2 key={idx} className="text-2xl font-semibold mb-4">
+                  <div key={idx} className="font-heading text-3xl font-semibold text-firefly mb-3 mt-8 px-4 md:px-0 text-center md:text-left">
                     {block.content}
-                  </h2>
+                  </div>
                 );
               case "text":
                 return (
                   <p
                     key={idx}
-                    className="mb-4 leading-relaxed whitespace-pre-line"
+                    className="mb-5"
                   >
                     {block.content}
                   </p>
@@ -181,11 +178,13 @@ const BlogPage = async (context) => {
               case "image":
                 return (
                   <figure key={idx} className="mb-6">
+                  <div className="blog-content-image border-[5px] border-[#1a365d] w-full md:w-1/3 mx-auto mb-5">
                     <img
                       src={block.content}
                       alt={block.caption || "Blog image"}
-                      className="w-full rounded"
+                      className="w-full h-auto"
                     />
+                    </div>
                     {block.caption && (
                       <figcaption className="text-sm text-gray-500 text-center mt-2">
                         {block.caption}
