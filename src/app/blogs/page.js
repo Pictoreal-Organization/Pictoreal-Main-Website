@@ -9,6 +9,14 @@ import ArrowBtn from "@/components/homepage/arrowbtn";
 export default function BlogsPage() {
   const blogs = [
     {
+      id: "blog6",
+      title: "हिंसेची सावली",
+      authors: "Chaitanya Kulkarni", 
+      img: "/blog/Blog6/blog6-poster-img.png",
+      excerpt:
+        "Violence, an act that casts a long-lasting shadow on an individual, is often stripped of its real form in media. Some like to portray it in a comical form, while others downplay its role by hiding it. But there are few attempts where the bleak reality is portrayed in its true form, and the impact it has on the characters of the story is not ignored or downplayed for melodrama. Instead, it develops into something we can only imagine. This blog is about some of those attempts...",
+    },
+    {
       id: "blog5",
       title: "Dreams and Deadlines",
       authors: "Harshit Vora, Omkar Desai",
