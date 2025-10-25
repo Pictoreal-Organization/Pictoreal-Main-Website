@@ -10,7 +10,7 @@ export default function Blog3() {
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="flex justify-center w-full gap-8 md:mx-16 p-5">
+            <div className="flex justify-center w-full gap-8 md:mx-16 p-5">  
               <img
                 src="/blog/blog3-poster-img.png"
                 alt="Blog Poster"

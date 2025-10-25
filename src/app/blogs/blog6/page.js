@@ -11,19 +11,21 @@ export default function Blog6() {
           <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             हिंसेची सावली
           </div>
-          <div className="flex w-7/11 gap-8 border-[5px] border-[#1a365d] mx-16">
-              <img
-                src="/blog/blog6-poster-img.png"
-                alt="Blog Poster"
-                className="w-full border-5 border-[#1a365d]"
-              />
-           </div>
-          <div className="font-body text-[20px] flex text-center text-firefly pt-8">
-              <p className="text-firefly text-center justify-center">Author: Chaitanya Kulkarni</p>
-            </div>
+<div className="flex justify-center items-center w-full px-16">
+  <img
+    src="/blog/Blog6/blog6-poster-img.png"
+    alt="Blog Poster"
+    className="w-auto md:w-7/11 h-auto border-[5px] border-firefly"
+  />
+</div>
 
-          {/* Left-aligned article text */}
-          <div className="text-left font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
+
+          <div className="font-body text-[20px] flex justify-center pt-8">
+             <p className="text-firefly text-center">Author: Chaitanya Kulkarni</p>
+          </div>
+
+
+          <div className="text-justify font-body text-[17px] text-firefly p-8 pl-[10px] pr-[10px] pt-[30px] pb-[30px]">
             <article className="max-w-4xl mx-auto md:p-5">
 
               <p className="mb-4">
@@ -147,33 +149,6 @@ export default function Blog6() {
                   className="border-[5px] border-[#1a365d]"
                   alt="Final abstract art"
                 />
-              </div>
-
-              {/* --- MODIFICATION: Footnotes with clickable links --- */}
-              <div className="text-left mt-8">
-                <p className="mb-1">Foot notes-</p>
-                <p className="mb-1">1) Oldboy part needs to polished</p>
-                <p className="mb-1">2) Sources-</p>
-                <p className="mb-1 break-words">
-                  <a
-                    href="https://www.brainfacts.org/Thinking-Sensing-and-Behaving/Emotions-Stress-and-Anxiety/2016/The-Neuroscience-of-Violence"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    https://www.brainfacts.org/Thinking-Sensing-and-Behaving/Emotions-Stress-and-Anxiety/2016/The-Neuroscience-of-Violence
-                  </a>
-                </p>
-                <p className="mb-1 break-words">
-                  <a
-                    href="https://www.psychologytoday.com/us/blog/the-human-experience/201901/insight-into-the-violent-mind"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    https://www.psychologytoday.com/us/blog/the-human-experience/201901/insight-into-the-violent-mind
-                  </a>
-                </p>
               </div>
 
             </article>
