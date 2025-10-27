@@ -11,17 +11,19 @@ export default function Blog6() {
           <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             हिंसेची सावली
           </div>
-<div className="flex justify-center items-center w-full px-16">
-  <img
-    src="/blog/Blog6/blog6-poster-img.png"
-    alt="Blog Poster"
-    className="w-auto md:w-7/11 h-auto border-[5px] border-firefly"
-  />
-</div>
-
-
-          <div className="font-body text-[20px] flex justify-center pt-8">
-             <p className="text-firefly text-center">Author: Chaitanya Kulkarni</p>
+          
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex justify-center w-auto md:w-1/2 gap-8 mx-auto md:mx-32">
+              <img
+                src="/blog/Blog6/blog6-poster-img.png"
+                alt="Blog Poster"
+                className="w-auto md:w-2/3 h-auto border-[5px] border-firefly"
+              />
+            </div>
+            <div className="font-body text-[20px] text-firefly flex flex-col items-center px-4 pt-8 text-center">
+              <p className="text-firefly">Author: Chaitanya Kulkarni</p>
+              <p className="text-firefly">Editors: Shruti Mundhe, Kasturi Vaidya</p>
+            </div>
           </div>
 
 
@@ -36,10 +38,10 @@ export default function Blog6() {
               </p>
 
               {/* 1st image centre (p1 faun) */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center w-full md:w-1/3 mx-auto mb-5">
                 <img
                   src="/blog/Blog6/Blog6-content-1.png"
-                  className="border-[5px] border-[#1a365d]"
+                  className=" border-[5px] border-[#1a365d]"
                   alt="Abstract art of a faun"
                 />
               </div>
@@ -87,7 +89,7 @@ export default function Blog6() {
               </p>
 
               {/* image 3 in centre (B&W abstract art) */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center w-full md:w-1/3 mx-auto mb-5">
                 <img
                   src="/blog/Blog6/Blog6-content-3.png"
                   className="border-[5px] border-[#1a365d]"
@@ -153,7 +155,7 @@ export default function Blog6() {
 
             </article>
 
-            <div className="flex flex-col items-center w-full mt-8">
+            <div className="flex flex-col items-center w-full">
               <div className="flex">
                 <ArrowBtn text="Back" path={`/blogs`} />
               </div>

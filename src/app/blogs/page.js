@@ -14,8 +14,7 @@ export default function BlogsPage() {
       authors: "Chaitanya Kulkarni", 
       img: "/blog/Blog6/blog6-poster-img.png",
       excerpt:
-        "Violence, an act that casts a long-lasting shadow on an individual, is often stripped of its real form in media. Some like to portray it in a comical form, while others downplay its role by hiding it. But there are few attempts where the bleak reality is portrayed in its true form, and the impact it has on the characters of the story is not ignored or downplayed for melodrama. Instead, it develops into something we can only imagine. This blog is about some of those attempts...",
-    },
+      "Violence leaves a lasting shadow on individuals, yet media often disguises its true form sometimes through comedy or sometimes by hiding it altogether. Rarely we see portrayals that confront its bleak reality and lasting impact on characters. This blog explores those rare works that do..."    },
     {
       id: "blog5",
       title: "Dreams and Deadlines",
