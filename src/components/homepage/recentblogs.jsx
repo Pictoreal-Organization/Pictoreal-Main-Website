@@ -10,8 +10,8 @@ export default function RecentBlogs() {
       title: "हिंसेची सावली",
       authors: "Chaitanya Kulkarni",
       excerpt:
-        "A deep dive into balancing creative aspirations with the practicalities of project timelines and client expectations.",
-        img: "/blog/Blog6/blog6-poster-img.png",
+        "Violence leaves a lasting shadow on individuals, yet media often disguises its true form sometimes through comedy or sometimes by hiding it altogether. Rarely we see portrayals that confront its bleak reality and lasting impact on characters. This blog explores those rare works that do...",
+        img: "/blog/Blog6/blog6-hp-poster-img.png",
       imagePosition: "top", // 👈 first card: show top
     },
     {
