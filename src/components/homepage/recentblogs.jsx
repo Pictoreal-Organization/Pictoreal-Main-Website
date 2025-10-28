@@ -10,7 +10,7 @@ export default function RecentBlogs() {
       title: "हिंसेची सावली",
       authors: "Chaitanya Kulkarni",
       excerpt:
-        "Violence leaves a lasting shadow on individuals, yet media often disguises its true form sometimes through comedy or sometimes by hiding it altogether. Rarely we see portrayals that confront its bleak reality and lasting impact on characters. This blog explores those rare works that do...",
+        "Violence leaves a lasting impact, but media often conceals its true nature, whether through humor or omission. This blog uncovers the rare works that confront its harsh reality... and reveal its lasting effects.",
         img: "/blog/Blog6/blog6-hp-poster-img.png",
       imagePosition: "top", // 👈 first card: show top
     },
