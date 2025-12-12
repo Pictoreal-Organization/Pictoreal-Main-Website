@@ -9,6 +9,14 @@ import ArrowBtn from "@/components/homepage/arrowbtn";
 export default function BlogsPage() {
   const blogs = [
     {
+      id: "blog7",
+      title: "Language Segregation: A Silent Divider in a Loud World",
+      authors: "Aswathi Pillai, Rania Abbas",
+      img: "/blog/Blog7/blog7-poster-img.png",
+      excerpt:
+        "Ever felt left out just because you didnt speak the 'right' language. Maybe this blog is for you then, read and find out how language segregation works in real life and why its worth talking about it.",
+    },
+    {
       id: "blog6",
       title: "हिंसेची सावली",
       authors: "Chaitanya Kulkarni", 
