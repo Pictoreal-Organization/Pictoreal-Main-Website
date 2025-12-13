@@ -6,24 +6,25 @@ import ArrowBtn from "./arrowbtn";
 export default function RecentBlogs() {
   const blogs = [
     {
+      id: "blog7",
+      title: "Language Segregation: A Silent Divider in a Loud World",
+      authors: "Aswathi Pillai, Rania Abbas",
+      excerpt:
+        "Ever felt left out just because you didnt speak the 'right' language? This blog explores how language segregation works in real life and why it is worth talking about.",
+      img: "/blog/Blog7/blog7-poster-img.png",
+      imagePosition: "top",
+    },
+    {
       id: "blog6",
       title: "हिंसेची सावली",
       authors: "Chaitanya Kulkarni",
       excerpt:
-        "Violence leaves a lasting impact, but media often conceals its true nature, whether through humor or omission. This blog uncovers the rare works that confront its harsh reality... and reveal its lasting effects.",
-        img: "/blog/Blog6/blog6-hp-poster-img.png",
-      imagePosition: "top", // 👈 first card: show top
-    },
-    {
-      id: "blog5",
-      title: "Dreams and Deadlines",
-      authors: "Harshit Vora, Omkar Desai",
-      excerpt:
-        "A deep dive into balancing creative aspirations with the practicalities of project timelines and client expectations.",
-      img: "/blog/blog5-poster-img.png",
-      imagePosition: "top", // 👈 first card: show top
+        "Violence leaves a lasting impact, but media often conceals its true nature, whether through humor or omission. This blog uncovers the rare works that confront its harsh reality.",
+      img: "/blog/Blog6/blog6-hp-poster-img.png",
+      imagePosition: "top",
     },
   ];
+  
 
   return (
     <section 

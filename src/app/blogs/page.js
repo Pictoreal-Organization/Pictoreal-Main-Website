@@ -17,11 +17,11 @@ export default function BlogsPage() {
         "Ever felt left out just because you didnt speak the 'right' language. Maybe this blog is for you then, read and find out how language segregation works in real life and why its worth talking about it.",
     },
     {
-      id: "blog6",
-      title: "हिंसेची सावली",
-      authors: "Chaitanya Kulkarni", 
-      img: "/blog/Blog6/blog6-poster-img.png",
-      excerpt:
+      id: "blog6",
+      title: "हिंसेची सावली",
+      authors: "Chaitanya Kulkarni", 
+      img: "/blog/Blog6/blog6-poster-img.png",
+      excerpt:
       "Violence leaves a lasting shadow on individuals, yet media often disguises its true form sometimes through comedy or sometimes by hiding it altogether. Rarely we see portrayals that confront its bleak reality and lasting impact on characters. This blog explores those rare works that do..."    },
     {
       id: "blog5",
