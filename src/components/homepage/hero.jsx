@@ -236,7 +236,7 @@ const Hero = () => {
   const router = useRouter();
 
   // 🎯 EASY CONFIGURATION
-  const SHOW_FEATURED = true;
+  const SHOW_FEATURED = false;
   
   // 🎨 CHOOSE YOUR ANIMATION STYLE (1, 2, or 3)
   const ANIMATION_STYLE = 2;
@@ -260,12 +260,12 @@ const Hero = () => {
 
   // ---------------- MOBILE CARDS ----------------
   const cards = [
-    {
-      id: 0,
-      title: featuredBanner.title,
-      image: "/current_banner_vert.png",
-      path: featuredBanner.path,
-    },
+    // {
+    //   id: 0,
+    //   title: featuredBanner.title,
+    //   image: "/current_banner_vert.png",
+    //   path: featuredBanner.path,
+    // },
     {
       id: 1,
       title: "Magazine V27",
