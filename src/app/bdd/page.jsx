@@ -13,8 +13,8 @@ export default function BDDComingSoon() {
           <Image
             src="/bdd/bdd_vector.png"   // optional image
             alt="Blood Donation Drive"
-            width={300}
-            height={300}
+            width={400}
+            height={400}
           />
         </div>
 
