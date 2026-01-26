@@ -5,13 +5,13 @@ import ArrowBtn from "../../components/homepage/arrowbtn.jsx"; // adjust path if
 
 export default function BDDComingSoon() {
   return (
-    <div className="min-h-screen bg-[#DDF1FF] flex items-center justify-center px-6">
+    <div className="min-h-[calc(100vh-5rem)] bg-[#DDF1FF] flex items-center justify-center px-6">
       <div className="max-w-2xl text-center">
 
         {/* Optional Illustration */}
         <div className="flex justify-center mb-6">
           <Image
-            src="/bdd/bdd_vector.jpeg"   // optional image
+            src="/bdd/bdd_vector.png"   // optional image
             alt="Blood Donation Drive"
             width={300}
             height={300}
@@ -27,7 +27,7 @@ export default function BDDComingSoon() {
         </p>
 
         <div className="mt-6 inline-block px-6 py-3 rounded-full bg-red-500 text-white font-bold text-lg shadow-lg">
-          🩸 Starting 4th February
+          🩸 Starting 1st February
         </div>
 
         <p className="mt-8 text-gray-600 text-base">
