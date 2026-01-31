@@ -1,28 +1,24 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//     async rewrites() {
-//       return [
-//         {
-//           source: "/api/:path*", 
-//           destination: "https://cd9392g9-5000.inc1.devtunnels.ms/api/:path*", // Proxy to your backend
-//         },
-//       ];
-//     },
-//   };
-  
-//   export default nextConfig;
-  
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/:path*", 
-        destination: "https://cd9392g9-5000.inc1.devtunnels.ms/api/:path*", // Proxy to your backend
+        source: "/api/:path*",
+        destination: "https://cd9392g9-5000.inc1.devtunnels.ms/api/:path*",
       },
     ];
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/bdd",
+        destination: "https://bdd.pictoreal.in",
+        permanent: true,
+      },
+    ];
+  },
+
   images: {
     remotePatterns: [
       {
