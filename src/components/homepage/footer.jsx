@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillHeart } from 'react-icons/ai';
+import { AiFillHeart, AiFillInstagram } from 'react-icons/ai';
 
 const Footer = () => {
   return (
@@ -50,6 +50,19 @@ const Footer = () => {
             <p>
               <strong className="text-white">Email :</strong> pictoreal@pict.edu
             </p>
+            {/* --- Added Instagram Link --- */}
+            <div className="flex items-center gap-2 mt-4">
+              <a
+                href="https://www.instagram.com/pictoreal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-all duration-300 group"
+              >
+                <AiFillInstagram className="text-2xl" />
+                <span className="group-hover:underline">@pictoreal</span>
+              </a>
+
+            </div>
           </div>
 
         </div>
