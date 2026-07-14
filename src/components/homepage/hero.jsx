@@ -18,9 +18,9 @@ const Hero = () => {
     },
     {
       id: 1,
-      title: "Know Your Prahar",
-      image: "/know-your-prahar.png",
-      path: "/know-your-prahar",
+      title: "Anvesha",
+      image: "/anvesha.png",
+      path: "/anvesha",
     },
   ];
 
@@ -88,11 +88,11 @@ const Hero = () => {
         <div className="flex flex-col md:block w-full items-center justify-center mt-10 gap-10">
           {/* Left Box */}
           <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16">
-            <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
+            <ArrowBtn text="Anvesha" path="/anvesha" />
             <div className="w-[180px] sm:w-[200px] md:w-[220px] rounded-[10px] overflow-hidden shadow-lg bg-white">
               <Image
-                src="/know-your-prahar.png"
-                alt="Know Your Prahar"
+                src="/anvesha.png"
+                alt="Anvesha"
                 className="w-full h-full object-cover"
                 priority={true}
                 width={220}
