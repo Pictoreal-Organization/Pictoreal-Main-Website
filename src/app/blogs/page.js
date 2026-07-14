@@ -53,7 +53,7 @@ export default function BlogsPage() {
   return (
     <div className="bg-paleskyblue min-h-screen px-4 md:p-6">
       {/* Header */}
-      <p className="text-center font-bold text-3xl text-[#001730] md:text-5xl font-heading mb-4">
+      <p className="text-center font-bold text-3xl text-[#083C3C] md:text-5xl font-heading mb-4">
         BLOGS
       </p>
 
@@ -110,7 +110,7 @@ export default function BlogsPage() {
               width={160}
               height={182}
               // CHANGE 2: Made image responsive while maintaining aspect ratio.
-              className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-auto object-cover object-top rounded border-2 border-[#1a365d] aspect-[7/8]"
+              className="w-full max-w-[240px] md:w-[140px] lg:w-[160px] h-auto object-cover object-top rounded border-2 border-[#0A2B2B] aspect-[7/8]"
             />
 
             {/* Content */}

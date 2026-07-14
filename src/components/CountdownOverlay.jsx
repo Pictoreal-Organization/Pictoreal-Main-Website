@@ -302,15 +302,15 @@ export default function CountdownOverlay({ onTransitionComplete }) {
     <div className={`flex flex-col items-center mx-2 md:mx-6 transform transition-all duration-[1500ms] ease-out ${
       isTransitioning ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
     }`}>
-      <div className="relative w-20 h-24 md:w-28 md:h-32 flex items-center justify-center bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-[#407499]/20 overflow-hidden group hover:shadow-2xl hover:shadow-[#407499]/20 transition-all duration-300">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#DDF1FF]/30 to-[#407499]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#407499] via-[#001730] to-[#407499]"></div>
-        <span className="text-4xl md:text-6xl font-heading font-bold relative z-10 text-[#001730] drop-shadow-sm">
+      <div className="relative w-20 h-24 md:w-28 md:h-32 flex items-center justify-center bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-[#2D7F7F]/20 overflow-hidden group hover:shadow-2xl hover:shadow-[#2D7F7F]/20 transition-all duration-300">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#D8ECEC]/30 to-[#2D7F7F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2D7F7F] via-[#083C3C] to-[#2D7F7F]"></div>
+        <span className="text-4xl md:text-6xl font-heading font-bold relative z-10 text-[#083C3C] drop-shadow-sm">
           {String(value).padStart(2, '0')}
         </span>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#407499]/40 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#2D7F7F]/40 to-transparent"></div>
       </div>
-      <span className="text-sm md:text-base uppercase tracking-wider mt-3 font-body font-semibold text-[#001730]/80">
+      <span className="text-sm md:text-base uppercase tracking-wider mt-3 font-body font-semibold text-[#083C3C]/80">
         {label}
       </span>
     </div>
@@ -318,7 +318,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
 
   return (
     <div 
-      className={`fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4 overflow-hidden bg-gradient-to-br from-[#DDF1FF] via-white to-[#DDF1FF] transition-all duration-1000 ease-in-out ${
+      className={`fixed inset-0 flex flex-col justify-center items-center z-[9999] p-4 overflow-hidden bg-gradient-to-br from-[#D8ECEC] via-white to-[#D8ECEC] transition-all duration-1000 ease-in-out ${
         fadeOut ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
       }`}
       style={{ 
@@ -340,7 +340,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
             style={{
               width: `${3 + Math.random() * 6}px`,
               height: `${3 + Math.random() * 6}px`,
-              backgroundColor: Math.random() > 0.5 ? '#407499' : '#001730',
+              backgroundColor: Math.random() > 0.5 ? '#2D7F7F' : '#083C3C',
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 4}s`,
@@ -349,9 +349,9 @@ export default function CountdownOverlay({ onTransitionComplete }) {
             }}
           />
         ))}
-        <div className="absolute top-1/6 left-1/4 w-12 h-12 border-2 border-[#407499]/30 rotate-45 animate-spin" style={{animationDuration: '20s'}}></div>
-        <div className="absolute top-2/3 right-1/5 w-8 h-8 rounded-full animate-bounce" style={{backgroundColor: '#407499', opacity: '0.2', animationDelay: '1s', animationDuration: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-6 h-6 border-2 border-[#001730]/20 rounded-full animate-pulse" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
+        <div className="absolute top-1/6 left-1/4 w-12 h-12 border-2 border-[#2D7F7F]/30 rotate-45 animate-spin" style={{animationDuration: '20s'}}></div>
+        <div className="absolute top-2/3 right-1/5 w-8 h-8 rounded-full animate-bounce" style={{backgroundColor: '#2D7F7F', opacity: '0.2', animationDelay: '1s', animationDuration: '4s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-6 h-6 border-2 border-[#083C3C]/20 rounded-full animate-pulse" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
       </div>
 
       {/* Main container */}
@@ -371,13 +371,13 @@ export default function CountdownOverlay({ onTransitionComplete }) {
           }}>
             <div className="relative flex justify-center">
               <img
-                src="/V27_FINAL_LOGO.png"
+                src="/V28_FINAL_LOGO.png"
                 alt="Pictoreal Logo"
                 className={`drop-shadow-2xl object-contain transition-all duration-[2000ms] ease-out ${
                   isTransitioning ? 'w-40 h-40 md:w-56 md:h-56' : 'w-32 h-32 md:w-48 md:h-48'
                 }`}
               />
-              <div className={`absolute inset-0 bg-gradient-to-br from-[#407499]/10 to-[#001730]/10 rounded-full blur-3xl -z-10 transition-all duration-[2000ms] ${
+              <div className={`absolute inset-0 bg-gradient-to-br from-[#2D7F7F]/10 to-[#083C3C]/10 rounded-full blur-3xl -z-10 transition-all duration-[2000ms] ${
                 isTransitioning ? 'animate-pulse scale-125' : 'animate-pulse scale-100'
               }`}></div>
             </div>
@@ -400,7 +400,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
                   isTransitioning ? 'h-20 md:h-28' : 'h-16 md:h-24'
                 }`}
               />
-              <p className="text-sm md:text-lg font-body text-[#001730]/80 text-center whitespace-nowrap">
+              <p className="text-sm md:text-lg font-body text-[#083C3C]/80 text-center whitespace-nowrap">
                 Where thoughts, colours, and words prevail!
               </p>
             </div>
@@ -426,7 +426,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
         {/* Launch message */}
         {!isTransitioning && (
           <div className="text-center opacity-80">
-            <p className="text-[#001730]/60 font-body text-xs md:text-base">
+            <p className="text-[#083C3C]/60 font-body text-xs md:text-base">
               Get ready for an amazing experience
             </p>
           </div>
@@ -436,16 +436,16 @@ export default function CountdownOverlay({ onTransitionComplete }) {
       {/* Transition effect on exit - Enhanced */}
       {isTransitioning && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-8 h-8 rounded-full animate-ping" style={{backgroundColor: '#407499', opacity: 0.6}}></div>
-          <div className="absolute w-24 h-24 border-2 rounded-full animate-ping" style={{borderColor: '#407499', opacity: 0.4, animationDelay: '0.3s', animationDuration: '2s'}}></div>
-          <div className="absolute w-48 h-48 border border-[#001730] rounded-full animate-ping" style={{opacity: 0.3, animationDelay: '0.6s', animationDuration: '2.5s'}}></div>
+          <div className="w-8 h-8 rounded-full animate-ping" style={{backgroundColor: '#2D7F7F', opacity: 0.6}}></div>
+          <div className="absolute w-24 h-24 border-2 rounded-full animate-ping" style={{borderColor: '#2D7F7F', opacity: 0.4, animationDelay: '0.3s', animationDuration: '2s'}}></div>
+          <div className="absolute w-48 h-48 border border-[#083C3C] rounded-full animate-ping" style={{opacity: 0.3, animationDelay: '0.6s', animationDuration: '2.5s'}}></div>
           
           {/* Additional sparkle effect for smoother transition */}
           <div className="absolute inset-0">
             {[...Array(12)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-[#407499] rounded-full animate-ping"
+                className="absolute w-2 h-2 bg-[#2D7F7F] rounded-full animate-ping"
                 style={{
                   left: `${20 + Math.random() * 60}%`,
                   top: `${20 + Math.random() * 60}%`,
@@ -461,7 +461,7 @@ export default function CountdownOverlay({ onTransitionComplete }) {
       
       {/* Final fade overlay for ultra-smooth transition */}
       {fadeOut && (
-        <div className="absolute inset-0 bg-[#DDF1FF] animate-pulse" style={{
+        <div className="absolute inset-0 bg-[#D8ECEC] animate-pulse" style={{
           animation: 'fadeToHomepage 1s ease-in-out forwards'
         }}></div>
       )}

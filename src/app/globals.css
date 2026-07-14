@@ -22,12 +22,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paleskyblue: #DCF1FF;
-  --color-pastelskyblue: #B3DFFF;
-  --color-deepnavy: #111C33;
-  --color-greenblue:#407499;
-  --color-midnightblue: #0A192E;
-  --color-cream: #F2F2F2;
+  --color-paleskyblue: #EAF5F5;
+  --color-pastelskyblue: #86C5C5;
+  --color-deepnavy: #0A2B2B;
+  --color-greenblue: #2D7F7F;
+  --color-midnightblue: #051C1C;
+  --color-cream: #F4F7F7;
   --font-heading: Playfair, "serif";
   --font-body: Inter, "sans-serif";
 }

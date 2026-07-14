@@ -6,8 +6,8 @@ export default function BlogDakhni() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             अरे बैगन ! - चलिये, जानते है दक्खनी की दुनिया
           </div>
           {/* <div className="flex items-center justify-center">
@@ -19,7 +19,7 @@ export default function BlogDakhni() {
               <img
                 src="/blog/blog-dakhni-poster.png"
                 alt="Blog Poster"
-                className="w-full md:w-1/2 border-[5px] border-[#1a365d]"
+                className="w-full md:w-1/2 border-[5px] border-[#0A2B2B]"
               />
             </div>
 

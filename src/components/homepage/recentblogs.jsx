@@ -145,7 +145,7 @@ export default function RecentBlogs() {
   return (
     <section 
     id="recent-blogs" 
-    className="bg-[#111C33] text-white min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
+    className="bg-[#0A2B2B] text-white min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl w-full mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
@@ -156,7 +156,7 @@ export default function RecentBlogs() {
             <ArrowBtn
               text="Read All Blogs"
               path="/blogs"
-              borderColor="#DDF1FF"
+              borderColor="#D8ECEC"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function RecentBlogs() {
                     {blog.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 bg-white/90 text-[#111C33] rounded-full text-xs font-semibold backdrop-blur-sm shadow-sm"
+                        className="px-2.5 py-1 bg-white/90 text-[#0A2B2B] rounded-full text-xs font-semibold backdrop-blur-sm shadow-sm"
                       >
                         {tag}
                       </span>
@@ -207,29 +207,29 @@ export default function RecentBlogs() {
                 {/* Content Section */}
                 <div className="md:w-3/5 p-5 md:p-6 flex flex-col justify-between h-full">
                   <div className="flex-1">
-                    <p className="text-xl md:text-2xl font-heading font-bold text-[#111C33] mb-2 leading-tight group-hover:text-[#003366] transition-colors duration-300">
+                    <p className="text-xl md:text-2xl font-heading font-bold text-[#0A2B2B] mb-2 leading-tight group-hover:text-[#145353] transition-colors duration-300">
                       {blog.title}
                     </p>
 
-                    <p className="text-[#111C33]/60 font-medium mb-3 text-sm">
+                    <p className="text-[#0A2B2B]/60 font-medium mb-3 text-sm">
                       By {blog.authors}
                     </p>
 
-                    <p className="text-[#111C33]/80 font-body text-sm leading-relaxed mb-4">
+                    <p className="text-[#0A2B2B]/80 font-body text-sm leading-relaxed mb-4">
                       {blog.excerpt}
                     </p>
                   </div>
 
                   {/* Action Area */}
-                  <div className="flex items-center justify-between pt-3 border-t border-[#111C33]/10">
-                    <div className="text-xs text-[#111C33]/50 font-medium">
+                  <div className="flex items-center justify-between pt-3 border-t border-[#0A2B2B]/10">
+                    <div className="text-xs text-[#0A2B2B]/50 font-medium">
                       5 min read
                     </div>
                     <div className="transform group-hover:translate-x-1 transition-transform duration-300">
                       <ArrowBtn
                         text="Read Article"
                         path={`/blogs/${blog.id}`}
-                        borderColor="#111C33"
+                        borderColor="#0A2B2B"
                       />
                     </div>
                   </div>
@@ -246,17 +246,17 @@ export default function RecentBlogs() {
             <ArrowBtn
               text="Read All Blogs"
               path="/blogs"
-              borderColor="#DDF1FF"
+              borderColor="#D8ECEC"
             />
           </div>
           {/* <ArrowBtn
             text="Write a Blog"
             path="/blogs/write"
-            bgColor="#DDF1FF"
-            textColor="#111C33"
-            circleBg="#111C33"
-            hoverColor="#EAF7FF"
-            arrowColor="#DDF1FF"
+            bgColor="#D8ECEC"
+            textColor="#0A2B2B"
+            circleBg="#0A2B2B"
+            hoverColor="#F0F7F7"
+            arrowColor="#D8ECEC"
           /> */}
         </div>
       </div>

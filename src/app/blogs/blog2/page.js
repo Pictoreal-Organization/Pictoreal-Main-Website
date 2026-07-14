@@ -5,17 +5,17 @@ export default function Blog2() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Mysteries of Particle Physics: A Cosmic Dance of Tiny Wonders and
             Universal Forces
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="flex w-7/11 gap-8 border-[5px] border-[#1a365d] mx-16">
+            <div className="flex w-7/11 gap-8 border-[5px] border-[#0A2B2B] mx-16">
               <img
                 src="/blog/blog2-poster-img.png"
                 alt="Blog Poster"
-                className="w-full border-5 border-[#1a365d]"
+                className="w-full border-5 border-[#0A2B2B]"
               />
             </div>
             <div className="font-body text-[20px] flex text-cenetr text-firefly pt-8">
@@ -56,12 +56,12 @@ export default function Blog2() {
               <div className="md:flex justify-center mb-4">
                 <img
                   src="../blog/blog2-content-1.png"
-                  className="flex-1 border-[5px] border-[#1a365d] mb-5 md:mb-0"
+                  className="flex-1 border-[5px] border-[#0A2B2B] mb-5 md:mb-0"
                   alt="Image 1"
                 />
                 <img
                   src="../blog/blog2-content-2.png"
-                  className="flex-1 border-[5px] border-[#1a365d]"
+                  className="flex-1 border-[5px] border-[#0A2B2B]"
                   alt="Image 2"
                 />
               </div>
@@ -73,7 +73,7 @@ export default function Blog2() {
                 <div className="flex-shrink-0 mr-2 ">
                   <img
                     src="../blog/blog2-content-3.png"
-                    className="w-44 border-[5px] border-[#1a365d]"
+                    className="w-44 border-[5px] border-[#0A2B2B]"
                     alt="Image 3"
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function Blog2() {
               <div className="flex justify-center mb-4">
                 <img
                   src="../blog/blog2-content-4.png"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Image 4"
                 />
               </div>
@@ -133,7 +133,7 @@ export default function Blog2() {
                 <div className="">
                   <img
                     src="../blog/blog2-content-6.png"
-                    className="border-[5px] border-[#1a365d]"
+                    className="border-[5px] border-[#0A2B2B]"
                     alt="Image 5"
                   />
                 </div>
@@ -146,7 +146,7 @@ export default function Blog2() {
                 <div className="flex-shrink-0">
                   <img
                     src="/blog/blog2-content-5.png"
-                    className="border-[5px] border-[#1a365d]"
+                    className="border-[5px] border-[#0A2B2B]"
                     alt="Image 6"
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function Blog2() {
               <div className="mb-4">
                 <img
                   src="../blog/blog2-content-7.png"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Image 7"
                 />
               </div>
@@ -221,7 +221,7 @@ export default function Blog2() {
                 <div className="flex md:flex-shrink-0 justify-center items-center">
                   <img
                     src="../blog/blog2-content-8.png"
-                    className="border-[5px] border-[#1a365d]"
+                    className="border-[5px] border-[#0A2B2B]"
                     alt="Image 8"
                   />
                 </div>

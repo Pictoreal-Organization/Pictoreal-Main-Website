@@ -77,9 +77,9 @@ export default function AudioArticlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#DDF1Ff] p-4 flex flex-col">
+    <div className="min-h-screen bg-[#D8ECEC] p-4 flex flex-col">
       {/* Title */}
-      <p className="text-3xl md:text-5xl font-heading font-bold text-center mb-4 text-[#111C33] drop-shadow-lg">
+      <p className="text-3xl md:text-5xl font-heading font-bold text-center mb-4 text-[#0A2B2B] drop-shadow-lg">
         AUDIO ARTICLES
       </p>
 
@@ -91,8 +91,8 @@ export default function AudioArticlePage() {
             href={`/audio/v27/${lang}`}
             className={`px-4 py-2 rounded-lg shadow text-sm transition-all duration-300 border ${
               selectedLang === lang
-                ? "bg-[#001730] text-white border-[#001730]"
-                : "bg-white text-gray-700 border-transparent hover:border-[#001730] hover:text-black"
+                ? "bg-[#083C3C] text-white border-[#083C3C]"
+                : "bg-white text-gray-700 border-transparent hover:border-[#083C3C] hover:text-black"
             }`}
           >
             {lang.toUpperCase()}
@@ -115,7 +115,7 @@ export default function AudioArticlePage() {
               const idKey = article.id ?? article._id;
               const isSelected = selectedArticle === article;
               const activeClass =
-                "bg-[#003366] text-white shadow-lg shadow-[#407499]/30";
+                "bg-[#145353] text-white shadow-lg shadow-[#2D7F7F]/30";
 
               return (
                 <div
@@ -124,7 +124,7 @@ export default function AudioArticlePage() {
                   className={`group max-w-[90%] mx-auto relative overflow-hidden rounded-lg px-2 py-3 cursor-pointer flex items-center transition-all duration-300 transform hover:scale-[1.03] ${
                     isSelected
                       ? activeClass
-                      : "bg-[#f5f8fa] text-[#111C33]/70 hover:bg-white/80 hover:transform hover:text-[#111C33] hover:shadow-md"
+                      : "bg-[#F4F7F7] text-[#0A2B2B]/70 hover:bg-white/80 hover:transform hover:text-[#0A2B2B] hover:shadow-md"
                   }`}
                 >
                   <Image
@@ -141,7 +141,7 @@ export default function AudioArticlePage() {
                     className={`text-sm font-medium line-clamp-2 transition-all duration-300 ${
                       isSelected
                         ? "text-white"
-                        : "text-[#111C33]/70 group-hover:text-[#111C33]"
+                        : "text-[#0A2B2B]/70 group-hover:text-[#0A2B2B]"
                     }`}
                   >
                     {article.title ?? article.name ?? "Untitled"}
@@ -153,7 +153,7 @@ export default function AudioArticlePage() {
         </div>
 
         {/* RIGHT: Selected article player */}
-        <div className="w-full md:w-2/3 flex flex-col bg-[#f5f8fa] shadow-2xl rounded-3xl p-8 order-1 md:order-2 border border-blue-100/50 backdrop-blur-sm">
+        <div className="w-full md:w-2/3 flex flex-col bg-[#F4F7F7] shadow-2xl rounded-3xl p-8 order-1 md:order-2 border border-teal-100/50 backdrop-blur-sm">
           {selectedArticle ? (
             <>
               {/* Image container with custom player overlay */}
@@ -167,7 +167,7 @@ export default function AudioArticlePage() {
                     src={`${backendUrl}/images/${
                       selectedArticle.image ?? selectedArticle.cover ?? ""
                     }`}
-                    alt={selectedArticle.title ?? "Selected article"}
+                    alt={selectedArticle.title ?? "selected article"}
                     width={270}
                     height={400}
                     unoptimized
@@ -193,7 +193,7 @@ export default function AudioArticlePage() {
                       // Show Play button when paused
                       <button
                         onClick={handlePlayPause}
-                        className="p-5 bg-[#111c33]/80 rounded-full text-white transform transition hover:scale-110 backdrop-blur-md"
+                        className="p-5 bg-[#0A2B2B]/80 rounded-full text-white transform transition hover:scale-110 backdrop-blur-md"
                         aria-label="Play"
                       >
                         <Play className="w-12 h-12 fill-current" />
@@ -203,21 +203,21 @@ export default function AudioArticlePage() {
                       <div className="flex items-center gap-8 text-white">
                         <button
                           onClick={() => handleSeek(-5)}
-                          className="p-3 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-3 bg-[#0A2B2B]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Rewind 5 seconds"
                         >
                           <Rewind className="w-8 h-8" />
                         </button>
                         <button
                           onClick={handlePlayPause}
-                          className="p-5 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-5 bg-[#0A2B2B]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Pause"
                         >
                           <Pause className="w-10 h-10" />
                         </button>
                         <button
                           onClick={() => handleSeek(5)}
-                          className="p-3 bg-[#111c33]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
+                          className="p-3 bg-[#0A2B2B]/80 rounded-full transform transition hover:scale-110 backdrop-blur-md"
                           aria-label="Fast-forward 5 seconds"
                         >
                           <FastForward className="w-8 h-8" />
@@ -230,7 +230,7 @@ export default function AudioArticlePage() {
 
               {/* Title with enhanced styling */}
               <div className="text-center">
-                <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#111C33] to-[#003366] bg-clip-text text-transparent mb-2 leading-tight">
+                <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#0A2B2B] to-[#145353] bg-clip-text text-transparent mb-2 leading-tight">
                   {selectedArticle.title ??
                     selectedArticle.name ??
                     "Untitled"}
@@ -265,19 +265,19 @@ export default function AudioArticlePage() {
             </>
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#86C5C5]/20 to-[#2D7F7F]/20 rounded-full flex items-center justify-center mb-6 shadow-lg">
                 <svg
-                  className="w-10 h-10 text-[#111C33]/50"
+                  className="w-10 h-10 text-[#0A2B2B]/50"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M18 3a1 1 0 00-1.196-.98L12 3v13.5a2.5 2.5 0 11-1-2V5.75l5.804-1.742A1 1 0 0018 5v-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#111C33]/70 mb-2">
+              <h3 className="text-xl font-bold text-[#0A2B2B]/70 mb-2">
                 Ready to Listen
               </h3>
-              <p className="text-[#111C33]/50 font-medium">
+              <p className="text-[#0A2B2B]/50 font-medium">
                 Select an article from the list to start your audio journey
               </p>
             </div>

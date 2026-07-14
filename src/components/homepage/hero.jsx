@@ -69,18 +69,18 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
+    <div className="relative w-full bg-[#D8ECEC] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
       {/* ------------------ DESKTOP / TABLET (≥ md) ------------------ */}
       <div className="hidden md:flex flex-col items-center justify-center w-full">
         {/* Center Text */}
         <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 mt-16 md:mt-20">
-          <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-heading font-bold leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#001730]">
+          <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-heading font-bold leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#083C3C]">
             Pictoreal
           </div>
         </div>
 
         {/* Subtitle */}
-        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#001730] text-center px-4 font-heading">
+        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#083C3C] text-center px-4 font-heading">
           Where thoughts, colours, and words prevail!
         </p>
 
@@ -128,11 +128,11 @@ const Hero = () => {
       <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-8">
-          <div className="text-[3rem] sm:text-[4rem] font-heading font-bold leading-tight tracking-tight text-[#001730] mb-4">
+          <div className="text-[3rem] sm:text-[4rem] font-heading font-bold leading-tight tracking-tight text-[#083C3C] mb-4">
             Pictoreal
-            {/* <span className="text-[#001730]">It's Pictoreal</span> */}
+            {/* <span className="text-[#083C3C]">It's Pictoreal</span> */}
           </div>
-          <p className="text-[15px] sm:text-[20px] text-[#001730] font-heading px-4">
+          <p className="text-[15px] sm:text-[20px] text-[#083C3C] font-heading px-4">
             Where thoughts, colours, and words prevail!
           </p>
         </div>
@@ -190,7 +190,7 @@ const Hero = () => {
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   activeCard === index
-                    ? "bg-[#001730] scale-125"
+                    ? "bg-[#083C3C] scale-125"
                     : "bg-gray-300 hover:bg-gray-400"
                 }`}
               />

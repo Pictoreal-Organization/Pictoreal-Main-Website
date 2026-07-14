@@ -27,8 +27,8 @@ export default function MagazinePage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#DDF1FF] px-4 pb-4 md:p-6">
-      <p className="text-3xl text-[#001730] md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 ">
+    <div className="min-h-screen bg-[#D8ECEC] px-4 pb-4 md:p-6">
+      <p className="text-3xl text-[#083C3C] md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 ">
         MAGAZINES
       </p>
 
@@ -36,7 +36,7 @@ export default function MagazinePage() {
       <div ref={timelineRef} className="hidden md:block max-w-7xl mx-auto relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-300"></div>
         <motion.div
-          className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-[#0A192E] origin-top"
+          className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-[#051C1C] origin-top"
           style={{ scaleY: scrollYProgress }}
         />
 
@@ -72,12 +72,12 @@ export default function MagazinePage() {
                       </div>
                       {/* Text */}
                       <div className="flex-1 flex flex-col justify-center">
-                        <div className="text-[#0A192E] font-heading font-bold mb-1 text-3xl md:text-4xl">{magazine.title}</div>
+                        <div className="text-[#051C1C] font-heading font-bold mb-1 text-3xl md:text-4xl">{magazine.title}</div>
                         <div className="text-lg md:text-xl text-gray-400 my-2 font-body font-bold">VOLUME {magazine.volume}</div>
                         <Link
                           href={magazine.iFrameSrc}
                           target="_blank"
-                          className="inline-block font-body bg-[#111C33] text-white px-4 py-2 rounded-md hover:bg-[#003366] transition-colors text-sm w-fit"
+                          className="inline-block font-body bg-[#0A2B2B] text-white px-4 py-2 rounded-md hover:bg-[#145353] transition-colors text-sm w-fit"
                         >
                           Read Magazine
                         </Link>
@@ -98,7 +98,7 @@ export default function MagazinePage() {
                     className="bg-white rounded-xl shadow-lg p-4 h-full flex items-center"
                   >
                     <div>
-                      <h3 className="text-[#0A192E] font-body font-bold mb-3 text-lg">
+                      <h3 className="text-[#051C1C] font-body font-bold mb-3 text-lg">
                         About {magazine.title} Vol. {magazine.volume}
                       </h3>
                       <p className="font-body text-gray-600 text-sm leading-relaxed">{magazine.description}</p>
@@ -118,7 +118,7 @@ export default function MagazinePage() {
                     className="bg-white rounded-xl shadow-lg p-4 overflow-hidden"
                   >
                     <div>
-                      <h3 className="font-body text-[#0A192E] font-bold mb-3 text-lg">
+                      <h3 className="font-body text-[#051C1C] font-bold mb-3 text-lg">
                         About {magazine.title} Vol. {magazine.volume}
                       </h3>
                       <p className="font-body text-gray-600 text-sm leading-relaxed">{magazine.description}</p>
@@ -130,7 +130,7 @@ export default function MagazinePage() {
 
             {/* Timeline Dot */}
             <motion.div
-              className="w-3 h-3 bg-[#0A192E] rounded-full absolute left-4 md:left-1/2 top-8 md:top-1/2 transform -translate-x-[6px] md:-translate-x-1/2 md:-translate-y-1/2"
+              className="w-3 h-3 bg-[#051C1C] rounded-full absolute left-4 md:left-1/2 top-8 md:top-1/2 transform -translate-x-[6px] md:-translate-x-1/2 md:-translate-y-1/2"
               whileInView={{ scale: [1, 1.5, 1] }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
@@ -152,9 +152,9 @@ export default function MagazinePage() {
                 <Image src={magazine.imgLink} alt={`${magazine.title} cover`} fill className="object-contain rounded-lg" />
               </div>
               <div className="flex-1">
-                <p className="font-body text-[#111C33] font-bold mb-1">{magazine.title}</p>
+                <p className="font-body text-[#0A2B2B] font-bold mb-1">{magazine.title}</p>
                 <p className="font-body text-sm text-gray-500 mb-2">VOLUME {magazine.volume}</p>
-                <span className="font-body text-sm text-[#111C33] flex items-center gap-2">Tap to explore</span>
+                <span className="font-body text-sm text-[#0A2B2B] flex items-center gap-2">Tap to explore</span>
               </div>
             </div>
           </div>
@@ -176,18 +176,18 @@ export default function MagazinePage() {
                     <Image src={selectedMagazine.imgLink} alt={`${selectedMagazine.title} cover`} fill className="object-contain rounded-lg" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-body text-[#111C33] font-bold mb-1">{selectedMagazine.title}</p>
+                    <p className="font-body text-[#0A2B2B] font-bold mb-1">{selectedMagazine.title}</p>
                     <p className="font-body text-sm text-gray-500 mb-2">VOLUME {selectedMagazine.volume}</p>
                   </div>
                 </div>
-                <div className="bg-[#DDF1FF] p-3 rounded-xl mb-3">
-                  <h4 className="font-semibold font-body text-[#111C33] mb-1 text-sm">About this volume</h4>
+                <div className="bg-[#D8ECEC] p-3 rounded-xl mb-3">
+                  <h4 className="font-semibold font-body text-[#0A2B2B] mb-1 text-sm">About this volume</h4>
                   <p className="font-body text-gray-600 text-xs leading-relaxed line-clamp-4">{selectedMagazine.description}</p>
                 </div>
                 <Link
                   href={selectedMagazine.iFrameSrc}
                   target="_blank"
-                  className="bg-[#111C33] font-body text-white px-4 py-2 rounded-xl text-sm font-medium w-full inline-block text-center"
+                  className="bg-[#0A2B2B] font-body text-white px-4 py-2 rounded-xl text-sm font-medium w-full inline-block text-center"
                 >
                   Read Magazine
                 </Link>

@@ -88,7 +88,7 @@ const TeamMember = ({ names, imageSrc, altText, hoverKey, height = 300, responsi
         {/* Names */}
         <div
           className="text-center rounded-b-md py-4"
-          style={{ backgroundColor: "#0A192E" }}
+          style={{ backgroundColor: "#051C1C" }}
         >
           {names.map((name, index) => (
             <div

@@ -5,8 +5,8 @@ export default function Blog1() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Uncanny Valley
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -50,7 +50,7 @@ export default function Blog1() {
               </p>
               <div className="blog-content-image w-full flex justify-center items-center">
                 <img
-                  className="w-auto h-auto max-w-full md:max-w-4/6 border-[5px] border-[#1a365d]"
+                  className="w-auto h-auto max-w-full md:max-w-4/6 border-[5px] border-[#0A2B2B]"
                   src="../blog/blog1-content-image-1.png"
                   alt="Sofia the robot"
                 />
@@ -69,7 +69,7 @@ export default function Blog1() {
               </p>
               <div className="blog-content-image flex justify-center items-center">
                 <img
-                  className="w-auto h-auto max-w-full border-[5px] border-[#1a365d] md:max-w-1/2"
+                  className="w-auto h-auto max-w-full border-[5px] border-[#0A2B2B] md:max-w-1/2"
                   src="../blog/blog1-content-img-2.webp"
                   alt="Uncanny Valley"
                 />
@@ -86,7 +86,7 @@ export default function Blog1() {
               </p>
               <div className="blog-content-image flex justify-center items-center">
                 <img
-                  className="w-auto h-auto max-w-full border-[5px] border-[#1a365d] md:max-w-2/3"
+                  className="w-auto h-auto max-w-full border-[5px] border-[#0A2B2B] md:max-w-2/3"
                   src="../blog/blog1-content-img-3.png"
                   alt="AI blurring lines"
                 />
@@ -139,7 +139,7 @@ export default function Blog1() {
               </p>
               <div className="blog-content-image flex justify-center items-center">
                 <img
-                  className="w-auto h-auto max-w-full border-[5px] border-[#1a365d] max-w-4/6"
+                  className="w-auto h-auto max-w-full border-[5px] border-[#0A2B2B] max-w-4/6"
                   src="../blog/blog1-content-img-4.jpg"
                   alt="DALL-E art"
                 />

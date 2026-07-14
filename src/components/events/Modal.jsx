@@ -7,8 +7,8 @@ const Modal = ({ isOpen, onClose, images, onImageClick }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 !m-auto  bg-[#A8DCEC] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
-      <div className="relative bg-[#DCF1FF] p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 ">
+    <div className="fixed inset-0 !m-auto  bg-[#86C5C5] bg-opacity-90 flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+      <div className="relative bg-[#EAF5F5] p-6 rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto shadow-lg transition-transform duration-300 transform scale-95 ">
         <div className="absolut sticky top-0 right-0 flex justify-end rounded-full">
           <div
             className="bg-red-600 flex items-center justify-center h-10 w-10 p-2 absolute top-0 right-0 rounded-full hover:bg-red-700 "

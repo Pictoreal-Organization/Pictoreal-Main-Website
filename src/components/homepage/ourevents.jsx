@@ -270,7 +270,7 @@ const EventsCarousel = () => {
   };
 
   return (
-    <section id="events-carousel" className="w-full bg-[#0A1631] py-12 flex flex-col items-center" aria-labelledby="events-heading">
+    <section id="events-carousel" className="w-full bg-[#0A2B2B] py-12 flex flex-col items-center" aria-labelledby="events-heading">
       <div className="text-center mb-8">
         <p id="events-heading" className="text-3xl font-heading md:text-5xl font-bold text-white mb-3">
           Our Events
@@ -321,7 +321,7 @@ const EventsCarousel = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center transition-all duration-300 rounded-xl p-4">
                   <p className="text-white font-heading text-lg font-semibold text-center">{events[getPrevIndex()].name}</p>
                 </div>
-                <div className="absolute inset-0 shadow-[0_0_15px_3px_rgba(190,227,248,0.3)] group-hover:shadow-[0_0_20px_4px_rgba(190,227,248,0.4)] transition-all duration-300 rounded-xl pointer-events-none"></div>
+                <div className="absolute inset-0 shadow-[0_0_15px_3px_rgba(134,197,197,0.3)] group-hover:shadow-[0_0_20px_4px_rgba(134,197,197,0.4)] transition-all duration-300 rounded-xl pointer-events-none"></div>
               </div>
             </Link>
           </div>
@@ -349,7 +349,7 @@ const EventsCarousel = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center transition-all duration-300 rounded-2xl p-6">
                   <p className="text-white font-heading text-3xl font-bold text-center">{events[currentIndex].name}</p>
                 </div>
-                <div className="absolute inset-0 shadow-[0_0_20px_5px_rgba(190,227,248,0.4)] group-hover:shadow-[0_0_25px_6px_rgba(190,227,248,0.5)] transition-all duration-300 rounded-2xl pointer-events-none"></div>
+                <div className="absolute inset-0 shadow-[0_0_20px_5px_rgba(134,197,197,0.4)] group-hover:shadow-[0_0_25px_6px_rgba(134,197,197,0.5)] transition-all duration-300 rounded-2xl pointer-events-none"></div>
               </div>
             </Link>
           </div>
@@ -376,7 +376,7 @@ const EventsCarousel = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center transition-all duration-300 rounded-xl p-4">
                   <p className="text-white font-heading text-lg font-semibold text-center">{events[getNextIndex()].name}</p>
                 </div>
-                <div className="absolute inset-0 shadow-[0_0_15px_3px_rgba(190,227,248,0.3)] group-hover:shadow-[0_0_20px_4px_rgba(190,227,248,0.4)] transition-all duration-300 rounded-xl pointer-events-none"></div>
+                <div className="absolute inset-0 shadow-[0_0_15px_3px_rgba(134,197,197,0.3)] group-hover:shadow-[0_0_20px_4px_rgba(134,197,197,0.4)] transition-all duration-300 rounded-xl pointer-events-none"></div>
               </div>
             </Link>
           </div>
@@ -402,7 +402,7 @@ const EventsCarousel = () => {
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
-                <div className="absolute inset-0 shadow-[0_0_20px_5px_rgba(190,227,248,0.4)] transition-all duration-300 rounded-2xl pointer-events-none"></div>
+                <div className="absolute inset-0 shadow-[0_0_20px_5px_rgba(134,197,197,0.4)] transition-all duration-300 rounded-2xl pointer-events-none"></div>
               </div>
             </Link>
           </div>
@@ -420,7 +420,7 @@ const EventsCarousel = () => {
                 key={index}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex 
-                    ? 'bg-[#DDF1FF] w-6' 
+                    ? 'bg-[#D8ECEC] w-6' 
                     : 'bg-white/30'
                 }`}
               />
@@ -433,11 +433,11 @@ const EventsCarousel = () => {
         <ArrowBtn
           text="Explore Events"
           path="/events"
-          bgColor="#DDF1FF"
-          textColor="#111C33"
-          circleBg="#111C33"
-          hoverColor="#EAF7FF"
-          arrowColor="#DDF1FF"
+          bgColor="#D8ECEC"
+          textColor="#0A2B2B"
+          circleBg="#0A2B2B"
+          hoverColor="#F0F7F7"
+          arrowColor="#D8ECEC"
         />
       </div>
     </section>

@@ -5,8 +5,8 @@ export default function Blog3() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Error 500 - The Flawed Beauty of Your Day
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -14,7 +14,7 @@ export default function Blog3() {
               <img
                 src="/blog/blog3-poster-img.png"
                 alt="Blog Poster"
-                className="w-full md:w-6/11 border-[5px] border-[#1a365d]"
+                className="w-full md:w-6/11 border-[5px] border-[#0A2B2B]"
               />
             </div>
 
@@ -55,7 +55,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-1.jpg"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Blog Image 1"
                   width={600}
                   height={400}
@@ -128,7 +128,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-2.jpg"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Blog Image 2"
                   width={600}
                   height={400}
@@ -179,7 +179,7 @@ export default function Blog3() {
               <div className="flex justify-center my-4 md:mx-16">
                 <Image
                   src="/blog/blog3-content-3.jpg"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Blog Image 3"
                   width={600}
                   height={400}
@@ -224,7 +224,7 @@ export default function Blog3() {
                   existence as the most erroneous being on this planet!
                 </p>
 
-                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#1a365d] md:w-5/12">
+                <div className="flex justify-center my-4 md:ml-8 border-[5px] border-[#0A2B2B] md:w-5/12">
                   <Image
                     src="/blog/blog3-content-4.jpg"
                     alt="Blog Image 4"

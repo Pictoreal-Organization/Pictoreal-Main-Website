@@ -98,25 +98,25 @@ const TeamContent = ({ teamName, teamData }) => {
   return (
     <div className="bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl p-8 relative overflow-hidden">
       <div className="absolute top-8 right-8 opacity-[0.03]">
-        <ActiveIcon className="w-32 h-32 text-[#111C33] transform -rotate-12" />
+        <ActiveIcon className="w-32 h-32 text-[#0A2B2B] transform -rotate-12" />
       </div>
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-6">
-          <div className="p-2 md:p-4 bg-[#003366] rounded-xl shadow-lg shadow-[#003366]/20">
+          <div className="p-2 md:p-4 bg-[#145353] rounded-xl shadow-lg shadow-[#145353]/20">
             <ActiveIcon className="w-4 h-4 md:w-8 md:h-8 text-white" />
           </div>
           <div>
-            <p className="text-2xl md:text-3xl font-body font-bold text-[#111C33]">
+            <p className="text-2xl md:text-3xl font-body font-bold text-[#0A2B2B]">
               {teamName} Team
             </p>
           </div>
         </div>
-        <p className="text-[#111C33]/80 font-body leading-relaxed mb-8 text-base">
+        <p className="text-[#0A2B2B]/80 font-body leading-relaxed mb-8 text-base">
           {teamData.description}
         </p>
         <div className="mb-6">
-          <p className="md:text-base font-body text-[#111C33] mb-4 flex items-center gap-2">
-            <Layers className="w-5 h-5 text-[#111C33]" />
+          <p className="md:text-base font-body text-[#0A2B2B] mb-4 flex items-center gap-2">
+            <Layers className="w-5 h-5 text-[#0A2B2B]" />
             Specializations
           </p>
           <div className="flex flex-col gap-3">
@@ -125,8 +125,8 @@ const TeamContent = ({ teamName, teamData }) => {
                 key={stat}
                 className="flex items-center gap-3 p-3 bg-black/5 rounded-lg"
               >
-                <div className="w-2 h-2 bg-[#003366] rounded-full"></div>
-                <span className="text-[#111C33] font-body font-bold text-sm">
+                <div className="w-2 h-2 bg-[#145353] rounded-full"></div>
+                <span className="text-[#0A2B2B] font-body font-bold text-sm">
                   {stat}
                 </span>
               </div>
@@ -161,9 +161,9 @@ const OurTeams = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-[#DCF1FF] min-h-screen flex flex-col items-center justify-center py-10 font-sans text-[#111C33]">
+    <div className="bg-gradient-to-br from-white to-[#EAF5F5] min-h-screen flex flex-col items-center justify-center py-10 font-sans text-[#0A2B2B]">
       <div className="relative mb-12 text-center">
-        <p className="text-3xl md:text-5xl font-heading font-bold text-[#0A192E] mb-2">
+        <p className="text-3xl md:text-5xl font-heading font-bold text-[#051C1C] mb-2">
           Our Teams
         </p>
         <div className="flex justify-center items-center gap-2 text-[#76879E]">
@@ -184,7 +184,7 @@ const OurTeams = () => {
             const isActive = activeTeam === teamName;
 
             const activeClass =
-              "bg-[#003366] text-white shadow-lg shadow-[#407499]/30";
+              "bg-[#145353] text-white shadow-lg shadow-[#2D7F7F]/30";
 
             return (
               // Use React Fragment to group button and its mobile content
@@ -193,7 +193,7 @@ const OurTeams = () => {
                   onClick={() => handleTeamClick(teamName)}
                   className={`group font-body w-full relative overflow-hidden rounded-xl px-4 py-1 md:px-3 md:py-2 text-sm md:text-base font-semibold flex items-center transition-all duration-300 transform md:hover:scale-105 ${isActive
                       ? activeClass
-                      : "hover:bg-white/80 bg-transparent md:border-0 text-[#111C33]/70 md:hover:bg-black/5"
+                      : "hover:bg-white/80 bg-transparent md:border-0 text-[#0A2B2B]/70 md:hover:bg-black/5"
                     }`}
                 >
                   <div className="flex items-center w-full p-2">
@@ -234,7 +234,7 @@ const OurTeams = () => {
             <TeamContent teamName={activeTeam} teamData={teams[activeTeam]} />
           ) : (
             <div className="h-80 flex items-center justify-center bg-white/70 backdrop-blur-sm border border-black/5 rounded-2xl shadow-xl">
-              <div className="text-[#111C33]/60 font-body">
+              <div className="text-[#0A2B2B]/60 font-body">
                 Select a team to see the details
               </div>
             </div>

@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Head>
-      <body className={`antialiased bg-[#DDF1FF] bg-repeat pt-20`}>
+      <body className={`antialiased bg-[#D8ECEC] bg-repeat pt-20`}>
         <Providers>
           <CountdownOverlay />
           <Navbar />

@@ -485,7 +485,7 @@ export default function Navbar() {
 
                 {/* Slider */}
                 <div
-                  className="absolute top-2 bottom-2 bg-[#111C33] rounded-full"
+                  className="absolute top-2 bottom-2 bg-[#0A2B2B] rounded-full"
                   style={{ ...sliderStyle, height: "calc(100% - 1rem)" }}
                 />
               </div>
@@ -501,7 +501,7 @@ export default function Navbar() {
               <button
                 ref={toggleBtnRef}   // ✅ added ref
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-[#0B2D4F] hover:bg-gray-100 focus:outline-none z-50"
+                className="inline-flex items-center justify-center p-2 rounded-md text-[#083C3C] hover:bg-gray-100 focus:outline-none z-50"
                 aria-controls="mobile-menu"
                 aria-expanded={isMobileMenuOpen}
               >
@@ -538,7 +538,7 @@ export default function Navbar() {
       <div
         ref={mobileMenuRef}   // ✅ added ref
         id="mobile-menu"
-        className={`md:hidden fixed top-20 right-0 h-auto w-1/2 rounded-3xl max-w-xs bg-[#EAF7FF]   shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-20 right-0 h-auto w-1/2 rounded-3xl max-w-xs bg-[#F0F7F7]   shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -551,7 +551,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`block w-full text-center py-3 rounded-3xl text-base font-medium transition-colors duration-300 ${
                   isActive
-                    ? "bg-[#111C33] text-white"
+                    ? "bg-[#0A2B2B] text-white"
                     : "text-black hover:bg-gray-100"
                 }`}
               >

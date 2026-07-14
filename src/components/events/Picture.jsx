@@ -8,9 +8,9 @@ import { imageSets } from "./data";
 import Image from "next/image";
 
 
-const color1 = "#DCF1FF";
-const color2 = "#A8DCEC";
-const color3 = "#111C33";
+const color1 = "#EAF5F5";
+const color2 = "#86C5C5";
+const color3 = "#0A2B2B";
 
 const Picture = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -43,7 +43,7 @@ const Picture = () => {
         <>
             <div className={` text-[${color3}] bg-[${color1}]`}>
                 <div className={`space-y-80 mb-10`}>
-                    <p className="font-heading text-3xl text-[#001730] md:text-5xl mt-6 font-bold text-center sm:-mb-6 -mb-1">
+                    <p className="font-heading text-3xl text-[#083C3C] md:text-5xl mt-6 font-bold text-center sm:-mb-6 -mb-1">
                         GALLERY
                     </p>
                     {imageSets.map((set, i) => (
@@ -58,7 +58,7 @@ const Picture = () => {
                                 className="flex flex-col max-w-full mx-auto lg:p-6 px-4 rounded-lg"
                             >
                                 <div className={`flex flex-col lg:flex-row mt-10 lg:pt-0`}>
-                                    <p className="lg:hidden font-heading text-xl text-[#001730] md:text-3xl font-bold text-center mb-4">
+                                    <p className="lg:hidden font-heading text-xl text-[#083C3C] md:text-3xl font-bold text-center mb-4">
                                         {set.title}
                                     </p>
                                     <div className="lg:max-w-[40%] lg:pl-10">

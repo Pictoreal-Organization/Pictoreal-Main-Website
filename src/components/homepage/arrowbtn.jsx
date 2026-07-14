@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 const ArrowBtn = ({
   text,
   path,
-  textColor = "#DDF1FF",
-  bgColor = "#111C33",
-  hoverColor = "#003366",
+  textColor = "#D8ECEC",
+  bgColor = "#0A2B2B",
+  hoverColor = "#145353",
   borderColor = null,   
-  circleBg = "#DDF1FF",  
-  arrowColor = "#111C33"
+  circleBg = "#D8ECEC",  
+  arrowColor = "#0A2B2B"
 }) => {
   const router = useRouter();
 

@@ -146,8 +146,8 @@ const AboutUs = () => {
                     {/* Back side */}
                     <div className="flip-back absolute w-full h-full backface-hidden rounded-full overflow-hidden rotate-y-180">
                       <Image
-                        src="/V27_FINAL_LOGO.png"
-                        alt="Volume 27 logo"
+                        src="/V28_FINAL_LOGO.png"
+                        alt="Volume 28 logo"
                         className="w-full h-full object-contain p-4"
                         loading="lazy"
                         width={186}
@@ -160,10 +160,10 @@ const AboutUs = () => {
                 {/* Flip Button */}
                 <div className="flex justify-center mt-4">
                   <button onClick={() => setIsFlipped(!isFlipped)}
-                    className="transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[#407499]/30 hover:shadow-lg bg-[#407499] hover:bg-[#0A192E]
-                text-[#DCF1FF] text-sm font-semibold px-3 py-1.5 rounded-md shadow-md border
-                border-[#407499]/30
-                hover:border-[#DCF1FF]/30
+                    className="transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[#2D7F7F]/30 hover:shadow-lg bg-[#2D7F7F] hover:bg-[#051C1C]
+                text-[#EAF5F5] text-sm font-semibold px-3 py-1.5 rounded-md shadow-md border
+                border-[#2D7F7F]/30
+                hover:border-[#EAF5F5]/30
                   backdrop-blur-sm
                   active:scale-95
                   hover:bg-opacity-80">Reveal Logo
@@ -183,7 +183,7 @@ const AboutUs = () => {
                 {/* Stat 1 */}
                 <div className="flex flex-col items-center justify-center text-white text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[137px] md:h-[76px]"
                   style={{
-                    backgroundColor: "#407499",
+                    backgroundColor: "#2D7F7F",
                     borderTopLeftRadius: "30px",
                     borderTopRightRadius: "50px",
                     borderBottomRightRadius: "20px",
@@ -196,7 +196,7 @@ const AboutUs = () => {
                 {/* Stat 2 */}
                 <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[126px] md:h-[76px]"
                   style={{
-                    backgroundColor: "#A4CDE4",
+                    backgroundColor: "#86C5C5",
                     borderTopLeftRadius: "30px",
                     borderTopRightRadius: "50px",
                     borderBottomRightRadius: "20px",
@@ -209,7 +209,7 @@ const AboutUs = () => {
                 {/* Stat 3 */}
                 <div className="flex flex-col items-center justify-center text-black text-center w-[90px] h-[60px] sm:w-[100px] sm:h-[65px] md:w-[126px] md:h-[76px]"
                   style={{
-                    backgroundColor: "#DCF1FF",
+                    backgroundColor: "#EAF5F5",
                     borderTopLeftRadius: "30px",
                     borderTopRightRadius: "50px",
                     borderBottomRightRadius: "20px",

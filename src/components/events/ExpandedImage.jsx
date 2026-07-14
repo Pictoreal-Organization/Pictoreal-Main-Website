@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 const ExpandedImage = ({ image, onClose }) => (
-  <div className="fixed inset-0 !m-auto bg-[#A8DCEC]  flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
+  <div className="fixed inset-0 !m-auto bg-[#86C5C5]  flex items-center justify-center z-50 p-4 transition-opacity duration-500 ease-in-out">
     <Image
       priority={false}
       height={700}

@@ -57,7 +57,7 @@ export default function SelectLanguagePage() {
         }
       `}</style>
 
-      <div className="min-h-screen bg-[#DDF1FF] flex flex-col items-center justify-center p-4 -mt-20 overflow-hidden relative">
+      <div className="min-h-screen bg-[#D8ECEC] flex flex-col items-center justify-center p-4 -mt-20 overflow-hidden relative">
         {/* Background Scrolling Columns */}
         <div className="absolute inset-0 w-full h-full flex justify-center gap-4 opacity-25">
           <div className="w-1/4 h-full">
@@ -75,11 +75,11 @@ export default function SelectLanguagePage() {
         </div>
 
         {/* Fading overlay to create a vignette effect */}
-        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,_#DDF1FF_35%,transparent_70%)]"></div>
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,_#D8ECEC_35%,transparent_70%)]"></div>
 
         {/* Foreground Content */}
         <div className="relative z-10 text-center w-full px-4">
-          <h1 className="text-5xl text-[#001730] font-heading md:text-6xl font-bold mb-3 drop-shadow-lg">
+          <h1 className="text-5xl text-[#083C3C] font-heading md:text-6xl font-bold mb-3 drop-shadow-lg">
             AUDIO ARTICLES
           </h1>
           <p className="text-lg font-body text-gray-600 mb-10">
@@ -94,7 +94,7 @@ export default function SelectLanguagePage() {
                 className="group w-full max-w-xs sm:w-auto"
               >
                 <div
-                  className="bg-[#111C33] text-[#DDF1FF] text-xl font-semibold w-full sm:w-60 rounded-full shadow-lg p-4 sm:p-5 text-center transition-all duration-500 ease-in-out hover:bg-[#003366] hover:scale-110"
+                  className="bg-[#0A2B2B] text-[#D8ECEC] text-xl font-semibold w-full sm:w-60 rounded-full shadow-lg p-4 sm:p-5 text-center transition-all duration-500 ease-in-out hover:bg-[#145353] hover:scale-110"
                 >
                   {lang.name}
                 </div>
