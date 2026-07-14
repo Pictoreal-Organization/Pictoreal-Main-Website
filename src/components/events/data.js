@@ -11,7 +11,7 @@ export const imageSets = [
         ],
         title: "Magazine Release Event",
         description:
-            "The Magazine Release Event, Pictoreal's flagship event, embraced the theme Navras, symbolizing a magazine brimming with emotions. A classical dance performance depicting the nine rasas enhanced the event's charm, and the magazine was unveiled by dignitaries alongside student members. Team members shared their journey through a heartfelt behind-the-scenes video, marking the fulfillment of a year-long dream.",
+            "The Magazine Release Event, the flagship event of Pictoreal, showcased this year's unique theme, Anvesha, inspired by the timeless spirit of exploration and the pursuit of discovering what often goes unnoticed. Rooted in the Sanskrit meaning of search and exploration, Anvesha celebrates curiosity, reflection, and the beauty of looking beyond the obvious to uncover hidden stories, forgotten histories, and new perspectives. The magazine was unveiled by dignitaries alongside student members of Pictoreal, beautifully capturing the essence of Anvesha and symbolizing the collective journey of inquiry, creativity, and dedication that brought this edition to life.",
     },
     {
         images: [
