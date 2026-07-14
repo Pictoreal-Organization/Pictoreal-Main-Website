@@ -90,46 +90,6 @@ export const imageSets = [
     },
     {
         images: [
-            "/gallery/Int1.jpg",
-            "/gallery/Int2.jpg",
-            "/gallery/Int3.jpg",
-            "/gallery/Int4.jpg",
-            "/gallery/Int5.jpg",
-        ],
-        title: "Interviews",
-        description:
-            "This year at Pictoreal, we interviewed remarkable individuals: tech enthusiast Pratik Ratadiya, Sujata Mastani visionary Sachin Kondhalkar, wildlife conservation hero Kulbhushan Singh Suryawanshi, and Guinness World Record cyclist Preeti Maske. Each conversation offered invaluable insights into diverse fields, including technology, culinary arts, conservation, and extreme sports. These interviews enriched our journey and provided valuable lessons from people who have excelled in their respective domains.",
-    },
-    {
-        images: [
-            "/gallery/Career_1.jpg",
-            "/gallery/Career_2.jpg",
-            "/gallery/Career_3.jpg",
-            "/gallery/Career_4.jpg",
-            "/gallery/Career_5.jpg",
-            "/gallery/Career_6.jpg",
-            "/gallery/Career_7.jpg",
-        ],
-        title: "Career Guidance",
-        description:
-            "On October 22nd, 2024, a career guidance session was conducted at Pune Municipality's Madhyamik Vidyalaya, Katraj. It aimed to enlighten 8th and 9th grade students about career pathways after completing the 10th grade, encouraging them to explore their dreams and various career options. An interactive activity prompted students to write down their aspirations, fostering engagement and reflection on the steps needed to achieve their goals.",
-    },
-    {
-        images: [
-            "/gallery/OLD_1.jpg",
-            "/gallery/OLD_2.jpg",
-            "/gallery/OLD_3.jpg",
-            "/gallery/OLD_4.jpg",
-            "/gallery/OLD_5.jpg",
-            "/gallery/OLD_6.jpg",
-            "/gallery/OLD_7.jpg",
-        ],
-        title: "Old Age Home Visit",
-        description:
-            "The visit to Akshar Paaul NGO on April 13th, 2025, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami, while inspiring stories of freedom fighters were shared on the occasion of Republic Day along with engaging general knowledge questions. It was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
-    },
-    {
-        images: [
             "/gallery/Picto_Plants1.jpg",
             "/gallery/Picto_Plants2.jpg",
             "/gallery/Picto_Plants3.jpg",
@@ -149,18 +109,6 @@ export const imageSets = [
         title: "Orphanage Visit",
         description:
             "On November 2nd, 2025, Team Pictosocial visited the Janseva Foundation Destitute Rehabilitation Centre to spend some quality time with the children. After warm introductions, the volunteers engaged the kids in a colouring activity, followed by group games like Dog and the Bone and Passing the Pass that had everyone laughing and running around. The visit ended with a fun dance session that the children absolutely loved, making it a simple but genuinely joyful day for both the kids and the volunteers.",
-    },
-    {
-        images: [
-            "/gallery/Clean_1.jpg",
-            "/gallery/Clean_2.jpg",
-            "/gallery/Clean_3.jpg",
-            "/gallery/Clean_4.jpg",
-            "/gallery/Clean_5.jpg",
-        ],
-        title: "Cleanliness Drive",
-        description:
-            "On April 20th, a cleanliness drive was conducted at ARAI Hills, Pune, with the primary objective of restoring the pristine beauty and well-being of the local ecosystem. Three groups of volunteers, equipped with garbage bags and hand gloves for safety, commenced the activity at 9:00 AM and collected 12+ bags worth of environmentally hazardous waste over two hours of rigorous scouting. The drive halted at 11:00 AM due to intense heat, and all waste was disposed of at the PMC garbage disposal area on the hill.",
     },
     {
         images: [
