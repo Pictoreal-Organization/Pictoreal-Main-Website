@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const AboutUs = () => {
   const images = [
-    "/Pictofam.jpg",
-    "/Pictofam2.jpg",
-    "/Pictofam3.jpg",
-    "/Pictofam4.jpg",
+    "/Pictofam.jpeg",
+    "/Pictofam2.jpeg",
+    "/Pictofam3.jpeg",
+    "/Pictofam4.jpeg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
