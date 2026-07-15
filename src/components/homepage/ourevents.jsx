@@ -176,18 +176,18 @@ const EventsCarousel = () => {
   const containerRef = useRef(null);
 
   const events = [
-    { id: 1, name: "Magazine Release Event", image: "/home_page/Prahar.jpg" },
-    { id: 2, name: "Manthan", image: "/home_page/Manthan.jpg" },
+    { id: 1, name: "Pictofest", image: "/home_page/Pictofest2.JPG" },
+    { id: 2, name: "Manthan", image: "/home_page/Manthan.JPG" },
     { id: 3, name: "Parichay", image: "/home_page/Parichay1.jpg" },
-    { id: 4, name: "Blood Donation Drive", image: "/home_page/BDD.jpg" },
-    { id: 5, name: "PICTOFEST", image: "/home_page/Pictofest.jpg" },
-    { id: 6, name: "BE Photoshoot", image: "/home_page/BE_Shoot.jpg" },
-    { id: 7, name: "Interviews", image: "/home_page/Interview.jpg" },
-    { id: 8, name: "Career Guidance", image: "/home_page/Career_guidance.jpg" },
-    { id: 9, name: "Old Age Home Visit", image: "/home_page/Old_Age_Home_Visit.jpg" },
+    { id: 4, name: "Blood Donation Drive", image: "/home_page/BDD.JPG" },
+    { id: 5, name: "Pictofest", image: "/home_page/Pictofest.JPG" },
+    { id: 6, name: "BE Photoshoot", image: "/home_page/BE_Shoot.JPG" },
+    //{ id: 7, name: "Interviews", image: "/home_page/Interview.jpg" },
+    //{ id: 8, name: "Career Guidance", image: "/home_page/Career_guidance.jpg" },
+    //{ id: 9, name: "Old Age Home Visit", image: "/home_page/Old_Age_Home_Visit.jpg" },
     { id: 10, name: "Picto Plants", image: "/home_page/Pictoplants.jpg" },
     { id: 11, name: "Orphanage Visit", image: "/home_page/Orphange_Visit.jpg" },
-    { id: 12, name: "Cleanliness Drive", image: "/home_page/Cleanliness.jpg" },
+    //{ id: 12, name: "Cleanliness Drive", image: "/home_page/Cleanliness.jpg" },
     { id: 13, name: "Amche Bappa", image: "/home_page/amche_bappa.jpg" },
   ];
   
