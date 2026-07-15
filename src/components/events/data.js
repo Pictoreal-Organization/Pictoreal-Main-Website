@@ -11,7 +11,7 @@ export const imageSets = [
         ],
         title: "Magazine Release Event",
         description:
-            "The Magazine Release Event, the flagship event of Pictoreal, showcased a unique and captivating theme this year, Navras, symbolizing a magazine brimming with emotions. A classical dance performance depicting the nine rasas enhanced the event’s charm. The magazine was unveiled by dignitaries alongside student members of Pictoreal.The essence of Navras was truly felt as team members shared their experiences of magazine creation. Nostalgia peaked when the journey was relived through a heartfelt behind-the-scenes video. The magazine’s success was evident in the emotional involvement of all attendees, marking the fulfillment of a year-long dream.",
+            "The Magazine Release Event, the flagship event of Pictoreal, showcased this year's unique theme, Anvesha, inspired by the timeless spirit of exploration and the pursuit of discovering what often goes unnoticed. Rooted in the Sanskrit meaning of search and exploration, Anvesha celebrates curiosity, reflection, and the beauty of looking beyond the obvious to uncover hidden stories, forgotten histories, and new perspectives. The magazine was unveiled by dignitaries alongside student members of Pictoreal, beautifully capturing the essence of Anvesha and symbolizing the collective journey of inquiry, creativity, and dedication that brought this edition to life.",
     },
     {
         images: [
@@ -24,7 +24,7 @@ export const imageSets = [
         ],
         title: "Manthan",
         description:
-            'The MANTHAN public speaking competition on February 18, 2025, allowed students to showcase their oratory skills on "Is brain drain a threat to innovation and development in home countries?". Through extempore storytelling and debate rounds, participants gained public speaking experience. First-year student Siddhant Vishnu won, receiving an Amazon gift card. MANTHAN helped students enhance communication skills while addressing a key socio-economic issue.',
+            "MANTHAN, a public speaking competition organized by PICTOREAL on October 3rd, 2025, gave students across departments a platform to showcase their oratory skills. Over 80 students participated in two rounds - an extempore round on a wide variety of topics, followed by a debate on whether historical figures and events should be judged by modern moral standards. The event was lively and engaging, marking a clear success in achieving what it set out to do.",
     },
     {
         images: [
@@ -37,7 +37,7 @@ export const imageSets = [
         ],
         title: "Parichay",
         description:
-            "On September 27th, 2024, Parichay introduced PICT's club Pictoreal to over 160 First Year students. Team heads introduced their teams, conducted activities and played games describing every team and its role in the harmonic operation of the club. The PictoSocial team performed a humorous skit on the ‘Blood Donation Drive.’ The event concluded with an open mic, showcasing talents in music and dance.",
+            "PARICHAY, held on October 10th, 2025, was PICTOREAL's introductory event for first-year students. It featured fun games, stall activities, and team introductions by the respective heads of all eight sub-teams. The event wrapped up with the announcement of MANTHAN's winners and a prize distribution, making it a fun and welcoming experience for the freshers.",
     },
     {
         images: [
@@ -51,7 +51,7 @@ export const imageSets = [
         ],
         title: "Blood Donation Drive",
         description:
-            "On March 4th, 2025, Pictoreal and NSS hosted a successful Blood Donation Drive with Janakalyan Blood Bank. Dr. Kulkarni inaugurated the event, emphasizing community involvement and the importance of blood donation. A campus street play raised awareness, resulting in over 231 donors. With support from 50+ volunteers, the event ran smoothly. The closing ceremony celebrated the event’s success and the impact of community collaboration.",
+            "On February 5th, 2026, Team Pictosocial of the Pictoreal Club, along with PICT NSS and PONNA SEROLOGICAL Blood Bank, organized a Blood Donation Drive to spread awareness about the importance of voluntary blood donation. The event opened with a street play, followed by donor registration and basic medical screening, and eligible donors donated blood under the care of trained medical staff. Donors were given refreshments and certificates of appreciation, and the drive saw great participation from students and staff alike.",
     },
     {
         images: [
@@ -68,8 +68,9 @@ export const imageSets = [
             "/gallery/Pictofest_12.jpg",
             "/gallery/Pictofest_13.jpg",
         ],
-        title: "PICTOFEST",
-        description: `On February 20th, PICTOREAL hosted its first intercollegiate art festival, PICTOFEST 2025, under the theme “Beachy Vibes.” Over two days, vibrant decor and engaging activities brought the spirit of the sea to life. Events like Manthan (public speaking), Coastal Crimes (mystery-solving), Horizon Hunt (treasure hunt), and Figma Wave (online design contest) saw enthusiastic participation. Hands-on workshops such as Play with Clay, Texture Art, and Craft Your Moon drew 150+ creatives. The PICS-O-REEL exhibition showcased 800+ artworks and drew large crowds across Pune. The festival ended with a grand closing ceremony honoring winners across all events.`,
+        title: "Pictofest",
+        description:
+            "From February 23rd to 25th, 2026, PICTOREAL hosted Pictofest 2026 at PICT, themed around FIESTA FRENZY - a nod to the vibrant spirit of a Mexican fiesta. The highlight of the three-day fest was Picsoreel, an intercollegiate art competition across categories including Sketching, Painting, Photography, and a theme category on EVERYDAY INDIA, which received over 750 entries. The fest also featured events like Fiesta Files, Carnival Hunt, and Bidding Wars, along with workshops in Pottery, Pipe Cleaner Flower Bouquet, and Lotus Resin Pond, bringing together students and art lovers from across Pune.",
     },
     {
         images: [
@@ -85,47 +86,7 @@ export const imageSets = [
         ],
         title: "BE Photoshoot",
         description:
-            "The BE photoshoot by Pictoreal on April 26th, 2025, captured final moments for the BEs with class photos and staff portraits. Held in front of the A1 Building and Lawn, the event included interactive activities, fostering bonding among students. It concluded with a ramp walk where BEs flaunted their sarees and suits, adding style and flair.",
-    },
-    {
-        images: [
-            "/gallery/Int1.jpg",
-            "/gallery/Int2.jpg",
-            "/gallery/Int3.jpg",
-            "/gallery/Int4.jpg",
-            "/gallery/Int5.jpg",
-        ],
-        title: "Interviews",
-        description:
-            "This year at Pictoreal, we interviewed remarkable individuals: tech enthusiast Pratik Ratadiya, Sujata Mastani visionary Sachin Kondhalkar, wildlife conservation hero Kulbhushan Singh Suryawanshi, and Guinness World Record cyclist Preeti Maske. Each conversation offered invaluable insights, enriching our journey and providing lessons from diverse fields, including technology, culinary arts, conservation, and extreme sports.",
-    },
-    {
-        images: [
-            "/gallery/Career_1.jpg",
-            "/gallery/Career_2.jpg",
-            "/gallery/Career_3.jpg",
-            "/gallery/Career_4.jpg",
-            "/gallery/Career_5.jpg",
-            "/gallery/Career_6.jpg",
-            "/gallery/Career_7.jpg",
-        ],
-        title: "Career Guidance",
-        description:
-            "On October 22nd, 2024, a career guidance session was conducted at Pune Municipality's Madhyamik Vidyalaya, Katraj. It aimed to enlighten 8th and 9th grade students about career pathways after completing the 10th grade. The session encouraged students to explore their dreams and various career options, providing guidance on steps to achieve their goals. An interactive activity prompted students to write down their aspirations, fostering engagement and reflection.",
-    },
-    {
-        images: [
-            "/gallery/OLD_1.jpg",
-            "/gallery/OLD_2.jpg",
-            "/gallery/OLD_3.jpg",
-            "/gallery/OLD_4.jpg",
-            "/gallery/OLD_5.jpg",
-            "/gallery/OLD_6.jpg",
-            "/gallery/OLD_7.jpg",
-        ],
-        title: "Old Age Home Visit",
-        description:
-            "The visit to Akshar Paaul NGO on April 13th, 2025, was an unforgettable experience. With 30 passionate volunteers, children explored their creativity through handprint bookmarks and origami. On the occasion of Republic Day, inspiring stories of freedom fighters were shared, along with engaging general knowledge questions. But it was the lively song and dance that truly enchanted everyone, leaving hearts full and spirits lifted.",
+            "On April 25th, 2026, PICTOREAL organized BE Photoshoot 2026 for the graduating batch - a day dedicated to capturing memories and clicking photographs for the official college magazine. A professional photographer ensured quality shots of students, faculty, and staff, from group photographs to individual portraits. It was an emotional and cheerful day, giving final year students a chance to celebrate friendships and soak in their last moments on campus.",
     },
     {
         images: [
@@ -134,9 +95,9 @@ export const imageSets = [
             "/gallery/Picto_Plants3.jpg",
             "/gallery/Picto_Plants4.jpg",
         ],
-        title: "Picto Plants",
+        title: "Pictoplants",
         description:
-            "Picto Plants was a sapling plantation drive organized by Pictoreal for Vol '27, reflecting the club's commitment to environmental sustainability and community service. Students and staff participated enthusiastically, planting saplings and contributing to a greener campus. The drive aimed to raise awareness about the importance of trees and environmental conservation, and concluded with a ceremony celebrating the collective effort to make a positive ecological impact.",
+            "On August 24th, 2025, Team Pictosocial collaborated with the Green Hills Foundation to organize PICTOPLANTS, a tree plantation drive at Chaturshrungi Hills, Pune. The event began with an orientation on afforestation, soil conservation, and geotagging, after which volunteers got hands-on with planting saplings, soil work, and documentation for future monitoring. It was a well-executed and energetic initiative that left participants with a greater sense of responsibility towards the environment.",
     },
     {
         images: [
@@ -147,19 +108,7 @@ export const imageSets = [
         ],
         title: "Orphanage Visit",
         description:
-            "The visit to Janseva Orphanage on December 22nd, 2024, saw the enthusiastic participation of 40 dedicated volunteers. Our goal was not just to bring smiles to the children's faces, but also to ignite their creativity, promote teamwork, and instill an appreciation for cultural traditions. Through engaging activities like diya painting, killa making, and lantern crafting, we created a memorable experience for both volunteers and children alike, fostering a sense of joy and community spirit.",
-    },
-    {
-        images: [
-            "/gallery/Clean_1.jpg",
-            "/gallery/Clean_2.jpg",
-            "/gallery/Clean_3.jpg",
-            "/gallery/Clean_4.jpg",
-            "/gallery/Clean_5.jpg",
-        ],
-        title: "Cleanliness Drive",
-        description:
-            "On April 20th, a cleanliness drive was conducted at ARAI Hills, Pune. The primary objective was restoring the pristine beauty and well-being of the local ecosystem. Three groups of volunteers equipped with garbage bags and hand gloves for safety, commenced the activity at 9:00 AM. After two hours of rigourous scouting, volunteers managed to collected 12+ bags worth of environmentally hazardous waste. Drive halted at 11:00 AM due to intense heat. All waste was then disposed of at the PMC garbage disposal area on the hill.",
+            "On November 2nd, 2025, Team Pictosocial visited the Janseva Foundation Destitute Rehabilitation Centre to spend some quality time with the children. After warm introductions, the volunteers engaged the kids in a colouring activity, followed by group games like Dog and the Bone and Passing the Pass that had everyone laughing and running around. The visit ended with a fun dance session that the children absolutely loved, making it a simple but genuinely joyful day for both the kids and the volunteers.",
     },
     {
         images: [
@@ -170,6 +119,14 @@ export const imageSets = [
         ],
         title: "Amche Bappa",
         description:
-            "Amche Bappa, spanned for 10 days featuring contests where participants displayed creativity and devotion to Ganpati Bappa. They uploaded photos of home decorations and showcased mandal art, enriching community festivities. Reels and videos added dynamic storytelling to express devotion. Overall, Amche Bappa celebrated Ganesh Chaturthi with enthusiasm, creativity, and community spirit.",
+            "Amche Bappa spanned 10 days, featuring contests where participants displayed creativity and devotion to Ganpati Bappa. They uploaded photos of home decorations and showcased mandal art, enriching community festivities, while reels and videos added dynamic storytelling to express devotion. Overall, Amche Bappa celebrated Ganesh Chaturthi with enthusiasm, creativity, and community spirit.",
+    },
+    {
+        images: [
+            // TODO: add Code The Cause gallery image paths here, e.g. "/gallery/CTC_1.jpg"
+        ],
+        title: "Code The Cause",
+        description:
+            "From 10th December 2025 to 17th January 2026, CodeTheCause was a social-impact hackathon organized by PICTOREAL, born out of the team's firsthand interactions with NGOs and local communities. The event invited students to build technology-based solutions for real problems across five domains - NGO financial transparency, healthcare for people with intellectual disabilities, adaptive education, senior care, and field operations management. Over 350 students across 75+ teams competed through three rounds - idea presentation, prototype evaluation, and final implementation - and the hackathon was a proud first for PICTOREAL, with solutions that showed genuine creativity and a real desire to make a difference.",
     },
 ];
