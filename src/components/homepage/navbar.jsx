@@ -303,15 +303,11 @@ export default function Navbar() {
     { text: "Home", href: "/" },
     { text: "Events", href: "/events" },
     { text: "Blogs", href: "/blogs" },
-    { text: "Articles", href: "/audio/v27" },
     { text: "OurTeam", href: "/ourteam" },
   ];
 
   const getActiveIndex = () => {
     return navLinks.findIndex((link) => {
-      if (link.text === "Articles") {
-        return pathname.startsWith("/audio");
-      }
       if (link.href === "/") {
         return pathname === "/";
       }

@@ -18,8 +18,8 @@ const Hero = () => {
     },
     {
       id: 1,
-      title: "Anvesha",
-      image: "/anvesha.png",
+      title: "Lost Threads",
+      image: "/lost_threads.png",
       path: "/anvesha",
     },
   ];
@@ -88,11 +88,11 @@ const Hero = () => {
         <div className="flex flex-col md:block w-full items-center justify-center mt-10 gap-10">
           {/* Left Box */}
           <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16">
-            <ArrowBtn text="Anvesha" path="/anvesha" />
-            <div className="w-[180px] sm:w-[200px] md:w-[220px] rounded-[10px] overflow-hidden shadow-lg bg-white">
+            <ArrowBtn text="Lost Threads" path="/anvesha" />
+            <div className="w-[180px] sm:w-[200px] md:w-[230px] aspect-[384/500] rounded-[10px] overflow-hidden shadow-lg bg-white">
               <Image
-                src="/anvesha.png"
-                alt="Anvesha"
+                src="/lost_threads.png"
+                alt="Lost Threads"
                 className="w-full h-full object-cover"
                 priority={true}
                 width={220}
@@ -103,7 +103,7 @@ const Hero = () => {
 
           {/* Right Box */}
           <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16">
-            <div className="w-[180px] sm:w-[200px] md:w-[230px] rounded-[10px] overflow-hidden shadow-lg bg-white">
+            <div className="w-[180px] sm:w-[200px] md:w-[230px] aspect-[384/500] rounded-[10px] overflow-hidden shadow-lg bg-white">
               <Image
                 src="/magazines/vol27.png"
                 alt="Pictoreal Magazine"
@@ -119,7 +119,7 @@ const Hero = () => {
 
         {/* Bottom Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mt-10">
-          <ArrowBtn text="Audio Articles" path="/audio/v27" />
+          <ArrowBtn text="pictoCreds" path="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" />
           <ArrowBtn text="Blogs" path="/blogs" />
         </div>
       </div>

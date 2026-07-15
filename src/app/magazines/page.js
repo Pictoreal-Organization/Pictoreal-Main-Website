@@ -74,13 +74,23 @@ export default function MagazinePage() {
                       <div className="flex-1 flex flex-col justify-center">
                         <div className="text-[#051C1C] font-heading font-bold mb-1 text-3xl md:text-4xl">{magazine.title}</div>
                         <div className="text-lg md:text-xl text-gray-400 my-2 font-body font-bold">VOLUME {magazine.volume}</div>
-                        <Link
-                          href={magazine.iFrameSrc}
-                          target="_blank"
-                          className="inline-block font-body bg-[#0A2B2B] text-white px-4 py-2 rounded-md hover:bg-[#145353] transition-colors text-sm w-fit"
-                        >
-                          Read Magazine
-                        </Link>
+                        <div className="flex flex-wrap gap-2">
+                          <Link
+                            href={magazine.iFrameSrc}
+                            target="_blank"
+                            className="inline-block font-body bg-[#0A2B2B] text-white px-4 py-2 rounded-md hover:bg-[#145353] transition-colors text-sm w-fit"
+                          >
+                            Read Magazine
+                          </Link>
+                          {magazine.volume === "27" && (
+                            <Link
+                              href="/audio/v27"
+                              className="inline-block font-body border border-[#0A2B2B] text-[#0A2B2B] px-4 py-2 rounded-md hover:bg-[#0A2B2B] hover:text-white transition-colors text-sm w-fit"
+                            >
+                              Listen to Articles
+                            </Link>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -184,13 +194,23 @@ export default function MagazinePage() {
                   <h4 className="font-semibold font-body text-[#0A2B2B] mb-1 text-sm">About this volume</h4>
                   <p className="font-body text-gray-600 text-xs leading-relaxed line-clamp-4">{selectedMagazine.description}</p>
                 </div>
-                <Link
-                  href={selectedMagazine.iFrameSrc}
-                  target="_blank"
-                  className="bg-[#0A2B2B] font-body text-white px-4 py-2 rounded-xl text-sm font-medium w-full inline-block text-center"
-                >
-                  Read Magazine
-                </Link>
+                <div className="flex flex-col gap-2">
+                  <Link
+                    href={selectedMagazine.iFrameSrc}
+                    target="_blank"
+                    className="bg-[#0A2B2B] font-body text-white px-4 py-2 rounded-xl text-sm font-medium w-full inline-block text-center"
+                  >
+                    Read Magazine
+                  </Link>
+                  {selectedMagazine.volume === "27" && (
+                    <Link
+                      href="/audio/v27"
+                      className="border-2 border-[#0A2B2B] text-[#0A2B2B] bg-transparent font-body px-4 py-2 rounded-xl text-sm font-medium w-full inline-block text-center hover:bg-[#0A2B2B] hover:text-white transition-colors"
+                    >
+                      Listen to Articles
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>
