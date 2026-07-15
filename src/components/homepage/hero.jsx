@@ -119,7 +119,7 @@ const Hero = () => {
 
         {/* Bottom Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mt-10">
-          <ArrowBtn text="pictoCreds" path="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" />
+          <ArrowBtn text="PictoCreds" path="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" />
           <ArrowBtn text="Blogs" path="/blogs" />
         </div>
       </div>

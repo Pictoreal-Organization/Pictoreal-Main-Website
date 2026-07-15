@@ -303,7 +303,7 @@ export default function Navbar() {
     { text: "Home", href: "/" },
     { text: "Events", href: "/events" },
     { text: "Blogs", href: "/blogs" },
-    { text: "OurTeam", href: "/ourteam" },
+    { text: "Our Team", href: "/ourteam" },
   ];
 
   const getActiveIndex = () => {
