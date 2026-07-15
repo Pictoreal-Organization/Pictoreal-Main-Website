@@ -16,7 +16,13 @@ const ArrowBtn = ({
 
   return (
     <button
-      onClick={() => router.push(path)}
+      onClick={() => {
+        if (path.startsWith("http://") || path.startsWith("https://")) {
+          window.open(path, "_blank");
+        } else {
+          router.push(path);
+        }
+      }}
       className={`flex items-center text-white pl-6 pr-2 py-1.5 rounded-full 
         transform transition duration-500 ease-in-out hover:scale-110 font-body cursor-pointer`}
       style={{
