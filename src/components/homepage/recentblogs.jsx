@@ -121,24 +121,22 @@ import ArrowBtn from "./arrowbtn";
 export default function RecentBlogs() {
   const blogs = [
     {
-      id: "blog5",
-      title: "Dreams and Deadlines",
-      authors: "Harshit Vora, Omkar Desai",
+      id: "blog7",
+      title: "Language Segregation: A Silent Divider in a Loud World",
+      authors: "Aswathi Pillai, Rania Abbas",
       excerpt:
-        "A deep dive into balancing creative aspirations with the practicalities of project timelines and client expectations.",
-      img: "/blog/blog5-poster-img.png",
-      //tags: ["Productivity", "Student Life"],
-      imagePosition: "top", // 👈 first card: show top
+        "Ever felt left out just because you didn't speak the 'right' language? Read and find out how language segregation works in real life and why it's worth talking about it.",
+      img: "/blog/Blog7/blog7-poster-img.png",
+      imagePosition: "top",
     },
     {
-      id: "blog2",
-      title: "Mysteries of Particle Physics",
-      authors: "Shrihari Kulkarni",
+      id: "blog6",
+      title: "हिंसेची सावली",
+      authors: "Chaitanya Kulkarni",
       excerpt:
-        "Step into the fascinating world of particle physics—a cosmic dance of quarks, leptons, and universal forces that shape our universe.",
-      img: "/blog/blog2-poster-img.png",
-      //tags: ["Science", "Featured"],
-      imagePosition: "center", // 👈 second card: show center
+        "Violence leaves a lasting shadow on individuals, yet media often disguises its true form. This blog explores those rare works that confront its bleak reality and lasting impact on characters.",
+      img: "/blog/Blog6/blog6-hp-poster-img.png",
+      imagePosition: "top",
     },
   ];
 

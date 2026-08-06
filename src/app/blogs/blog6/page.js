@@ -5,10 +5,10 @@ export default function Blog6() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
           
           {/* Centered Title */}
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             हिंसेची सावली
           </div>
           
@@ -41,7 +41,7 @@ export default function Blog6() {
               <div className="flex justify-center w-full md:w-1/3 mx-auto mb-5">
                 <img
                   src="/blog/Blog6/Blog6-content-1.png"
-                  className=" border-[5px] border-[#1a365d]"
+                  className=" border-[5px] border-[#0A2B2B]"
                   alt="Abstract art of a faun"
                 />
               </div>
@@ -76,7 +76,7 @@ export default function Blog6() {
               <div className="flex justify-center mb-4">
                 <img
                   src="/blog/Blog6/Blog6-content-2.jpg"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Black Friday still"
                 />
               </div>
@@ -92,7 +92,7 @@ export default function Blog6() {
               <div className="flex justify-center w-full md:w-1/3 mx-auto mb-5">
                 <img
                   src="/blog/Blog6/Blog6-content-3.png"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Black and white abstract art"
                 />
               </div>
@@ -114,12 +114,12 @@ export default function Blog6() {
               <div className="md:flex justify-center mb-4 gap-4">
                 <img
                   src="/blog/Blog6/Blog6-content-4.jpg" 
-                  className="border-[5px] border-[#1a365d] w-full md:w-5/12 mb-4 md:mb-0"
+                  className="border-[5px] border-[#0A2B2B] w-full md:w-5/12 mb-4 md:mb-0"
                   alt="Oldboy before comparison"
                 />
                 <img
                   src="/blog/Blog6/Blog6-content-5.jpg" 
-                  className="border-[5px] border-[#1a365d] w-full md:w-5/12"
+                  className="border-[5px] border-[#0A2B2B] w-full md:w-5/12"
                   alt="Oldboy after comparison"
                 />
               </div>
@@ -135,7 +135,7 @@ export default function Blog6() {
               <div className="flex justify-center mb-4">
                 <img
                   src="/blog/Blog6/Blog6-content-6.jpg"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Oldboy corridor fight scene"
                 />
               </div>
@@ -148,7 +148,7 @@ export default function Blog6() {
               <div className="flex justify-center mb-4">
                 <img
                   src="/blog/Blog6/Blog6-content-7.png"
-                  className="border-[5px] border-[#1a365d]"
+                  className="border-[5px] border-[#0A2B2B]"
                   alt="Final abstract art"
                 />
               </div>

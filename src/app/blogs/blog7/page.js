@@ -6,10 +6,10 @@ export default function Blog7() {
   return (
     <>
       <div className="flex sm:mt-[10vh] flex-col p-2 md:px-10">
-        <div className="relative bg-[#a4cde4] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#111c33] mx-auto">
+        <div className="relative bg-[#86C5C5] w-full md:w-4/5 max-w-[1200px] p-2 md:p-5 border-[10px] border-[#0A2B2B] mx-auto">
 
           {/* Centered Title */}
-          <div className="font-heading text-[#111c33] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
+          <div className="font-heading text-[#0A2B2B] font-extrabold pt-2 sm:text-5xl text-3xl text-firefly text-center mt-5 mb-8 sm:mt-14 sm:mb-5">
             Language Segregation: A Silent Divider in a Loud World
           </div>
 
@@ -63,7 +63,7 @@ export default function Blog7() {
               <div className="flex justify-center w-full md:w-3/4 mx-auto mb-5">
                 <img
                   src="/blog/Blog7/Blog7-content-1.png"
-                  className="border-[5px] border-[#1a365d] w-full h-auto"
+                  className="border-[5px] border-[#0A2B2B] w-full h-auto"
                   alt="People with flags / language illustration"
                 />
               </div>
@@ -91,7 +91,7 @@ export default function Blog7() {
               <div className="flex justify-center mb-4">
                 <img
                   src="/blog/Blog7/Blog7-content-2.png"
-                  className="border-[5px] border-[#1a365d] w-3/5 h-auto"
+                  className="border-[5px] border-[#0A2B2B] w-3/5 h-auto"
                   alt="People with flags / language illustration"
                 />
               </div>
@@ -114,7 +114,7 @@ export default function Blog7() {
               <div className="md:flex justify-center mb-4 gap-4">
                 <img
                   src="/blog/Blog7/Blog7-content-3.png"
-                  className="border-[5px] border-[#1a365d] w-4/5 h-auto"
+                  className="border-[5px] border-[#0A2B2B] w-4/5 h-auto"
                   alt="People with flags / language illustration"
                 />
               </div>
