@@ -6,6 +6,8 @@ import { motion, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 
 const magazines = [
+  { 
+  title: "Anvesha", volume: "28", imgLink: "/magazines/vol28.jpeg", iFrameSrc: "https://online.fliphtml5.com/vimxt/tepk/", description: "Anvesha is a journey of search and rediscovery—a pause to look beyond the familiar, reconnect with what was overlooked, and discover new meaning in the world around us. It marks the beginning of seeing properly again: with curiosity, awareness, and a renewed perspective."},
   { title: "Prahar", volume: "27", imgLink: "/magazines/vol27.png", iFrameSrc: "https://online.fliphtml5.com/vimxt/lkrg/#p=1", description: "Prahar symbolises a new dawn or era, focusing on changes, significant transitions, and the passage of time in society or personal narratives." },
   { title: "Navras", volume: "26", imgLink: "/magazines/vol26.png", iFrameSrc: "https://online.fliphtml5.com/ukioy/fyba/#p=1", description: "Navras represents the nine emotions of Indian art and literature, covering themes of love, anger, courage, wonder, peace, disgust, fear, humour, and compassion, reflecting human experience." },
   { title: "Odyssey", volume: "25", imgLink: "/magazines/vol_2024_25.png", iFrameSrc: "https://www.yumpu.com/xx/embed/view/hQFX2kOYlHIs8xA9", description: "Odyssey explores the journey of discovery and adventure, emphasising transformative quests, personal growth, and the pursuit of knowledge or new horizons." },
