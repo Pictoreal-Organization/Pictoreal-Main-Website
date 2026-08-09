@@ -42,9 +42,9 @@ const Hero = () => {
     // },
     {
       id: 1,
-      title: "Magazine V27",
-      image: "/magazines/vol27.png",
-      path: "https://online.fliphtml5.com/vimxt/lkrg/#p=1",
+      title: "Magazine V28",
+      image: "/magazines/vol28.jpeg",
+      path: "https://online.fliphtml5.com/vimxt/tepk/",
     },
     {
       id: 2,
@@ -246,16 +246,16 @@ const Hero = () => {
               <div className="flex flex-col items-center gap-4 mt-[-100px] mr-[-200px]">
                 <div className="w-full max-w-[230px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <Image
-                    src="/magazines/vol27.png"
-                    alt="Magazine V27"
+                    src="/magazines/vol28.jpeg"
+                    alt="Magazine V28"
                     width={280}
                     height={380}
                     className="w-full h-auto"
                   />
                 </div>
                 <ArrowBtn
-                  text="Magazine V27"
-                  path="https://online.fliphtml5.com/vimxt/lkrg/#p=1"
+                  text="Magazine V28"
+                  path="https://online.fliphtml5.com/vimxt/tepk/"
                 />
               </div>
             </div>
@@ -287,16 +287,16 @@ const Hero = () => {
               <div className="flex flex-col items-center gap-4">
                 <div className="w-[260px] lg:w-[240px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <Image
-                    src="/magazines/vol27.png"
-                    alt="Magazine V27"
+                    src="/magazines/vol28.jpeg"
+                    alt="Magazine V28"
                     width={320}
                     height={440}
                     className="w-full h-auto"
                   />
                 </div>
                 <ArrowBtn
-                  text="Magazine V27"
-                  path="https://online.fliphtml5.com/vimxt/lkrg/#p=1"
+                  text="Magazine V28"
+                  path="https://online.fliphtml5.com/vimxt/tepk/"
                 />
               </div>
             </div>
