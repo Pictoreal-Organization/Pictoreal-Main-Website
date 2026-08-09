@@ -6,39 +6,65 @@ import Image from "next/image";
 
 const Hero = () => {
   const [activeCard, setActiveCard] = useState(0);
+  const [animateFeatured, setAnimateFeatured] = useState(false);
   const router = useRouter();
-  const iFrameSrc = "https://online.fliphtml5.com/vimxt/lkrg/#p=1";
 
+  // 🎯 EASY CONFIGURATION
+  const SHOW_FEATURED = false;
+
+  // 🎨 CHOOSE YOUR ANIMATION STYLE (1, 2, or 3)
+  const ANIMATION_STYLE = 2;
+  // Style 1: Slide Up from Bottom (classic reveal)
+  // Style 2: Scale + Fade In (zoom entrance)
+  // Style 3: Flip + Slide (dramatic 3D flip)
+
+  const featuredBanner = {
+    title: "Blood Donation Drive",
+    image: "/current_banner_horiz.png",
+    path: "https://bdd.pictoreal.in/",
+  };
+
+  // Trigger animation after 300ms
+  useEffect(() => {
+    if (SHOW_FEATURED) {
+      const timer = setTimeout(() => setAnimateFeatured(true), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [SHOW_FEATURED]);
+
+  // ---------------- MOBILE CARDS ----------------
   const cards = [
-    {
-      id: 0,
-      title: "Magazine V27",
-      image: "/magazines/vol27.png",
-      path: iFrameSrc,
-    },
+    // {
+    //   id: 0,
+    //   title: featuredBanner.title,
+    //   image: "/current_banner_vert.png",
+    //   path: featuredBanner.path,
+    // },
     {
       id: 1,
-      title: "Lost Threads",
-      image: "/lost_threads.png",
-      path: "https://anvesha.pictoreal.in",
+      title: "Magazine V28",
+      image: "/magazines/vol28.jpeg",
+      path: "https://online.fliphtml5.com/vimxt/tepk/",
+    },
+    {
+      id: 2,
+      title: "Know Your Prahar",
+      image: "/know-your-prahar.png",
+      path: "/know-your-prahar",
     },
   ];
 
-  // ✅ For swipe
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
-
-  // ✅ Interval ref so we can reset
   const intervalRef = useRef(null);
 
-  // Auto rotate with reset
   useEffect(() => {
     startAutoRotate();
     return () => stopAutoRotate();
   }, []);
 
   const startAutoRotate = () => {
-    stopAutoRotate(); // clear if already running
+    stopAutoRotate();
     intervalRef.current = setInterval(() => {
       setActiveCard((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
     }, 4000);
@@ -54,13 +80,10 @@ const Hero = () => {
       setActiveCard((prev) => {
         let nextCard;
         if (swipeDistance > 0) {
-          // swipe left → next card
           nextCard = prev === cards.length - 1 ? 0 : prev + 1;
         } else {
-          // swipe right → previous card
           nextCard = prev === 0 ? cards.length - 1 : prev - 1;
         }
-        // ✅ Restart timer after swipe
         stopAutoRotate();
         startAutoRotate();
         return nextCard;
@@ -68,78 +91,240 @@ const Hero = () => {
     }
   };
 
+  // Animation class generators
+  const getHeadingAnimation = () => {
+    if (!SHOW_FEATURED) return "";
+    return animateFeatured
+      ? "-translate-y-12 opacity-100"
+      : "translate-y-30 opacity-100";
+  };
+
+  const getBannerAnimation = () => {
+    if (!animateFeatured) {
+      // Initial hidden state for all styles
+      switch (ANIMATION_STYLE) {
+        case 1:
+          return "opacity-0 translate-y-32"; // Slide up
+        case 2:
+          return "opacity-0 scale-50"; // Scale zoom
+        case 3:
+          return "opacity-0 translate-y-20 rotateX-90"; // Flip
+        default:
+          return "opacity-0 translate-y-32";
+      }
+    }
+    // Animated visible state
+    return "opacity-100 translate-y-0 scale-100 rotateX-0";
+  };
+
   return (
-    <div className="relative w-full bg-[#D8ECEC] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
-      {/* ------------------ DESKTOP / TABLET (≥ md) ------------------ */}
-      <div className="hidden md:flex flex-col items-center justify-center w-full">
-        {/* Center Text */}
-        <div className="text-center max-w-full sm:max-w-[500px] md:max-w-[607px] mx-auto px-2 mt-16 md:mt-20">
-          <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-heading font-bold leading-[1.2] sm:leading-[1.1] lg:leading-[0.9] tracking-[-0.01em] text-[#083C3C]">
-            Pictoreal
-          </div>
-        </div>
-
-        {/* Subtitle */}
-        <p className="mt-10 text-[15px] sm:text-[20px] md:text-[30px] text-[#083C3C] text-center px-4 font-heading">
-          Where thoughts, colours, and words prevail!
-        </p>
-
-        {/* Cards Section */}
-        <div className="flex flex-col md:block w-full items-center justify-center mt-10 gap-10">
-          {/* Left Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:left-6 lg:left-16">
-            <ArrowBtn text="Lost Threads" path="https://anvesha.pictoreal.in" />
-            <div className="w-[180px] sm:w-[200px] md:w-[230px] aspect-[384/500] rounded-[10px] overflow-hidden shadow-lg bg-white">
-              <Image
-                src="/lost_threads.png"
-                alt="Lost Threads"
-                className="w-full h-full object-cover"
-                priority={true}
-                width={220}
-                height={300}
-              />
+    <div className="relative w-full bg-[#DDF1FF] flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] overflow-hidden">
+      {/* ------------------ DESKTOP / TABLET ------------------ */}
+      <div className="hidden md:flex flex-col items-center justify-center w-full px-6 lg:px-12 py-8">
+        {/* Heading - Only this moves up */}
+        {SHOW_FEATURED && (
+          <div
+            className={`text-center transition-all duration-1000 ease-out ${getHeadingAnimation()}`}
+          >
+            <div className="text-[4rem] lg:text-[5rem] font-heading font-bold leading-tight tracking-tight text-[#001730]">
+              Pictoreal
             </div>
+            <p className="mt-2 text-[20px] lg:text-[26px] text-[#001730] font-heading">
+              Where thoughts, colours, and words prevail!
+            </p>
           </div>
+        )}
 
-          {/* Right Box */}
-          <div className="flex flex-col items-center gap-4 md:absolute md:top-[20%] md:right-6 lg:right-16">
-            <div className="w-[180px] sm:w-[200px] md:w-[230px] aspect-[384/500] rounded-[10px] overflow-hidden shadow-lg bg-white">
-              <Image
-                src="/magazines/vol27.png"
-                alt="Pictoreal Magazine"
-                className="w-full h-full object-cover"
-                priority={true}
-                width={220}
-                height={300}
-              />
+        {/* ------------------ MAIN CONTENT ------------------ */}
+        <div
+          className="w-full max-w-7xl mx-auto mt-8 relative"
+          style={{ perspective: "1200px" }}
+        >
+          {SHOW_FEATURED ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              {/* LEFT COLUMN - Static, no animation */}
+              <div className="flex flex-col items-center gap-4 mt-[-100px] ml-[-200px]">
+                <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
+                <div className="w-full max-w-[230px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <Image
+                    src="/know-your-prahar.png"
+                    alt="Know Your Prahar"
+                    width={280}
+                    height={380}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* CENTER COLUMN - Featured Banner with Animation */}
+              <div
+                className={`flex flex-col items-center gap-4 transition-all duration-1200 ease-out ${getBannerAnimation()}`}
+                style={{
+                  transitionDelay: "400ms",
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="px-4 py-1.5 bg-red-500 text-white text-sm font-bold rounded-full animate-pulse shadow-lg mb-10">
+                  🔴 LIVE NOW
+                </div>
+
+                <div
+                  className="w-full cursor-pointer group mb-5"
+                  onClick={() => router.push(featuredBanner.path)}
+                >
+                  <div className="relative rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 max-w-[650px] scale-130 mb-7">
+                    <div className="relative rounded-2xl">
+                      <Image
+                        src={featuredBanner.image}
+                        alt={featuredBanner.title}
+                        width={500}
+                        height={281}
+                        className="w-full h-auto"
+                      />
+
+                      <div className="absolute inset-0 bg-gray-950/0 group-hover:bg-gray-950/20 transition-all duration-300 flex items-center justify-center">
+                        <span className="px-6 py-2 bg-white text-[#001730] font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300">
+                          View Details →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <ArrowBtn
+                  text={featuredBanner.title}
+                  path={featuredBanner.path}
+                />
+              </div>
+
+              {/* Yeh use karenge jab horizontal poster nahi milega*/}
+              {/* CENTER COLUMN - Featured Banner with Animation */}
+              {/* 
+              <div className="flex-1 flex items-center justify-center px-8">
+                <div
+                  className={`flex flex-col items-center gap-4 transition-all duration-1200 ease-out ${getBannerAnimation()}`}
+                  style={{
+                    transitionDelay: "400ms",
+                    transformStyle: "preserve-3d"
+                  }}
+                >
+                  <div className="px-4 py-1.5 bg-red-500 text-white text-sm font-bold rounded-full animate-pulse shadow-lg mb-6">
+                    🔴 LIVE NOW
+                  </div>
+
+                  <div 
+                    className="w-full cursor-pointer group mb-5"
+                    onClick={() => router.push(featuredBanner.path)}
+                  >
+                    <div className="relative rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 max-w-[400px] mx-auto">
+                      <div className="absolute rounded-xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                      
+                      <div className="relative bg-white rounded-2xl overflow-hidden">
+                        <Image
+                          src={featuredBanner.image}
+                          alt={featuredBanner.title}
+                          width={100}
+                          height={300}
+                          className="w-full h-auto object-contain"
+                          priority
+                        />
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-8">
+                          <span className="text-white font-bold text-lg">
+                            View Details →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ArrowBtn text={featuredBanner.title} path={featuredBanner.path} />
+                </div>
+              </div> */}
+
+              {/* RIGHT COLUMN - Static, no animation */}
+              <div className="flex flex-col items-center gap-4 mt-[-100px] mr-[-200px]">
+                <div className="w-full max-w-[230px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <Image
+                    src="/magazines/vol28.jpeg"
+                    alt="Magazine V28"
+                    width={280}
+                    height={380}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <ArrowBtn
+                  text="Magazine V28"
+                  path="https://online.fliphtml5.com/vimxt/tepk/"
+                />
+              </div>
             </div>
-            <ArrowBtn text="Magazine V27" path={iFrameSrc} />
-          </div>
+          ) : (
+            /* Layout WITHOUT Featured Banner */
+            <div className="flex justify-center items-center gap-24 lg:gap-32 mt-10">
+              <div className="flex flex-col items-center gap-4">
+                <ArrowBtn text="Know Your Prahar" path="/know-your-prahar" />
+                <div className="w-[260px] lg:w-[240px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <Image
+                    src="/know-your-prahar.png"
+                    alt="Know Your Prahar"
+                    width={320}
+                    height={440}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              <div className="text-center mb-3">
+                <div className="text-[4rem] lg:text-[5rem] font-heading font-bold leading-tight tracking-tight text-[#001730]">
+                  Pictoreal
+                </div>
+                <p className="mt-2 text-[20px] lg:text-[26px] text-[#001730] font-heading">
+                  Where thoughts, colours, and words prevail!
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-[260px] lg:w-[240px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <Image
+                    src="/magazines/vol28.jpeg"
+                    alt="Magazine V28"
+                    width={320}
+                    height={440}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <ArrowBtn
+                  text="Magazine V28"
+                  path="https://online.fliphtml5.com/vimxt/tepk/"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Bottom Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
-          <ArrowBtn text="PictoCreds" path="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" />
-          <ArrowBtn text="Blogs" path="/blogs" />
-        </div>
+        {!SHOW_FEATURED && (
+          <div className="flex flex-wrap justify-center gap-4 mt-12">
+            <ArrowBtn text="Audio Articles" path="/audio/v27" />
+            <ArrowBtn text="Blogs" path="/blogs" />
+          </div>
+        )}
       </div>
 
-      {/* ------------------ MOBILE (< md) ------------------ */}
+      {/* ------------------ MOBILE ------------------ */}
       <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden">
-        {/* Heading */}
-        <div className="text-center mb-8">
-          <div className="text-[3rem] sm:text-[4rem] font-heading font-bold leading-tight tracking-tight text-[#083C3C] mb-4">
+        <div className="text-center mb-8 mt-10">
+          <div className="text-[3rem] font-heading font-bold leading-tight text-[#001730] mb-4">
             Pictoreal
-            {/* <span className="text-[#083C3C]">It's Pictoreal</span> */}
           </div>
-          <p className="text-[15px] sm:text-[20px] text-[#083C3C] font-heading px-4">
+          <p className="text-[16px] text-[#001730] font-heading px-4">
             Where thoughts, colours, and words prevail!
           </p>
         </div>
 
-        {/* Cards Slider */}
         <div
-          className="relative mb-1 sm:mb-1"
+          className="relative mb-1"
           onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
           onTouchEnd={(e) => {
             touchEndX.current = e.changedTouches[0].clientX;
@@ -170,7 +355,7 @@ const Hero = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="absolute bottom-20 ">
+                  <div className="absolute bottom-20">
                     <ArrowBtn text={card.title} path={card.path} />
                   </div>
                 </div>
@@ -178,7 +363,6 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* Indicators */}
           <div className="flex justify-center space-x-3 absolute left-1/2 -translate-x-1/2 bottom-8">
             {cards.map((_, index) => (
               <button
@@ -186,18 +370,27 @@ const Hero = () => {
                 onClick={() => {
                   setActiveCard(index);
                   stopAutoRotate();
-                  startAutoRotate(); // ✅ restart timer
+                  startAutoRotate();
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   activeCard === index
-                    ? "bg-[#083C3C] scale-125"
-                    : "bg-gray-300 hover:bg-gray-400"
+                    ? "bg-[#001730] scale-125"
+                    : "bg-gray-300"
                 }`}
-              />
+              ></button>
             ))}
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .rotateX-90 {
+          transform: rotateX(90deg);
+        }
+        .rotateX-0 {
+          transform: rotateX(0deg);
+        }
+      `}</style>
     </div>
   );
 };
