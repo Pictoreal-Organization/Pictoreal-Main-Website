@@ -36,7 +36,7 @@ const Footer = () => {
               <li><a href="/" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">Home</a></li>
               <li><a href="/events" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">Events</a></li>
               <li><a href="/blogs" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">Blogs</a></li>
-              <li><a href="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" target="_blank" rel="noopener noreferrer" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">pictoCreds</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.pictoreal.pictocreds" target="_blank" rel="noopener noreferrer" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">PictoCreds</a></li>
               <li><a href="/ourteam" className="hover:text-[#F0F7F7] hover:underline transition-colors duration-300">Our Team</a></li>
             </ul>
           </div>
