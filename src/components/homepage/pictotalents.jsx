@@ -45,16 +45,27 @@ const PictoTalentsPods = () => {
     }
   ];
 
-  const pictoPodcast = {
+  const pictoPodcast = [{
     id: 1,
     thumbnail: "/talents-pods/pods1.png",
     title: "The Story Behind The Voice ft. Mr. Anand Bhate",
     description: `What does it take to become a legend at just 10 years old? In this episode, we bring you the extraordinary journey of Anand Bhate, the iconic voice that has kept the spirit of Marathi music alive across generations.`,
     duration: "1:17:02",
-    views: "600",
+    views: "700",
     youtubeUrl: "https://www.youtube.com/watch?v=-j2gEDCxtJ0",
-    publishDate: "Jun 20 2025"
-  };
+    publishDate: "Jun 20, 2025"
+  },
+  {
+    id: 2,
+    thumbnail: "/talents-pods/pods2.jpg",
+    title: "The Heroes Behind Lila Poonawala Foundation",
+    description: `In this special conversation, we sit down with Padma Shri Awardee Lila Poonawalla and Mr. Firoz Poonawalla - the visionary founders behind the Lila Poonawalla Foundation (LPF), to hear the story of how a remarkable woman rose to become one of India's first woman CEOs, and how she and her husband together went on to transform the lives of over 19,000 girls and their families across India.
+`,
+    duration: "47:47",
+    views: "400",
+    youtubeUrl: "https://www.youtube.com/watch?v=fnHqnyboBYo",
+    publishDate: "Apr 8, 2026"
+  }];
 
   useEffect(() => {
     if (activeSection === 0) {
@@ -261,86 +272,128 @@ const PictoTalentsPods = () => {
 
           {/* Podcast Section */}
           {activeSection === 1 && (
-            <div className="transition-all duration-700 ease-out">
-              <div className="text-center mb-6">
-                <p className="text-2xl md:text-3xl font-heading font-bold text-[#083C3C] mb-2">
-                  Latest Podcast Episode
-                </p>
-                <p className="text-[#186060] text-base font-body">Deep conversations about creativity and storytelling</p>
-              </div>
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="relative aspect-video md:w-2/5">
-                      <Image
-                        src={pictoPodcast.thumbnail}
-                        alt={pictoPodcast.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 40vw"
-                      />
-                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                        <button
-                          onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition hover:scale-110"
-                        >
-                          <Play className="text-white fill-white" size={28} />
-                        </button>
-                      </div>
-                      <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
-                        {pictoPodcast.duration}
-                      </div>
-                    </div>
-                    <div className="md:w-3/5 p-6 flex flex-col justify-center">
-                      <div className="flex items-center space-x-2 text-red-600 mb-3">
-                        <Youtube size={16} />
-                        <span className="text-xs font-heading font-semibold">PODCAST</span>
-                      </div>
-                      <p className="text-xl md:text-3xl font-heading font-bold text-[#083C3C] mb-3 leading-tight line-clamp-2">
-                        {pictoPodcast.title}
-                      </p>
-                      <p className="text-[#186060] mb-4 font-body text-sm leading-relaxed line-clamp-3">
-                        {pictoPodcast.description}
-                      </p>
-                      <div className="flex items-center space-x-4 text-xs text-gray-600 mb-4">
-                        <span>{pictoPodcast.views} views</span>
-                        <span>{pictoPodcast.publishDate}</span>
-                      </div>
-                      <div className="space-y-3 mt-auto">
-                        <button
-                          onClick={() => window.open(pictoPodcast.youtubeUrl, '_blank')}
-                          className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition transform hover:scale-105 flex items-center justify-center space-x-2 shadow-md text-sm"
-                        >
-                          <Youtube size={16} />
-                          <span>Watch on YouTube</span>
-                        </button>
-                        <button
-                          onClick={() => window.open('https://www.youtube.com/@Pictoreal-yt', '_blank')}
-                          className="w-full group flex items-center justify-center bg-[#083C3C] text-white pl-6 pr-2 py-2 rounded-full hover:scale-105 font-sans cursor-pointer hover:bg-[#186060] transition"
-                        >
-                          <span className="flex items-center space-x-3">
-                            <Youtube size={20} className="text-[#D8ECEC]" />
-                            <span className="text-[#D8ECEC] font-semibold">Subscribe to PictoPods</span>
-                          </span>
-                          <span className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#D8ECEC]">
-                            <svg
-                              className="w-5 h-5"
-                              fill="none"
-                              stroke="#083C3C"
-                              strokeWidth={2.5}
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 7L7 17M17 7h-6m6 0v6" />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
+                <div className="transition-all duration-700 ease-out">
+                  <div className="text-center mb-6">
+                    <p className="text-2xl md:text-3xl font-heading font-bold text-[#083C3C] mb-2">
+                      Latest Podcast Episodes
+                    </p>
+                    <p className="text-[#186060] text-base font-body">
+                      Deep conversations about creativity and storytelling
+                    </p>
                   </div>
-                </div>
-              </div>
+              
+                  <div className="max-w-6xl mx-auto space-y-6">
+                    {pictoPodcast.map((podcast) => (
+                      <div
+                        key={podcast.id}
+                        className="bg-white rounded-2xl shadow-xl overflow-hidden"
+                      >
+                        <div className="flex flex-col md:flex-row">
+                          
+                          <div className="relative aspect-video md:w-2/5">
+                            <Image
+                              src={podcast.thumbnail}
+                              alt={podcast.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 40vw"
+                            />
+              
+                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                              <button
+                                onClick={() =>
+                                  window.open(podcast.youtubeUrl, "_blank")
+                                }
+                                className="w-20 h-12 bg-red-600/90 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-red-700 transition hover:scale-110"
+                              >
+                                <Play
+                                  className="text-white fill-white"
+                                  size={28}
+                                />
+                              </button>
+                            </div>
+              
+                            <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                              {podcast.duration}
+                            </div>
+                          </div>
+              
+                          <div className="md:w-3/5 p-6 flex flex-col justify-center">
+                            <div className="flex items-center space-x-2 text-red-600 mb-3">
+                              <Youtube size={16} />
+                              <span className="text-xs font-heading font-semibold">
+                                PODCAST
+                              </span>
+                            </div>
+              
+                            <p className="text-xl md:text-3xl font-heading font-bold text-[#083C3C] mb-3 leading-tight line-clamp-2">
+                              {podcast.title}
+                            </p>
+              
+                            <p className="text-[#186060] mb-4 font-body text-sm leading-relaxed line-clamp-3">
+                              {podcast.description}
+                            </p>
+              
+                            <div className="flex items-center space-x-4 text-xs text-gray-600 mb-4">
+                              <span>{podcast.views} views</span>
+                              <span>{podcast.publishDate}</span>
+                            </div>
+              
+                            <div className="space-y-3 mt-auto">
+                              <button
+                                onClick={() =>
+                                  window.open(podcast.youtubeUrl, "_blank")
+                                }
+                                className="w-full bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition transform hover:scale-105 flex items-center justify-center space-x-2 shadow-md text-sm"
+                              >
+                                <Youtube size={16} />
+                                <span>Watch on YouTube</span>
+                              </button>
+                            </div>
+                          </div>
+              
+                        </div>
+                      </div>
+                    ))}
+              
+                    {/* Subscribe button - only once */}
+                    <div className="flex justify-center pt-2">
+                      <button
+                        onClick={() =>
+                          window.open(
+                            "https://www.youtube.com/@Pictoreal-yt",
+                            "_blank"
+                          )
+                        }
+                        className="group flex items-center justify-center bg-[#083C3C] text-white pl-6 pr-2 py-2 rounded-full hover:scale-105 font-sans cursor-pointer hover:bg-[#186060] transition"
+                      >
+                        <span className="flex items-center space-x-3">
+                          <Youtube size={20} className="text-[#D8ECEC]" />
+                          <span className="text-[#D8ECEC] font-semibold">
+                            Subscribe to PictoPods
+                          </span>
+                        </span>
+              
+                        <span className="ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#D8ECEC]">
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="#083C3C"
+                            strokeWidth={2.5}
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M17 7L7 17M17 7h-6m6 0v6"
+                            />
+                      </svg>
+                </span>
+              </button>
             </div>
-          )}
+          </div>
+        </div>
+        )}
         </div>
       </div>
     </div>
