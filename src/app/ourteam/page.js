@@ -30,7 +30,7 @@ const Team = () => {
             imageSrc="/our_team/slide_img_1.jpg"
             altText="team pictoreal"
             hoverKey="team pictoreal"
-            responsiveMobile={true} // ✅ special prop
+            responsiveMobile={true} //  special prop
             height={500}  
           />
         </div>
@@ -45,7 +45,7 @@ const Team = () => {
             imageSrc="/our_team/asmita-joshi.jpg"
             altText="Magazine Coordinator"
             hoverKey="magazine_coordinators"
-            responsiveMobile={true} // ✅ special prop
+            responsiveMobile={true} //  special prop
             height={400}  
           />
 
@@ -55,23 +55,23 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
           {/* Magazine Secretaries */}
           <div className="flex flex-col items-center">
-            <Position text="Magazine Secretaries"/>
+            <Position text="Magazine Secretary"/>
             <TeamMember
-              names={["Amulya Agrawal", "Prem Rahinj"]}
-              imageSrc="/our_team/magazine-secretaries.JPG"
-              altText="Magazine Secretaries"
-              hoverKey="magazine_secretaries"
+              names={["Omkar Desai"]}
+              imageSrc="/our_team/V29_TEAM/V29_MagazineSecretary.JPG"
+              altText="Magazine Secretary"
+              hoverKey="magazine_secretary"
             />
           </div>
 
           {/* Joint Secretaries */}
           <div className="flex flex-col items-center">
-            <Position text="Joint Secretaries"/>
+            <Position text="Joint Secretary"/>
             <TeamMember
-              names={["Sampada Tagalpallewar", "Kshitij Dhake"]}
-              imageSrc="/our_team/joint-secretaries.JPG"
-              altText="Joint Secretaries"
-              hoverKey="joint_secretaries"
+              names={["Harshit Vora"]}
+              imageSrc="/our_team/V29_TEAM/v29_jointSecretary.JPG"
+              altText="Joint Secretary"
+              hoverKey="joint_secretary"
             />
           </div>
 
@@ -79,8 +79,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="General Secretaries"/>
             <TeamMember
-              names={["Aarya Badhe", "Unnati Rathi"]}
-              imageSrc="/our_team/general-secretaries.JPG"
+              names={["Shraddha Dolas", "Sukanya Gupta"]}
+              imageSrc="/our_team/V29_TEAM/V29_GeneralSecretary.JPG"
               altText="General Secretaries"
               hoverKey="general_secretaries"
             />
@@ -90,10 +90,23 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Treasurer"/>
             <TeamMember
-              names={["Kartik Tichkule"]}
-              imageSrc="/our_team/TR.JPG"
+              names={["Pratik Chavan"]}
+              imageSrc="/our_team/V29_TEAM/v29_treasurer.jpg"
               altText="Treasurer"
               hoverKey="treasurer"
+              height={370}  
+            />
+          </div>
+
+          {/* Editorial Incharge */}
+          <div className="flex flex-col items-center">
+            <Position text="Editorial Incharge"/>
+            <TeamMember
+              names={["Ayan Pathan"]}
+              imageSrc="/our_team/V29_TEAM/V29_EditorialIncharge.jpg"
+              altText="Editorial Incharge"
+              hoverKey="editorial_incharge"
+              height={400}  
             />
           </div>
 
@@ -101,8 +114,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Design Heads"/>
             <TeamMember
-              names={["Saanvi Bhavsar", "Anjani Gulve", "Sanvi Waghmode"]}
-              imageSrc="/our_team/design-heads.JPG"
+              names={["Salina Tamboli", "Khushi Sarda", "Bhagyashree Shirapure","Srushti Malvadkar"]}
+              imageSrc="/our_team/V29_TEAM/V29_DesignHeads.jpg"
               altText="Design Heads"
               hoverKey="design_heads"
             />
@@ -112,30 +125,19 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Editorial Heads"/>
             <TeamMember
-              names={["Spondon Nath", "Sanavi Kulkarni", "Ayan Pathan"]}
-              imageSrc="/our_team/editorial-heads.JPG"
+              names={["Kalyani Deshpande", "Aaliya Phirphire", "Kasturi Vaidya"]}
+              imageSrc="/our_team/V29_TEAM/V29_EditorialHeads.jpg"
               altText="Editorial Heads"
               hoverKey="editorial_heads"
             />
           </div>
 
-          {/* Picto-Social Heads */}
+          {/* Management Team */}
           <div className="flex flex-col items-center">
-            <Position text="Picto-Social Heads"/>
+            <Position text="Management Heads"/>
             <TeamMember
-              names={["Dhanashri Mahadik", "Harshit Vora", "Sukanya Gupta"]}
-              imageSrc="/our_team/picto-social-heads.JPG"
-              altText="Picto-Social Heads"
-              hoverKey="picto_social_heads"
-            />
-          </div>
-
-          {/* Event Managers */}
-          <div className="flex flex-col items-center">
-            <Position text="Event Managers"/>
-            <TeamMember
-              names={["Vedika Bopche", "Omkar Desai", "Jeet Amin"]}
-              imageSrc="/our_team/event-managers.JPG"
+              names={["Jayesh Zanwar", "Mrudul Ganvir", "Palak Rathi", "Aditya Deshpande"]}
+              imageSrc="/our_team/V29_TEAM/V29_Management_Heads.JPG"
               altText="Event Managers"
               hoverKey="event_managers"
             />
@@ -145,8 +147,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Public Relations Officers"/>
             <TeamMember
-              names={["Shraddha Dolas", "Trishit Guin", "Maria Shaikh"]}
-              imageSrc="/our_team/public-relations-officers.JPG"
+              names={["Mahi Bhati", "Tanishka Kankal"]}
+              imageSrc="/our_team/V29_TEAM/V29_PROs.jpg"
               altText="Public Relations Officers"
               hoverKey="public_relations_officers"
             />
@@ -156,8 +158,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Social Media Heads"/>
             <TeamMember
-              names={["Pushkar Mulajkar", "Aditya Tidake", "Samierra Arora"]}
-              imageSrc="/our_team/social-media-heads.JPG"
+              names={["Shrawani Choukone", "Kumud Kojabe", "Shravani Nikam"]}
+              imageSrc="/our_team/V29_TEAM/V29_SocialMediaHeads.jpg"
               altText="Social Media Heads"
               hoverKey="social_media_heads"
             />
@@ -167,8 +169,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Tech Heads"/>
             <TeamMember
-              names={["Madhura Deshmukh", "Manas Gawali", "Riddhi Lahare"]}
-              imageSrc="/our_team/tech-heads.JPG"
+              names={["Hemangi Patil", "Jayachandra Vandanapu", "Mahi Goel"]}
+              imageSrc="/our_team/V29_TEAM/V29_TechHeads.JPG"
               altText="Tech Heads"
               hoverKey="tech_heads"
             />
@@ -178,21 +180,10 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Marketing Heads"/>
             <TeamMember
-              names={["Manas Yeola", "Pratik Chavan", "Gauravi Muttha"]}
-              imageSrc="/our_team/marketing-heads.jpg"
+              names={["Sarthak Shastri", "Hiten Chhajed"]}
+              imageSrc="/our_team/V29_TEAM/V29_MarketingHeads.jpg"
               altText="Marketing Heads"
               hoverKey="marketing_heads"
-            />
-          </div>
-
-          {/* Production Heads */}
-          <div className="flex flex-col items-center">
-            <Position text="Production Heads"/>
-            <TeamMember
-              names={["Vihan Wani", "Pranav Wagh"]}
-              imageSrc="/our_team/video-editing-heads.jpg"
-              altText="Video Editing Heads"
-              hoverKey="video_editing_heads"
             />
           </div>
 
@@ -200,8 +191,8 @@ const Team = () => {
           <div className="flex flex-col items-center">
             <Position text="Photography Heads"/>
             <TeamMember
-              names={["Shantanu Sable", "Mahesh Loya"]}
-              imageSrc="/our_team/photography-heads.JPG"
+              names={["Sanika Joshi", "Trupti Gawali"]}
+              imageSrc="/our_team/V29_TEAM/V29_PhotographyHeads.jpg"
               altText="Photography Heads"
               hoverKey="photography_heads"
             />

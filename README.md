@@ -1,3 +1,50 @@
+# Pictoreal Main Website
+
+Public website of Pictoreal (PICT)
+The site shows the club, team, events, blogs, magazines and audio articles.
+
+## Technology
+
+- Next.js (App Router) and React 19
+- Tailwind CSS 4
+- Node.js 22.x and npm
+
+## Commands
+
+| Task | Command |
+| --- | --- |
+| Install packages | `npm install` |
+| Start development server | `npm run dev` |
+| Make production build | `npm run build` |
+| Start production server | `npm run start` |
+| Run lint | `npm run lint` |
+
+## Environment variables
+
+Put these variables in a `.env.local` file in the project root.
+
+| Variable | Use |
+| --- | --- |
+| `NEXT_PUBLIC_AUDIO_API_URL` | Base URL of the audio back-end |
+| `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name (blog editor) |
+| `NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET` | Cloudinary upload preset (blog editor) |
+
+## Folders
+
+- `src/app/` - pages
+- `src/components/` - shared components and event data
+- `public/` - images and static files
+
+## Add content
+
+1. Put the image in `public/`.
+2. Add the entry to the data list:
+   - Blog or magazine: `src/app/blogs/page.js` or `src/app/magazines/page.js`
+   - Event: `src/components/events/data.js`
+---
+
+## Original Next.js notes
+
 Thiss is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started!

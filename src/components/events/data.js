@@ -134,13 +134,13 @@
 export const imageSets = [
   {
     images: [
-      "/gallery/Events/Magazine_Release_Event/mre1.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre2.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre3.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre4.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre5.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre6.jpg",
-      "/gallery/Events/Magazine_Release_Event/mre7.jpg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE1.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE2.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE3.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE4.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE5.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE6.jpeg",
+      "/gallery/Events/Magazine_Release_Event/V29MRE7.jpeg",
     ],
     title: "Magazine Release Event",
     description:
