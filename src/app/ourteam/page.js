@@ -27,7 +27,7 @@ const Team = () => {
         <div className="flex justify-center mb-12 w-full md:w-3/4">
         <TeamMember
             names={["TEAM PICTOREAL"]}
-            imageSrc="/our_team/slide_img_1.jpg"
+            imageSrc="/Pictofam.jpeg"
             altText="team pictoreal"
             hoverKey="team pictoreal"
             responsiveMobile={true} //  special prop
@@ -91,10 +91,10 @@ const Team = () => {
             <Position text="Treasurer"/>
             <TeamMember
               names={["Pratik Chavan"]}
-              imageSrc="/our_team/V29_TEAM/v29_treasurer.jpg"
+              imageSrc="/our_team/V29_TEAM/V29_treasurer.jpg"
               altText="Treasurer"
               hoverKey="treasurer"
-              height={370}  
+              height={330}  
             />
           </div>
 
