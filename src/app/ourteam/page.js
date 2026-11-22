@@ -41,8 +41,8 @@ const Team = () => {
         <div className="flex flex-col items-center mb-12 w-full md:w-3/4 max-w-xl">
           <Position text="Magazine Coordinator"/>
           <TeamMember
-            names={["Mrs. Asmita Joshi"]}
-            imageSrc="/our_team/asmita-joshi.jpg"
+            names={["Mr. Yogesh Handge"]}
+            imageSrc="/our_team/Yogesh-Handge.jpg"
             altText="Magazine Coordinator"
             hoverKey="magazine_coordinators"
             responsiveMobile={true} //  special prop
